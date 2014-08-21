@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<residential>
+	<uniqueID>foo</uniqueID>
+	<features>
+		<pool type="inground">yes</pool>
+		<poolInGround>yes</poolInGround>
+		<poolAboveGround>yes</poolAboveGround>
+		<spa type="inground">yes</spa>
+		<tennisCourt>yes</tennisCourt>
+		<shed>yes</shed>
+		<outsideSpa>yes</outsideSpa>
+	</features>
+</residential>

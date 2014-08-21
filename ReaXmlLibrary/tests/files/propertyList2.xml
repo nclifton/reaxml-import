@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE residential SYSTEM "propertyList.dtd" >
+<residential modTime="" status="current">
+  <agentID>agentID</agentID>
+  <uniqueID>uniqueID</uniqueID>
+  <authority value="auction"/>
+  <underOffer value="no"/>
+  <isHomeLandPackage value="no"/>
+  <listingAgent id="1">
+    <agentID>agentID</agentID>
+    <name>name</name>
+    <telephone type="BH">telephone</telephone>
+    <email>email</email>
+    <twitterURL>twitterURL</twitterURL>
+    <facebookURL>facebookURL</facebookURL>
+    <linkedInURL>linkedInURL</linkedInURL>
+  </listingAgent>
+  <price display="yes" plusSAV="no" tax="unknown">
+    <range>
+      <min>min</min>
+      <max>max</max>
+    </range>
+  </price>
+  <priceView>priceView</priceView>
+  <address display="yes" streetview="yes">
+    <site>site</site>
+    <subNumber>subNumber</subNumber>
+    <lotNumber>lotNumber</lotNumber>
+    <streetNumber>streetNumber</streetNumber>
+    <street>street</street>
+    <suburb display="yes">suburb</suburb>
+    <country>country</country>
+  </address>
+  <municipality>municipality</municipality>
+  <streetDirectory type="melways">
+    <page>page</page>
+    <reference>reference</reference>
+  </streetDirectory>
+  <category name="House"/>
+  <headline>headline</headline>
+  <description>description</description>
+  <features>
+    <bedrooms>bedrooms</bedrooms>
+    <bathrooms>bathrooms</bathrooms>
+    <ensuite>ensuite</ensuite>
+    <garages>garages</garages>
+    <carports>carports</carports>
+    <remoteGarage>remoteGarage</remoteGarage>
+    <secureParking>secureParking</secureParking>
+    <airConditioning>airConditioning</airConditioning>
+    <alarmSystem>alarmSystem</alarmSystem>
+    <vacuumSystem>vacuumSystem</vacuumSystem>
+    <intercom>intercom</intercom>
+    <pool type="inground">pool</pool>
+    <poolInGround>poolInGround</poolInGround>
+    <poolAboveGround>poolAboveGround</poolAboveGround>
+    <spa type="inground">spa</spa>
+    <tennisCourt>tennisCourt</tennisCourt>
+    <balcony>balcony</balcony>
+    <deck>deck</deck>
+    <courtyard>courtyard</courtyard>
+    <outdoorEnt>outdoorEnt</outdoorEnt>
+    <shed>shed</shed>
+    <fullyFenced>fullyFenced</fullyFenced>
+    <openFirePlace>openFirePlace</openFirePlace>
+    <openSpaces>openSpaces</openSpaces>
+    <toilets>toilets</toilets>
+    <livingAreas>livingAreas</livingAreas>
+    <heating type="other"/>
+    <hotWaterService type="gas"/>
+    <insideSpa>insideSpa</insideSpa>
+    <outsideSpa>outsideSpa</outsideSpa>
+    <broadband>broadband</broadband>
+    <builtInRobes>builtInRobes</builtInRobes>
+    <dishwasher>dishwasher</dishwasher>
+    <ductedCooling>ductedCooling</ductedCooling>
+    <ductedHeating>ductedHeating</ductedHeating>
+    <evaporativeCooling>evaporativeCooling</evaporativeCooling>
+    <floorboards>floorboards</floorboards>
+    <gasHeating>gasHeating</gasHeating>
+    <gym>gym</gym>
+    <hydronicHeating>hydronicHeating</hydronicHeating>
+    <payTV>payTV</payTV>
+    <reverseCycleAirCon>reverseCycleAirCon</reverseCycleAirCon>
+    <rumpusRoom>rumpusRoom</rumpusRoom>
+    <splitSystemAirCon>splitSystemAirCon</splitSystemAirCon>
+    <splitSystemHeating>splitSystemHeating</splitSystemHeating>
+    <study>study</study>
+    <workshop>workshop</workshop>
+    <otherFeatures>otherFeatures</otherFeatures>
+  </features>
+  <soldDetails>
+    <price display="yes" plusSAV="no" tax="unknown">
+      <range>
+        <min>min</min>
+        <max>max</max>
+      </range>
+    </price>
+    <date>date</date>
+  </soldDetails>
+  <landDetails>
+    <area of="total" unit="square">
+      <range>
+        <min>min</min>
+        <max>max</max>
+      </range>
+    </area>
+    <frontage unit="meter">frontage</frontage>
+    <depth side="rear" unit="meter">depth</depth>
+    <crossOver value="left"/>
+  </landDetails>
+  <buildingDetails>
+    <area of="total" unit="square">
+      <range>
+        <min>min</min>
+        <max>max</max>
+      </range>
+    </area>
+    <energyRating>energyRating</energyRating>
+  </buildingDetails>
+  <inspectionTimes>
+    <inspection>inspection</inspection>
+  </inspectionTimes>
+  <auction date=""/>
+  <vendorDetails>
+    <name>name</name>
+    <telephone type="BH">telephone</telephone>
+    <email>email</email>
+  </vendorDetails>
+  <externalLink href=""/>
+  <videoLink href=""/>
+  <extraFields table="">
+    <eField name="">eField</eField>
+  </extraFields>
+  <objects>
+    <img file="" format="jpg" id="m" modTime="" url="">img</img>
+  </objects>
+  <newConstruction>newConstruction</newConstruction>
+  <ecoFriendly>
+    <solarPanels>solarPanels</solarPanels>
+    <solarHotWater>solarHotWater</solarHotWater>
+    <waterTank>waterTank</waterTank>
+    <greyWaterSystem>greyWaterSystem</greyWaterSystem>
+  </ecoFriendly>
+  <idealFor>
+    <firstHomeBuyer>firstHomeBuyer</firstHomeBuyer>
+    <investors>investors</investors>
+    <downsizing>downsizing</downsizing>
+    <couples>couples</couples>
+    <students>students</students>
+    <lrgFamilies>lrgFamilies</lrgFamilies>
+    <retirees>retirees</retirees>
+  </idealFor>
+  <views>
+    <city>city</city>
+    <water>water</water>
+    <valley>valley</valley>
+    <mountain>mountain</mountain>
+    <ocean>ocean</ocean>
+  </views>
+  <objects>
+    <floorplan file="" format="gif" id="1" modTime="" url="">floorplan</floorplan>
+  </objects>
+</residential>

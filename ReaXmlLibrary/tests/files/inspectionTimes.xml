@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE residential SYSTEM "propertyList.dtd" >
+<residential modTime="" status="current">
+  <uniqueID>foo</uniqueID>
+  <inspectionTimes>
+    <inspection>21-Dec-2010 11:00am to 1:00pm</inspection>
+  </inspectionTimes>
+</residential>

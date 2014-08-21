@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE propertyList SYSTEM "http://reaxml.realestate.com.au/propertyList.dtd">
+<propertyList date="2014-08-15-21:58:07" username="reaxml@robertsestateagents.com.au" password="roberts2014">
+  <residential modTime="2014-08-15-21:57:34" status="sold">
+    <agentID>167</agentID>
+    <uniqueID>8bec6ff1-62ee-d5c4-35a2-fd12c7d74af4</uniqueID>
+    <soldDetails>
+      <price display="yes">495000</price>
+      <date>2014-08-10</date>
+    </soldDetails>
+  </residential>
+</propertyList>

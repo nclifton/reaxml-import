@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="ReaxmlEzrColOpenhouse_Test" file="/Users/nclifton/Documents/LunaEclipse/workspace/ReaXmlLibrary/tests/ezr/col/openhouse_Test.php" tests="5" assertions="7" failures="0" errors="0" time="0.072346">
+    <testcase name="getValue_found_gives_true" class="ReaxmlEzrColOpenhouse_Test" file="/Users/nclifton/Documents/LunaEclipse/workspace/ReaXmlLibrary/tests/ezr/col/openhouse_Test.php" line="7" assertions="1" time="0.009527"/>
+    <testcase name="getValue_notfound_isnew_givesfalse" class="ReaxmlEzrColOpenhouse_Test" file="/Users/nclifton/Documents/LunaEclipse/workspace/ReaXmlLibrary/tests/ezr/col/openhouse_Test.php" line="22" assertions="2" time="0.046388"/>
+    <testcase name="getValue_notfound_isnotnew_givesnull" class="ReaxmlEzrColOpenhouse_Test" file="/Users/nclifton/Documents/LunaEclipse/workspace/ReaXmlLibrary/tests/ezr/col/openhouse_Test.php" line="39" assertions="2" time="0.009383"/>
+    <testcase name="getValue_empty_givesfalse" class="ReaxmlEzrColOpenhouse_Test" file="/Users/nclifton/Documents/LunaEclipse/workspace/ReaXmlLibrary/tests/ezr/col/openhouse_Test.php" line="56" assertions="1" time="0.003563"/>
+    <testcase name="getValue_2empty_givesfalse" class="ReaxmlEzrColOpenhouse_Test" file="/Users/nclifton/Documents/LunaEclipse/workspace/ReaXmlLibrary/tests/ezr/col/openhouse_Test.php" line="70" assertions="1" time="0.003485"/>
+  </testsuite>
+</testsuites>

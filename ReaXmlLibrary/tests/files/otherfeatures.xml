@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<residential modTime="" status="current">
+  <uniqueID>foo</uniqueID>
+  <features>
+    <remoteGarage>yes</remoteGarage>
+    <secureParking>yes</secureParking>
+    <alarmSystem>yes</alarmSystem>
+    <intercom>yes</intercom>
+    <fullyFenced>yes</fullyFenced>
+    <broadband>yes</broadband>
+    <payTV>yes</payTV>
+    <otherFeatures>Views,Quiet,Close to Beach</otherFeatures>
+  </features>
+</residential>

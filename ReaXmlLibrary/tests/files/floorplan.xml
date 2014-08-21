@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<residential modTime="" status="current">
+  <uniqueID>foo</uniqueID>
+  <objects>
+    <floorplan file="Sample_Floorplan.jpg" format="jpg" id="1" modTime="" url="">floorplan</floorplan>
+  </objects>
+</residential>

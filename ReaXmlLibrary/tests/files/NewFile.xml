@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<residential>
+  <features>
+     <airConditioning>yes</airConditioning>
+    <alarmSystem>yes</alarmSystem>
+    <vacuumSystem>yes</vacuumSystem>
+    <intercom>yes</intercom>
+    <openFirePlace>yes</openFirePlace>
+    <livingAreas>yes</livingAreas>
+    <heating type="other">yes</heating>
+    <hotWaterService type="gas">yes</hotWaterService>
+    <insideSpa>yes</insideSpa>
+    <outsideSpa>yes</outsideSpa>
+    <builtInRobes>yes</builtInRobes>
+    <ductedCooling>yes</ductedCooling>
+    <ductedHeating>yes</ductedHeating>
+    <evaporativeCooling>yes</evaporativeCooling>
+    <gasHeating>yes</gasHeating>
+    <hydronicHeating>yes</hydronicHeating>
+    <reverseCycleAirCon>yes</reverseCycleAirCon>
+    <splitSystemAirCon>yes</splitSystemAirCon>
+    <splitSystemHeating>yes</splitSystemHeating>
+  </features>
+  </residential>

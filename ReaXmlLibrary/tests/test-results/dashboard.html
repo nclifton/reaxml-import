@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /Users/nclifton/Documents</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/nv.d3.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+ </head>
+ <body>
+  <header>
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li><a href="index.html">/Users/nclifton/Documents</a></li>
+        <li class="active">(Dashboard)</li>
+
+      </ol>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th><div align="left">Class</div></th>
+         <th><div align="right">Coverage</div></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#24">JLanguage</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#17">JFactory</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/date/date.php.html#33">JDate</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/log/entry.php.html#22">JLogEntry</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/log/log.php.html#25">JLog</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/platform.php.html#17">JPlatform</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#36">JError</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#18">Registry</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/cms/version/version.php.html#19">JVersion</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/row.php.html#2">ReaxmlEzrRow</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/images.php.html#2">ReaxmlEzrImages</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#2">ReaxmlEzrDbo</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/tests/AutoLoader.php.html#2">ReaxmlTestingAutoLoader</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/tests/dbtestcase.php.html#3">Reaxml_Tests_DatabaseTestCase</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/cms/error/page.php.html#19">JErrorPage</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/language/en-GB/en-GB.localise.php.html#17">En_GBLocalise</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#19">EzRealtyUploadHelper</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/column.php.html#4">ReaxmlEzrColumn</a></td><td><div align="right">8%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/loader.php.html#17">JLoader</a></td><td><div align="right">26%</div></td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th><div align="left">Class</div></th>
+         <th><div align="right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></div></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#24">JLanguage</a></td><td><div align="right">18632</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#19">EzRealtyUploadHelper</a></td><td><div align="right">15750</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#2">ReaxmlEzrDbo</a></td><td><div align="right">6972</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/date/date.php.html#33">JDate</a></td><td><div align="right">6480</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#17">JFactory</a></td><td><div align="right">4970</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#36">JError</a></td><td><div align="right">4160</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#18">Registry</a></td><td><div align="right">3660</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/loader.php.html#17">JLoader</a></td><td><div align="right">1545</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/column.php.html#4">ReaxmlEzrColumn</a></td><td><div align="right">1268</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/log/log.php.html#25">JLog</a></td><td><div align="right">756</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/cms/version/version.php.html#19">JVersion</a></td><td><div align="right">342</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/tests/AutoLoader.php.html#2">ReaxmlTestingAutoLoader</a></td><td><div align="right">90</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/images.php.html#2">ReaxmlEzrImages</a></td><td><div align="right">72</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/language/en-GB/en-GB.localise.php.html#17">En_GBLocalise</a></td><td><div align="right">56</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/cms/error/page.php.html#19">JErrorPage</a></td><td><div align="right">30</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/row.php.html#2">ReaxmlEzrRow</a></td><td><div align="right">30</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/tests/dbtestcase.php.html#3">Reaxml_Tests_DatabaseTestCase</a></td><td><div align="right">20</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/log/entry.php.html#22">JLogEntry</a></td><td><div align="right">12</div></td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th><div align="left">Method</div></th>
+         <th><div align="right">Coverage</div></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#538">JLanguage::getLowerLimitSearchWord</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#523">JLanguage::setIgnoredSearchWordsCallback</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#557">JLanguage::getLowerLimitSearchWordCallback</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#571">JLanguage::setLowerLimitSearchWordCallback</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#605">JLanguage::getUpperLimitSearchWordCallback</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#586">JLanguage::getUpperLimitSearchWord</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#509">JLanguage::getIgnoredSearchWordsCallback</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#490">JLanguage::getIgnoredSearchWords</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#411">JLanguage::getTransliterator</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#391">JLanguage::transliterate</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#425">JLanguage::setTransliterator</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#442">JLanguage::getPluralSuffixes</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#475">JLanguage::setPluralSuffixesCallback</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#461">JLanguage::getPluralSuffixesCallback</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#619">JLanguage::setUpperLimitSearchWordCallback</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#634">JLanguage::getSearchDisplayedCharactersNumber</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#986">JLanguage::getName</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#942">JLanguage::getCallerInfo</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#1000">JLanguage::getPaths</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#1024">JLanguage::getErrorFiles</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#1048">JLanguage::isRTL</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#1036">JLanguage::getTag</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#925">JLanguage::get</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#838">JLanguage::parse</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#667">JLanguage::setSearchDisplayedCharactersNumberCallback</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#653">JLanguage::getSearchDisplayedCharactersNumberCallback</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#687">JLanguage::exists</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#724">JLanguage::load</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#789">JLanguage::loadLanguage</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#320">JLanguage::_</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#297">JLanguage::getInstance</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#191">JFactory::getLanguage</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#171">JFactory::getSession</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#211">JFactory::getDocument</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#233">JFactory::getUser</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#301">JFactory::getACL</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#266">JFactory::getCache</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#144">JFactory::getConfig</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#115">JFactory::getApplication</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/date/date.php.html#394">JDate::setTimezone</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/column.php.html#7">ReaxmlEzrColumn::getValue</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/date/date.php.html#412">JDate::toISO8601</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/date/date.php.html#428">JDate::toSql</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/date/date.php.html#461">JDate::toUnix</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/date/date.php.html#449">JDate::toRFC822</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#323">JFactory::getDbo</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#343">JFactory::getMailer</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#654">JFactory::createMailer</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#613">JFactory::createDbo</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#701">JFactory::createLanguage</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#719">JFactory::createDocument</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#186">JLanguage::__construct</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#753">JFactory::getStream</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#586">JFactory::createSession</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#548">JFactory::createConfig</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#392">JFactory::getXML</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#367">JFactory::getFeedParser</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#446">JFactory::getEditor</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#476">JFactory::getURI</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#494">JFactory::getDate</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#1062">JLanguage::setDebug</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#1077">JLanguage::getDebug</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#648">JError::handleDie</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#602">JError::handleVerbose</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#689">JError::handleMessage</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#713">JError::handleLog</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#767">JError::customErrorPage</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#750">JError::handleCallback</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#529">JError::handleEcho</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#509">JError::handleIgnore</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#347">JError::setErrorHandling</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#313">JError::getErrorHandling</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#417">JError::attachHandler</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#433">JError::detachHandler</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#484">JError::translateErrorLevel</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#457">JError::registerErrorLevel</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#829">JError::customErrorHandler</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#846">JError::renderBacktrace</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/loader.php.html#419">JLoader::loadByPsr0</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/loader.php.html#385">JLoader::setup</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/loader.php.html#476">JLoader::loadByAlias</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/platform.php.html#62">JPlatform::isCompatible</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/platform.php.html#86">JPlatform::getLongVersion</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/platform.php.html#74">JPlatform::getShortVersion</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/loader.php.html#342">JLoader::registerNamespace</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/loader.php.html#316">JLoader::registerAlias</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/loader.php.html#119">JLoader::getClassList</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/loader.php.html#71">JLoader::discover</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/loader.php.html#131">JLoader::getNamespaces</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/loader.php.html#244">JLoader::register</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/loader.php.html#278">JLoader::registerPrefix</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#295">JError::raiseNotice</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#272">JError::raiseWarning</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#1232">JLanguage::setLanguage</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#1209">JLanguage::getLanguagePath</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#1248">JLanguage::getLocale</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#1274">JLanguage::getFirstDay</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#1300">JLanguage::parseLanguageFiles</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#1286">JLanguage::getWeekEnd</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#1191">JLanguage::getKnownLanguages</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#1162">JLanguage::getMetadata</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#1103">JLanguage::setDefault</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#1089">JLanguage::getDefault</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#1118">JLanguage::getOrphans</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#1132">JLanguage::getUsed</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#1146">JLanguage::hasKey</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#1346">JLanguage::parseXMLLanguageFile</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/log/entry.php.html#79">JLogEntry::__construct</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#130">JError::getErrors</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#102">JError::getError</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#147">JError::addToStack</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#173">JError::raise</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#249">JError::raiseError</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#193">JError::throwError</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#85">JError::isError</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/log/log.php.html#278">JLog::findLoggers</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/log/log.php.html#139">JLog::add</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/log/log.php.html#123">JLog::__construct</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/log/log.php.html#168">JLog::addLogger</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/log/log.php.html#222">JLog::setInstance</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/log/log.php.html#240">JLog::addLogEntry</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/date/date.php.html#338">JDate::getOffsetFromGMT</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/date/date.php.html#353">JDate::monthToString</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#299">ReaxmlEzrDbo::countIncatsForPropertyIdCategoryId</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#292">ReaxmlEzrDbo::insertIncats</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#307">ReaxmlEzrDbo::getEzrealtyColumns</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#310">ReaxmlEzrDbo::getEzrealtyImagesColumns</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#323">ReaxmlEzrDbo::lookupEzrImageFnameUsingMls_idAndOrdering</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#313">ReaxmlEzrDbo::update</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#287">ReaxmlEzrDbo::updateIncats</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#260">ReaxmlEzrDbo::updateCom_ezrealtyParamsFeatures</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#201">ReaxmlEzrDbo::imageCached</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#191">ReaxmlEzrDbo::cacheImage</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#212">ReaxmlEzrDbo::lookupImageId</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#223">ReaxmlEzrDbo::getImagePropertyValues</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#251">ReaxmlEzrDbo::updateCom_ezrealtyParamsOtherFeatures</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#237">ReaxmlEzrDbo::getRowPropertyValues</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#332">ReaxmlEzrDbo::countEzrImagesUsingMls_id</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/images.php.html#9">ReaxmlEzrImages::__construct</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/row.php.html#24">ReaxmlEzrRow::__get</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/row.php.html#12">ReaxmlEzrRow::getValue</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/tests/AutoLoader.php.html#8">ReaxmlTestingAutoLoader::registerDirectory</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/tests/AutoLoader.php.html#24">ReaxmlTestingAutoLoader::registerClass</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/tests/dbtestcase.php.html#6">Reaxml_Tests_DatabaseTestCase::getConnection</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/date/date.php.html#277">JDate::format</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/row.php.html#7">ReaxmlEzrRow::__construct</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/images.php.html#59">ReaxmlEzrImages::key</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/images.php.html#27">ReaxmlEzrImages::valid</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/images.php.html#19">ReaxmlEzrImages::count</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/images.php.html#35">ReaxmlEzrImages::rewind</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/images.php.html#43">ReaxmlEzrImages::current</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/images.php.html#51">ReaxmlEzrImages::next</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#179">ReaxmlEzrDbo::lookupImageUsingMls_idAndOrdering</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#153">ReaxmlEzrDbo::updateImages</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#10">ReaxmlEzrDbo::getId</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#7">ReaxmlEzrDbo::exists</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#21">ReaxmlEzrDbo::lookupPropertyId</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#31">ReaxmlEzrDbo::getDb</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#47">ReaxmlEzrDbo::lookupEzrLocidUsingSuburb</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#37">ReaxmlEzrDbo::lookupEzrAgentUidUsingAgentName</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/column.php.html#129">ReaxmlEzrColumn::parseInspectionEndTime</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/column.php.html#122">ReaxmlEzrColumn::parseInspectionStartTime</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/column.php.html#77">ReaxmlEzrColumn::copyWorkImageFile</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/column.php.html#43">ReaxmlEzrColumn::getFeaturesValue</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/column.php.html#95">ReaxmlEzrColumn::downloadUrlImageFile</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/column.php.html#106">ReaxmlEzrColumn::deleteImagesFile</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/column.php.html#115">ReaxmlEzrColumn::parseInspectionDate</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#57">ReaxmlEzrDbo::lookupEzrStidUsingState</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#67">ReaxmlEzrDbo::lookupEzrCnidUsingCountry</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#131">ReaxmlEzrDbo::lookupEzrPdfinfo1</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#128">ReaxmlEzrDbo::lookupEzrOtherFeatures</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#134">ReaxmlEzrDbo::lookupEzrPdfinfo2</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#137">ReaxmlEzrDbo::lookupEzrFlpl1</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#143">ReaxmlEzrDbo::insert</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#140">ReaxmlEzrDbo::lookupEzrFlpl2</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#125">ReaxmlEzrDbo::lookupEzrBuildingFeatures</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#122">ReaxmlEzrDbo::lookupEzrOutdoorFeatures</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#89">ReaxmlEzrDbo::lookupEzrOtherrooms</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#79">ReaxmlEzrDbo::lookupEzrPorchpatio</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#99">ReaxmlEzrDbo::lookupEzrCategoryIdUsingCategoryName</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#109">ReaxmlEzrDbo::lookupSingleEzrealtyColumn</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#119">ReaxmlEzrDbo::lookupEzrIndoorFeatures</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/tests/dbtestcase.php.html#16">Reaxml_Tests_DatabaseTestCase::getColumns</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/tests/AutoLoader.php.html#27">ReaxmlTestingAutoLoader::loadClass</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#253">Registry::loadObject</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#237">Registry::loadArray</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#271">Registry::loadFile</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#289">Registry::loadString</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#342">Registry::offsetExists</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#310">Registry::merge</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#218">Registry::getInstance</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#166">Registry::get</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#27">EzRealtyUploadHelper::imageUpload</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#66">Registry::__clone</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#92">Registry::jsonSerialize</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#107">Registry::def</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#124">Registry::exists</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#356">Registry::offsetGet</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#371">Registry::offsetSet</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/date/date.php.html#126">JDate::__get</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/date/date.php.html#81">JDate::__construct</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/date/date.php.html#199">JDate::__toString</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/date/date.php.html#214">JDate::getInstance</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/date/date.php.html#261">JDate::calendar</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/date/date.php.html#229">JDate::dayToString</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#527">Registry::asArray</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#487">Registry::bindData</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#400">Registry::set</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#385">Registry::offsetUnset</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#441">Registry::toArray</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#453">Registry::toObject</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#468">Registry::toString</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#43">Registry::__construct</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#78">Registry::__toString</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#287">EzRealtyUploadHelper::profileUpload</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#249">EzRealtyUploadHelper::saveFlpl</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#308">EzRealtyUploadHelper::saveProfileUpload</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#346">EzRealtyUploadHelper::saveFileUpload</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#462">EzRealtyUploadHelper::resize_thumb</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/cms/version/version.php.html#219">JVersion::setMediaVersion</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#226">EzRealtyUploadHelper::floorplanUpload</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#188">EzRealtyUploadHelper::saveEpc</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#60">EzRealtyUploadHelper::savePanoramaUpload</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#42">EzRealtyUploadHelper::panoramaUpload</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#98">EzRealtyUploadHelper::proppdfUpload</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#121">EzRealtyUploadHelper::savePropPdf</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#158">EzRealtyUploadHelper::epcUpload</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#583">EzRealtyUploadHelper::copyFile</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#392">EzRealtyUploadHelper::resize_main</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/cms/version/version.php.html#100">JVersion::getLongVersion</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/cms/version/version.php.html#88">JVersion::getShortVersion</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/language/en-GB/en-GB.localise.php.html#28">En_GBLocalise::getPluralSuffixes</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/cms/version/version.php.html#118">JVersion::getUserAgent</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/cms/version/version.php.html#149">JVersion::generateMediaVersion</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/cms/version/version.php.html#203">JVersion::refreshMediaVersion</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/cms/version/version.php.html#168">JVersion::getMediaVersion</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/cms/version/version.php.html#64">JVersion::isCompatible</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/cms/version/version.php.html#76">JVersion::getHelpVersion</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/language/en-GB/en-GB.localise.php.html#80">En_GBLocalise::getUpperLimitSearchWord</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/language/en-GB/en-GB.localise.php.html#52">En_GBLocalise::getIgnoredSearchWords</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/language/en-GB/en-GB.localise.php.html#92">En_GBLocalise::getSearchDisplayedCharactersNumber</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/language/en-GB/en-GB.localise.php.html#68">En_GBLocalise::getLowerLimitSearchWord</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/cms/error/page.php.html#30">JErrorPage::render</a></td><td><div align="right">0%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/column.php.html#24">ReaxmlEzrColumn::featureBoolean</a></td><td><div align="right">7%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/loader.php.html#211">JLoader::load</a></td><td><div align="right">66%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/loader.php.html#499">JLoader::_autoload</a></td><td><div align="right">71%</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/column.php.html#10">ReaxmlEzrColumn::getId</a></td><td><div align="right">75%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/loader.php.html#524">JLoader::_load</a></td><td><div align="right">77%</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/loader.php.html#146">JLoader::import</a></td><td><div align="right">80%</div></td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th><div align="left">Method</div></th>
+         <th><div align="right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></div></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/date/date.php.html#353">JDate::monthToString</a></td><td><div align="right">650</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#462">EzRealtyUploadHelper::resize_thumb</a></td><td><div align="right">380</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#186">JLanguage::__construct</a></td><td><div align="right">306</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#188">EzRealtyUploadHelper::saveEpc</a></td><td><div align="right">272</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#249">EzRealtyUploadHelper::saveFlpl</a></td><td><div align="right">272</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/date/date.php.html#229">JDate::dayToString</a></td><td><div align="right">240</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#308">EzRealtyUploadHelper::saveProfileUpload</a></td><td><div align="right">210</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#60">EzRealtyUploadHelper::savePanoramaUpload</a></td><td><div align="right">210</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/date/date.php.html#126">JDate::__get</a></td><td><div align="right">182</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#724">JLanguage::load</a></td><td><div align="right">182</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#392">EzRealtyUploadHelper::resize_main</a></td><td><div align="right">156</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/column.php.html#43">ReaxmlEzrColumn::getFeaturesValue</a></td><td><div align="right">156</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#121">EzRealtyUploadHelper::savePropPdf</a></td><td><div align="right">156</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#838">JLanguage::parse</a></td><td><div align="right">132</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#166">Registry::get</a></td><td><div align="right">110</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#320">JLanguage::_</a></td><td><div align="right">110</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#529">JError::handleEcho</a></td><td><div align="right">110</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/log/log.php.html#278">JLog::findLoggers</a></td><td><div align="right">90</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#347">JError::setErrorHandling</a></td><td><div align="right">90</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/date/date.php.html#277">JDate::format</a></td><td><div align="right">90</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/loader.php.html#71">JLoader::discover</a></td><td><div align="right">72</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/loader.php.html#419">JLoader::loadByPsr0</a></td><td><div align="right">72</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#487">Registry::bindData</a></td><td><div align="right">72</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#753">JFactory::getStream</a></td><td><div align="right">72</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#789">JLanguage::loadLanguage</a></td><td><div align="right">56</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#346">EzRealtyUploadHelper::saveFileUpload</a></td><td><div align="right">56</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/log/log.php.html#168">JLog::addLogger</a></td><td><div align="right">56</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/date/date.php.html#81">JDate::__construct</a></td><td><div align="right">56</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#494">JFactory::getDate</a></td><td><div align="right">56</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/column.php.html#24">ReaxmlEzrColumn::featureBoolean</a></td><td><div align="right">46</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#942">JLanguage::getCallerInfo</a></td><td><div align="right">42</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#392">JFactory::getXML</a></td><td><div align="right">42</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#153">ReaxmlEzrDbo::updateImages</a></td><td><div align="right">42</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/tests/AutoLoader.php.html#8">ReaxmlTestingAutoLoader::registerDirectory</a></td><td><div align="right">42</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/cms/version/version.php.html#118">JVersion::getUserAgent</a></td><td><div align="right">42</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#1300">JLanguage::parseLanguageFiles</a></td><td><div align="right">42</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#310">Registry::merge</a></td><td><div align="right">30</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#43">Registry::__construct</a></td><td><div align="right">30</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#400">Registry::set</a></td><td><div align="right">30</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#527">Registry::asArray</a></td><td><div align="right">30</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#124">Registry::exists</a></td><td><div align="right">30</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/cms/error/page.php.html#30">JErrorPage::render</a></td><td><div align="right">30</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/loader.php.html#342">JLoader::registerNamespace</a></td><td><div align="right">30</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#223">ReaxmlEzrDbo::getImagePropertyValues</a></td><td><div align="right">30</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#767">JError::customErrorPage</a></td><td><div align="right">30</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/loader.php.html#278">JLoader::registerPrefix</a></td><td><div align="right">30</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#237">ReaxmlEzrDbo::getRowPropertyValues</a></td><td><div align="right">30</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#846">JError::renderBacktrace</a></td><td><div align="right">30</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#1346">JLanguage::parseXMLLanguageFile</a></td><td><div align="right">30</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/loader.php.html#244">JLoader::register</a></td><td><div align="right">30</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#233">JFactory::getUser</a></td><td><div align="right">20</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#212">ReaxmlEzrDbo::lookupImageId</a></td><td><div align="right">20</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/log/log.php.html#240">JLog::addLogEntry</a></td><td><div align="right">20</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#266">JFactory::getCache</a></td><td><div align="right">20</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#193">JError::throwError</a></td><td><div align="right">20</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#548">JFactory::createConfig</a></td><td><div align="right">20</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#602">JError::handleVerbose</a></td><td><div align="right">20</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#654">JFactory::createMailer</a></td><td><div align="right">20</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#191">ReaxmlEzrDbo::cacheImage</a></td><td><div align="right">20</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#1248">JLanguage::getLocale</a></td><td><div align="right">20</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/loader.php.html#385">JLoader::setup</a></td><td><div align="right">20</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/cms/version/version.php.html#168">JVersion::getMediaVersion</a></td><td><div align="right">20</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#287">ReaxmlEzrDbo::updateIncats</a></td><td><div align="right">20</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/column.php.html#106">ReaxmlEzrColumn::deleteImagesFile</a></td><td><div align="right">20</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#260">ReaxmlEzrDbo::updateCom_ezrealtyParamsFeatures</a></td><td><div align="right">20</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#613">JFactory::createDbo</a></td><td><div align="right">12</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#586">JFactory::createSession</a></td><td><div align="right">12</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#1162">JLanguage::getMetadata</a></td><td><div align="right">12</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#1000">JLanguage::getPaths</a></td><td><div align="right">12</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#446">JFactory::getEditor</a></td><td><div align="right">12</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#1286">JLanguage::getWeekEnd</a></td><td><div align="right">12</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#102">JError::getError</a></td><td><div align="right">12</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/log/log.php.html#222">JLog::setInstance</a></td><td><div align="right">12</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/log/entry.php.html#79">JLogEntry::__construct</a></td><td><div align="right">12</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#648">JError::handleDie</a></td><td><div align="right">12</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/log/log.php.html#139">JLog::add</a></td><td><div align="right">12</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#687">JLanguage::exists</a></td><td><div align="right">12</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/loader.php.html#476">JLoader::loadByAlias</a></td><td><div align="right">12</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#115">JFactory::getApplication</a></td><td><div align="right">12</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#158">EzRealtyUploadHelper::epcUpload</a></td><td><div align="right">12</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#201">ReaxmlEzrDbo::imageCached</a></td><td><div align="right">12</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#143">ReaxmlEzrDbo::insert</a></td><td><div align="right">12</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/row.php.html#12">ReaxmlEzrRow::getValue</a></td><td><div align="right">12</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/language/en-GB/en-GB.localise.php.html#28">En_GBLocalise::getPluralSuffixes</a></td><td><div align="right">12</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#144">JFactory::getConfig</a></td><td><div align="right">12</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#10">ReaxmlEzrDbo::getId</a></td><td><div align="right">12</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#42">EzRealtyUploadHelper::panoramaUpload</a></td><td><div align="right">12</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#313">ReaxmlEzrDbo::update</a></td><td><div align="right">12</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/column.php.html#77">ReaxmlEzrColumn::copyWorkImageFile</a></td><td><div align="right">12</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/tests/dbtestcase.php.html#6">Reaxml_Tests_DatabaseTestCase::getConnection</a></td><td><div align="right">12</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#251">ReaxmlEzrDbo::updateCom_ezrealtyParamsOtherFeatures</a></td><td><div align="right">12</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/loader.php.html#146">JLoader::import</a></td><td><div align="right">7</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#89">ReaxmlEzrDbo::lookupEzrOtherrooms</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/images.php.html#27">ReaxmlEzrImages::valid</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#179">ReaxmlEzrDbo::lookupImageUsingMls_idAndOrdering</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#79">ReaxmlEzrDbo::lookupEzrPorchpatio</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#109">ReaxmlEzrDbo::lookupSingleEzrealtyColumn</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#99">ReaxmlEzrDbo::lookupEzrCategoryIdUsingCategoryName</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#67">ReaxmlEzrDbo::lookupEzrCnidUsingCountry</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/column.php.html#122">ReaxmlEzrColumn::parseInspectionStartTime</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/column.php.html#129">ReaxmlEzrColumn::parseInspectionEndTime</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/loader.php.html#316">JLoader::registerAlias</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/column.php.html#115">ReaxmlEzrColumn::parseInspectionDate</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/column.php.html#95">ReaxmlEzrColumn::downloadUrlImageFile</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#31">ReaxmlEzrDbo::getDb</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#37">ReaxmlEzrDbo::lookupEzrAgentUidUsingAgentName</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#57">ReaxmlEzrDbo::lookupEzrStidUsingState</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#484">JError::translateErrorLevel</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/dbo.php.html#47">ReaxmlEzrDbo::lookupEzrLocidUsingSuburb</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#689">JError::handleMessage</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#713">JError::handleLog</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/legacy/error/error.php.html#457">JError::registerErrorLevel</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/tests/AutoLoader.php.html#27">ReaxmlTestingAutoLoader::loadClass</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#719">JFactory::createDocument</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/date/date.php.html#428">JDate::toSql</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/date/date.php.html#338">JDate::getOffsetFromGMT</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/framework/Joomla/Registry/Registry.php.html#218">Registry::getInstance</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#323">JFactory::getDbo</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/column.php.html#7">ReaxmlEzrColumn::getValue</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#171">JFactory::getSession</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#367">JFactory::getFeedParser</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#343">JFactory::getMailer</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#301">JFactory::getACL</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#211">JFactory::getDocument</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/factory.php.html#191">JFactory::getLanguage</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/cms/version/version.php.html#219">JVersion::setMediaVersion</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#297">JLanguage::getInstance</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#925">JLanguage::get</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#226">EzRealtyUploadHelper::floorplanUpload</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#98">EzRealtyUploadHelper::proppdfUpload</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#1209">JLanguage::getLanguagePath</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#1274">JLanguage::getFirstDay</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#391">JLanguage::transliterate</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#287">EzRealtyUploadHelper::profileUpload</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#490">JLanguage::getIgnoredSearchWords</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#442">JLanguage::getPluralSuffixes</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#586">JLanguage::getUpperLimitSearchWord</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#538">JLanguage::getLowerLimitSearchWord</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/joomla/language/language.php.html#634">JLanguage::getSearchDisplayedCharactersNumber</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/components/com_ezrealty/helpers/upload.helper.php.html#583">EzRealtyUploadHelper::copyFile</a></td><td><div align="right">6</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/loader.php.html#499">JLoader::_autoload</a></td><td><div align="right">5</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/loader.php.html#524">JLoader::_load</a></td><td><div align="right">4</div></td></tr>
+       <tr><td><a href="MAMP/htdocs/ezrea/libraries/loader.php.html#211">JLoader::load</a></td><td><div align="right">3</div></td></tr>
+       <tr><td><a href="LunaEclipse/workspace/ReaXmlLibrary/lib/reaxml/ezr/column.php.html#10">ReaxmlEzrColumn::getId</a></td><td><div align="right">2</div></td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 2.0.5</a> using <a href="http://php.net/" target="_top">PHP 5.5.3</a> and <a href="http://phpunit.de/">PHPUnit 4.0.17</a> at Mon Aug 18 23:40:04 EST 2014.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="js/jquery.js" type="text/javascript"></script>
+  <script src="js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="js/holder.js" type="text/javascript"></script>
+  <script src="js/d3.min.js" type="text/javascript"></script>
+  <script src="js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([17,1,0,1,0,0,0,0,0,0,0,2], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([243,1,0,0,0,0,0,1,3,1,0,4], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.scatter.onlyCircles(false);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[100,2,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/db\/column.php.html#3\">ReaxmlDbColumn<\/a>"],[100,5,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/col\/openhouse.php.html#2\">ReaxmlEzrColOpenhouse<\/a>"],[8.43373493976,40,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/column.php.html#4\">ReaxmlEzrColumn<\/a>"],[0,83,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#2\">ReaxmlEzrDbo<\/a>"],[0,8,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/images.php.html#2\">ReaxmlEzrImages<\/a>"],[0,5,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/row.php.html#2\">ReaxmlEzrRow<\/a>"],[0,9,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/tests\/AutoLoader.php.html#2\">ReaxmlTestingAutoLoader<\/a>"],[0,4,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/tests\/dbtestcase.php.html#3\">Reaxml_Tests_DatabaseTestCase<\/a>"],[0,125,"<a href=\"MAMP\/htdocs\/ezrea\/components\/com_ezrealty\/helpers\/upload.helper.php.html#19\">EzRealtyUploadHelper<\/a>"],[0,7,"<a href=\"MAMP\/htdocs\/ezrea\/language\/en-GB\/en-GB.localise.php.html#17\">En_GBLocalise<\/a>"],[0,5,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/cms\/error\/page.php.html#19\">JErrorPage<\/a>"],[0,18,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/cms\/version\/version.php.html#19\">JVersion<\/a>"],[0,60,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/framework\/Joomla\/Registry\/Registry.php.html#18\">Registry<\/a>"],[0,80,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/date\/date.php.html#33\">JDate<\/a>"],[0,70,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/factory.php.html#17\">JFactory<\/a>"],[0,136,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#24\">JLanguage<\/a>"],[0,3,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/log\/entry.php.html#22\">JLogEntry<\/a>"],[0,27,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/log\/log.php.html#25\">JLog<\/a>"],[0,64,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/legacy\/error\/error.php.html#36\">JError<\/a>"],[26.3888888889,61,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/loader.php.html#17\">JLoader<\/a>"],[0,3,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/platform.php.html#17\">JPlatform<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.scatter.onlyCircles(false);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[100,1,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/db\/column.php.html#9\">ReaxmlDbColumn::__construct<\/a>"],[100,1,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/db\/column.php.html#17\">ReaxmlDbColumn::getValue<\/a>"],[100,5,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/col\/openhouse.php.html#4\">ReaxmlEzrColOpenhouse::getValue<\/a>"],[0,2,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/column.php.html#7\">ReaxmlEzrColumn::getValue<\/a>"],[75,2,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/column.php.html#10\">ReaxmlEzrColumn::getId<\/a>"],[100,2,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/column.php.html#18\">ReaxmlEzrColumn::isNew<\/a>"],[7.14285714286,7,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/column.php.html#24\">ReaxmlEzrColumn::featureBoolean<\/a>"],[0,12,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/column.php.html#43\">ReaxmlEzrColumn::getFeaturesValue<\/a>"],[0,3,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/column.php.html#77\">ReaxmlEzrColumn::copyWorkImageFile<\/a>"],[0,2,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/column.php.html#95\">ReaxmlEzrColumn::downloadUrlImageFile<\/a>"],[0,4,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/column.php.html#106\">ReaxmlEzrColumn::deleteImagesFile<\/a>"],[0,2,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/column.php.html#115\">ReaxmlEzrColumn::parseInspectionDate<\/a>"],[0,2,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/column.php.html#122\">ReaxmlEzrColumn::parseInspectionStartTime<\/a>"],[0,2,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/column.php.html#129\">ReaxmlEzrColumn::parseInspectionEndTime<\/a>"],[0,1,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#7\">ReaxmlEzrDbo::exists<\/a>"],[0,3,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#10\">ReaxmlEzrDbo::getId<\/a>"],[0,1,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#21\">ReaxmlEzrDbo::lookupPropertyId<\/a>"],[0,2,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#31\">ReaxmlEzrDbo::getDb<\/a>"],[0,2,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#37\">ReaxmlEzrDbo::lookupEzrAgentUidUsingAgentName<\/a>"],[0,2,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#47\">ReaxmlEzrDbo::lookupEzrLocidUsingSuburb<\/a>"],[0,2,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#57\">ReaxmlEzrDbo::lookupEzrStidUsingState<\/a>"],[0,2,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#67\">ReaxmlEzrDbo::lookupEzrCnidUsingCountry<\/a>"],[0,2,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#79\">ReaxmlEzrDbo::lookupEzrPorchpatio<\/a>"],[0,2,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#89\">ReaxmlEzrDbo::lookupEzrOtherrooms<\/a>"],[0,2,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#99\">ReaxmlEzrDbo::lookupEzrCategoryIdUsingCategoryName<\/a>"],[0,2,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#109\">ReaxmlEzrDbo::lookupSingleEzrealtyColumn<\/a>"],[0,1,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#119\">ReaxmlEzrDbo::lookupEzrIndoorFeatures<\/a>"],[0,1,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#122\">ReaxmlEzrDbo::lookupEzrOutdoorFeatures<\/a>"],[0,1,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#125\">ReaxmlEzrDbo::lookupEzrBuildingFeatures<\/a>"],[0,1,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#128\">ReaxmlEzrDbo::lookupEzrOtherFeatures<\/a>"],[0,1,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#131\">ReaxmlEzrDbo::lookupEzrPdfinfo1<\/a>"],[0,1,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#134\">ReaxmlEzrDbo::lookupEzrPdfinfo2<\/a>"],[0,1,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#137\">ReaxmlEzrDbo::lookupEzrFlpl1<\/a>"],[0,1,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#140\">ReaxmlEzrDbo::lookupEzrFlpl2<\/a>"],[0,3,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#143\">ReaxmlEzrDbo::insert<\/a>"],[0,6,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#153\">ReaxmlEzrDbo::updateImages<\/a>"],[0,2,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#179\">ReaxmlEzrDbo::lookupImageUsingMls_idAndOrdering<\/a>"],[0,4,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#191\">ReaxmlEzrDbo::cacheImage<\/a>"],[0,3,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#201\">ReaxmlEzrDbo::imageCached<\/a>"],[0,4,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#212\">ReaxmlEzrDbo::lookupImageId<\/a>"],[0,5,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#223\">ReaxmlEzrDbo::getImagePropertyValues<\/a>"],[0,5,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#237\">ReaxmlEzrDbo::getRowPropertyValues<\/a>"],[0,3,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#251\">ReaxmlEzrDbo::updateCom_ezrealtyParamsOtherFeatures<\/a>"],[0,4,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#260\">ReaxmlEzrDbo::updateCom_ezrealtyParamsFeatures<\/a>"],[0,4,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#287\">ReaxmlEzrDbo::updateIncats<\/a>"],[0,1,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#292\">ReaxmlEzrDbo::insertIncats<\/a>"],[0,1,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#299\">ReaxmlEzrDbo::countIncatsForPropertyIdCategoryId<\/a>"],[0,1,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#307\">ReaxmlEzrDbo::getEzrealtyColumns<\/a>"],[0,1,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#310\">ReaxmlEzrDbo::getEzrealtyImagesColumns<\/a>"],[0,3,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#313\">ReaxmlEzrDbo::update<\/a>"],[0,1,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#323\">ReaxmlEzrDbo::lookupEzrImageFnameUsingMls_idAndOrdering<\/a>"],[0,1,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/dbo.php.html#332\">ReaxmlEzrDbo::countEzrImagesUsingMls_id<\/a>"],[0,1,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/images.php.html#9\">ReaxmlEzrImages::__construct<\/a>"],[0,1,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/images.php.html#19\">ReaxmlEzrImages::count<\/a>"],[0,2,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/images.php.html#27\">ReaxmlEzrImages::valid<\/a>"],[0,1,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/images.php.html#35\">ReaxmlEzrImages::rewind<\/a>"],[0,1,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/images.php.html#43\">ReaxmlEzrImages::current<\/a>"],[0,1,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/images.php.html#51\">ReaxmlEzrImages::next<\/a>"],[0,1,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/images.php.html#59\">ReaxmlEzrImages::key<\/a>"],[0,1,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/row.php.html#7\">ReaxmlEzrRow::__construct<\/a>"],[0,3,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/row.php.html#12\">ReaxmlEzrRow::getValue<\/a>"],[0,1,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/lib\/reaxml\/ezr\/row.php.html#24\">ReaxmlEzrRow::__get<\/a>"],[0,6,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/tests\/AutoLoader.php.html#8\">ReaxmlTestingAutoLoader::registerDirectory<\/a>"],[0,1,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/tests\/AutoLoader.php.html#24\">ReaxmlTestingAutoLoader::registerClass<\/a>"],[0,2,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/tests\/AutoLoader.php.html#27\">ReaxmlTestingAutoLoader::loadClass<\/a>"],[0,3,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/tests\/dbtestcase.php.html#6\">Reaxml_Tests_DatabaseTestCase::getConnection<\/a>"],[0,1,"<a href=\"LunaEclipse\/workspace\/ReaXmlLibrary\/tests\/dbtestcase.php.html#16\">Reaxml_Tests_DatabaseTestCase::getColumns<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/components\/com_ezrealty\/helpers\/upload.helper.php.html#27\">EzRealtyUploadHelper::imageUpload<\/a>"],[0,3,"<a href=\"MAMP\/htdocs\/ezrea\/components\/com_ezrealty\/helpers\/upload.helper.php.html#42\">EzRealtyUploadHelper::panoramaUpload<\/a>"],[0,14,"<a href=\"MAMP\/htdocs\/ezrea\/components\/com_ezrealty\/helpers\/upload.helper.php.html#60\">EzRealtyUploadHelper::savePanoramaUpload<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/components\/com_ezrealty\/helpers\/upload.helper.php.html#98\">EzRealtyUploadHelper::proppdfUpload<\/a>"],[0,12,"<a href=\"MAMP\/htdocs\/ezrea\/components\/com_ezrealty\/helpers\/upload.helper.php.html#121\">EzRealtyUploadHelper::savePropPdf<\/a>"],[0,3,"<a href=\"MAMP\/htdocs\/ezrea\/components\/com_ezrealty\/helpers\/upload.helper.php.html#158\">EzRealtyUploadHelper::epcUpload<\/a>"],[0,16,"<a href=\"MAMP\/htdocs\/ezrea\/components\/com_ezrealty\/helpers\/upload.helper.php.html#188\">EzRealtyUploadHelper::saveEpc<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/components\/com_ezrealty\/helpers\/upload.helper.php.html#226\">EzRealtyUploadHelper::floorplanUpload<\/a>"],[0,16,"<a href=\"MAMP\/htdocs\/ezrea\/components\/com_ezrealty\/helpers\/upload.helper.php.html#249\">EzRealtyUploadHelper::saveFlpl<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/components\/com_ezrealty\/helpers\/upload.helper.php.html#287\">EzRealtyUploadHelper::profileUpload<\/a>"],[0,14,"<a href=\"MAMP\/htdocs\/ezrea\/components\/com_ezrealty\/helpers\/upload.helper.php.html#308\">EzRealtyUploadHelper::saveProfileUpload<\/a>"],[0,7,"<a href=\"MAMP\/htdocs\/ezrea\/components\/com_ezrealty\/helpers\/upload.helper.php.html#346\">EzRealtyUploadHelper::saveFileUpload<\/a>"],[0,12,"<a href=\"MAMP\/htdocs\/ezrea\/components\/com_ezrealty\/helpers\/upload.helper.php.html#392\">EzRealtyUploadHelper::resize_main<\/a>"],[0,19,"<a href=\"MAMP\/htdocs\/ezrea\/components\/com_ezrealty\/helpers\/upload.helper.php.html#462\">EzRealtyUploadHelper::resize_thumb<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/components\/com_ezrealty\/helpers\/upload.helper.php.html#583\">EzRealtyUploadHelper::copyFile<\/a>"],[0,3,"<a href=\"MAMP\/htdocs\/ezrea\/language\/en-GB\/en-GB.localise.php.html#28\">En_GBLocalise::getPluralSuffixes<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/language\/en-GB\/en-GB.localise.php.html#52\">En_GBLocalise::getIgnoredSearchWords<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/language\/en-GB\/en-GB.localise.php.html#68\">En_GBLocalise::getLowerLimitSearchWord<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/language\/en-GB\/en-GB.localise.php.html#80\">En_GBLocalise::getUpperLimitSearchWord<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/language\/en-GB\/en-GB.localise.php.html#92\">En_GBLocalise::getSearchDisplayedCharactersNumber<\/a>"],[0,5,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/cms\/error\/page.php.html#30\">JErrorPage::render<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/cms\/version\/version.php.html#64\">JVersion::isCompatible<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/cms\/version\/version.php.html#76\">JVersion::getHelpVersion<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/cms\/version\/version.php.html#88\">JVersion::getShortVersion<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/cms\/version\/version.php.html#100\">JVersion::getLongVersion<\/a>"],[0,6,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/cms\/version\/version.php.html#118\">JVersion::getUserAgent<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/cms\/version\/version.php.html#149\">JVersion::generateMediaVersion<\/a>"],[0,4,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/cms\/version\/version.php.html#168\">JVersion::getMediaVersion<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/cms\/version\/version.php.html#203\">JVersion::refreshMediaVersion<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/cms\/version\/version.php.html#219\">JVersion::setMediaVersion<\/a>"],[0,5,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/framework\/Joomla\/Registry\/Registry.php.html#43\">Registry::__construct<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/framework\/Joomla\/Registry\/Registry.php.html#66\">Registry::__clone<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/framework\/Joomla\/Registry\/Registry.php.html#78\">Registry::__toString<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/framework\/Joomla\/Registry\/Registry.php.html#92\">Registry::jsonSerialize<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/framework\/Joomla\/Registry\/Registry.php.html#107\">Registry::def<\/a>"],[0,5,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/framework\/Joomla\/Registry\/Registry.php.html#124\">Registry::exists<\/a>"],[0,10,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/framework\/Joomla\/Registry\/Registry.php.html#166\">Registry::get<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/framework\/Joomla\/Registry\/Registry.php.html#218\">Registry::getInstance<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/framework\/Joomla\/Registry\/Registry.php.html#237\">Registry::loadArray<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/framework\/Joomla\/Registry\/Registry.php.html#253\">Registry::loadObject<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/framework\/Joomla\/Registry\/Registry.php.html#271\">Registry::loadFile<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/framework\/Joomla\/Registry\/Registry.php.html#289\">Registry::loadString<\/a>"],[0,5,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/framework\/Joomla\/Registry\/Registry.php.html#310\">Registry::merge<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/framework\/Joomla\/Registry\/Registry.php.html#342\">Registry::offsetExists<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/framework\/Joomla\/Registry\/Registry.php.html#356\">Registry::offsetGet<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/framework\/Joomla\/Registry\/Registry.php.html#371\">Registry::offsetSet<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/framework\/Joomla\/Registry\/Registry.php.html#385\">Registry::offsetUnset<\/a>"],[0,5,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/framework\/Joomla\/Registry\/Registry.php.html#400\">Registry::set<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/framework\/Joomla\/Registry\/Registry.php.html#441\">Registry::toArray<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/framework\/Joomla\/Registry\/Registry.php.html#453\">Registry::toObject<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/framework\/Joomla\/Registry\/Registry.php.html#468\">Registry::toString<\/a>"],[0,8,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/framework\/Joomla\/Registry\/Registry.php.html#487\">Registry::bindData<\/a>"],[0,5,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/framework\/Joomla\/Registry\/Registry.php.html#527\">Registry::asArray<\/a>"],[0,7,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/date\/date.php.html#81\">JDate::__construct<\/a>"],[0,13,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/date\/date.php.html#126\">JDate::__get<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/date\/date.php.html#199\">JDate::__toString<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/date\/date.php.html#214\">JDate::getInstance<\/a>"],[0,15,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/date\/date.php.html#229\">JDate::dayToString<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/date\/date.php.html#261\">JDate::calendar<\/a>"],[0,9,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/date\/date.php.html#277\">JDate::format<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/date\/date.php.html#338\">JDate::getOffsetFromGMT<\/a>"],[0,25,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/date\/date.php.html#353\">JDate::monthToString<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/date\/date.php.html#394\">JDate::setTimezone<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/date\/date.php.html#412\">JDate::toISO8601<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/date\/date.php.html#428\">JDate::toSql<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/date\/date.php.html#449\">JDate::toRFC822<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/date\/date.php.html#461\">JDate::toUnix<\/a>"],[0,3,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/factory.php.html#115\">JFactory::getApplication<\/a>"],[0,3,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/factory.php.html#144\">JFactory::getConfig<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/factory.php.html#171\">JFactory::getSession<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/factory.php.html#191\">JFactory::getLanguage<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/factory.php.html#211\">JFactory::getDocument<\/a>"],[0,4,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/factory.php.html#233\">JFactory::getUser<\/a>"],[0,4,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/factory.php.html#266\">JFactory::getCache<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/factory.php.html#301\">JFactory::getACL<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/factory.php.html#323\">JFactory::getDbo<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/factory.php.html#343\">JFactory::getMailer<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/factory.php.html#367\">JFactory::getFeedParser<\/a>"],[0,6,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/factory.php.html#392\">JFactory::getXML<\/a>"],[0,3,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/factory.php.html#446\">JFactory::getEditor<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/factory.php.html#476\">JFactory::getURI<\/a>"],[0,7,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/factory.php.html#494\">JFactory::getDate<\/a>"],[0,4,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/factory.php.html#548\">JFactory::createConfig<\/a>"],[0,3,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/factory.php.html#586\">JFactory::createSession<\/a>"],[0,3,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/factory.php.html#613\">JFactory::createDbo<\/a>"],[0,4,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/factory.php.html#654\">JFactory::createMailer<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/factory.php.html#701\">JFactory::createLanguage<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/factory.php.html#719\">JFactory::createDocument<\/a>"],[0,8,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/factory.php.html#753\">JFactory::getStream<\/a>"],[0,17,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#186\">JLanguage::__construct<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#297\">JLanguage::getInstance<\/a>"],[0,10,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#320\">JLanguage::_<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#391\">JLanguage::transliterate<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#411\">JLanguage::getTransliterator<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#425\">JLanguage::setTransliterator<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#442\">JLanguage::getPluralSuffixes<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#461\">JLanguage::getPluralSuffixesCallback<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#475\">JLanguage::setPluralSuffixesCallback<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#490\">JLanguage::getIgnoredSearchWords<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#509\">JLanguage::getIgnoredSearchWordsCallback<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#523\">JLanguage::setIgnoredSearchWordsCallback<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#538\">JLanguage::getLowerLimitSearchWord<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#557\">JLanguage::getLowerLimitSearchWordCallback<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#571\">JLanguage::setLowerLimitSearchWordCallback<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#586\">JLanguage::getUpperLimitSearchWord<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#605\">JLanguage::getUpperLimitSearchWordCallback<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#619\">JLanguage::setUpperLimitSearchWordCallback<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#634\">JLanguage::getSearchDisplayedCharactersNumber<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#653\">JLanguage::getSearchDisplayedCharactersNumberCallback<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#667\">JLanguage::setSearchDisplayedCharactersNumberCallback<\/a>"],[0,3,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#687\">JLanguage::exists<\/a>"],[0,13,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#724\">JLanguage::load<\/a>"],[0,7,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#789\">JLanguage::loadLanguage<\/a>"],[0,11,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#838\">JLanguage::parse<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#925\">JLanguage::get<\/a>"],[0,6,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#942\">JLanguage::getCallerInfo<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#986\">JLanguage::getName<\/a>"],[0,3,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#1000\">JLanguage::getPaths<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#1024\">JLanguage::getErrorFiles<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#1036\">JLanguage::getTag<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#1048\">JLanguage::isRTL<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#1062\">JLanguage::setDebug<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#1077\">JLanguage::getDebug<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#1089\">JLanguage::getDefault<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#1103\">JLanguage::setDefault<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#1118\">JLanguage::getOrphans<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#1132\">JLanguage::getUsed<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#1146\">JLanguage::hasKey<\/a>"],[0,3,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#1162\">JLanguage::getMetadata<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#1191\">JLanguage::getKnownLanguages<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#1209\">JLanguage::getLanguagePath<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#1232\">JLanguage::setLanguage<\/a>"],[0,4,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#1248\">JLanguage::getLocale<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#1274\">JLanguage::getFirstDay<\/a>"],[0,3,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#1286\">JLanguage::getWeekEnd<\/a>"],[0,6,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#1300\">JLanguage::parseLanguageFiles<\/a>"],[0,5,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/language\/language.php.html#1346\">JLanguage::parseXMLLanguageFile<\/a>"],[0,3,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/log\/entry.php.html#79\">JLogEntry::__construct<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/log\/log.php.html#123\">JLog::__construct<\/a>"],[0,3,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/log\/log.php.html#139\">JLog::add<\/a>"],[0,7,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/log\/log.php.html#168\">JLog::addLogger<\/a>"],[0,3,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/log\/log.php.html#222\">JLog::setInstance<\/a>"],[0,4,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/log\/log.php.html#240\">JLog::addLogEntry<\/a>"],[0,9,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/joomla\/log\/log.php.html#278\">JLog::findLoggers<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/legacy\/error\/error.php.html#85\">JError::isError<\/a>"],[0,3,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/legacy\/error\/error.php.html#102\">JError::getError<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/legacy\/error\/error.php.html#130\">JError::getErrors<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/legacy\/error\/error.php.html#147\">JError::addToStack<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/legacy\/error\/error.php.html#173\">JError::raise<\/a>"],[0,4,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/legacy\/error\/error.php.html#193\">JError::throwError<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/legacy\/error\/error.php.html#249\">JError::raiseError<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/legacy\/error\/error.php.html#272\">JError::raiseWarning<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/legacy\/error\/error.php.html#295\">JError::raiseNotice<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/legacy\/error\/error.php.html#313\">JError::getErrorHandling<\/a>"],[0,9,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/legacy\/error\/error.php.html#347\">JError::setErrorHandling<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/legacy\/error\/error.php.html#417\">JError::attachHandler<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/legacy\/error\/error.php.html#433\">JError::detachHandler<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/legacy\/error\/error.php.html#457\">JError::registerErrorLevel<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/legacy\/error\/error.php.html#484\">JError::translateErrorLevel<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/legacy\/error\/error.php.html#509\">JError::handleIgnore<\/a>"],[0,10,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/legacy\/error\/error.php.html#529\">JError::handleEcho<\/a>"],[0,4,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/legacy\/error\/error.php.html#602\">JError::handleVerbose<\/a>"],[0,3,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/legacy\/error\/error.php.html#648\">JError::handleDie<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/legacy\/error\/error.php.html#689\">JError::handleMessage<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/legacy\/error\/error.php.html#713\">JError::handleLog<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/legacy\/error\/error.php.html#750\">JError::handleCallback<\/a>"],[0,5,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/legacy\/error\/error.php.html#767\">JError::customErrorPage<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/legacy\/error\/error.php.html#829\">JError::customErrorHandler<\/a>"],[0,5,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/legacy\/error\/error.php.html#846\">JError::renderBacktrace<\/a>"],[0,8,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/loader.php.html#71\">JLoader::discover<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/loader.php.html#119\">JLoader::getClassList<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/loader.php.html#131\">JLoader::getNamespaces<\/a>"],[80,7,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/loader.php.html#146\">JLoader::import<\/a>"],[66.6666666667,3,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/loader.php.html#211\">JLoader::load<\/a>"],[0,5,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/loader.php.html#244\">JLoader::register<\/a>"],[0,5,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/loader.php.html#278\">JLoader::registerPrefix<\/a>"],[0,2,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/loader.php.html#316\">JLoader::registerAlias<\/a>"],[0,5,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/loader.php.html#342\">JLoader::registerNamespace<\/a>"],[0,4,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/loader.php.html#385\">JLoader::setup<\/a>"],[0,8,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/loader.php.html#419\">JLoader::loadByPsr0<\/a>"],[0,3,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/loader.php.html#476\">JLoader::loadByAlias<\/a>"],[71.4285714286,5,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/loader.php.html#499\">JLoader::_autoload<\/a>"],[77.7777777778,4,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/loader.php.html#524\">JLoader::_load<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/platform.php.html#62\">JPlatform::isCompatible<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/platform.php.html#74\">JPlatform::getShortVersion<\/a>"],[0,1,"<a href=\"MAMP\/htdocs\/ezrea\/libraries\/platform.php.html#86\">JPlatform::getLongVersion<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

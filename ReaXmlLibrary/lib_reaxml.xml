@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="library" version="3.0" method="upgrade">
+	<name>REAXML Library</name>
+	<libraryname>reaxml</libraryname>
+	<author>Clifton IT Foundries Pty Ltd</author>
+	<creationDate>July 2014</creationDate>
+	<copyright>Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights
+		Reserved
+	</copyright>
+	<license>GNU General Public License version 2 or later; see gpl-2.0.txt
+	</license>
+	<authorEmail>neil.clifton@cliftonwebfoundry.com.au</authorEmail>
+	<authorUrl>http://cliftonwebfoundry.com.au</authorUrl>
+	<version>0.0.48</version>
+	<description>REAXML Library</description>
+
+	<files folder="lib/reaxml">
+		<folder>db</folder>
+		<folder>ezr</folder>
+		<file>configuration.php</file>
+		<file>importer.php</file>
+		<file>index.html</file>
+	</files>
+
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.lib_reaxml.ini</language>
+		<language tag="en-GB">en-GB/en-GB.lib_reaxml.sys.ini</language>
+	</languages>
+
+
+</extension>

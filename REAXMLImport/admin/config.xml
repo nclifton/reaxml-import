@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<fieldset name="component" label="COM_REAXMLIMPORT_OPTIONS"
+		description="COM_REAXMLIMPORT_OPTIONS_DESC">
+
+		<field name="root_rel_url" type="text" default="/relative/url/path"
+			label="COM_REAXMLIMPORT_ROOT_REL_URL_LABEL" description="COM_REAXMLIMPORT_INPUT_REL_URL_DESC">
+		</field>
+		<field name="input_dir" type="text"
+			default="/path/to/a/directory/on/the/server/input" label="COM_REAXMLIMPORT_INPUT_DIR_LABEL"
+			description="COM_REAXMLIMPORT_INPUT_DIR_DESC">
+		</field>
+		<field name="input_rel_url" type="text" default="/relative/url/path/input"
+			label="COM_REAXMLIMPORT_INPUT_REL_URL_LABEL" description="COM_REAXMLIMPORT_INPUT_REL_URL_DESC">
+		</field>
+		<field name="work_dir" type="text"
+			default="/path/to/a/directory/on/the/server/work" label="COM_REAXMLIMPORT_WORK_DIR_LABEL"
+			description="COM_REAXMLIMPORT_WORK_DIR_DESC">
+		</field>
+		<field name="work_rel_url" type="text" default="/relative/url/path/work"
+			label="COM_REAXMLIMPORT_WORK_REL_URL_LABEL" description="COM_REAXMLIMPORT_WORK_REL_URL_DESC">
+		</field>
+		<field name="done_dir" type="text"
+			default="/path/to/a/directory/on/the/server/done" label="COM_REAXMLIMPORT_DONE_DIR_LABEL"
+			description="COM_REAXMLIMPORT_DONE_DIR_DESC">
+		</field>
+		<field name="done_rel_url" type="text" default="/relative/url/path/done"
+			label="COM_REAXMLIMPORT_DONE_REL_URL_LABEL" description="COM_REAXMLIMPORT_DONE_REL_URL_DESC">
+		</field>
+		<field name="log_dir" type="text"
+			default="/path/to/a/directory/on/the/server/log" label="COM_REAXMLIMPORT_LOG_DIR_LABEL"
+			description="COM_REAXMLIMPORT_LOG_DIR_DESC">
+		</field>
+		<field name="log_rel_url" type="text" default="/relative/url/path/log"
+			label="COM_REAXMLIMPORT_LOG_REL_URL_LABEL" description="COM_REAXMLIMPORT_LOG_REL_URL_DESC">
+		</field>
+		<field name="error_dir" type="text"
+			default="/path/to/a/directory/on/the/server/error" label="COM_REAXMLIMPORT_ERROR_DIR_LABEL"
+			description="COM_REAXMLIMPORT_ERROR_DIR_DESC">
+		</field>
+		<field name="error_rel_url" type="text" default="/relative/url/path/error"
+			label="COM_REAXMLIMPORT_ERROR_REL_URL_LABEL" description="COM_REAXMLIMPORT_ERROR_REL_URL_DESC">
+		</field>
+	</fieldset>
+	<fieldset name="permissions" label="JCONFIG_PERMISSIONS_LABEL"
+		description="JCONFIG_PERMISSIONS_DESC">
+		<field name="rules" type="rules" label="JCONFIG_PERMISSIONS_LABEL"
+			class="inputbox" validate="rules" filter="rules" component="com_reaxmlinput"
+			section="component">
+			<action name="core.admin" title="JACTION_ADMIN" description="JACTION_ADMIN_COMPONENT_DESC" />
+			<action name="core.manage" title="JACTION_MANAGE"
+				description="JACTION_MANAGE_COMPONENT_DESC" />
+		</field>
+	</fieldset>
+</config>

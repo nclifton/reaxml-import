@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<residential modTime="" status="current">
+ <uniqueID>foo</uniqueID>
+  <features>
+    <balcony>yes</balcony>
+    <deck>yes</deck>
+    <courtyard>yes</courtyard>
+     <floorboards>yes</floorboards>
+  </features>
+</residential>
