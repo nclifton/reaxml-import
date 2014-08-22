@@ -1,6 +1,10 @@
 /**
  * request an import run through JQuery AJAX
+ *   
+ * Copyright (C) 2005 - 2014 Clifton IT Foundries Pty Ltd. All rights reserved.
+ * GNU General Public License version 3 or later.
  */
+
 function requestImportRun(event) {
 
 	jQuery

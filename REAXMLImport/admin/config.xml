@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2014 Clifton IT Foundries Pty Ltd All rights reserved. 
+	GNU General Public License version 2 or later; see LICENSE.txt -->
 <config>
 	<fieldset name="component" label="COM_REAXMLIMPORT_OPTIONS"
 		description="COM_REAXMLIMPORT_OPTIONS_DESC">
@@ -45,11 +47,8 @@
 	<fieldset name="permissions" label="JCONFIG_PERMISSIONS_LABEL"
 		description="JCONFIG_PERMISSIONS_DESC">
 		<field name="rules" type="rules" label="JCONFIG_PERMISSIONS_LABEL"
-			class="inputbox" validate="rules" filter="rules" component="com_reaxmlinput"
+			class="inputbox" validate="rules" filter="rules" component="com_reaxmlimport"
 			section="component">
-			<action name="core.admin" title="JACTION_ADMIN" description="JACTION_ADMIN_COMPONENT_DESC" />
-			<action name="core.manage" title="JACTION_MANAGE"
-				description="JACTION_MANAGE_COMPONENT_DESC" />
 		</field>
 	</fieldset>
 </config>

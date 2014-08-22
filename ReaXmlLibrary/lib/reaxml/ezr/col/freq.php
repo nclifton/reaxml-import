@@ -1,4 +1,10 @@
 <?php
+defined ( '_JEXEC' ) or die ( 'Restricted access' );
+
+/**
+ * @copyright	Copyright (C) 2014 Clifton IT Foundries Pty Ltd All rights reserved.
+ * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ **/ 
 class ReaxmlEzrColFreq extends \ReaxmlEzrColumn {
 	const XPATH_WEEKLY = ' /rental/rent[@period="weekly" or @period="week"]/@period  | /holidayRental/rent[@period="weekly" or @period="week"]/@period';
 	const XPATH_NOT_APPLICABLE = '/residential | /rural | /land | /commercial | /commercialLand | /business ';

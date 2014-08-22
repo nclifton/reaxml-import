@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @copyright	Copyright (C) 2014 Clifton IT Foundries Pty Ltd All rights reserved.
+ * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ **/ 
+
 abstract class Reaxml_Tests_DatabaseTestCase extends PHPUnit_Extensions_Database_TestCase{
 	private static $pdo = null;
 	private $conn = null;

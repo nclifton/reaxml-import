@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * @copyright	Copyright (C) 2014 Clifton IT Foundries Pty Ltd All rights reserved.
+ * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ **/ 
 error_reporting ( E_ALL );
 
 // /Users/nclifton/Documents/MAMP/htdocs/ezrea/libraries' );// /Users/nclifton/Documents/MAMP/htdocs/ezrea/libraries
@@ -6,7 +11,7 @@ error_reporting ( E_ALL );
 define ( '_JEXEC', 1 );
 
 define ( 'JPATH_BASE', '/Users/nclifton/Documents/MAMP/htdocs/ezrea' );
-define ( 'REAXML_LIBRARIES', '/Users/nclifton/Documents/LunaEclipse/workspace/ReaXmlLibrary/lib');
+define ( 'REAXML_LIBRARIES', __DIR__.'/../lib');
 
 require_once JPATH_BASE . '/includes/defines.php';
 require_once JPATH_BASE . '/includes/framework.php';

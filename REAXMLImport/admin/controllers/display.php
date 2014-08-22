@@ -1,6 +1,11 @@
 <?php
-
 defined ( '_JEXEC' ) or die ( 'Restricted access' );
+
+/**
+ * Copyright (C) 2014 Clifton IT Foundries Pty Ltd.
+ * All rights reserved.
+ * GNU General Public License version 3 or later.
+ */
 class ReaXmlImportControllersDisplay extends JControllerBase {
 	public function execute() {
 		

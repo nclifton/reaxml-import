@@ -1,8 +1,13 @@
 <?php
-define ( 'REAXML_LIBRARIES', JPATH_ROOT . '/libraries' );
-JLoader::registerPrefix ( 'Reaxml', REAXML_LIBRARIES . '/reaxml' );
 
-jimport ( 'reaxml.ezr.dbo' );
+/**
+ *
+ * @copyright Copyright (C) 2014 Clifton IT Foundries Pty Ltd All rights reserved.
+ * @license GNU General Public License version 2 or later; see LICENSE.txt
+ *         
+ */
+define ( 'REAXML_LIBRARIES', JPATH_ROOT . '/libraries' );
+
 class com_reaxmlImportInstallerScript {
 	
 	/**
@@ -71,6 +76,9 @@ class com_reaxmlImportInstallerScript {
 		$reload = true;
 		$lang->load ( $extension, $base_dir, $language_tag, $reload );
 		
+		JLoader::registerPrefix ( 'Reaxml', REAXML_LIBRARIES . '/reaxml' );
+		jimport ( 'reaxml.ezr.dbo' );
+		
 		$dbo = new ReaxmlEzrDbo ();
 		$dbo->updateCom_ezrealtyParamsFeatures ( 'appliancefeats', array (
 				JText::_ ( 'LIB_REAXML_APPLIANCE_FEATURE_DISHWASHER' ) 
@@ -130,8 +138,8 @@ class com_reaxmlImportInstallerScript {
 		echo '<p>' . JText::_ ( 'COM_REAXMLIMPORT_CHECKING_EZREALTY_MLS_ID' ) . '</p>';
 		
 		$db = JFactory::getDbo ();
-		$sql = "SELECT substring_index(column_type,'(',1) as type, substring_index(substring_index(column_type,')',1),'(',-1) as size FROM information_schema.columns where table_name = '".$db->getPrefix()."ezrealty' and column_name = 'mls_id'";
-		$db->setQuery ($sql );
+		$sql = "SELECT substring_index(column_type,'(',1) as type, substring_index(substring_index(column_type,')',1),'(',-1) as size FROM information_schema.columns where table_name = '" . $db->getPrefix () . "ezrealty' and column_name = 'mls_id'";
+		$db->setQuery ( $sql );
 		$row = $db->loadAssoc ();
 		if (($row ['type'] == 'varchar') && ($row ['size'] < 36)) {
 			echo '<p>' . JText::_ ( 'COM_REAXMLIMPORT_ADJUSTING_EZREALTY_MLS_ID' ) . '</p>';

@@ -1,4 +1,10 @@
 <?php
+defined ( '_JEXEC' ) or die ( 'Restricted access' );
+
+/**
+ * @copyright	Copyright (C) 2014 Clifton IT Foundries Pty Ltd All rights reserved.
+ * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ **/ 
 class ReaxmlEzrColPrice extends \ReaxmlEzrColumn {
 	//const XPATH_PRICE = '/[residential or rural or land or commercial or commercialLand or business]/Price | /[rental or holidayRental]/rent[@period="weekly" or @period="week"] ';
 	const XPATH_PRICE = '//residential/price | //rural/price | //land/price | //commercial/price | //commercialLand/price | //business/price | //rental/rent[@period="weekly" or @period="week"]  | //holidayRental/rent[@period="weekly" or @period="week"]';

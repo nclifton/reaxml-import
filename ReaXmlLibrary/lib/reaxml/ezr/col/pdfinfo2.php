@@ -1,4 +1,10 @@
 <?php
+defined ( '_JEXEC' ) or die ( 'Restricted access' );
+
+/**
+ * @copyright	Copyright (C) 2014 Clifton IT Foundries Pty Ltd All rights reserved.
+ * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ **/ 
 class ReaxmlEzrColPdfinfo2 extends \ReaxmlEzrColumn {
 	const XPATH_DOCUMENT = '//objects/document[@id="2"]';
 	const XPATH_URL = '//objects/document[@id="2"]/@url';

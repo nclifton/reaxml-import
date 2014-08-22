@@ -7,19 +7,20 @@
 	<copyright>Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights
 		Reserved
 	</copyright>
-	<license>GNU General Public License version 2 or later; see gpl-2.0.txt
+	<license>GNU General Public License version 3 or later; see gpl-3.0.txt
 	</license>
 	<authorEmail>neil.clifton@cliftonwebfoundry.com.au</authorEmail>
 	<authorUrl>http://cliftonwebfoundry.com.au</authorUrl>
-	<version>0.0.48</version>
+	<version>0.0.51</version>
 	<description>REAXML Library</description>
 
 	<files folder="lib/reaxml">
 		<folder>db</folder>
 		<folder>ezr</folder>
-		<file>configuration.php</file>
-		<file>importer.php</file>
-		<file>index.html</file>
+		<filename>configuration.php</filename>
+		<filename>importer.php</filename>
+		<filename>index.html</filename>
+		<filename>gpl-3.0.txt</filename>
 	</files>
 
 	<languages folder="language">

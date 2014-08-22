@@ -1,4 +1,11 @@
 <?php
+
+/**
+ *
+ * @copyright Copyright (C) 2014 Clifton IT Foundries Pty Ltd All rights reserved.
+ * @license GNU General Public License version 2 or later; see LICENSE.txt
+ *         
+ */
 jimport ( 'joomla.filesystem.file' );
 class ReaxmlImporter_Test extends PHPUnit_Framework_TestCase {
 	

@@ -1,4 +1,9 @@
 /**
+ * @copyright   Copyright (C) 2014 Clifton IT Foundries Pty Ltd All rights reserved.
+ * @license     GNU General Public License version 3 or later; see gpl-3.0.txt
+ **/
+
+/**
  * request an import run through JQuery AJAX
  */
 function requestImportRun(event) {
