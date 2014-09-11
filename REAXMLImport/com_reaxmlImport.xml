@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension type="component" version="3.0" group="" method="upgrade">
-	<name>REAXML Import</name>
-	<author>Clifton IT Foundries Pty Ltd</author>
+	<name>REAXML Import for EZ Realty</name>
+	<author>Neil Clifton</author>
 	<creationDate>July 2014</creationDate>
 	<copyright>Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights
-		Reserved
-	</copyright>
-	<license>GNU General Public License version 3 or later; see gpl-3.0.txt
-	</license>
+		Reserved</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
 	<authorEmail>neil.clifton@cliftonwebfoundry.com.au</authorEmail>
 	<authorUrl>http://cliftonwebfoundry.com.au</authorUrl>
 	<version>0.43.117</version>
