@@ -10,13 +10,6 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
  * @license GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-/**
- * ReaXmlImport component helper.
- *
- * @package Joomla.Administrator
- * @subpackage com_reaxmlimport
- * @since 1.6
- */
 class ReaXmlImportHelpersAdmin {
 	public static $extension = 'com_reaxmlimport';
 	
