@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<extension type="library" version="3.0" method="upgrade">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension method="upgrade" type="library" version="3.0">
 	<name>REAXML Library</name>
 	<libraryname>reaxml</libraryname>
 	<author>Clifton IT Foundries Pty Ltd</author>
@@ -10,7 +10,7 @@
 	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
 	<authorEmail>neil.clifton@cliftonwebfoundry.com.au</authorEmail>
 	<authorUrl>http://cliftonwebfoundry.com.au</authorUrl>
-	<version>0.0.51</version>
+	<version>0.0.52</version>
 	<description>REAXML Library</description>
 
 	<files folder="lib/reaxml">

@@ -2,11 +2,13 @@
 defined ( '_JEXEC' ) or die ( 'Restricted access' );
 
 /**
- * @copyright	Copyright (C) 2014 Clifton IT Foundries Pty Ltd All rights reserved.
- * @license		GNU General Public License version 2 or later; see LICENSE.txt
- **/ 
-class ReaxmlEzrColImage_ordering extends \ReaxmlEzrImagecolumn {
-	const XPATH_IMAGES_IMG_ID = '/*/objects/img[@id="%s"]';
+ * @package Library REAXML Library for Joomla! 3.3
+ * @version 0.0.52: image_ordering.php 2014-09-12T14:10:36.970
+ * @author Clifton IT Foundries Pty Ltd
+ * @link http://cliftonwebfoundry.com.au
+ * @copyright Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights Reserved
+ * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ **/objects/img[@id="%s"]';
 	public function getValueAt($idx) {
 		$ids = parent::getIdSequence ();
 		$nodes = $this->xml->xpath ( sprintf ( self::XPATH_IMAGES_IMG_ID, $ids [$idx] ) );

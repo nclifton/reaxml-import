@@ -2,15 +2,13 @@
 defined ( '_JEXEC' ) or die ( 'Restricted access' );
 
 /**
- * @copyright	Copyright (C) 2014 Clifton IT Foundries Pty Ltd All rights reserved.
- * @license		GNU General Public License version 2 or later; see LICENSE.txt
- **/ 
-error_reporting ( E_ALL & ~ E_STRICT & ~ E_NOTICE );
-class ReaxmlEzrColImage_fname extends \ReaxmlEzrImagecolumn {
-	const XPATH_IMG = '/*/objects/img[@id="%s"]';
-	const XPATH_URL = '/*/objects/img[@id="%s"]/@url';
-	const XPATH_FILE = '/*/objects/img[@id="%s"]/@file';
-	const XPATH_FORMAT = '/*/objects/img[@id="%s"]/@format';
+ * @package Library REAXML Library for Joomla! 3.3
+ * @version 0.0.52: image_fname.php 2014-09-12T14:10:36.970
+ * @author Clifton IT Foundries Pty Ltd
+ * @link http://cliftonwebfoundry.com.au
+ * @copyright Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights Reserved
+ * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ **/objects/img[@id="%s"]/@format';
 	const IMAGES_SUBDIRECTORY = 'properties';
 	const THUMBS_SUB_SUBDIRECTORY = 'th';
 	public function getValueAt($idx) {
