@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <buildpath>
-	<buildpathentry kind="con" path="org.eclipse.dltk.USER_LIBRARY/joomla"/>
 	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
-	<buildpathentry kind="con" path="org.eclipse.dltk.USER_LIBRARY/rea-joomla"/>
 	<buildpathentry kind="lib" path="tests/phpunit.phar"/>
 	<buildpathentry kind="src" path=""/>
 </buildpath>
