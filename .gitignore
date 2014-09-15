@@ -435,3 +435,8 @@
 /index.php
 /joomla.xml
 /*.txt
+
+.DS_Store
+
+REAXMLImport/admin/.DS_Store
+

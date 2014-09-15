@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <extension type="package" version="3.0">
 	<name>REAXML Package</name>
 	<author>Clifton IT Foundries Pty Ltd</author>
 	<creationDate>July 2014</creationDate>
 	<packagename>reaxml</packagename>	
-	<version>1.0.70</version>
+	<version>1.0.71</version>
 	<url>http://cliftonwebfoundry.com.au</url>
 	<packageurl>http://cliftonwebfoundry.com.au</packageurl>
 	<description>Package for the REAXML Import component and library</description>
 	<files folder="packages">
-		<file type="library" id="lib_reaxml">lib_reaxml.zip</file>
+		<file id="lib_reaxml" type="library">lib_reaxml.zip</file>
 		<!-- <file type="plugin" id="plg_reaxml" group ="system">plg_reaxml.zip</file> -->
-		<file type="component" id="com_reaxmlimport">com_reaxmlimport.zip</file>
+		<file id="com_reaxmlimport" type="component">com_reaxmlimport.zip</file>
 	</files>
 </extension>

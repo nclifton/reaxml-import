@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+phpunit_config_file=/ReaXmlLibrary/tests/phpunit.xml
+preload_script=/ReaXmlLibrary/tests/bootstrap.php
+test_file_pattern=
+test_folders=/ReaXmlLibrary/tests
+testing_framework=PHPUnit
