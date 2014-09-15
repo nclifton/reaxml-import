@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <extension group="" method="upgrade" type="component" version="3.0">
-	<name>REAXML Import for EZ Realty</name>
+	<name>REAXML Import</name>
 	<author>Neil Clifton</author>
 	<creationDate>July 2014</creationDate>
 	<copyright>Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights
