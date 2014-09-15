@@ -2,12 +2,18 @@
 <extension type="package" version="3.0">
 	<name>REAXML Package</name>
 	<author>Clifton IT Foundries Pty Ltd</author>
+	<authorEmail>neil.clifton@cliftonwebfoundry.com.au</authorEmail>
 	<creationDate>July 2014</creationDate>
-	<packagename>reaxml</packagename>	
+	<packagename>reaxml</packagename>
 	<version>1.0.71</version>
+	<releaseDate>2010-05-14</releaseDate>
+	<releaseType>Minor update</releaseType>
+	<downloadUrl>https://cliftonwebfoundry.com.au/downloads/reaxml-import-for-ezrealty
+	</downloadUrl>
 	<url>http://cliftonwebfoundry.com.au</url>
 	<packageurl>http://cliftonwebfoundry.com.au</packageurl>
-	<description>Package for the REAXML Import component and library</description>
+	<description>Package for the REAXML Import component and library
+	</description>
 	<files folder="packages">
 		<file id="lib_reaxml" type="library">lib_reaxml.zip</file>
 		<!-- <file type="plugin" id="plg_reaxml" group ="system">plg_reaxml.zip</file> -->
