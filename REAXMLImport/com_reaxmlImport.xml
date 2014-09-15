@@ -2,13 +2,14 @@
 <extension group="" method="upgrade" type="component" version="3.0">
 	<name>REAXML Import</name>
 	<author>Clifton IT Foundries Pty Ltd</author>
-	<creationDate>July 2014</creationDate>
+	<authorEmail>neil.clifton@cliftonwebfoundry.com.au</authorEmail>
+	<creationDate>2014-07-24</creationDate>
 	<copyright>Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights
 		Reserved</copyright>
 	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
 	<authorEmail>neil.clifton@cliftonwebfoundry.com.au</authorEmail>
 	<authorUrl>http://cliftonwebfoundry.com.au</authorUrl>
-	<version>0.43.120</version>
+	<version>0.43.121</version>
 	<description>COM_REAXMLIMPORT_XML_DESCRIPTION</description>
 
 	<scriptfile>installscript.php</scriptfile>
