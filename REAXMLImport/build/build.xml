@@ -1,0 +1,90 @@
+<project default="create_install" basedir="..">
+
+	<description> 
+	build file
+	</description>
+
+	<!-- Task definition -->
+	<!-- Define classpath for ant-contrib tasks -->
+	<taskdef resource="net/sf/antcontrib/antlib.xml" />
+	<taskdef name="xmltask" classname="com.oopsconsultancy.xmltask.ant.XmlTask" />
+
+	<property name="manifestfile" value="com_reaxmlimport.xml" />
+	<property name="installfile" value="../REAXMLPackage/packages/com_reaxmlimport.zip" />
+
+	<scriptdef name="increment_version" language="javascript">
+		<attribute name="current" />
+		<attribute name="property" />
+		<![CDATA[
+		var current = attributes.get("current");
+		var dotidx = current.lastIndexOf(".");
+		var buildnum = parseInt(current.slice(dotidx+1));
+		project.setProperty(attributes.get("property"),current.substring(0,dotidx+1) + (++buildnum) ) ;
+		]]>
+	</scriptdef>
+
+	<tstamp>
+		<format property="datetime" pattern="yyyy-MM-dd'T'HH:mm:ss.SSS" />
+	</tstamp>
+
+	<target name="create_install" depends="update_php_headers">
+		<zip destfile="${installfile}" >
+			<fileset dir="." excludes=".*/**, **/.DS_Store, tests/**, build/**, .settings/**"/>
+		</zip>
+	</target>
+
+	<target name="update_php_headers" depends="update_manifest">
+		<foreach target="replace_headers" param="fullfilename" inheritall="true">
+			<param name="copyright" value="${copyright.stripped}" />
+			<param name="version" value="${newVersion}" />
+			<path>
+				<fileset dir="admin">
+					<include name="**/*.php" />
+				</fileset>
+				<fileset dir="site">
+					<include name="**/*.php" />
+				</fileset>
+			</path>
+		</foreach>
+	</target>
+
+	<target name="update_manifest" depends="get_version" unless="skipIncrement">
+		<echo>newversion=${newVersion}</echo>
+		<xmltask source="${manifestfile}" dest="${manifestfile}">
+			<replace path="/extension/version/text()" withText="${newVersion}" />
+		</xmltask>
+	</target>
+
+	<target name="get_version" depends="increment_version" if="skipIncrement">
+		<property name="newVersion" value="${version}" />
+	</target>
+
+	<target name="increment_version" depends="get_component_properties" unless="skipIncrement">
+		<echo>${version}</echo>
+		<increment_version current="${version}" property="newVersion" />
+		<echo>${newVersion}</echo>
+	</target>
+
+	<target name="get_component_properties">
+		<xmlproperty file="${manifestfile}" keepRoot="false" />
+		<loadresource property="copyright.stripped">
+			<string value="${copyright}" />
+			<filterchain>
+				<striplinebreaks />
+				<replaceregex pattern="[\t]+" replace=" " flags="g" />
+			</filterchain>
+		</loadresource>
+	</target>
+
+	<target name="replace_headers">
+		<basename file="${fullfilename}" property="filename" />
+		<loadfile property="phpheader" srcFile="build/phpheader.txt">
+			<filterchain>
+				<expandproperties />
+			</filterchain>
+		</loadfile>
+		<replaceregexp file="${fullfilename}" match="/\*\*.*\* @copyright.*\*\*/" flags="sm" replace="${phpheader}">
+		</replaceregexp>
+	</target>
+
+</project>
