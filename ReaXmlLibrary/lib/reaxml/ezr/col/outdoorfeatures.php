@@ -3,12 +3,28 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
 
 /**
  * @package Library REAXML Library for Joomla! 3.3
- * @version 0.0.52: outdoorfeatures.php 2014-09-12T14:10:36.970
+ * @version 0.0.53: outdoorfeatures.php 2014-09-15T16:21:18.708
  * @author Clifton IT Foundries Pty Ltd
  * @link http://cliftonwebfoundry.com.au
  * @copyright Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights Reserved
  * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
- **/features/inGroundSpa',
+ **/ 
+class ReaxmlEzrColOutdoorfeatures extends \ReaxmlEzrColumn {
+	public static $mappings = array (
+			array (
+					'xpath' => '//features/pool[@type="inground"] | /*/features/poolInGround',
+					'text' => 'LIB_REAXML_OUTDOOR_FEATURE_IN_GROUND_POOL' 
+			),
+			array (
+					'xpath' => '//features/pool[@type="aboveground"] | /*/features/poolAboveGround',
+					'text' => 'LIB_REAXML_OUTDOOR_FEATURE_ABOVE_GROUND_POOL' 
+			),
+			array (
+					'xpath' => '//features/spa[@type="aboveground"] | /*/features/aboveGroundSpa',
+					'text' => 'LIB_REAXML_OUTDOOR_FEATURE_ABOVE_GROUND_SPA' 
+			),
+			array (
+					'xpath' => '//features/spa[@type="inground"] | /*/features/inGroundSpa',
 					'text' => 'LIB_REAXML_OUTDOOR_FEATURE_IN_GROUND_SPA' 
 			),
 			array (

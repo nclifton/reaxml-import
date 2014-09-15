@@ -3,12 +3,60 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
 
 /**
  * @package Library REAXML Library for Joomla! 3.3
- * @version 0.0.52: indoorfeatures.php 2014-09-12T14:10:36.970
+ * @version 0.0.53: indoorfeatures.php 2014-09-15T16:21:18.708
  * @author Clifton IT Foundries Pty Ltd
  * @link http://cliftonwebfoundry.com.au
  * @copyright Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights Reserved
  * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
- **/features/spa[@type="indoor"]',
+ **/ 
+class ReaxmlEzrColIndoorfeatures extends \ReaxmlEzrColumn {
+	public static $mappings = array (
+			array (
+					'xpath' => '//features/airConditioning',
+					'text' => 'LIB_REAXML_INDOOR_FEATURE_AIR_CONDITIONING' 
+			),
+			array (
+					'xpath' => '//features/vacuumSystem',
+					'text' => 'LIB_REAXML_INDOOR_FEATURE_VACUUM_SYSTEM' 
+			),
+			array (
+					'xpath' => '//features/openFirePlace',
+					'text' => 'LIB_REAXML_INDOOR_FEATURE_OPEN_FIRE_PLACE' 
+			),
+			array (
+					'xpath' => '//features/heating[@type="gas"] | /*/features/gasHeating',
+					'text' => 'LIB_REAXML_INDOOR_FEATURE_GAS_HEATING' 
+			),
+			array (
+					'xpath' => '//features/heating[@type="electric"]',
+					'text' => 'LIB_REAXML_INDOOR_FEATURE_ELECTRIC_HEATING' 
+			),
+			array (
+					'xpath' => '//features/heating[@type="GDH"]',
+					'text' => 'LIB_REAXML_INDOOR_FEATURE_GDH_HEATING' 
+			),
+			array (
+					'xpath' => '//features/heating[@type="solid"]',
+					'text' => 'LIB_REAXML_INDOOR_FEATURE_SOLID_FUEL_HEATING' 
+			),
+			array (
+					'xpath' => '//features/heating[@type="other"]',
+					'text' => 'LIB_REAXML_INDOOR_FEATURE_HEATING' 
+			),
+			array (
+					'xpath' => '//features/hotWaterService[@type="gas"]',
+					'text' => 'LIB_REAXML_INDOOR_FEATURE_GAS_HOT_WATER' 
+			),
+			array (
+					'xpath' => '//features/hotWaterService[@type="electric"]',
+					'text' => 'LIB_REAXML_INDOOR_FEATURE_ELECTRIC_HOT_WATER' 
+			),
+			array (
+					'xpath' => '//features/hotWaterService[@type="solar"] | /*/ecoFriendly/solarHotWater',
+					'text' => 'LIB_REAXML_INDOOR_FEATURE_SOLAR_HOT_WATER' 
+			),
+			array (
+					'xpath' => '//features/insideSpa | /*/features/spa[@type="indoor"]',
 					'text' => 'LIB_REAXML_FEATURE_SPA' 
 			),
 			array (
