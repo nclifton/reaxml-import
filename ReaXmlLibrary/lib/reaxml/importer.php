@@ -2,13 +2,15 @@
 defined ( '_JEXEC' ) or die ( 'Restricted access' );
 
 /**
+ *
  * @package Library REAXML Library for Joomla! 3.3
  * @version 0.0.56: importer.php 2015-03-11T19:57:05.574
  * @author Clifton IT Foundries Pty Ltd
  * @link http://cliftonwebfoundry.com.au
  * @copyright Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights Reserved
  * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
- **/ 
+ *         
+ */
 defined ( '_JEXEC' ) or die ();
 
 jimport ( 'joomla.filesystem.file' );
@@ -20,6 +22,7 @@ jimport ( 'joomla.ezr.images' );
 
 defined ( 'REAXML_LOG_CATEGORY' ) or define ( 'REAXML_LOG_CATEGORY', 'REAXML-Import' );
 class ReaxmlImporter {
+	static $loggerAdded = false;
 	private $configuration;
 	private $runtag;
 	const IMPORT_FILE_NAME_REGEX = '\.(xml|jpg|jpeg|gif|pdf|doc|xls|zip)$';
@@ -28,37 +31,38 @@ class ReaxmlImporter {
 	const LOG_EXT = '.log';
 	
 	/**
-	 * get a singleton instance
-	 *
 	 * @param Object $configuration        	
 	 */
-	public static function getInstance(ReaxmlConfiguration $configuration) {
-		static $instance = null;
-		if (null === $instance) {
-			$instance = new static ();
-		}
-		$instance->configuration = $configuration;
+	public function setConfiguration(ReaxmlConfiguration $configuration) {
+		$this->configuration = $configuration;
+		$this->checkDirectories ();
+	}
+
+	public function __construct() {
 		$lang = JFactory::getLanguage ();
 		$lang->load ( 'lib_reaxml', JPATH_SITE, 'en-GB', true );
-		$instance->checkDirectories ();
-		return $instance;
 	}
+
 	private function newLogger() {
 		if (JFile::exists ( $this->configuration->log_dir . DIRECTORY_SEPARATOR . self::LOG_NAME . self::LOG_EXT )) {
 			$this->runtag = date ( 'YmdHis', filemtime ( $this->configuration->log_dir . DIRECTORY_SEPARATOR . self::LOG_NAME . self::LOG_EXT ) );
 			JFile::move ( self::LOG_NAME . self::LOG_EXT, self::LOG_NAME . '-' . $this->runtag . self::LOG_EXT, $this->configuration->log_dir );
 		}
-		JLog::addLogger ( array (
-				'text_file' => self::LOG_NAME . self::LOG_EXT,
-				'text_file_path' => $this->configuration->log_dir,
-				'text_file_no_php' => true,
-				'text_entry_format' => '{DATE} {TIME} {PRIORITY} {MESSAGE}' 
-		), JLog::ALL, array (
-				REAXML_LOG_CATEGORY 
-		) );
+		
+		if (!self::$loggerAdded) {		
+			JLog::addLogger ( array (
+					'text_file' => self::LOG_NAME . self::LOG_EXT,
+					'text_file_path' => $this->configuration->log_dir,
+					'text_file_no_php' => true,
+					'text_entry_format' => '{DATE} {TIME} {PRIORITY} {MESSAGE}' 
+			), JLog::ALL, array (
+					REAXML_LOG_CATEGORY 
+			) );
+			self::$loggerAdded = true;
+		}
 	}
-	public function run() {
-		// will be threaded
+	private function start() {
+		
 		$this->logStart ();
 		
 		try {
@@ -77,6 +81,11 @@ class ReaxmlImporter {
 						// loop over the properties
 						
 						$propertyList = $this->listProperties ( $xml );
+						
+						// log message if there are no properties in the file
+						if (count ( $propertyList ) == 0) {
+							throw new Exception ( JText::_ ( 'LIB_REAXML_ERROR_MESSAGE_NO_PROPERTIES' ) );
+						}
 						
 						foreach ( $propertyList as $property ) {
 							
@@ -118,11 +127,11 @@ class ReaxmlImporter {
 		if (count ( $files ) > 0) {
 			foreach ( $files as $file ) {
 				if (! JFolder::exists ( $path )) {
-					//JLog::add ( 'Created ' . $path, JLog::INFO, REAXML_LOG_CATEGORY );
+					// JLog::add ( 'Created ' . $path, JLog::INFO, REAXML_LOG_CATEGORY );
 					JFolder::create ( $path );
 				}
-				JFile::move ( $file, $path . DIRECTORY_SEPARATOR . basename($file) );
-				//JLog::add ( 'Moved ' . $file . ' to ' . $path . DIRECTORY_SEPARATOR . basename($file), JLog::INFO, REAXML_LOG_CATEGORY );
+				JFile::move ( $file, $path . DIRECTORY_SEPARATOR . basename ( $file ) );
+				// JLog::add ( 'Moved ' . $file . ' to ' . $path . DIRECTORY_SEPARATOR . basename($file), JLog::INFO, REAXML_LOG_CATEGORY );
 			}
 		}
 	}
@@ -156,13 +165,12 @@ class ReaxmlImporter {
 	/**
 	 * starts the import process
 	 */
-	public function start() {
-		$this->checkDirectories ();
+	public function import() {
+		$this->newLogger ();
 		$dt = new DateTime ();
 		$this->runtag = $dt->format ( 'YmdHis' );
-		$this->newLogger ();
 		$this->prepareDirectories ();
-		$this->run ();
+		$this->start ();
 		return $this->runtag;
 	}
 	protected function checkDirectories() {
@@ -187,7 +195,7 @@ class ReaxmlImporter {
 			throw new Exception ( JText::sprintf ( 'LIB_REAXML_LOG_ERROR_DIRECTORY_DOES_NOT_EXIST', $this->configuration->error_dir ), 500 );
 		}
 	}
-	public function moveInputToWork() {
+	private function moveInputToWork() {
 		$files = $this->getInputFiles ();
 		if (count ( $files ) == 0) {
 			return array ();
