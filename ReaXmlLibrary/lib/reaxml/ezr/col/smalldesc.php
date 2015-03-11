@@ -3,7 +3,7 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
 
 /**
  * @package Library REAXML Library for Joomla! 3.3
- * @version 0.0.59: smalldesc.php 2015-03-11T22:48:48.530
+ * @version 0.0.61: smalldesc.php 2015-03-12T02:22:10.059
  * @author Clifton IT Foundries Pty Ltd
  * @link http://cliftonwebfoundry.com.au
  * @copyright Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights Reserved
