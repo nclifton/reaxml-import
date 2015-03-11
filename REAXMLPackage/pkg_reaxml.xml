@@ -4,9 +4,12 @@
 	<author>Clifton IT Foundries Pty Ltd</author>
 	<authorEmail>neil.clifton@cliftonwebfoundry.com.au</authorEmail>
 	<creationDate>July 2014</creationDate>
+	<copyright>Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights
+		Reserved</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
 	<packagename>reaxml</packagename>
-	<version>1.0.72</version>
-	<releaseDate>2014-09-15</releaseDate>
+	<version>1.0.73</version>
+	<releaseDate>2015-03-11</releaseDate>
 	<releaseType>Minor update</releaseType>
 	<downloadUrl>https://cliftonwebfoundry.com.au/downloads/reaxml-import-for-ezrealty
 	</downloadUrl>

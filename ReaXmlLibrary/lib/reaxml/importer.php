@@ -3,7 +3,7 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
 
 /**
  * @package Library REAXML Library for Joomla! 3.3
- * @version 0.0.54: importer.php 2014-09-15T18:47:20.143
+ * @version 0.0.56: importer.php 2015-03-11T19:57:05.574
  * @author Clifton IT Foundries Pty Ltd
  * @link http://cliftonwebfoundry.com.au
  * @copyright Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights Reserved
@@ -14,6 +14,7 @@ defined ( '_JEXEC' ) or die ();
 jimport ( 'joomla.filesystem.file' );
 jimport ( 'joomla.filesystem.folder' );
 jimport ( 'joomla.log.log' );
+jimport ( 'reaxml.ezr.dbo' );
 jimport ( 'reaxml.ezr.row' );
 jimport ( 'joomla.ezr.images' );
 
