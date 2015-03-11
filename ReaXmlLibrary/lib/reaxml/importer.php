@@ -16,9 +16,10 @@ defined ( '_JEXEC' ) or die ();
 jimport ( 'joomla.filesystem.file' );
 jimport ( 'joomla.filesystem.folder' );
 jimport ( 'joomla.log.log' );
-jimport ( 'reaxml.ezr.dbo' );
-jimport ( 'reaxml.ezr.row' );
-jimport ( 'joomla.ezr.images' );
+
+JLoader::registerPrefix ( 'ReaxmlDb', JPATH_LIBRARIES . '/reaxml/db' );
+JLoader::registerPrefix ( 'ReaxmlEzr', JPATH_LIBRARIES . '/reaxml/ezr' );
+JLoader::registerPrefix ( 'ReaxmlEzrCol', JPATH_LIBRARIES . '/reaxml/ezr/col' );
 
 defined ( 'REAXML_LOG_CATEGORY' ) or define ( 'REAXML_LOG_CATEGORY', 'REAXML-Import' );
 class ReaxmlImporter {
