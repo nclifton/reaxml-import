@@ -3,7 +3,7 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
 
 /**
  * @package Component REAXML Import for Joomla! 3.3
- * @version 0.43.121: import.php 2014-09-15T18:47:23.372
+ * @version 0.43.123: import.php 2015-03-11T22:17:34.616
  * @author Clifton IT Foundries Pty Ltd
  * @link http://cliftonwebfoundry.com.au
  * @copyright Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights Reserved
@@ -36,7 +36,8 @@ class ReaXmlImportModelsImport extends JModelBase {
 	}
 	public function import() {
 		$configuration = $this->getConfiguration ();
-		$importer = ReaxmlImporter::getInstance ( $configuration );
-		return $importer->start ();
+		$importer = new ReaxmlImporter();
+		$importer->setConfiguration($configuration);
+		return $importer->import ();
 	}
 }

@@ -6,7 +6,7 @@
  */
 
 function requestImportRun(event) {
-
+	jQuery('#toolbar-download > button').unbind('click').toggleClass('disabled');
 	jQuery
 			.ajax({
 				url : 'index.php?option=com_reaxmlimport&controller=import&format=raw&tmpl=component',
@@ -24,20 +24,14 @@ function requestImportRun(event) {
 					}
 					jQuery('#toolbar-download > button').bind('click',
 							requestImportRun).toggleClass('disabled');
-					jQuery('#toolbar-refresh > button').bind('click',
-							updateLogDisplay).toggleClass('disabled');
 				}
 			});
-	jQuery('#toolbar-download > button').bind('click', requestImportRun)
-			.toggleClass('disabled');
-	jQuery('#toolbar-refresh > button').unbind('click', updateLogDisplay)
-			.toggleClass('disabled');
 }
 /**
  * request a log update
  */
 function updateLogDisplay(event) {
-
+	jQuery('#toolbar-refresh > button').unbind('click').toggleClass('disabled');
 	jQuery
 			.ajax({
 				url : 'index.php?option=com_reaxmlimport&controller=update&format=raw&tmpl=component',
@@ -53,16 +47,10 @@ function updateLogDisplay(event) {
 					} else {
 
 					}
-					jQuery('#toolbar-download > button').bind('click',
-							requestImportRun).toggleClass('disabled');
 					jQuery('#toolbar-refresh > button').bind('click',
 							updateLogDisplay).toggleClass('disabled');
 				}
 			});
-	jQuery('#toolbar-refresh > button').unbind('click', updateLogDisplay)
-			.toggleClass('disabled');
-	jQuery('#toolbar-download > button').bind('click', requestImportRun)
-			.toggleClass('disabled');
 
 }
 /**

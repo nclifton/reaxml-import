@@ -7,7 +7,7 @@
  * request an import run through JQuery AJAX
  */
 function requestImportRun(event) {
-
+	jQuery('#importWidget').unbind('click').toggleClass('disabled');
 	jQuery
 			.ajax({
 				url : 'index.php?option=com_reaxmlimport&controller=import&format=raw&tmpl=component',
@@ -24,13 +24,12 @@ function requestImportRun(event) {
 					jQuery('#importWidget').bind('click', requestImportRun).toggleClass('disabled');;
 				}
 			});
-	jQuery('#importWidget').bind('click', requestImportRun).toggleClass('disabled');
 }
 /**
  * request a log update
  */
 function updateLogDisplay(event) {
-
+	jQuery('#updateWidget').unbind('click').toggleClass('disabled');
 	jQuery
 			.ajax({
 				url : 'index.php?option=com_reaxmlimport&controller=updatelog&format=raw&tmpl=component',
@@ -46,7 +45,7 @@ function updateLogDisplay(event) {
 					jQuery('#updateWidget').bind('click', updateLogDisplay).toggleClass('disabled');;
 				}
 			});
-	jQuery('#updateWidget').unbind('click', updateLogDisplay).toggleClass('disabled');;
+
 }
 /**
  * bind some JQuery functions to some elements in the page
