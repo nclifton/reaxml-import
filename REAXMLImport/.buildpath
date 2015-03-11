@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <buildpath>
 	<buildpathentry kind="src" path="site"/>
-	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
 	<buildpathentry kind="src" path="admin"/>
+	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
 	<buildpathentry kind="src" path="language"/>
+	<buildpathentry combineaccessrules="false" kind="prj" path="/rea"/>
 	<buildpathentry combineaccessrules="false" kind="prj" path="/ReaXmlLibrary"/>
 	<buildpathentry kind="src" path="tests"/>
 </buildpath>
