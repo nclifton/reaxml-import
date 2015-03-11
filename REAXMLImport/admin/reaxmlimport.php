@@ -3,7 +3,7 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
 
 /**
  * @package Component REAXML Import for Joomla! 3.3
- * @version 0.43.127: reaxmlimport.php 2015-03-12T02:22:18.590
+ * @version 0.43.129: reaxmlimport.php 2015-03-12T03:46:25.454
  * @author Clifton IT Foundries Pty Ltd
  * @link http://cliftonwebfoundry.com.au
  * @copyright Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights Reserved
@@ -12,6 +12,7 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
 
 // load classes
 JLoader::registerPrefix ( 'ReaXmlImport', JPATH_COMPONENT_ADMINISTRATOR );
+JLoader::registerPrefix ( 'Reaxml', JPATH_LIBRARIES . '/reaxml' );
 
 // Access check: is this user allowed to access the backend of this component?
 $canDo = ReaXmlImportHelpersAdmin::getActions ();
@@ -22,9 +23,6 @@ if (! $canDo->get ( 'core.manage' )) {
 // load class libraries
 jimport ( 'joomla.filesystem.file' );
 jimport ( 'joomla.filesystem.folder' );
-
-// Load plugins
-JPluginHelper::importPlugin ( 'plg_reaxml' );
 
 // application
 $app = JFactory::getApplication ();

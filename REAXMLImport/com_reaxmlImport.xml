@@ -9,7 +9,7 @@
 	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
 	<authorEmail>neil.clifton@cliftonwebfoundry.com.au</authorEmail>
 	<authorUrl>http://cliftonwebfoundry.com.au</authorUrl>
-	<version>0.43.127</version>
+	<version>0.43.129</version>
 	<description>COM_REAXMLIMPORT_XML_DESCRIPTION</description>
 
 	<scriptfile>installscript.php</scriptfile>
