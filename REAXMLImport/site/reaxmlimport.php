@@ -20,8 +20,8 @@ JLoader::registerPrefix ( 'Reaxml', JPATH_LIBRARIES . '/reaxml' );
 jimport ( 'joomla.filesystem.file' );
 jimport ( 'joomla.filesystem.folder' );
 
-// Load plugins
-JPluginHelper::importPlugin ( 'system', 'plg_reaxml' );
+jimport ( 'reaxml.configuration' );
+jimport ( 'reaxml.importer' );
 
 // application
 $app = JFactory::getApplication ();
