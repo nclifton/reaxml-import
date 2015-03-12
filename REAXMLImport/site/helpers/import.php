@@ -18,6 +18,8 @@ class ReaXmlImportHelpersImport {
 		$document->addStylesheet ( JUri::base () . 'components/com_reaxmlimport/assets/css/import.css' );
 		
 		// javascripts
+		JHtml::_ ( 'jquery.framework' );
+		JHtml::_ ( 'jquery.ui' );
 		$document->addScript ( JUri::base () . 'components/com_reaxmlimport/assets/js/import.js' );
 	}
 }
