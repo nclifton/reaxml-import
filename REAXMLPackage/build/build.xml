@@ -26,6 +26,7 @@
 	<tstamp>
 		<format property="datetime" pattern="yyyy-MM-dd'T'HH:mm:ss.SSS" />
 		<format property="newReleaseDate" pattern="yyyy-MM-dd" />
+		<format property="newCreationDate" pattern="MMM yyyy" />
 	</tstamp>
 
 	<target name="create_install" depends="update_manifest">
@@ -60,6 +61,7 @@
 		<xmltask source="${manifestfile}" dest="${manifestfile}">
 			<replace path="/extension/version/text()" withText="${newVersion}"/>
 			<replace path="/extension/releaseDate/text()" withText="${newReleaseDate}"/>
+			<replace path="/extension/creationDate/text()" withText="${newCreationDate}"/>
 		</xmltask>
 	</target>
 
