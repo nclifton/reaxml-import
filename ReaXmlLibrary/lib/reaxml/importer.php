@@ -32,25 +32,24 @@ class ReaxmlImporter {
 	const LOG_EXT = '.log';
 	
 	/**
+	 *
 	 * @param Object $configuration        	
 	 */
 	public function setConfiguration(ReaxmlConfiguration $configuration) {
 		$this->configuration = $configuration;
 		$this->checkDirectories ();
 	}
-
 	public function __construct() {
 		$lang = JFactory::getLanguage ();
 		$lang->load ( 'lib_reaxml', JPATH_SITE, 'en-GB', true );
 	}
-
 	private function newLogger() {
 		if (JFile::exists ( $this->configuration->log_dir . DIRECTORY_SEPARATOR . self::LOG_NAME . self::LOG_EXT )) {
 			$this->runtag = date ( 'YmdHis', filemtime ( $this->configuration->log_dir . DIRECTORY_SEPARATOR . self::LOG_NAME . self::LOG_EXT ) );
 			JFile::move ( self::LOG_NAME . self::LOG_EXT, self::LOG_NAME . '-' . $this->runtag . self::LOG_EXT, $this->configuration->log_dir );
 		}
 		
-		if (!self::$loggerAdded) {		
+		if (! self::$loggerAdded) {
 			JLog::addLogger ( array (
 					'text_file' => self::LOG_NAME . self::LOG_EXT,
 					'text_file_path' => $this->configuration->log_dir,
@@ -63,7 +62,6 @@ class ReaxmlImporter {
 		}
 	}
 	private function start() {
-		
 		$this->logStart ();
 		
 		try {
@@ -114,8 +112,8 @@ class ReaxmlImporter {
 				JFile::move ( $file, $this->configuration->done_dir . DIRECTORY_SEPARATOR . basename ( $file ) );
 			}
 			
-			JLog::add ( JText::_ ( 'LIB_REAXML_LOG_ENDING' ), JLog::INFO, REAXML_LOG_CATEGORY );
 		} finally {
+			JLog::add ( JText::_ ( 'LIB_REAXML_LOG_ENDING' ), JLog::INFO, REAXML_LOG_CATEGORY );
 		}
 	}
 	private function prepareDirectories() {

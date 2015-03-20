@@ -1,2 +1,4 @@
 eclipse.preferences.version=1
-include_path=0;/ReaXmlLibrary\u00051;/ReaXmlLibrary/tests/phpunit.phar\u00055;org.eclipse.dltk.USER_LIBRARY/joomla
+include_path=0;/ReaXmlLibrary\u00051;/ReaXmlLibrary/tests/phpunit.phar\u00051;/Users/nclifton/Documents/MAMP/htdocs/rea
+phpVersion=php5.5
+useShortTags=true

@@ -3,7 +3,7 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
 
 /**
  * @package Library REAXML Library for Joomla! 3.3
- * @version 0.0.62: dbo.php 2015-03-12T03:45:43.139
+ * @version 0.0.75: dbo.php 2015-03-20T12:55:43.786
  * @author Clifton IT Foundries Pty Ltd
  * @link http://cliftonwebfoundry.com.au
  * @copyright Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights Reserved
@@ -166,7 +166,7 @@ class ReaxmlEzrDbo {
 			$object = $this->getImagePropertyValues ( $image, $currentImage );
 			if (isset ( $currentImage )) {
 				if (isset($object->fname)) {
-					if (empty ( $object->fname . '' )) {
+					if (empty ( ($object->fname) . '' )) {
 						$db = $this->getDb ();
 						$query = $db->getQuery ( true );
 						$query->delete ( $db->qn ( '#__ezrealty_images' ) )->where ( $db->qn ( 'id' ) . ' = ' . $currentImage->id );
