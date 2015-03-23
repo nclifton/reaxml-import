@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<extension method="upgrade" type="package" version="3.0">
+<?xml version="1.0" encoding="UTF-8"?><extension method="upgrade" type="package" version="3.0">
 	<name>REAXML Package</name>
 	<author>Clifton IT Foundries Pty Ltd</author>
 	<authorEmail>neil.clifton@cliftonwebfoundry.com.au</authorEmail>
@@ -8,8 +7,8 @@
 		Reserved</copyright>
 	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
 	<packagename>reaxml</packagename>
-	<version>1.0.102</version>
-	<releaseDate>2015-03-20</releaseDate>
+	<version>1.0.109</version>
+	<releaseDate>2015-03-21</releaseDate>
 	<releaseType>Minor update</releaseType>
 	<downloadUrl>https://cliftonwebfoundry.com.au/downloads/reaxml-import-for-ezrealty
 	</downloadUrl>

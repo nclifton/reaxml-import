@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<extension group="" method="upgrade" type="component" version="3.0">
+<?xml version="1.0" encoding="UTF-8"?><extension group="" method="upgrade" type="component" version="3.0">
 	<name>REAXML Import</name>
 	<author>Clifton IT Foundries Pty Ltd</author>
 	<authorEmail>neil.clifton@cliftonwebfoundry.com.au</authorEmail>
@@ -10,7 +9,7 @@
 	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
 	<authorEmail>neil.clifton@cliftonwebfoundry.com.au</authorEmail>
 	<authorUrl>http://cliftonwebfoundry.com.au</authorUrl>
-	<version>0.43.135</version>
+	<version>0.43.142</version>
 	<description>COM_REAXMLIMPORT_XML_DESCRIPTION</description>
 
 <!-- 	<scriptfile>installscript.php</scriptfile>

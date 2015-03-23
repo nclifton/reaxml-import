@@ -10,7 +10,7 @@ error_reporting ( E_ALL );
 
 define ( '_JEXEC', 1 );
 
-define ( 'JPATH_BASE', '/Users/nclifton/Documents/MAMP/htdocs/ezrea' );
+define ( 'JPATH_BASE', '/Users/nclifton/Documents/MAMP/htdocs/reaxml' );
 define ( 'REAXML_LIBRARIES', __DIR__.'/../lib');
 
 require_once JPATH_BASE . '/includes/defines.php';
