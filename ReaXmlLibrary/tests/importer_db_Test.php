@@ -2,7 +2,7 @@
 /**
  * @copyright	Copyright (C) 2014 Clifton IT Foundries Pty Ltd All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
- **/ 
+ **/
 if (! function_exists ( 'glob_recursive' )) {
 	// Does not support flag GLOB_BRACE
 	function glob_recursive($pattern, $flags = 0) {
@@ -14,8 +14,9 @@ if (! function_exists ( 'glob_recursive' )) {
 	}
 }
 /**
- * @author nclifton
  *
+ * @author nclifton
+ *        
  */
 class ReaxmlImporter_db_Test extends Reaxml_Tests_DatabaseTestCase {
 	
@@ -46,7 +47,7 @@ class ReaxmlImporter_db_Test extends Reaxml_Tests_DatabaseTestCase {
 			} catch ( Exception $e ) {
 			}
 		}
-	}	
+	}
 	/**
 	 * @before
 	 */
@@ -54,7 +55,6 @@ class ReaxmlImporter_db_Test extends Reaxml_Tests_DatabaseTestCase {
 		parent::setUp ();
 		$this->cleanDirectories ();
 	}
-	
 	public function cleanDirectories() {
 		$this->recursiveUnlink ( __DIR__ . DIRECTORY_SEPARATOR . 'test_done' . DIRECTORY_SEPARATOR . '*' );
 		$this->recursiveUnlink ( __DIR__ . DIRECTORY_SEPARATOR . 'test_work' . DIRECTORY_SEPARATOR . '*' );
@@ -75,11 +75,9 @@ class ReaxmlImporter_db_Test extends Reaxml_Tests_DatabaseTestCase {
 	 * @test
 	 */
 	public function insert_images() {
-
 		copy ( __DIR__ . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'Sample_Floorplan.jpg', __DIR__ . DIRECTORY_SEPARATOR . 'test_input' . DIRECTORY_SEPARATOR . 'Sample_Floorplan.jpg' );
 		copy ( __DIR__ . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'residential_insert_sample.xml', __DIR__ . DIRECTORY_SEPARATOR . 'test_input' . DIRECTORY_SEPARATOR . 'residential_insert_sample.xml' );
 		copy ( __DIR__ . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'camden-camelot-house.jpg', __DIR__ . DIRECTORY_SEPARATOR . 'test_input' . DIRECTORY_SEPARATOR . 'camden-camelot-house.jpg' );
-		
 		
 		$configuration = new ReaxmlConfiguration ();
 		$configuration->log_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_log';
@@ -87,39 +85,36 @@ class ReaxmlImporter_db_Test extends Reaxml_Tests_DatabaseTestCase {
 		$configuration->work_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_work';
 		$configuration->done_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_done';
 		$configuration->error_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_error';
-	
-		// Act
-		$importer = ReaxmlImporter::getInstance ( $configuration );
-		$importer->start ();
-	
-		// Assert
-	
-		$dataSet = $this->filterDataset ( $this->getConnection ()->createDataSet () );
-		$table1 = $dataSet->getTable ( 'ezrea_ezrealty_images' );
-		$expectedDataset = $this->filterDataset ( $this->createMySQLXMLDataSet ( __DIR__ . '/files/expected_ezrealty_after_insert_test.xml' ) );
-		$expectedTable1 = $expectedDataset->getTable ( 'ezrea_ezrealty_images' );
 		
-		$this->assertThat( $table1->getRowCount() , $this->equalTo($expectedTable1->getRowCount()));
+		// Act
+		$importer = new ReaxmlImporter ();
+		$importer->setConfiguration ( $configuration );
+		$importer->import ();
+		
+		// Assert
+		
+		$dataSet = $this->filterDataset ( $this->getConnection ()->createDataSet () );
+		$table1 = $dataSet->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty_images' );
+		$expectedDataset = $this->filterDataset ( $this->createMySQLXMLDataSet ( __DIR__ . '/files/expected_ezrealty_after_insert_test.xml' ) );
+		$expectedTable1 = $expectedDataset->getTable (  $GLOBALS['DB_TBLPREFIX'].'ezrealty_images' );
+		
+		$this->assertThat ( $table1->getRowCount (), $this->equalTo ( $expectedTable1->getRowCount () ) );
 		
 		$this->assertThat ( count ( glob_recursive ( __DIR__ . DIRECTORY_SEPARATOR . 'test_input' . DIRECTORY_SEPARATOR . '*' ) ), $this->equalTo ( 0 ), 'input' );
 		$this->assertThat ( count ( glob_recursive ( __DIR__ . DIRECTORY_SEPARATOR . 'test_work' . DIRECTORY_SEPARATOR . '*' ) ), $this->equalTo ( 0 ), 'work' );
 		$this->assertThat ( count ( glob_recursive ( __DIR__ . DIRECTORY_SEPARATOR . 'test_done' . DIRECTORY_SEPARATOR . '*' ) ), $this->equalTo ( 3 ), 'done' );
 		$this->assertThat ( count ( glob_recursive ( __DIR__ . DIRECTORY_SEPARATOR . 'test_error' . DIRECTORY_SEPARATOR . '*' ) ), $this->equalTo ( 0 ), 'error' );
-		
 	}
-	
 	private function filterDataset($dataSet) {
 		$filterDataSet = new PHPUnit_Extensions_Database_DataSet_DataSetFilter ( $dataSet );
-		$filterDataSet->setExcludeColumnsForTable ( 'ezrea_ezrealty', array (
+		$filterDataSet->setExcludeColumnsForTable ( $GLOBALS ['DB_TBLPREFIX'] . 'ezrealty', array (
 				'hits',
-				'flpl1'
+				'flpl1' 
 		) );
-		$filterDataSet->setIncludeColumnsForTable ( 'ezrea_extensions', array (
-				'params'
+		$filterDataSet->setIncludeColumnsForTable ( $GLOBALS ['DB_TBLPREFIX'] . 'extensions', array (
+				'params' 
 		) );
-	
+		
 		return $filterDataSet;
 	}
-	
-	
 }

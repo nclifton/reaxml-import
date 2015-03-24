@@ -77,27 +77,31 @@ class ReaxmlDbo_Test extends Reaxml_Tests_DatabaseTestCase {
 		// Assert
 		
 		// Assert database comtains the new record
-		$this->assertEquals ( 2, $this->getConnection ()->getRowCount ( 'ezrea_ezrealty' ), "Inserting failed" );
+		$this->assertEquals ( 2, $this->getConnection ()->getRowCount ( $GLOBALS['DB_TBLPREFIX'].'ezrealty' ), "Inserting failed" );
 		
 		$dataSet = $this->filterDataset ( $this->getConnection ()->createDataSet () );
-		$table1 = $dataSet->getTable ( 'ezrea_ezrealty' );
-		$table2 = $dataSet->getTable ( 'ezrea_ezrealty_incats' );
-		$table3 = $dataSet->getTable ( 'ezrea_extensions' );
+		$dataSet->setExcludeColumnsForTable($GLOBALS['DB_TBLPREFIX'].'ezrealty', array('propdesc', 'smalldesc'));
+		$table1 = $dataSet->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty' );
+		$table2 = $dataSet->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty_incats' );
+		$table3 = $dataSet->getTable ( $GLOBALS['DB_TBLPREFIX'].'extensions' );
+		
 		$expectedDataset = $this->filterDataset ( $this->createMySQLXMLDataSet ( __DIR__ . '/../files/expected_ezrealty_afterinsertusingrealrowxml.xml' ) );
-		$expectedTable1 = $expectedDataset->getTable ( 'ezrea_ezrealty' );
-		$expectedTable2 = $expectedDataset->getTable ( 'ezrea_ezrealty_incats' );
-		$expectedTable3 = $expectedDataset->getTable ( 'ezrea_extensions' );
+		$expectedDataset->setExcludeColumnsForTable($GLOBALS['DB_TBLPREFIX'].'ezrealty', array('propdesc', 'smalldesc'));
+		$expectedTable1 = $expectedDataset->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty' );
+		$expectedTable2 = $expectedDataset->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty_incats' );
+		$expectedTable3 = $expectedDataset->getTable ( $GLOBALS['DB_TBLPREFIX'].'extensions' );
+		
 		$this->assertTablesEqual ( $expectedTable1, $table1 );
 		$this->assertTablesEqual ( $expectedTable2, $table2 );
 		$this->assertTablesEqual ( $expectedTable3, $table3 );
 	}
 	private function filterDataset($dataSet) {
 		$filterDataSet = new PHPUnit_Extensions_Database_DataSet_DataSetFilter ( $dataSet );
-		$filterDataSet->setExcludeColumnsForTable ( 'ezrea_ezrealty', array (
+		$filterDataSet->setExcludeColumnsForTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty', array (
 				'hits',
 				'flpl1' 
 		) );
-		$filterDataSet->setIncludeColumnsForTable ( 'ezrea_extensions', array (
+		$filterDataSet->setIncludeColumnsForTable ( $GLOBALS['DB_TBLPREFIX'].'extensions', array (
 				'params' 
 		) );
 		
@@ -122,9 +126,9 @@ class ReaxmlDbo_Test extends Reaxml_Tests_DatabaseTestCase {
 		
 		// Assert
 		$dataSet = $this->filterDataset ( $this->getConnection ()->createDataSet () );
-		$table1 = $dataSet->getTable ( 'ezrea_ezrealty' );
+		$table1 = $dataSet->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty' );
 		$expectedDataset = $this->filterDataset ( $this->createMySQLXMLDataSet ( __DIR__ . '/../files/expected_ezrealty_after_updateprice.xml' ) );
-		$expectedTable1 = $expectedDataset->getTable ( 'ezrea_ezrealty' );
+		$expectedTable1 = $expectedDataset->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty' );
 		$this->assertTablesEqual ( $expectedTable1, $table1 );
 	}
 	/**
@@ -146,9 +150,9 @@ class ReaxmlDbo_Test extends Reaxml_Tests_DatabaseTestCase {
 		$dbo->insert ( $row, $images );
 		
 		$dataSet = $this->filterDataset ( $this->getConnection ()->createDataSet () );
-		$table1 = $dataSet->getTable ( 'ezrea_ezrealty_images' );
+		$table1 = $dataSet->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty_images' );
 		$expectedDataset = $this->filterDataset ( $this->createMySQLXMLDataSet ( __DIR__ . '/../files/expected_ezrealty_after_insert_test.xml' ) );
-		$expectedTable1 = $expectedDataset->getTable ( 'ezrea_ezrealty_images' );
+		$expectedTable1 = $expectedDataset->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty_images' );
 		
 		$this->assertThat( $table1->getRowCount() , $this->equalTo($expectedTable1->getRowCount()));
 

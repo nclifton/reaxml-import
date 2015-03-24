@@ -12,6 +12,7 @@ define ( '_JEXEC', 1 );
 
 define ( 'JPATH_BASE', '/Users/nclifton/Documents/MAMP/htdocs/reaxml' );
 define ( 'REAXML_LIBRARIES', __DIR__.'/../lib');
+define ( 'JPATH_LIBRARIES', JPATH_BASE . '/Libraries');
 
 require_once JPATH_BASE . '/includes/defines.php';
 require_once JPATH_BASE . '/includes/framework.php';
@@ -29,13 +30,13 @@ JLoader::registerPrefix('Reaxml', REAXML_LIBRARIES . '/reaxml');
 
 
 $lang = JFactory::getLanguage ();
-$lang->load ( 'lib_reaxml', '..', 'en-GB', true );
+echo getcwd() . "\n";
+$lang->load ( 'lib_reaxml', __DIR__ . '/..', 'en-GB', true );
 
 define ( 'REAXML_LOG_CATEGORY', 'REAXML-Import' );
 
 //JLoader::registerPrefix('Reaxml', REAXML_LIBRARIES . '/reaxml');
 
-require_once 'phpunit.phar';
 include_once 'dbtestcase.php';
 include_once (JPATH_BASE . '/components/com_ezrealty/helpers/upload.helper.php');
 

@@ -55,7 +55,7 @@ class ReaxmlEzrColImage_fname extends \ReaxmlEzrImagecolumn {
 		$thumbPath = $mainPath . DIRECTORY_SEPARATOR . $thumbPath . DIRECTORY_SEPARATOR;
 		$src = $mainPath . DIRECTORY_SEPARATOR . $newimage;
 		$ezrparams = JComponentHelper::getParams ( 'com_ezrealty' );
-		$newThumbwidth = $ezrparams->get ( 'newthumbwidth' );
+		$newThumbwidth = $ezrparams->get ( 'newthumbwidth' , 200);
 		ReaxmlEzrImagehelper::createThumbs ( $src, $thumbPath, $newThumbwidth );
 		return $newimage;
 	}

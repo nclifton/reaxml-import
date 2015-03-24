@@ -1,4 +1,4 @@
 eclipse.preferences.version=1
-include_path=0;/ReaXmlLibrary\u00051;/Users/nclifton/Documents/MAMP/htdocs/reaxml
-phpVersion=php5.5
+include_path=0;/ReaXmlLibrary\u00051;/Users/nclifton/Documents/MAMP/htdocs/reaxml\u00051;/Users/nclifton/Documents/LunaEclipse/workspace/reaxml-import/ReaXmlLibrary/vendor
+phpVersion=php5.6
 useShortTags=true

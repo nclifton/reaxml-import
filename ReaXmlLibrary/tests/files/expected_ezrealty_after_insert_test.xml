@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<database name="ezrea_joomla">
-		<table_data name="ezrea_ezrealty">
+	<database name="joomla-reaxml">
+		<table_data name="jos_ezrealty">
 			<row>
 				<field name="id">1</field>
 				<field name="type">1</field>
@@ -381,7 +381,7 @@
 				<field name="ordering" xsi:nil="true" />
 			</row>
 		</table_data>
-		<table_data name="ezrea_ezrealty_incats">
+		<table_data name="jos_ezrealty_incats">
 			<row>
 				<field name="property_id">1</field>
 				<field name="category_id">1</field>
@@ -391,7 +391,7 @@
 				<field name="category_id">1</field>
 			</row>
 		</table_data>
-		<table_data name="ezrea_ezrealty_images">
+		<table_data name="jos_ezrealty_images">
 			<row>
 				<field name="id">1</field>
 				<field name="propid">1</field>

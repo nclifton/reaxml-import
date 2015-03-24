@@ -57,17 +57,21 @@ class ReaxmlDboUpdate_Test extends Reaxml_Tests_DatabaseTestCase {
 	
 		// Assert
 		$dataSet = $this->filterDataset ( $this->getConnection ()->createDataSet () );
-		$table1 = $dataSet->getTable ( 'ezrea_ezrealty' );
+
+		$table1 = $dataSet->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty' );
+		
 		$expectedDataset = $this->filterDataset ( $this->createMySQLXMLDataSet ( __DIR__ . '/../files/expected_ezrealty_after_updateusingrealrowxml.xml' ) );
-		$expectedTable1 = $expectedDataset->getTable ( 'ezrea_ezrealty' );
+
+		$expectedTable1 = $expectedDataset->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty' );
+		
 		$this->assertTablesEqual ( $expectedTable1, $table1 );
 	}
 	private function filterDataset($dataSet) {
 		$filterDataSet = new PHPUnit_Extensions_Database_DataSet_DataSetFilter ( $dataSet );
-		$filterDataSet->setExcludeColumnsForTable ( 'ezrea_ezrealty', array (
+		$filterDataSet->setExcludeColumnsForTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty', array (
 				'hits'
 		) );
-		$filterDataSet->setIncludeColumnsForTable ( 'ezrea_extensions', array (
+		$filterDataSet->setIncludeColumnsForTable ( $GLOBALS['DB_TBLPREFIX'].'extensions', array (
 				'params'
 		) );
 	

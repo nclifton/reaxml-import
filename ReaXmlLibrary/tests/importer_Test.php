@@ -123,8 +123,9 @@ class ReaxmlImporter_Test extends PHPUnit_Framework_TestCase {
 		$configuration->error_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_error';
 		
 		// Act
-		$importer = ReaxmlImporter::getInstance ( $configuration );
-		$importer->start ();
+		$importer = new ReaxmlImporter ();
+		$importer->setConfiguration($configuration);
+		$importer->import();
 		
 		// Assert
 		

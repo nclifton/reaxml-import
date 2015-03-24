@@ -212,9 +212,15 @@ class ReaxmlEzrColImage_fname_Test extends PHPUnit_Framework_TestCase {
 		
 		$this->assertThat ( file_exists ( $this->logfile ), $this->isTrue () );
 		$log = file ( $this->logfile );
-		$matches = array ();
-		$found = preg_match ( '/ (ERROR .*)(\b\s$)/', $log [count ( $log ) - 2], $matches );
 		
+		$found = 0;
+		$matches = array ();
+		foreach ($log as $value) {
+			$found = preg_match ( '/ (ERROR .*)(\b\s$)/', $value, $matches );
+			if ($found > 0){
+				break;
+			}
+		}
 		$this->assertThat ( $found, $this->greaterThan ( 0 ) );
 		$this->assertThat ( $matches [1], $this->equalTo ( 'ERROR copy(http://www.realestate.com.au/tmp/floorplan1.gif): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found' ) );
 	}
@@ -239,9 +245,16 @@ class ReaxmlEzrColImage_fname_Test extends PHPUnit_Framework_TestCase {
 		
 		$this->assertThat ( file_exists ( $this->logfile ), $this->isTrue () );
 		$log = file ( $this->logfile );
-		$matches = array ();
-		$found = preg_match ( '/ (ERROR .*$)/', $log [count ( $log ) - 1], $matches );
 		
+		$found = 0;
+		$matches = array ();
+		foreach ($log as $value) {
+			$found = preg_match ( '/ (ERROR .*$)/', $value, $matches );
+			if ($found > 0){
+				break;
+			}
+		}
+				
 		$this->assertThat ( $found, $this->greaterThan ( 0 ) );
 		$this->assertThat ( $matches [1], $this->equalTo ( 'ERROR The file someimage.jpg referenced in the XML could not be found. Possibly ommitted from the uploaded package.' ) );
 	}
