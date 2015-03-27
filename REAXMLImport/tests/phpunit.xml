@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit verbose="true" bootstrap="bootstrap.php">
 	<php>
-		<var name="DB_DSN" value="mysql:dbname=ezrea_joomla;host=localhost" />
+		<var name="DB_DSN" value="mysql:dbname=joomla-reaxml;host=localhost" />
 		<var name="DB_USER" value="root" />
 		<var name="DB_PASSWD" value="root" />
 		<var name="DB_DBNAME" value="joomla-reaxml" />
+		<var name="DB_TBLPREFIX" value="jos_" />
 		<server name="HTTP_HOST" value="localhost" />
+
 	</php>
 	<logging>
 		<log type="junit" target="test-results/logfile.xml"
@@ -13,40 +15,5 @@
 		<log type="testdox-html" target="test-results/testdox.html" />
 	</logging>
 
-	<testsuites>
-		<testsuite name="all">
-			<file>importer_Test.php</file>
-			<file>installscript_Test.php</file>
-			<directory>ezr</directory>
-			<directory>ezr/col</directory>
-		</testsuite>
-		<testsuite name="importer">
-			<file>importer_Test.php</file>
-		</testsuite>
-		<testsuite name="col">
-			<directory>ezr/col</directory>
-		</testsuite>
-		<testsuite name="dbo">
-			<file>ezr/dbo_Test.php</file>
-			<file>ezr/dbo_update_Test.php</file>
-		</testsuite>
-		<testsuite name="type">
-			<file>ezr/col/type_Test.php</file>
-			<file>ezr/col/type_business_Test.php</file>
-			<file>ezr/col/type_commercial_Test.php</file>
-			<file>ezr/col/type_commercialLand_Test.php</file>
-			<file>ezr/col/type_land_Test.php</file>
-			<file>ezr/col/type_residential_Test.php</file>
-			<file>ezr/col/type_rural_Test.php</file>
-		</testsuite>
-		<testsuite name="sold">
-			<file>ezr/col/sold_Test.php</file>
-			<file>ezr/col/sold_current_Test.php</file>
-			<file>ezr/col/sold_leased_Test.php</file>
-			<file>ezr/col/sold_offmarket_Test.php</file>
-			<file>ezr/col/sold_sold_Test.php</file>
-			<file>ezr/col/sold_underoffer_Test.php</file>
-			<file>ezr/col/sold_withdrawn_Test.php</file>
-		</testsuite>
-	</testsuites>
+
 </phpunit>

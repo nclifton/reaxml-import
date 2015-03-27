@@ -2,8 +2,8 @@
 defined ( '_JEXEC' ) or die ( 'Restricted access' );
 
 /**
- * @package Component REAXML Import for Joomla! 3.3
- * @version 0.43.142: admin.php 2015-03-21T01:43:26.374
+ * @package Component REAXML Import for Joomla! 3.4
+ * @version 1.2.19: admin.php 2015-03-28T06:33:12.028
  * @author Clifton IT Foundries Pty Ltd
  * @link http://cliftonwebfoundry.com.au
  * @copyright Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights Reserved

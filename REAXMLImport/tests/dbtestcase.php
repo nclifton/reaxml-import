@@ -20,6 +20,6 @@ abstract class Reaxml_Tests_DatabaseTestCase extends PHPUnit_Extensions_Database
 		return $this->conn;
 	}
 	protected function getColumns() {
-		return self::$pdo->query ( 'SHOW COLUMNS FROM ezrea_joomla.ezrea_ezrealty' );
+		return self::$pdo->query ( 'SHOW COLUMNS FROM '.$GLOBALS ['DB_DBNAME'].'.'.$GLOBALS['DB_TBLPREFIX'].'ezrealty' );
 	}
 }

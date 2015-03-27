@@ -5,4 +5,5 @@
   <installed facet="php.core.component" version="1"/>
   <installed facet="php.component" version="5.4"/>
   <installed facet="wst.jsdt.web" version="1.0"/>
+  <installed facet="php.composer.component" version="1"/>
 </faceted-project>
