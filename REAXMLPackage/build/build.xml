@@ -31,7 +31,7 @@
 
 	<target name="create_install" depends="update_manifest">
 		<zip destfile="${installfilePrefix}${newVersion}.zip" >
-			<fileset dir="." excludes=".*/**, **/.DS_Store, tests/**, build/**, .settings/**"/>
+			<fileset dir="." excludes=".*/**, **/.DS_Store, tests/**, build/**, .settings/**, vendor/**"/>
 		</zip>
 	</target>
 	
