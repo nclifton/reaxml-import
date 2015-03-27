@@ -29,7 +29,7 @@
 
 	<target name="create_install" depends="update_php_headers">
 		<zip destfile="${installfile}" >
-			<fileset dir="." excludes=".*/**, **/.DS_Store, tests/**, build/**, .settings/**"/>
+			<fileset dir="." excludes=".*/**, **/.DS_Store, tests/**, build/**, .settings/**, vendor/**, composer.*"/>
 		</zip>
 	</target>
 

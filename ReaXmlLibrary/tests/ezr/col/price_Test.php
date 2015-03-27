@@ -71,18 +71,20 @@ class ReaxmlEzrColPrice_Test extends PHPUnit_Framework_TestCase {
 	/**
 	 * @test
 	 */
-	public function getValue_commercialLand() {
+	public function getValue_commercialRent() {
 	
 		// Arrange
-		$xml = new SimpleXMLElement ( '<commercialLand><price>350000000</price></commercialLand>' );
+		$xml = new SimpleXMLElement ( '<commercial><commercialRent tax="exclusive" period="annual">36000.00</commercialRent></commercial>' );
 	
 		// Act
 		$col = new ReaxmlEzrColPrice ( $xml );
 		$value = $col->getValue ();
 	
 		// Assert
-		$this->assertThat ( $value, $this->equalTo ( 350000000 ) );
+		$this->assertThat ( $value, $this->equalTo ( 36000 ) );
 	}
+	
+
 	/**
 	 * @test
 	 */

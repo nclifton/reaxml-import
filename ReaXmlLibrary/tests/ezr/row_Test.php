@@ -66,9 +66,9 @@ class ReaxmlRowTest extends PHPUnit_Framework_TestCase {
 			if ($name !== 'id') {
 				try {
 					$result = $row->getValue ( $name );
-					JLog::add ( '"' . $name . '" = "' . $result . '"', JLog::INFO, REAXML_LOG_CATEGORY );
+					ReaxmlImporter::LogAdd ( '"' . $name . '" = "' . $result . '"', JLog::INFO );
 				} catch (Exception $e) {
-					JLog::add ( '"' . $name . '" error '.$e->getMessage(), JLog::ERROR, REAXML_LOG_CATEGORY );
+					ReaxmlImporter::LogAdd ( '"' . $name . '" error '.$e->getMessage(), JLog::ERROR );
 				}
 			}
 		}

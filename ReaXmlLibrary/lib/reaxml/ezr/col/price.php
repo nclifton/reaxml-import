@@ -2,16 +2,23 @@
 defined ( '_JEXEC' ) or die ( 'Restricted access' );
 
 /**
- * @package Library REAXML Library for Joomla! 3.3
- * @version 0.0.79: price.php 2015-03-20T17:13:33.572
+ * @package Library REAXML Library for Joomla! 3.4
+ * @version 1.2.1: price.php 2015-03-28T04:18:12.779
  * @author Clifton IT Foundries Pty Ltd
  * @link http://cliftonwebfoundry.com.au
  * @copyright Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights Reserved
  * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  **/ 
 class ReaxmlEzrColPrice extends \ReaxmlEzrColumn {
-	//const XPATH_PRICE = '/[residential or rural or land or commercial or commercialLand or business]/Price | /[rental or holidayRental]/rent[@period="weekly" or @period="week"] ';
-	const XPATH_PRICE = '//residential/price | //rural/price | //land/price | //commercial/price | //commercialLand/price | //business/price | //rental/rent[@period="weekly" or @period="week"]  | //holidayRental/rent[@period="weekly" or @period="week"]';
+	const XPATH_RESIDENTIAL_PRICE = '//residential/price';
+	const XPATH_RURAL_PRICE = '//rural/price';
+	const XPATH_LAND_PRICE = '//land/price';
+	const XPATH_BUSINESS_PRICE = '//business/price';
+	const XPATH_COMMMERCIAL_RENTAL_RENT = '//commercial/commercialRent';
+	const XPATH_COMMMERCIAL_PRICE = '//commercial/price';
+	const XPATH_RENTAL_RENT = '//rental/rent';
+	const XPATH_HOLIDAY_RENTAL_RENT ='//holidayRental/rent';
+	const XPATH_PRICE = self::XPATH_RESIDENTIAL_PRICE.'|'.self::XPATH_RURAL_PRICE.'|'.self::XPATH_LAND_PRICE.'|'.self::XPATH_BUSINESS_PRICE.'|'.self::XPATH_COMMMERCIAL_RENTAL_RENT.'|'.self::XPATH_COMMMERCIAL_PRICE.'|'.self::XPATH_RENTAL_RENT.'|'.self::XPATH_HOLIDAY_RENTAL_RENT ;
 	
 	public function getValue() {
 		$found = $this->xml->xpath ( self::XPATH_PRICE );

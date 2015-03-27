@@ -2,8 +2,8 @@
 defined ( '_JEXEC' ) or die ( 'Restricted access' );
 
 /**
- * @package Library REAXML Library for Joomla! 3.3
- * @version 0.0.79: auctime.php 2015-03-20T17:13:33.572
+ * @package Library REAXML Library for Joomla! 3.4
+ * @version 1.2.1: auctime.php 2015-03-28T04:18:12.779
  * @author Clifton IT Foundries Pty Ltd
  * @link http://cliftonwebfoundry.com.au
  * @copyright Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights Reserved
@@ -16,7 +16,14 @@ class ReaxmlEzrColAuctime extends \ReaxmlEzrColumn {
 		$found = $this->xml->xpath ( self::XPATH );
 		if (count($found) > 0){
 			$datestring = $found[0];
-			return date('H:i:s', strtotime($datestring));
+			
+			//check date format
+			if (preg_match('/^\d{4}-\d{2}-\d{2}-\d{2}:\d{2}:\d{2}$/', $datestring) == 1){
+				return date('H:i:s', DateTime::createFromFormat('Y-m-d-H:i:s', $datestring)->getTimestamp());
+			} elseif (preg_match('/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}$/', $datestring) == 1) {
+				return date('H:i:s', strtotime($datestring));
+			}
+
 		} else {
 			return null;
 		}

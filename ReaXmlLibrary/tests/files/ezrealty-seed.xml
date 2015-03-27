@@ -191,6 +191,384 @@
 				<field name="checked_out_time">0000-00-00 00:00:00</field>
 				<field name="ordering" xsi:nil="true" />
 			</row>
+			<row>
+				<field name="id">2</field>
+				<field name="type">1</field>
+				<field name="rent_type">0</field>
+				<field name="cid">1</field>
+				<field name="locid">8</field>
+				<field name="stid">1</field>
+				<field name="cnid">0</field>
+				<field name="soleAgency">0</field>
+				<field name="bldg_name"></field>
+				<field name="unit_num"></field>
+				<field name="lot_num"></field>
+				<field name="street_num"></field>
+				<field name="address2"></field>
+				<field name="postcode">2570</field>
+				<field name="county"></field>
+				<field name="locality"></field>
+				<field name="state"></field>
+				<field name="country"></field>
+				<field name="viewad">1</field>
+				<field name="owncoords">0</field>
+				<field name="price">400000.00</field>
+				<field name="offpeak">0.00</field>
+				<field name="showprice">1</field>
+				<field name="freq">0</field>
+				<field name="bond">0.00</field>
+				<field name="closeprice">0.00</field>
+				<field name="priceview"></field>
+				<field name="year"></field>
+				<field name="yearRemodeled"></field>
+				<field name="houseStyle"></field>
+				<field name="houseConstruction"></field>
+				<field name="exteriorFinish"></field>
+				<field name="roof"></field>
+				<field name="flooring"></field>
+				<field name="porchPatio"></field>
+				<field name="landtype"></field>
+				<field name="frontage"></field>
+				<field name="depth"></field>
+				<field name="subdivision"></field>
+				<field name="LandAreaSqFt"></field>
+				<field name="AcresTotal"></field>
+				<field name="LotDimensions"></field>
+				<field name="bedrooms">0</field>
+				<field name="sleeps">0</field>
+				<field name="totalrooms"></field>
+				<field name="otherrooms"></field>
+				<field name="livingarea"></field>
+				<field name="bathrooms">3.00</field>
+				<field name="fullBaths">1</field>
+				<field name="thqtrBaths">0</field>
+				<field name="halfBaths">1</field>
+				<field name="qtrBaths">0</field>
+				<field name="ensuite">1</field>
+				<field name="parking"></field>
+				<field name="garageDescription"></field>
+				<field name="parkingGarage"></field>
+				<field name="parkingCarport"></field>
+				<field name="stories">0</field>
+				<field name="declat">-34.015767</field>
+				<field name="declong">150.6906542</field>
+				<field name="adline">some house</field>
+				<field name="alias">house1</field>
+				<field name="propdesc"></field>
+				<field name="smalldesc">nice house</field>
+				<field name="panorama"></field>
+				<field name="mediaUrl">http://youtu.be/k736vsLf1Js</field>
+				<field name="mediaType">1</field>
+				<field name="pdfinfo1">d10f2c2687c3551532ba07541036c853.pdf</field>
+				<field name="pdfinfo2"></field>
+				<field name="epc1"></field>
+				<field name="epc2"></field>
+				<field name="flpl1">c73ca5f56adc95bb6d64cc65143ce8a6.jpg</field>
+				<field name="flpl2"></field>
+				<field name="ctown"></field>
+				<field name="ctport"></field>
+				<field name="schooldist"></field>
+				<field name="preschool"></field>
+				<field name="primaryschool"></field>
+				<field name="highschool"></field>
+				<field name="university"></field>
+				<field name="hofees"></field>
+				<field name="AnnualInsurance">0.00</field>
+				<field name="TaxAnnual">0.00</field>
+				<field name="TaxYear"></field>
+				<field name="Utlities"></field>
+				<field name="ElectricService"></field>
+				<field name="AverageUtilElec">0.00</field>
+				<field name="AverageUtilHeat">0.00</field>
+				<field name="BasementAndFoundation"></field>
+				<field name="BasementSize"></field>
+				<field name="BasementPctFinished"></field>
+				<field name="appliances">Dishwasher</field>
+				<field name="indoorfeatures">Carpets;Alarm System</field>
+				<field name="outdoorfeatures">In Ground Pool</field>
+				<field name="buildingfeatures">Brick</field>
+				<field name="communityfeatures">Close to Schools</field>
+				<field name="otherfeatures">Views</field>
+				<field name="CovenantsYN">0</field>
+				<field name="PhoneAvailableYN">0</field>
+				<field name="GarbageDisposalYN">0</field>
+				<field name="RefrigeratorYN">0</field>
+				<field name="OvenYN">0</field>
+				<field name="FamilyRoomPresent">0</field>
+				<field name="LaundryRoomPresent">0</field>
+				<field name="KitchenPresent">0</field>
+				<field name="LivingRoomPresent">0</field>
+				<field name="ParkingSpaceYN">0</field>
+				<field name="custom1"></field>
+				<field name="custom2"></field>
+				<field name="custom3"></field>
+				<field name="custom4"></field>
+				<field name="custom5"></field>
+				<field name="custom6"></field>
+				<field name="custom7"></field>
+				<field name="custom8"></field>
+				<field name="takings"></field>
+				<field name="returns"></field>
+				<field name="netprofit"></field>
+				<field name="bustype"></field>
+				<field name="bussubtype"></field>
+				<field name="stock"></field>
+				<field name="fixtures"></field>
+				<field name="fittings"></field>
+				<field name="squarefeet"></field>
+				<field name="SqFtLower"></field>
+				<field name="SqFtMainLevel"></field>
+				<field name="SqFtUpper"></field>
+				<field name="percentoffice"></field>
+				<field name="percentwarehouse"></field>
+				<field name="loadingfac"></field>
+				<field name="fencing"></field>
+				<field name="rainfall"></field>
+				<field name="soiltype"></field>
+				<field name="grazing"></field>
+				<field name="cropping"></field>
+				<field name="irrigation"></field>
+				<field name="waterresources"></field>
+				<field name="carryingcap"></field>
+				<field name="storage"></field>
+				<field name="services"></field>
+				<field name="currency_position">0</field>
+				<field name="currency"></field>
+				<field name="currency_format">0</field>
+				<field name="schoolprof">0</field>
+				<field name="hoodprof">0</field>
+				<field name="openhouse">0</field>
+				<field name="ohouse_desc"></field>
+				<field name="ohdate">0000-00-00</field>
+				<field name="ohstarttime">00:00:00</field>
+				<field name="ohendtime">00:00:00</field>
+				<field name="ohdate2">0000-00-00</field>
+				<field name="ohstarttime2">00:00:00</field>
+				<field name="ohendtime2">00:00:00</field>
+				<field name="viewbooking">0</field>
+				<field name="availdate">0000-00-00</field>
+				<field name="aucdate">0000-00-00</field>
+				<field name="auctime">00:00:00</field>
+				<field name="aucdet"></field>
+				<field name="private"></field>
+				<field name="office_id"></field>
+				<field name="mls_id">ABCD12345</field>
+				<field name="mls_agent"></field>
+				<field name="agentInfo"></field>
+				<field name="rets_source" xsi:nil="true" />
+				<field name="mls_disclaimer"></field>
+				<field name="mls_image"></field>
+				<field name="oh_id" xsi:nil="true" />
+				<field name="closedate"></field>
+				<field name="contractdate"></field>
+				<field name="sold">1</field>
+				<field name="featured">1</field>
+				<field name="camtype">0</field>
+				<field name="owner">506</field>
+				<field name="assoc_agent">0</field>
+				<field name="email_status">0</field>
+				<field name="skipimp">0</field>
+				<field name="listdate">2014-07-26</field>
+				<field name="lastupdate">1406908419</field>
+				<field name="expdate">1406296800</field>
+				<field name="metadesc"></field>
+				<field name="metakey"></field>
+				<field name="hits">157</field>
+				<field name="published">1</field>
+				<field name="language">*</field>
+				<field name="checked_out">0</field>
+				<field name="checked_out_time">0000-00-00 00:00:00</field>
+				<field name="ordering" xsi:nil="true" />
+			</row>
+			<row>
+				<field name="id">3</field>
+				<field name="type">1</field>
+				<field name="rent_type">0</field>
+				<field name="cid">1</field>
+				<field name="locid">8</field>
+				<field name="stid">1</field>
+				<field name="cnid">0</field>
+				<field name="soleAgency">0</field>
+				<field name="bldg_name"></field>
+				<field name="unit_num"></field>
+				<field name="lot_num"></field>
+				<field name="street_num"></field>
+				<field name="address2"></field>
+				<field name="postcode">2570</field>
+				<field name="county"></field>
+				<field name="locality"></field>
+				<field name="state"></field>
+				<field name="country"></field>
+				<field name="viewad">1</field>
+				<field name="owncoords">0</field>
+				<field name="price">400000.00</field>
+				<field name="offpeak">0.00</field>
+				<field name="showprice">1</field>
+				<field name="freq">0</field>
+				<field name="bond">0.00</field>
+				<field name="closeprice">0.00</field>
+				<field name="priceview"></field>
+				<field name="year"></field>
+				<field name="yearRemodeled"></field>
+				<field name="houseStyle"></field>
+				<field name="houseConstruction"></field>
+				<field name="exteriorFinish"></field>
+				<field name="roof"></field>
+				<field name="flooring"></field>
+				<field name="porchPatio"></field>
+				<field name="landtype"></field>
+				<field name="frontage"></field>
+				<field name="depth"></field>
+				<field name="subdivision"></field>
+				<field name="LandAreaSqFt"></field>
+				<field name="AcresTotal"></field>
+				<field name="LotDimensions"></field>
+				<field name="bedrooms">0</field>
+				<field name="sleeps">0</field>
+				<field name="totalrooms"></field>
+				<field name="otherrooms"></field>
+				<field name="livingarea"></field>
+				<field name="bathrooms">3.00</field>
+				<field name="fullBaths">1</field>
+				<field name="thqtrBaths">0</field>
+				<field name="halfBaths">1</field>
+				<field name="qtrBaths">0</field>
+				<field name="ensuite">1</field>
+				<field name="parking"></field>
+				<field name="garageDescription"></field>
+				<field name="parkingGarage"></field>
+				<field name="parkingCarport"></field>
+				<field name="stories">0</field>
+				<field name="declat">-34.015767</field>
+				<field name="declong">150.6906542</field>
+				<field name="adline">some house</field>
+				<field name="alias">house1</field>
+				<field name="propdesc"></field>
+				<field name="smalldesc">nice house</field>
+				<field name="panorama"></field>
+				<field name="mediaUrl">http://youtu.be/k736vsLf1Js</field>
+				<field name="mediaType">1</field>
+				<field name="pdfinfo1">d10f2c2687c3551532ba07541036c853.pdf</field>
+				<field name="pdfinfo2"></field>
+				<field name="epc1"></field>
+				<field name="epc2"></field>
+				<field name="flpl1">c73ca5f56adc95bb6d64cc65143ce8a6.jpg</field>
+				<field name="flpl2"></field>
+				<field name="ctown"></field>
+				<field name="ctport"></field>
+				<field name="schooldist"></field>
+				<field name="preschool"></field>
+				<field name="primaryschool"></field>
+				<field name="highschool"></field>
+				<field name="university"></field>
+				<field name="hofees"></field>
+				<field name="AnnualInsurance">0.00</field>
+				<field name="TaxAnnual">0.00</field>
+				<field name="TaxYear"></field>
+				<field name="Utlities"></field>
+				<field name="ElectricService"></field>
+				<field name="AverageUtilElec">0.00</field>
+				<field name="AverageUtilHeat">0.00</field>
+				<field name="BasementAndFoundation"></field>
+				<field name="BasementSize"></field>
+				<field name="BasementPctFinished"></field>
+				<field name="appliances">Dishwasher</field>
+				<field name="indoorfeatures">Carpets;Alarm System</field>
+				<field name="outdoorfeatures">In Ground Pool</field>
+				<field name="buildingfeatures">Brick</field>
+				<field name="communityfeatures">Close to Schools</field>
+				<field name="otherfeatures">Views</field>
+				<field name="CovenantsYN">0</field>
+				<field name="PhoneAvailableYN">0</field>
+				<field name="GarbageDisposalYN">0</field>
+				<field name="RefrigeratorYN">0</field>
+				<field name="OvenYN">0</field>
+				<field name="FamilyRoomPresent">0</field>
+				<field name="LaundryRoomPresent">0</field>
+				<field name="KitchenPresent">0</field>
+				<field name="LivingRoomPresent">0</field>
+				<field name="ParkingSpaceYN">0</field>
+				<field name="custom1"></field>
+				<field name="custom2"></field>
+				<field name="custom3"></field>
+				<field name="custom4"></field>
+				<field name="custom5"></field>
+				<field name="custom6"></field>
+				<field name="custom7"></field>
+				<field name="custom8"></field>
+				<field name="takings"></field>
+				<field name="returns"></field>
+				<field name="netprofit"></field>
+				<field name="bustype"></field>
+				<field name="bussubtype"></field>
+				<field name="stock"></field>
+				<field name="fixtures"></field>
+				<field name="fittings"></field>
+				<field name="squarefeet"></field>
+				<field name="SqFtLower"></field>
+				<field name="SqFtMainLevel"></field>
+				<field name="SqFtUpper"></field>
+				<field name="percentoffice"></field>
+				<field name="percentwarehouse"></field>
+				<field name="loadingfac"></field>
+				<field name="fencing"></field>
+				<field name="rainfall"></field>
+				<field name="soiltype"></field>
+				<field name="grazing"></field>
+				<field name="cropping"></field>
+				<field name="irrigation"></field>
+				<field name="waterresources"></field>
+				<field name="carryingcap"></field>
+				<field name="storage"></field>
+				<field name="services"></field>
+				<field name="currency_position">0</field>
+				<field name="currency"></field>
+				<field name="currency_format">0</field>
+				<field name="schoolprof">0</field>
+				<field name="hoodprof">0</field>
+				<field name="openhouse">0</field>
+				<field name="ohouse_desc"></field>
+				<field name="ohdate">0000-00-00</field>
+				<field name="ohstarttime">00:00:00</field>
+				<field name="ohendtime">00:00:00</field>
+				<field name="ohdate2">0000-00-00</field>
+				<field name="ohstarttime2">00:00:00</field>
+				<field name="ohendtime2">00:00:00</field>
+				<field name="viewbooking">0</field>
+				<field name="availdate">0000-00-00</field>
+				<field name="aucdate">0000-00-00</field>
+				<field name="auctime">00:00:00</field>
+				<field name="aucdet"></field>
+				<field name="private"></field>
+				<field name="office_id"></field>
+				<field name="mls_id">ABCD12346</field>
+				<field name="mls_agent"></field>
+				<field name="agentInfo"></field>
+				<field name="rets_source" xsi:nil="true" />
+				<field name="mls_disclaimer"></field>
+				<field name="mls_image"></field>
+				<field name="oh_id" xsi:nil="true" />
+				<field name="closedate"></field>
+				<field name="contractdate"></field>
+				<field name="sold">1</field>
+				<field name="featured">1</field>
+				<field name="camtype">0</field>
+				<field name="owner">506</field>
+				<field name="assoc_agent">0</field>
+				<field name="email_status">0</field>
+				<field name="skipimp">0</field>
+				<field name="listdate">2014-07-26</field>
+				<field name="lastupdate">1406908419</field>
+				<field name="expdate">1406296800</field>
+				<field name="metadesc"></field>
+				<field name="metakey"></field>
+				<field name="hits">157</field>
+				<field name="published">1</field>
+				<field name="language">*</field>
+				<field name="checked_out">0</field>
+				<field name="checked_out_time">0000-00-00 00:00:00</field>
+				<field name="ordering" xsi:nil="true" />
+			</row>
 		</table_data>
 		<table_data name="jos_ezrealty_incats">
 			<row>
@@ -3356,7 +3734,8 @@
 					sites.&lt;\/td&gt;\n\t\t&lt;\/tr&gt;\n\t\t&lt;tr&gt;\n\t\t\t&lt;td&gt;&lt;br
 					\/&gt;\n\t\t\tNow that installation is complete - it's time to set
 					up the \n\t\t\tconfiguration area, specify your property
-					categories, define the \n\t\t\tlocalities, states, countries, and
+					categories, define the \n\t\t\tlocalities,
+					states, countries, and
 					price increments for the search\/select lists, update the
 					configuration settings, and enter \n\t\t\tyour property listing
 					details. &lt;br \/&gt;&lt;br \/&gt;&lt;strong&gt;Enjoy your new
@@ -3443,7 +3822,8 @@
 					What's the best module position to use for the accordion
 					module?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Select a module
 					position with sufficient display width across the page for what
-					you're showing on the page. In most cases - a module position above
+					you're showing on the page.
+					In most cases - a module position above
 					or below the main page content is best - however you could use a
 					sidebar position if just showing images in the accordion. It really
 					depends - so take all of these things into
@@ -3459,7 +3839,8 @@
 					it?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Test out the
 					\&quot;Disable jQuery File\&quot; setting. You may need to enable
 					it or disable it - depending on what you've already done to your
-					site. Make sure you've unpublished other modules while testing this
+					site. Make sure you've unpublished other modules while
+					testing this
 					- so that you do not wrongly attribute the problem to the accordion
 					module.&lt;\/i&gt;\n\n&lt;strong&gt;Q. Why aren't all of the
 					listings being displayed? I configured it to show 30 listings - but
@@ -3516,7 +3897,8 @@
 					action?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. No - it just
 					displays as a horizontal scroll.&lt;\/i&gt;&lt;br \/&gt;&lt;br
 					\/&gt;\n&lt;strong&gt;Q. Why don't I see anything displayed in the
-					carousel?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Make sure your
+					carousel?&lt;\/strong&gt;&lt;br
+					\/&gt;\n&lt;i&gt;A. Make sure your
 					property listings have images, and make sure there are listings
 					created which meet the parameters you've specified for the
 					module.&lt;\/i&gt;\n\t\t\n\t&quot;,&quot;group&quot;:&quot;&quot;}</field>
@@ -3551,7 +3933,8 @@
 					\/&gt;\n\t\t&lt;ul&gt;\n\t\t\t&lt;li&gt;property
 					categories&lt;\/li&gt;\n\t\t\t&lt;li&gt;states&lt;\/li&gt;\n\t\t\t&lt;li&gt;suburbs&lt;\/li&gt;\n\t\t\t&lt;li&gt;recursive
 					output of countries, state and
-					suburbs&lt;\/li&gt;\n\t\t&lt;\/ul&gt;\n\t\t&lt;br \/&gt;\n\t\tIf
+					suburbs&lt;\/li&gt;\n\t\t&lt;\/ul&gt;\n\t\t&lt;br
+					\/&gt;\n\t\tIf
 					displaying lists of categories, states or suburbs - you're able to
 					select from a variety of layouts and other formatting
 					options.&lt;br \/&gt;&lt;br \/&gt;\n\t\tMost of the configurable
@@ -3567,7 +3950,8 @@
 					categories, suburbs, states and\/or the recursive layout. You just
 					need to decide which, choose a module position, and setup the
 					module.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. How
-					can I display multiple copies of the same
+					can I display multiple copies of the
+					same
 					module?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Use the core
 					Joomla \&quot;Duplicate\&quot; button in the module manager.
 					Consult the Joomla documentation for more information on managing
@@ -3605,7 +3989,8 @@
 					display&lt;\/li&gt;\n\t\t\t&lt;li&gt;pan and zoom
 					controls&lt;\/li&gt;\n\t\t\t&lt;li&gt;popup information
 					windows&lt;\/li&gt;\n\t\t&lt;\/ul&gt;\n\t\t&lt;br \/&gt;\n\t\tWhen
-					setting up the EZ Realty Map Module - select the type of listings
+					setting up
+					the EZ Realty Map Module - select the type of listings
 					you want to display by using the refinement filters - eg. the
 					listing type, whether to refine by category, country, state, or
 					suburb.&lt;br \/&gt;&lt;br \/&gt;\n\n\t\t&lt;h3&gt;Common Questions
@@ -3621,7 +4006,8 @@
 					set of opening decimal coordinates, and these are defined in the
 					mapping module parameters. You need to assign opening decimal
 					coordinates of relevance to your part of the
-					world.&lt;\/i&gt;&lt;br \/&gt;&lt;br
+					world.&lt;\/i&gt;&lt;br
+					\/&gt;&lt;br
 					\/&gt;\n\n\t\t\n\t&quot;,&quot;group&quot;:&quot;&quot;}</field>
 				<field name="params">{&quot;misc_setting&quot;:&quot;&quot;,&quot;listingstype&quot;:&quot;0&quot;,&quot;listingorder&quot;:&quot;0&quot;,&quot;count&quot;:&quot;20&quot;,&quot;custom_setting&quot;:&quot;&quot;,&quot;reflistcust1&quot;:&quot;0&quot;,&quot;listcust1&quot;:&quot;&quot;,&quot;catg_setting&quot;:&quot;&quot;,&quot;reflistcat&quot;:&quot;0&quot;,&quot;listcat&quot;:&quot;&quot;,&quot;suburb_setting&quot;:&quot;&quot;,&quot;reflistsuburb&quot;:&quot;0&quot;,&quot;listsuburb&quot;:&quot;&quot;,&quot;state_setting&quot;:&quot;&quot;,&quot;refliststate&quot;:&quot;0&quot;,&quot;liststate&quot;:&quot;&quot;,&quot;country_setting&quot;:&quot;&quot;,&quot;reflistcountry&quot;:&quot;0&quot;,&quot;listcountry&quot;:&quot;&quot;,&quot;content_setting&quot;:&quot;&quot;,&quot;titlesource&quot;:&quot;1&quot;,&quot;map_setting&quot;:&quot;&quot;,&quot;usealtmap&quot;:&quot;0&quot;,&quot;maplang&quot;:&quot;ru-RU&quot;,&quot;usestreetview&quot;:&quot;0&quot;,&quot;control_size&quot;:&quot;1&quot;,&quot;maplat&quot;:&quot;-27.5541330&quot;,&quot;maplong&quot;:&quot;152.0292450&quot;,&quot;mapres&quot;:&quot;12&quot;,&quot;mapheight&quot;:&quot;300&quot;,&quot;cache&quot;:&quot;1&quot;,&quot;cache_time&quot;:&quot;900&quot;,&quot;cachemode&quot;:&quot;itemid&quot;}</field>
 				<field name="custom_data"></field>
@@ -3654,7 +4040,8 @@
 					the EZ Realty Multidisplay Module to showcase your property
 					listings in the following ways:-&lt;br \/&gt;&lt;br
 					\/&gt;\n\t\t&lt;ul&gt;\n\t\t\t&lt;li&gt;show images in a vertical
-					or horizontal display - or in a multi-row\/column
+					or horizontal display -
+					or in a multi-row\/column
 					output&lt;\/li&gt;\n\t\t\t&lt;li&gt;include a title above or below
 					the image&lt;\/li&gt;\n\t\t\t&lt;li&gt;select from thumbnail, main
 					image or panorama image&lt;\/li&gt;\n\t\t\t&lt;li&gt;add a
@@ -3670,7 +4057,8 @@
 					module is to be displayed, and based on the space available - begin
 					to define the settings for images and information - so you get a
 					well-balanced page. The EZ Realty multidisplay module is perfect
-					for templates which have a tabbed page feature - as you can assign
+					for templates which have a
+					tabbed page feature - as you can assign
 					a multidisplay module to each of the tabbed pages.&lt;br
 					\/&gt;&lt;br \/&gt;\n\t\t&lt;h3&gt;Common Questions about the EZ
 					Realty Multidisplay Module&lt;\/h3&gt;\n&lt;strong&gt;Q. Why are
@@ -3686,7 +4074,8 @@
 					sure you actually have some listings that meet the specified
 					parameters.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q.
 					I don't see any images! What's wrong?&lt;\/strong&gt;&lt;br
-					\/&gt;\n&lt;i&gt;A. Check which image source you're using. If
+					\/&gt;\n&lt;i&gt;A. Check which image
+					source you're using. If
 					you've configured the multidisplay module to use the panorama image
 					- make sure you've uploaded an image in the panorama image field
 					for at least 1 property listing. The panorama image field is on the
@@ -3719,7 +4108,8 @@
 					copies of the same module?&lt;\/strong&gt;&lt;br
 					\/&gt;\n&lt;i&gt;A. Use the core Joomla \&quot;Duplicate\&quot;
 					button in the module manager. Consult the Joomla documentation for
-					more information on managing modules in
+					more information on
+					managing modules in
 					general.&lt;\/i&gt;\n\n\t\t\n\t&quot;,&quot;group&quot;:&quot;&quot;}</field>
 				<field name="params">{&quot;misc_setting&quot;:&quot;&quot;,&quot;displaystatus&quot;:&quot;0&quot;,&quot;marketstatus&quot;:&quot;0&quot;,&quot;listingstype&quot;:&quot;0&quot;,&quot;listingorder&quot;:&quot;0&quot;,&quot;count&quot;:&quot;20&quot;,&quot;colcount&quot;:&quot;0&quot;,&quot;showohdate&quot;:&quot;0&quot;,&quot;custom_setting&quot;:&quot;&quot;,&quot;reflistcust1&quot;:&quot;0&quot;,&quot;listcust1&quot;:&quot;&quot;,&quot;catg_setting&quot;:&quot;&quot;,&quot;reflistcat&quot;:&quot;0&quot;,&quot;listcat&quot;:&quot;&quot;,&quot;suburb_setting&quot;:&quot;&quot;,&quot;reflistsuburb&quot;:&quot;0&quot;,&quot;listsuburb&quot;:&quot;&quot;,&quot;state_setting&quot;:&quot;&quot;,&quot;refliststate&quot;:&quot;0&quot;,&quot;liststate&quot;:&quot;&quot;,&quot;country_setting&quot;:&quot;&quot;,&quot;reflistcountry&quot;:&quot;0&quot;,&quot;listcountry&quot;:&quot;&quot;,&quot;agent_setting&quot;:&quot;&quot;,&quot;reflistagent&quot;:&quot;0&quot;,&quot;listagent&quot;:&quot;&quot;,&quot;content_setting&quot;:&quot;&quot;,&quot;titlesource&quot;:&quot;1&quot;,&quot;titlepos&quot;:&quot;0&quot;,&quot;titlesize&quot;:&quot;0&quot;,&quot;textsource&quot;:&quot;1&quot;,&quot;textlength&quot;:&quot;250&quot;,&quot;textpos&quot;:&quot;0&quot;,&quot;image_setting&quot;:&quot;&quot;,&quot;imgsource&quot;:&quot;0&quot;,&quot;imgeffect&quot;:&quot;0&quot;,&quot;file_setting&quot;:&quot;&quot;,&quot;lazyload&quot;:&quot;1&quot;,&quot;disjquery&quot;:&quot;0&quot;,&quot;cache&quot;:&quot;1&quot;,&quot;cache_time&quot;:&quot;900&quot;,&quot;cachemode&quot;:&quot;itemid&quot;}</field>
 				<field name="custom_data"></field>
@@ -3805,7 +4195,8 @@
 					\/&gt;&lt;br \/&gt;\n\t\t&lt;ul&gt;\n\t\t\t&lt;li&gt;publish in a
 					sidebar position and you'll have a vertical form
 					layout&lt;\/li&gt;\n\t\t\t&lt;li&gt;publish in a wide module
-					position such as above or below the main page content - and you'll
+					position such as above or below the main
+					page content - and you'll
 					have a horizontal form
 					layout&lt;\/li&gt;\n\t\t&lt;\/ul&gt;\n\t\t&lt;br
 					\/&gt;\n\n\t\t&lt;h3&gt;Common Questions about the EZ Realty Search
@@ -3904,7 +4295,8 @@
 					\/&gt;\n&lt;i&gt;A. Make sure you've enabled use of the panorama
 					image upload field in the EZ Realty configuration
 					settings.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q.
-					Where do I find the EZ Realty configuration
+					Where do I find
+					the EZ Realty configuration
 					settings?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Go into the EZ
 					Realty admin area, look at the icons across the page just below the
 					page title. You will see one called \&quot;Options\&quot; - click
@@ -3920,7 +4312,8 @@
 					it?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Test out the
 					\&quot;Disable jQuery File\&quot; setting. You may need to enable
 					it or disable it - depending on what you've already done to your
-					site. Make sure you've unpublished other modules while testing this
+					site. Make sure
+					you've unpublished other modules while testing this
 					- so that you do not wrongly attribute the problem to the slideshow
 					module.&lt;\/i&gt;\n\n\t\t\n\t&quot;,&quot;group&quot;:&quot;&quot;}</field>
 				<field name="params">{&quot;misc_setting&quot;:&quot;&quot;,&quot;listingstype&quot;:&quot;0&quot;,&quot;listingorder&quot;:&quot;0&quot;,&quot;count&quot;:&quot;20&quot;,&quot;custom_setting&quot;:&quot;&quot;,&quot;reflistcust1&quot;:&quot;0&quot;,&quot;listcust1&quot;:&quot;&quot;,&quot;catg_setting&quot;:&quot;&quot;,&quot;reflistcat&quot;:&quot;0&quot;,&quot;listcat&quot;:&quot;&quot;,&quot;suburb_setting&quot;:&quot;&quot;,&quot;reflistsuburb&quot;:&quot;0&quot;,&quot;listsuburb&quot;:&quot;&quot;,&quot;state_setting&quot;:&quot;&quot;,&quot;refliststate&quot;:&quot;0&quot;,&quot;liststate&quot;:&quot;&quot;,&quot;country_setting&quot;:&quot;&quot;,&quot;reflistcountry&quot;:&quot;0&quot;,&quot;listcountry&quot;:&quot;&quot;,&quot;content_setting&quot;:&quot;&quot;,&quot;listinginfo&quot;:&quot;0&quot;,&quot;titlesize&quot;:&quot;0&quot;,&quot;image_setting&quot;:&quot;&quot;,&quot;imgsource&quot;:&quot;0&quot;,&quot;height&quot;:&quot;50%&quot;,&quot;minHeight&quot;:&quot;200px&quot;,&quot;imgoverlay&quot;:&quot;&quot;,&quot;file_setting&quot;:&quot;&quot;,&quot;loader&quot;:&quot;pie&quot;,&quot;loaderColor&quot;:&quot;#eeeeee&quot;,&quot;loaderBgColor&quot;:&quot;#222222&quot;,&quot;loaderOpacity&quot;:&quot;.8&quot;,&quot;time&quot;:&quot;7000&quot;,&quot;transperiod&quot;:&quot;1500&quot;,&quot;easing&quot;:&quot;easeInOutExpo&quot;,&quot;fx&quot;:&quot;random&quot;,&quot;disjquery&quot;:&quot;0&quot;,&quot;cache&quot;:&quot;1&quot;,&quot;cache_time&quot;:&quot;900&quot;,&quot;cachemode&quot;:&quot;itemid&quot;}</field>
@@ -4000,7 +4393,7 @@
 				<field name="checked_out_time">0000-00-00 00:00:00</field>
 				<field name="ordering">1</field>
 			</row>
-						<row>
+			<row>
 				<field name="id">2</field>
 				<field name="countid">1</field>
 				<field name="name">VIC</field>
@@ -4038,7 +4431,7 @@
 				<field name="checked_out_time">0000-00-00 00:00:00</field>
 				<field name="ordering">1</field>
 			</row>
-						<row>
+			<row>
 				<field name="id">5</field>
 				<field name="stateid">2</field>
 				<field name="ezcity">RICHMOND</field>
@@ -4058,13 +4451,33 @@
 				<field name="checked_out_time">0000-00-00 00:00:00</field>
 				<field name="ordering">1</field>
 			</row>
-			
+			<!-- PENRITH -->
+			<row>
+				<field name="id">6</field>
+				<field name="stateid">1</field>
+				<field name="ezcity">PENRITH</field>
+				<field name="alias">penrith</field>
+				<field name="postcode">2750</field>
+				<field name="declat"></field>
+				<field name="declong"></field>
+				<field name="zoom">0</field>
+				<field name="owncoords">0</field>
+				<field name="image"></field>
+				<field name="ezcity_desc"></field>
+				<field name="metadesc"></field>
+				<field name="metakey"></field>
+				<field name="published">1</field>
+				<field name="language">*</field>
+				<field name="checked_out">0</field>
+				<field name="checked_out_time">0000-00-00 00:00:00</field>
+				<field name="ordering">1</field>
+			</row>
 		</table_data>
 		<table_data name="jos_ezportal">
 			<row>
 				<field name="id">1</field>
 				<field name="alias">brendan-roberts</field>
-				<field name="uid">640</field>
+				<field name="uid">650</field>
 				<field name="cid">0</field>
 				<field name="seller_name">Brendan Roberts</field>
 				<field name="seller_company"></field>
@@ -4074,14 +4487,14 @@
 				<field name="seller_unitnum"></field>
 				<field name="seller_address1"></field>
 				<field name="seller_address2"></field>
-				<field name="seller_suburb">Camden</field>
+				<field name="seller_suburb"></field>
 				<field name="seller_pcode"></field>
 				<field name="seller_state"></field>
 				<field name="seller_country"></field>
-				<field name="show_addy">1</field>
+				<field name="show_addy">0</field>
 				<field name="seller_declat"></field>
 				<field name="seller_declong"></field>
-				<field name="seller_email">broberts@robertsestateagents.com.au</field>
+				<field name="seller_email">nosuchaddress@localhost</field>
 				<field name="seller_phone"></field>
 				<field name="seller_fax"></field>
 				<field name="seller_mobile"></field>
@@ -4114,8 +4527,8 @@
 				<field name="metakey"></field>
 				<field name="published">1</field>
 				<field name="rets_source"></field>
-				<field name="listdate">2015-03-24</field>
-				<field name="lastupdate">2015-03-24 00:41:46</field>
+				<field name="listdate">0000-00-00</field>
+				<field name="lastupdate">0000-00-00 00:00:00</field>
 				<field name="checked_out">0</field>
 				<field name="checked_out_time">0000-00-00 00:00:00</field>
 				<field name="ordering">1</field>
@@ -4136,6 +4549,26 @@
 				<field name="ordering">1</field>
 				<field name="checked_out">0</field>
 				<field name="checked_out_time">0000-00-00 00:00:00</field>
+			</row>
+		</table_data>
+		<table_data name="jos_users">
+			<row>
+				<field name="id">650</field>
+				<field name="name">Super User</field>
+				<field name="username">admin</field>
+				<field name="email">neil.clifton@cliftonwebfoundry.com.au</field>
+				<field name="password">$2y$10$h5UzeLeAQgBD/JxIMBeg0eS09CLsG1x4H1voJOQ.m6M8DqAvA2zPi</field>
+				<field name="block">0</field>
+				<field name="sendEmail">1</field>
+				<field name="registerDate">2015-03-18 23:11:26</field>
+				<field name="lastvisitDate">2015-03-25 12:05:14</field>
+				<field name="activation">0</field>
+				<field name="params"></field>
+				<field name="lastResetTime">0000-00-00 00:00:00</field>
+				<field name="resetCount">0</field>
+				<field name="otpKey"></field>
+				<field name="otep"></field>
+				<field name="requireReset">0</field>
 			</row>
 		</table_data>
 	</database>

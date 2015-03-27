@@ -1,9 +1,10 @@
 <?php
+
 defined ( '_JEXEC' ) or die ( 'Restricted access' );
 
 /**
- * @package Library REAXML Library for Joomla! 3.3
- * @version 0.0.79: column.php 2015-03-20T17:13:33.572
+ * @package Library REAXML Library for Joomla! 3.4
+ * @version 1.2.1: column.php 2015-03-28T04:18:12.779
  * @author Clifton IT Foundries Pty Ltd
  * @link http://cliftonwebfoundry.com.au
  * @copyright Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights Reserved
@@ -11,6 +12,8 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
  **/ 
 jimport ( 'joomla.filesystem.file' );
 jimport ( 'joomla.log.log' );
+
+if (!defined('DS')) define('DS',DIRECTORY_SEPARATOR);
 abstract class ReaxmlEzrColumn extends ReaxmlDbColumn {
 	const XPATH_UNIQUEID = '//uniqueID';
 	private $isNew;
@@ -85,31 +88,35 @@ abstract class ReaxmlEzrColumn extends ReaxmlDbColumn {
 		return count ( $newFeatures ) == 0 ? '' : join ( ';', $newFeatures );
 	}
 	protected function copyWorkImageFile($file, $subdir) {
-		$src = $this->configuration->work_dir . DIRECTORY_SEPARATOR . $file;
+		$src = $this->configuration->work_dir . DS . $file;
 		$ext = JFile::getExt ( $src );
-		$dest = JPATH_ROOT . DIRECTORY_SEPARATOR . 'images' . DIRECTORY_SEPARATOR . 'ezrealty' . DIRECTORY_SEPARATOR . $subdir . DIRECTORY_SEPARATOR . md5 ( uniqid () ) . '.' . $ext;
+		$destdir = JPATH_ROOT . DS . 'images' . DS . 'ezrealty' . DS . $subdir;
+		$dest = $destdir . DS . md5 ( uniqid () ) . '.' . $ext;
 		if (JFile::exists ( $src )) {
 			try {
+				if (!file_exists($destdir)){
+					mkdir($destdir);
+				}	
 				JFile::copy ( $src, $dest );
-				JLog::add ( JText::sprintf ( 'LIB_REAXML_INFO_MESSAGE_COPYING_IMAGE_FILE', basename($src), basename($dest) ), JLog::INFO, REAXML_LOG_CATEGORY );
+				ReaxmlImporter::LogAdd ( JText::sprintf ( 'LIB_REAXML_INFO_MESSAGE_COPYING_IMAGE_FILE', basename($src), basename($dest) ), JLog::INFO );
 				return basename ( $dest );
 			} catch ( Exception $e ) {
-				JLog::add ( $e->getMessage (), JLog::ERROR, REAXML_LOG_CATEGORY );
+				ReaxmlImporter::LogAdd ( $e->getMessage (), JLog::ERROR );
 				return '';
 			}
 		} else {
-			JLog::add ( JText::sprintf ( 'LIB_REAXML_FILE_NOT_FOUND', basename ( $src ) ), JLog::ERROR, REAXML_LOG_CATEGORY );
+			ReaxmlImporter::LogAdd ( JText::sprintf ( 'LIB_REAXML_FILE_NOT_FOUND', basename ( $src ) ), JLog::ERROR );
 			return '';
 		}
 	}
 	protected function downloadUrlImageFile($url, $ext, $subdir) {
 		$dest = JPATH_ROOT . DIRECTORY_SEPARATOR . 'images' . DIRECTORY_SEPARATOR . 'ezrealty' . DIRECTORY_SEPARATOR . $subdir . DIRECTORY_SEPARATOR . md5 ( uniqid () ) . '.' . $ext;
-		JLog::add ( JText::sprintf ( 'LIB_REAXML_INFO_MESSAGE_DOWLOADING', $url ), JLog::INFO, REAXML_LOG_CATEGORY );
+		ReaxmlImporter::LogAdd ( JText::sprintf ( 'LIB_REAXML_INFO_MESSAGE_DOWLOADING', $url ), JLog::INFO );
 		try {
 			copy ( $url, $dest );
 			return basename ( $dest );
 		} catch ( Exception $e ) {
-			JLog::add ( $e->getMessage (), JLog::ERROR, REAXML_LOG_CATEGORY );
+			ReaxmlImporter::LogAdd ( $e->getMessage (), JLog::ERROR );
 			return '';
 		}
 	}
@@ -117,7 +124,7 @@ abstract class ReaxmlEzrColumn extends ReaxmlDbColumn {
 		if ($filename != null && $filename !== '') {
 			$file = JPATH_ROOT . DIRECTORY_SEPARATOR . 'images' . DIRECTORY_SEPARATOR . 'ezrealty' . DIRECTORY_SEPARATOR . $subdir . DIRECTORY_SEPARATOR . $filename;
 			if (JFile::exists ( $file )) {
-				JLog::add ( JText::sprintf ( 'LIB_REAXML_INFO_MESSAGE_DELETING', basename ( $file ) ), JLog::INFO, REAXML_LOG_CATEGORY );
+				ReaxmlImporter::LogAdd ( JText::sprintf ( 'LIB_REAXML_INFO_MESSAGE_DELETING', basename ( $file ) ), JLog::INFO );
 				JFile::delete ( $file );
 			}
 		}

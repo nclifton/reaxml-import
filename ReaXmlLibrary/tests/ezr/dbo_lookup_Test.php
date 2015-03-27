@@ -2,10 +2,11 @@
 defined ( '_JEXEC' ) or die ( 'Restricted access' );
 
 /**
- * @copyright	Copyright (C) 2014 Clifton IT Foundries Pty Ltd All rights reserved.
- * @license		GNU General Public License version 2 or later; see LICENSE.txt
- * @author nclifton
  *
+ * @copyright Copyright (C) 2014 Clifton IT Foundries Pty Ltd All rights reserved.
+ * @license GNU General Public License version 2 or later; see LICENSE.txt
+ * @author nclifton
+ *        
  */
 class ReaxmlDboLookup_Test extends Reaxml_Tests_DatabaseTestCase {
 	
@@ -135,17 +136,17 @@ class ReaxmlDboLookup_Test extends Reaxml_Tests_DatabaseTestCase {
 		$result = $dbo->lookupEzrAgentUidUsingAgentName ( 'Brendan Roberts' );
 		
 		// Assert
-		$this->assertThat ( $result, $this->equalTo ( 640 ) );
+		$this->assertThat ( $result, $this->equalTo ( 650 ) );
 	}
 	/**
 	 * @test
 	 */
-	public function lookupEzrlocidUsingSuburb_nomatch() {
+	public function lookupEzrLocidUsingLocalityDetails_nomatch() {
 		// Arrange
 		$dbo = new ReaxmlEzrDbo ();
 		
 		// Act
-		$result = $dbo->lookupEzrLocidUsingSuburb ( 'Back of Bourke' );
+		$result = $dbo->lookupEzrLocidUsingLocalityDetails ( 'Back of Bourke', '2999', 'NSW', 'AUSTRALIA' );
 		
 		// Assert
 		$this->assertThat ( $result, $this->isFalse () );
@@ -153,12 +154,51 @@ class ReaxmlDboLookup_Test extends Reaxml_Tests_DatabaseTestCase {
 	/**
 	 * @test
 	 */
-	public function lookupEzrLocidUsingSuburb() {
+	public function lookupEzrLocidUsingLocalityDetails_nopostcodematch() {
 		// Arrange
 		$dbo = new ReaxmlEzrDbo ();
 		
 		// Act
-		$result = $dbo->lookupEzrLocidUsingSuburb ( 'Camden' );
+		$result = $dbo->lookupEzrLocidUsingLocalityDetails ( 'Camden', '2577', 'NSW', 'AUSTRALIA' );
+		
+		// Assert
+		$this->assertThat ( $result, $this->isFalse () );
+	}
+	/**
+	 * @test
+	 */
+	public function lookupEzrLocidUsingLocalityDetails_nostatematch() {
+		// Arrange
+		$dbo = new ReaxmlEzrDbo ();
+		
+		// Act
+		$result = $dbo->lookupEzrLocidUsingLocalityDetails ( 'Camden', '2570', 'VIC', 'AUSTRALIA' );
+		
+		// Assert
+		$this->assertThat ( $result, $this->isFalse () );
+	}
+	/**
+	 * @test
+	 */
+	public function lookupEzrLocidUsingLocalityDetails_nocountrymatch() {
+		// Arrange
+		$dbo = new ReaxmlEzrDbo ();
+	
+		// Act
+		$result = $dbo->lookupEzrLocidUsingLocalityDetails ( 'Camden', '2570', 'NSW', 'LILYPUT' );
+	
+		// Assert
+		$this->assertThat ( $result, $this->isFalse () );
+	}
+	/**
+	 * @test
+	 */
+	public function lookupEzrLocidUsingLocalityDetails() {
+		// Arrange
+		$dbo = new ReaxmlEzrDbo ();
+		
+		// Act
+		$result = $dbo->lookupEzrLocidUsingLocalityDetails ( 'Camden', '2570', 'NSW', 'AUSTRALIA' );
 		
 		// Assert
 		$this->assertThat ( $result, $this->equalTo ( 4 ) );
@@ -407,7 +447,7 @@ class ReaxmlDboLookup_Test extends Reaxml_Tests_DatabaseTestCase {
 		$dbo = new ReaxmlEzrDbo ();
 		
 		// Act
-		$result = $dbo->lookupEzrImageFnameUsingMls_idAndOrdering( 'foo', 1 );
+		$result = $dbo->lookupEzrImageFnameUsingMls_idAndOrdering ( 'foo', 1 );
 		
 		// Assert
 		$this->assertThat ( $result, $this->equalTo ( '3bbf4ddaa372548469385fb069d90d3d.jpg' ) );

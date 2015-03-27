@@ -2,8 +2,8 @@
 defined ( '_JEXEC' ) or die ( 'Restricted access' );
 
 /**
- * @package Library REAXML Library for Joomla! 3.3
- * @version 0.0.79: owner.php 2015-03-20T17:13:33.572
+ * @package Library REAXML Library for Joomla! 3.4
+ * @version 1.2.1: owner.php 2015-03-28T04:18:12.779
  * @author Clifton IT Foundries Pty Ltd
  * @link http://cliftonwebfoundry.com.au
  * @copyright Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights Reserved
@@ -11,14 +11,17 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
  **/ 
 
 class ReaxmlEzrColOwner extends ReaxmlEzrColumn {
-	const XPATH = '//listingAgent/name';
+	const XPATH_PRIMARY_AGENT = '//listingAgent[@id=1] | //listingAgent[1]';
+	const XPATH_NAME = 'name';
+	const XPATH_TELEPHONE = 'telephone';
+	const XPATH_EMAIL = 'email';
 	
 	/*
 	 * (non-PHPdoc) @see ReaxmlDbColumn::getValue()
 	 */
 	public function getValue() {
-		$agentName = $this->xml->xpath ( self::XPATH );
-		if ($agentName == false) {
+		$foundagent = $this->xml->xpath ( self::XPATH_PRIMARY_AGENT );
+		if ($foundagent == false) {
 			if ($this->isNew ()) {
 				throw new RuntimeException ( JText::_ ( 'LIB_REAXML_ERROR_MESSAGE_LISTING_AGENT_NAME_NOT_IN_XML' ) );
 			} else {
@@ -26,10 +29,18 @@ class ReaxmlEzrColOwner extends ReaxmlEzrColumn {
 			}
 		}
 		// lookup ezrealty agent using name in the ezportal table
-		$id = $this->dbo->lookupEzrAgentUidUsingAgentName ( $agentName [0] );
-		if ($id == false) {
-			throw new RuntimeException ( JText::sprintf ( 'LIB_REAXML_ERROR_MESSAGE_DB_NO_AGENT_MATCH', $agentName [0] ) );
+		$name = $foundagent[0]->xpath(self::XPATH_NAME);
+		if ($name == false){
+			throw new RuntimeException ( JText::_ ( 'LIB_REAXML_ERROR_MESSAGE_LISTING_AGENT_NAME_NOT_IN_XML' ) );
 		}
-		return $id;
+		$uid = $this->dbo->lookupEzrAgentUidUsingAgentName ( $name [0] );
+		if ($uid == false) {
+			$email = $foundagent[0]->xpath(self::XPATH_EMAIL);
+			$email = ($email==false?null:$email[0]);
+			$telephone = $foundagent[0]->xpath(self::XPATH_TELEPHONE);
+			$telephone = ($telephone==false?null:$telephone[0]);
+			return $this->dbo->insertEzrAgent($name[0],$email,$telephone);
+		}
+		return $uid;
 	}
 }

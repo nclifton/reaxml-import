@@ -46,7 +46,8 @@ class ReaxmlImporter_Test extends PHPUnit_Framework_TestCase {
 		$configuration->log_dir = 'junk';
 		
 		// Act
-		ReaxmlImporter::getInstance ( $configuration );
+		$importer = new ReaxmlImporter();
+		$importer->setConfiguration( $configuration );
 		
 		// Assert
 	}
@@ -70,9 +71,10 @@ class ReaxmlImporter_Test extends PHPUnit_Framework_TestCase {
 		$configuration->work_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_work';
 		$configuration->done_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_done';
 		$configuration->error_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_error';
+		$importer = new ReaxmlImporter ();
+		$importer->setConfiguration($configuration);
 		
 		// Act
-		$importer = ReaxmlImporter::getInstance ( $configuration );
 		$importer->moveInputToWork ();
 		
 		// Assert
@@ -96,9 +98,10 @@ class ReaxmlImporter_Test extends PHPUnit_Framework_TestCase {
 		$configuration->work_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_work';
 		$configuration->done_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_done';
 		$configuration->error_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_error';
+		$importer = new ReaxmlImporter ();
+		$importer->setConfiguration($configuration);
 		
 		// Act
-		$importer = ReaxmlImporter::getInstance ( $configuration );
 		$importer->moveInputToWork ();
 		
 		// Assert
@@ -121,10 +124,10 @@ class ReaxmlImporter_Test extends PHPUnit_Framework_TestCase {
 		$configuration->work_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_work';
 		$configuration->done_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_done';
 		$configuration->error_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_error';
-		
-		// Act
 		$importer = new ReaxmlImporter ();
 		$importer->setConfiguration($configuration);
+		
+		// Act
 		$importer->import();
 		
 		// Assert
@@ -147,11 +150,12 @@ class ReaxmlImporter_Test extends PHPUnit_Framework_TestCase {
 		$configuration->work_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_work';
 		$configuration->done_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_done';
 		$configuration->error_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_error';
+		$importer = new ReaxmlImporter();
+		$importer->setConfiguration($configuration);
 		
 		// Act
-		$importer = ReaxmlImporter::getInstance ( $configuration );
-		$importer->start ();
-		
+		$importer->import ();
+				
 		// Assert
 		
 		$this->assertThat ( count ( glob_recursive ( __DIR__ . DIRECTORY_SEPARATOR . 'test_input' . DIRECTORY_SEPARATOR . '*' ) ), $this->equalTo ( 0 ), 'input' );
@@ -173,10 +177,11 @@ class ReaxmlImporter_Test extends PHPUnit_Framework_TestCase {
 		$configuration->work_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_work';
 		$configuration->done_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_done';
 		$configuration->error_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_error';
+		$importer = new ReaxmlImporter();
+		$importer->setConfiguration($configuration);
 		
 		// Act
-		$importer = ReaxmlImporter::getInstance ( $configuration );
-		$importer->start ();
+		$importer->import ();
 		
 		// Assert
 		
@@ -198,9 +203,10 @@ class ReaxmlImporter_Test extends PHPUnit_Framework_TestCase {
 		$configuration->work_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_work';
 		$configuration->done_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_done';
 		$configuration->error_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_error';
+		$importer = new ReaxmlImporter();
+		$importer->setConfiguration($configuration);
 		
 		// Act
-		$importer = ReaxmlImporter::getInstance ( $configuration );
 		$importer->start ();
 		
 		// Assert
@@ -209,6 +215,31 @@ class ReaxmlImporter_Test extends PHPUnit_Framework_TestCase {
 		$this->assertThat ( count ( glob_recursive ( __DIR__ . DIRECTORY_SEPARATOR . 'test_work' . DIRECTORY_SEPARATOR . '*' ) ), $this->equalTo ( 0 ), 'work' );
 		$this->assertThat ( count ( glob_recursive ( __DIR__ . DIRECTORY_SEPARATOR . 'test_done' . DIRECTORY_SEPARATOR . '*' ) ), $this->equalTo ( 1 ), 'done' );
 		$this->assertThat ( count ( glob_recursive ( __DIR__ . DIRECTORY_SEPARATOR . 'test_error' . DIRECTORY_SEPARATOR . '*' ) ), $this->equalTo ( 0 ), 'error' );
+	}
+	
+	/**
+	 * @test
+	 */
+	public function traverses_propertyList (){
+		// Arrange
+		copy ( __DIR__ . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'multipropertylist.xml', __DIR__ . DIRECTORY_SEPARATOR . 'test_input' . DIRECTORY_SEPARATOR . 'multipropertylist.xml' );
+		$configuration = new ReaxmlConfiguration ();
+		$configuration->log_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_log';
+		$configuration->input_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_input';
+		$configuration->work_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_work';
+		$configuration->done_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_done';
+		$configuration->error_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_error';
+		$importer = new ReaxmlImporter();
+		$importer->setConfiguration($configuration);
+		$dbo = $this->getMock ( 'ReaxmlEzrDbo' );
+		$dbo->expects ( $this->exactly (114) )->method ( 'exists' )->willReturn ( false );		
+		$importer->setDbo($dbo);
+				
+		// Act
+		$importer->import();
+		
+		// Assert
+		
 	}
 	
 	/**

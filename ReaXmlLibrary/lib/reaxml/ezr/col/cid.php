@@ -2,32 +2,37 @@
 defined ( '_JEXEC' ) or die ( 'Restricted access' );
 
 /**
+ *
  * @package Library REAXML Library for Joomla! 3.3
  * @version 0.0.79: cid.php 2015-03-20T17:13:33.572
  * @author Clifton IT Foundries Pty Ltd
  * @link http://cliftonwebfoundry.com.au
  * @copyright Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights Reserved
  * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
- **/ 
+ *         
+ */
 class ReaxmlEzrColCid extends ReaxmlEzrColumn {
-	const XPATH = '//category/@name';
+	const XPATH_RESIDENTIAL = '//residential/category/@name';
+	const XPATH_RENTAL = '//rental/category/@name';
+	const XPATH_COMMERCIAL = '//commercial/commercialCategory/@name';
+	const XPATH = self::XPATH_RESIDENTIAL . '|' . self::XPATH_RENTAL . '|' . self::XPATH_COMMERCIAL;
 	
 	/*
 	 * (non-PHPdoc) @see ReaxmlDbColumn::getValue()
 	 */
 	public function getValue() {
 		$found = $this->xml->xpath ( self::XPATH );
-		if (count($found) == 0) {
+		if (count ( $found ) == 0) {
 			if ($this->isNew ()) {
 				throw new RuntimeException ( JText::_ ( 'LIB_REAXML_ERROR_MESSAGE_CATEGORY_NAME_NOT_IN_XML' ) );
 			} else {
 				return null;
 			}
 		}
-		// lookup ezrealty agent using name in the ezportal table
+		// lookup ezrealty category id using name in the ezrealty_catg table
 		$id = $this->dbo->lookupEzrCategoryIdUsingCategoryName ( $found [0] );
 		if ($id == false) {
-			throw new RuntimeException ( JText::sprintf ( 'LIB_REAXML_ERROR_MESSAGE_DB_NO_CATEGORY_MATCH',  $found [0] ) );
+			return $this->dbo->insertEzrCategory($found [0].'');
 		}
 		return $id;
 	}

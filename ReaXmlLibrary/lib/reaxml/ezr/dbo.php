@@ -2,13 +2,15 @@
 defined ( '_JEXEC' ) or die ( 'Restricted access' );
 
 /**
+ *
  * @package Library REAXML Library for Joomla! 3.3
- * @version 0.0.79: dbo.php 2015-03-20T17:13:33.572
+ * @version 0.1.79: dbo.php 2015-03-20T17:13:33.572
  * @author Clifton IT Foundries Pty Ltd
  * @link http://cliftonwebfoundry.com.au
  * @copyright Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights Reserved
  * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
- **/ 
+ *         
+ */
 class ReaxmlEzrDbo {
 	private $db;
 	private $ids = array ();
@@ -51,15 +53,20 @@ class ReaxmlEzrDbo {
 		$query->from ( $db->quoteName ( '#__ezportal' ) );
 		$query->where ( $db->quoteName ( 'seller_name' ) . ' = ' . $db->quote ( $agentName ) );
 		$db->setQuery ( $query );
-		$id = $db->loadResult ();
-		return ($id == null) ? false : $id;
+		$uid = $db->loadResult ();
+		return ($uid == null) ? false : $uid;
 	}
-	public function lookupEzrLocidUsingSuburb($suburb) {
+	public function lookupEzrLocidUsingLocalityDetails($suburb, $postcode, $state, $country) {
 		$db = $this->getDb ();
 		$query = $db->getQuery ( true );
-		$query->select ( 'id' );
-		$query->from ( $db->quoteName ( '#__ezrealty_locality' ) );
-		$query->where ( 'LOWER(' . $db->quoteName ( 'ezcity' ) . ') = ' . $db->quote ( strtolower ( $suburb ) ) );
+		$query->select ( $db->qn('l.id') );
+		$query->from ( $db->quoteName ( '#__ezrealty_locality', 'l' ) );
+		$query->join ( 'INNER', $db->qn ( '#__ezrealty_state', 's' ) . ' ON (' . $db->qn ( 'l.stateid' ) . ' = ' . $db->qn ( 's.id' ) . ')' );
+		$query->join ( 'INNER', $db->qn ( '#__ezrealty_country', 'c' ) . ' ON (' . $db->qn ( 's.countid' ) . ' = ' . $db->qn ( 'c.id' ) . ')' );
+		$query->where ( 'LOWER(' . $db->qn ( 'l.ezcity' ) . ') = ' . $db->q ( strtolower ( $suburb ) ) );
+		$query->where ( $db->qn ( 'l.postcode' ) . ' = ' . $db->q ( $postcode ), 'AND' );
+		$query->where ( 'LOWER(' . $db->qn ( 's.name' ) . ') = ' . $db->q ( $state ), 'AND' );
+		$query->where ( '(LOWER(' . $db->qn ( 'c.name' ) . ') = ' . $db->q ( strtolower ( $country ) ) . ' OR LOWER(' . $db->qn ( 'c.alias' ) . ') = ' . $db->q ( strtolower ( $country ) ). ' OR LOWER(' . $db->qn ( 'c.name' ) . ') like ' . $db->q ( strtolower ( $country . '%' ) ) . ')', 'AND' );
 		$db->setQuery ( $query );
 		$id = $db->loadResult ();
 		return ($id == null) ? false : $id;
@@ -165,7 +172,7 @@ class ReaxmlEzrDbo {
 			$currentImage = $this->lookupImageUsingMls_idAndOrdering ( $row->mls_id, $ordering );
 			$object = $this->getImagePropertyValues ( $image, $currentImage );
 			if (isset ( $currentImage )) {
-				if (isset($object->fname)) {
+				if (isset ( $object->fname )) {
 					if (empty ( ($object->fname) . '' )) {
 						$db = $this->getDb ();
 						$query = $db->getQuery ( true );
@@ -346,5 +353,93 @@ class ReaxmlEzrDbo {
 		$query->where ( $db->qn ( 'b.mls_id' ) . ' = ' . $db->q ( $mls_id ) );
 		$db->setQuery ( $query );
 		return $db->loadResult ();
+	}
+	public function insertEzrLocality($ezcity, $stateid, $postcode) {
+		$locality = new stdClass ();
+		$locality->stateid = $stateid;
+		$locality->ezcity = $ezcity;
+		$locality->alias = $this->generateAlias ( $ezcity );
+		$locality->postcode = $postcode;
+		$locality->language = '*';
+		$locality->ordering = 1;
+		
+		$db = $this->getDb ();
+		$db->insertObject ( '#__ezrealty_locality', $locality );
+		return $db->insertid ();
+	}
+	public function insertEzrState($name, $countryid) {
+		$state = new stdClass ();
+		$state->countid = $countryid;
+		$state->name = $name;
+		$state->alias = $this->generateAlias ( $name );
+		$state->language = '*';
+		$state->ordering = 1;
+		
+		$db = $this->getDb ();
+		$db->insertObject ( '#__ezrealty_state', $state );
+		return $db->insertid ();
+	}
+	public function insertEzrCountry($name) {
+		$country = new stdClass ();
+		$country->name = $name;
+		$country->alias = $this->generateAlias ( $name );
+		$country->language = '*';
+		$country->ordering = 1;
+		
+		$db = $this->getDb ();
+		$db->insertObject ( '#__ezrealty_country', $country );
+		return $db->insertid ();
+	}
+	public function insertEzrCategory($name) {
+		$category = new stdClass ();
+		$category->id = 0;
+		$category->name = $name;
+		$category->alias = $this->generateAlias ( $name );
+		$category->access = 1;
+		$category->language = '*';
+		$category->ordering = 1;
+		$db = $this->getDb ();
+		$db->insertObject ( '#__ezrealty_catg', $category, 'id' );
+		return $category->id;
+	}
+	public function insertEzrAgent($name, $mail = null, $telephone = null) {
+		$user = new stdClass ();
+		$user->id = 0;
+		$user->name = $name;
+		$user->username = $this->generateUsername ( $name );
+		$user->block = 1;
+		$user->activation = 0;
+		$user->sendEmail = 0;
+		$user->email = $mail == null ? 'nosuchaddress@localhost' : $mail;
+		
+		$db = $this->getDb ();
+		$db->insertObject ( '#__users', $user, 'id' );
+		
+		$agent = new stdClass ();
+		$agent->id = 0;
+		$agent->alias = $this->generateAlias ( $name );
+		$agent->uid = $user->id;
+		$agent->seller_name = $name;
+		$agent->seller_phone = $telephone;
+		$agent->seller_email = $user->email;
+		$agent->show_addy = 0;
+		$agent->published = 1;
+		$agent->ordering = 1;
+		
+		$db->insertObject ( '#__ezportal', $agent, 'id' );
+		return $agent->uid;
+	}
+	private function generateAlias($string) {
+		// replace spaces with dashes
+		$string = str_replace ( " ", "-", $string );
+		// lowercase
+		$string = strtolower ( $string );
+		// keep only numbers and letters and dashes
+		$string = preg_replace ( '/[^a-z0-9-]/', '', $string );
+		
+		return $string;
+	}
+	private function generateUsername($string) {
+		return preg_replace ( '/[^a-z0-9-]/', '', strtolower ( $string ) );
 	}
 }

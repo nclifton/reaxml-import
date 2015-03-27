@@ -17,19 +17,56 @@ jimport ( 'joomla.filesystem.file' );
 jimport ( 'joomla.filesystem.folder' );
 jimport ( 'joomla.log.log' );
 
-JLoader::registerPrefix ( 'ReaxmlDb', JPATH_LIBRARIES . '/reaxml/db' );
-JLoader::registerPrefix ( 'ReaxmlEzr', JPATH_LIBRARIES . '/reaxml/ezr' );
-JLoader::registerPrefix ( 'ReaxmlEzrCol', JPATH_LIBRARIES . '/reaxml/ezr/col' );
+if (file_exists ( JPATH_LIBRARIES . '/reaxml' )) {
+	JLoader::registerPrefix ( 'ReaxmlDb', JPATH_LIBRARIES . '/reaxml/db', false, false );
+	JLoader::registerPrefix ( 'ReaxmlEzr', JPATH_LIBRARIES . '/reaxml/ezr', false, false );
+	JLoader::registerPrefix ( 'ReaxmlEzrCol', JPATH_LIBRARIES . '/reaxml/ezr/col', false, false );
+}
 
 defined ( 'REAXML_LOG_CATEGORY' ) or define ( 'REAXML_LOG_CATEGORY', 'REAXML-Import' );
 class ReaxmlImporter {
 	static $loggerAdded = false;
 	private $configuration;
 	private $runtag;
+	private $dbo;
+	private static $showlog = false;
 	const IMPORT_FILE_NAME_REGEX = '\.(xml|jpg|jpeg|gif|pdf|doc|xls|zip)$';
 	const IMPORT_ZIP_FILE_NAME_REGEX = '#\.(zip)$#i';
 	const LOG_NAME = 'REAXMLImport';
 	const LOG_EXT = '.log';
+	public static function LogAdd($message, $priority = JLog::INFO) {
+		JLog::add ( $message, $priority, REAXML_LOG_CATEGORY );
+		
+		if (self::$showlog) {
+			fwrite ( STDOUT, self::getLogPriorityString ( $priority ) . ' ' . $message . "\n" );
+		}
+	}
+	private static function getLogPriorityString($priority) {
+		switch ($priority) {
+			case JLog::ALERT :
+				return 'ALERT';
+			case JLog::ALL :
+				return 'ALL';
+			case JLog::CRITICAL :
+				return 'CRITICAL';
+			case JLog::DEBUG :
+				return 'DEBUG';
+			case JLog::EMERGENCY :
+				return 'EMERGENCY';
+			case JLog::ERROR :
+				return 'ERROR';
+			case JLog::INFO :
+				return 'INFO';
+			case JLog::NOTICE :
+				return 'NOTICE';
+			case JLog::WARNING :
+				return 'WARNING';
+		}
+		return '';
+	}
+	public function setShowLog($showlog = true) {
+		self::$showlog = $showlog;
+	}
 	
 	/**
 	 *
@@ -43,6 +80,8 @@ class ReaxmlImporter {
 		$lang = JFactory::getLanguage ();
 		$lang->load ( 'lib_reaxml', JPATH_SITE, 'en-GB', true );
 	}
+	private static function addLogger() {
+	}
 	private function newLogger() {
 		if (JFile::exists ( $this->configuration->log_dir . DIRECTORY_SEPARATOR . self::LOG_NAME . self::LOG_EXT )) {
 			$this->runtag = date ( 'YmdHis', filemtime ( $this->configuration->log_dir . DIRECTORY_SEPARATOR . self::LOG_NAME . self::LOG_EXT ) );
@@ -50,16 +89,28 @@ class ReaxmlImporter {
 		}
 		
 		if (! self::$loggerAdded) {
+			$loggerCategories = array (
+					REAXML_LOG_CATEGORY,
+					'jerror' 
+			);
+			
 			JLog::addLogger ( array (
 					'text_file' => self::LOG_NAME . self::LOG_EXT,
 					'text_file_path' => $this->configuration->log_dir,
 					'text_file_no_php' => true,
 					'text_entry_format' => '{DATE} {TIME} {PRIORITY} {MESSAGE}' 
-			), JLog::ALL, array (
-					REAXML_LOG_CATEGORY 
-			) );
+			), JLog::ALL, $loggerCategories );
 			self::$loggerAdded = true;
 		}
+	}
+	public function setDbo(ReaxmlEzrDbo $dbo) {
+		$this->dbo = $dbo;
+	}
+	private function getDbo() {
+		if (! isset ( $this->dbo )) {
+			$this->dbo = new ReaxmlEzrDbo ();
+		}
+		return $this->dbo;
 	}
 	private function start() {
 		$this->logStart ();
@@ -67,19 +118,19 @@ class ReaxmlImporter {
 		try {
 			$files = $this->moveInputToWork ();
 			
-			$dbo = new ReaxmlEzrDbo ();
+			$dbo = $this->getDbo ();
 			
 			foreach ( $files as $file ) {
 				try {
 					if (strtolower ( JFile::getExt ( $file ) ) == 'xml') {
 						
-						JLog::add ( JText::sprintf ( 'LIB_REAXML_LOG_IMPORTING', basename ( $file ) ), JLog::INFO, REAXML_LOG_CATEGORY );
+						self::LogAdd ( JText::sprintf ( 'LIB_REAXML_LOG_IMPORTING', basename ( $file ) ), JLog::INFO );
 						
 						$xml = simplexml_load_file ( $file );
 						
 						// loop over the properties
 						
-						$propertyList = $this->listProperties ( $xml );
+						$propertyList = $xml->xpath ( '//residential|//business|//commercial|//commercialLand|//land|//rental|//rural' );
 						
 						// log message if there are no properties in the file
 						if (count ( $propertyList ) == 0) {
@@ -95,25 +146,24 @@ class ReaxmlImporter {
 							
 							// insert or update the database with the row;
 							if ($dbo->exists ( $row )) {
-								JLog::add ( JText::sprintf ( 'LIB_REAXML_LOG_UPDATING_LISTING', $row->getValue ( 'mls_id' ) ), JLog::INFO, REAXML_LOG_CATEGORY );
+								self::LogAdd ( JText::sprintf ( 'LIB_REAXML_LOG_UPDATING_LISTING', $row->getValue ( 'mls_id' ) ), JLog::INFO );
 								$dbo->update ( $row, $images );
 							} else {
-								JLog::add ( JText::sprintf ( 'LIB_REAXML_LOG_ADDING_NEW_LISTING', $row->getValue ( 'mls_id' ) ), JLog::INFO, REAXML_LOG_CATEGORY );
+								self::LogAdd ( JText::sprintf ( 'LIB_REAXML_LOG_ADDING_NEW_LISTING', $row->getValue ( 'mls_id' ) ), JLog::INFO );
 								$dbo->insert ( $row, $images );
 							}
 						}
 					}
 				} catch ( Exception $e ) {
-					JLog::add ( JText::sprintf ( 'LIB_REAXML_CANNOT_IMPORT_FROM_FILE', basename ( $file ), $e->getMessage () ), JLog::ERROR, REAXML_LOG_CATEGORY );
+					self::LogAdd ( JText::sprintf ( 'LIB_REAXML_CANNOT_IMPORT_FROM_FILE', basename ( $file ), $e->getMessage () ), JLog::ERROR );
 					JFile::move ( $file, $this->configuration->error_dir . DIRECTORY_SEPARATOR . basename ( $file ) );
 				}
 			}
 			foreach ( $files as $file ) {
 				JFile::move ( $file, $this->configuration->done_dir . DIRECTORY_SEPARATOR . basename ( $file ) );
 			}
-			
 		} finally {
-			JLog::add ( JText::_ ( 'LIB_REAXML_LOG_ENDING' ), JLog::INFO, REAXML_LOG_CATEGORY );
+			self::LogAdd ( JText::_ ( 'LIB_REAXML_LOG_ENDING' ), JLog::INFO );
 		}
 	}
 	private function prepareDirectories() {
@@ -126,11 +176,11 @@ class ReaxmlImporter {
 		if (count ( $files ) > 0) {
 			foreach ( $files as $file ) {
 				if (! JFolder::exists ( $path )) {
-					// JLog::add ( 'Created ' . $path, JLog::INFO, REAXML_LOG_CATEGORY );
+					// self::LogAdd ( 'Created ' . $path, JLog::INFO );
 					JFolder::create ( $path );
 				}
 				JFile::move ( $file, $path . DIRECTORY_SEPARATOR . basename ( $file ) );
-				// JLog::add ( 'Moved ' . $file . ' to ' . $path . DIRECTORY_SEPARATOR . basename($file), JLog::INFO, REAXML_LOG_CATEGORY );
+				// self::LogAdd ( 'Moved ' . $file . ' to ' . $path . DIRECTORY_SEPARATOR . basename($file), JLog::INFO );
 			}
 		}
 	}
@@ -207,11 +257,11 @@ class ReaxmlImporter {
 		}
 		
 		$files = JFolder::files ( $this->configuration->work_dir, self::IMPORT_FILE_NAME_REGEX, true, true );
-		JLog::add ( JText::sprintf ( 'LIB_REAXML_LOG_FILES_IN_WORK', count ( $files ) ), JLog::INFO, REAXML_LOG_CATEGORY );
+		self::LogAdd ( JText::sprintf ( 'LIB_REAXML_LOG_FILES_IN_WORK', count ( $files ) ), JLog::INFO );
 		return $files;
 	}
 	private function extractInputZipToWork($ZipFileName) {
-		JLog::add ( JText::sprintf ( 'LIB_REAXML_LOG_EXPANDING', basename ( $ZipFileName ) ), JLog::INFO, REAXML_LOG_CATEGORY );
+		self::LogAdd ( JText::sprintf ( 'LIB_REAXML_LOG_EXPANDING', basename ( $ZipFileName ) ), JLog::INFO );
 		$zip = new ZipArchive ();
 		
 		if ($zip->open ( $ZipFileName ) === TRUE) {
@@ -244,13 +294,13 @@ class ReaxmlImporter {
 	private function getInputFiles() {
 		$files = JFolder::files ( $this->configuration->input_dir, self::IMPORT_FILE_NAME_REGEX, false, true );
 		if (count ( $files ) == 0) {
-			JLog::add ( JText::_ ( 'LIB_REAXML_LOG_NO_FILES_TO_PROCESS' ), JLog::INFO, REAXML_LOG_CATEGORY );
+			self::LogAdd ( JText::_ ( 'LIB_REAXML_LOG_NO_FILES_TO_PROCESS' ), JLog::INFO );
 		} else {
-			JLog::add ( JText::sprintf ( 'LIB_REAXML_LOG_FILES_TO_MOVE_INTO_WORK', count ( $files ) ), JLog::INFO, REAXML_LOG_CATEGORY );
+			self::LogAdd ( JText::sprintf ( 'LIB_REAXML_LOG_FILES_TO_MOVE_INTO_WORK', count ( $files ) ), JLog::INFO );
 		}
 		return $files;
 	}
 	private function logStart() {
-		JLog::add ( JText::_ ( 'LIB_REAXML_LOG_STARTING' ), JLog::INFO, REAXML_LOG_CATEGORY );
+		JLog::add ( JText::_ ( 'LIB_REAXML_LOG_STARTING' ), JLog::INFO, 'jerror' );
 	}
 }

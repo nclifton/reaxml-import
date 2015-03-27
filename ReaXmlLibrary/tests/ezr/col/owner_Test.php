@@ -42,19 +42,39 @@ class ReaxmlEzrColOwner_Test extends PHPUnit_Framework_TestCase {
 	
 	/**
 	 * @test
-	 * @expectedException RuntimeException
-	 * @expectedExceptionMessage No match in the database for agent name Bob Smith
 	 */
-	public function getValue_notfoundindb() {
+	public function getValue_notfoundindb_addsagent() {
 		
 		// Arrange
 		$xml = new SimpleXMLElement ( '<residential><listingAgent><name>Bob Smith</name></listingAgent></residential>' );
 		$dbo = $this->getMock ( 'ReaxmlEzrDbo' );
 		$dbo->expects ( $this->once () )->method ( 'lookupEzrAgentUidUsingAgentName' )->with ( $this->equalTo ( 'Bob Smith' ) )->willReturn ( false );
+		$dbo->expects ( $this->once () )->method ( 'insertEzrAgent' )->with ( $this->equalTo ( 'Bob Smith' ),$this->isNull(),$this->isNull() )->willReturn ( 770 );
 		
 		// Act
 		$col = new ReaxmlEzrColOwner( $xml, $dbo );
-		$col->getValue ();
+		$value = $col->getValue ();
+		
+		// Assert
+		$this->assertThat ( $value, $this->equalTo ( 770 ) );
+	}
+	/**
+	 * @test
+	 */
+	public function getValue_notfoundindb_addsagent_withspecifiedemailandtelephone() {
+	
+		// Arrange
+		$xml = new SimpleXMLElement ( '<residential><listingAgent><name>Bob Smith</name><email>name@domain</email><telephone>1234567890</telephone></listingAgent></residential>' );
+		$dbo = $this->getMock ( 'ReaxmlEzrDbo' );
+		$dbo->expects ( $this->once () )->method ( 'lookupEzrAgentUidUsingAgentName' )->with ( $this->equalTo ( 'Bob Smith' ) )->willReturn ( false );
+		$dbo->expects ( $this->once () )->method ( 'insertEzrAgent' )->with ( $this->equalTo ( 'Bob Smith' ),$this->equalTo('name@domain'),$this->equalTo('1234567890') )->willReturn ( 770 );
+	
+		// Act
+		$col = new ReaxmlEzrColOwner( $xml, $dbo );
+		$value = $col->getValue ();
+	
+		// Assert
+		$this->assertThat ( $value, $this->equalTo ( 770 ) );
 	}
 	/**
 	 * @test

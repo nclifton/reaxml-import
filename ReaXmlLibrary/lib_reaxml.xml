@@ -10,8 +10,16 @@
 	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
 	<authorEmail>neil.clifton@cliftonwebfoundry.com.au</authorEmail>
 	<authorUrl>http://cliftonwebfoundry.com.au</authorUrl>
-	<version>0.0.79</version>
+	<version>1.2.1</version>
 	<description>REAXML Library</description>
+
+	<fileset>
+		<!-- EZ Realty language override -->
+		<files folder="language/overrides" target="language/overrides">
+			<filename>en-GB.override.ini</filename>
+		</files>
+	</fileset>
+
 
 	<files folder="lib/reaxml">
 		<folder>db</folder>

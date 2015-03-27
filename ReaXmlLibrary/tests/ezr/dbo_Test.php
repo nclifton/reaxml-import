@@ -41,25 +41,6 @@ class ReaxmlDbo_Test extends Reaxml_Tests_DatabaseTestCase {
 	
 	/**
 	 * @test
-	 * @expectedException RuntimeException
-	 * @expectedExceptionMessage No match in the database for agent name Mr John Doe
-	 */
-	public function insert_usingrealrowxml_unregisteredagent_throwsexception() {
-		// Arrange
-		$xml = simplexml_load_file ( __DIR__ . '/../files/residential_unregagent_sample.xml' );
-		$configuration = new ReaxmlConfiguration ();
-		$configuration->work_dir = __DIR__ . '/../../files';
-		
-		// Act
-		$dbo = new ReaxmlEzrDbo ();
-		$row = new ReaxmlEzrRow ( $xml, $dbo, $configuration );
-		$dbo->insert ( $row );
-		
-		// Assert
-	}
-	
-	/**
-	 * @test
 	 */
 	public function insert_usingrealrowxml() {
 		// Arrange
@@ -77,7 +58,7 @@ class ReaxmlDbo_Test extends Reaxml_Tests_DatabaseTestCase {
 		// Assert
 		
 		// Assert database comtains the new record
-		$this->assertEquals ( 2, $this->getConnection ()->getRowCount ( $GLOBALS['DB_TBLPREFIX'].'ezrealty' ), "Inserting failed" );
+		$this->assertEquals ( 4, $this->getConnection ()->getRowCount ( $GLOBALS['DB_TBLPREFIX'].'ezrealty' ), "Inserting failed" );
 		
 		$dataSet = $this->filterDataset ( $this->getConnection ()->createDataSet () );
 		$dataSet->setExcludeColumnsForTable($GLOBALS['DB_TBLPREFIX'].'ezrealty', array('propdesc', 'smalldesc'));
@@ -149,6 +130,7 @@ class ReaxmlDbo_Test extends Reaxml_Tests_DatabaseTestCase {
 		// Act
 		$dbo->insert ( $row, $images );
 		
+		// Assert
 		$dataSet = $this->filterDataset ( $this->getConnection ()->createDataSet () );
 		$table1 = $dataSet->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty_images' );
 		$expectedDataset = $this->filterDataset ( $this->createMySQLXMLDataSet ( __DIR__ . '/../files/expected_ezrealty_after_insert_test.xml' ) );
@@ -157,4 +139,144 @@ class ReaxmlDbo_Test extends Reaxml_Tests_DatabaseTestCase {
 		$this->assertThat( $table1->getRowCount() , $this->equalTo($expectedTable1->getRowCount()));
 
 	}
+	
+	/**
+	 * @test
+	 */
+	public function inserts_new_locality (){
+		// Arrange
+		$dbo = new ReaxmlEzrDbo ();
+		
+		
+		// Act
+		$dbo->insertEzrLocality("Back of Bourke",1,'2999');
+		
+		// Assert
+		$dataSet = $this->filterDataset ( $this->getConnection ()->createDataSet () );
+		$table1 = $dataSet->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty_locality' );
+		$expectedDataset = $this->filterDataset ( $this->createMySQLXMLDataSet ( __DIR__ . '/../files/expected_locality_after_insert_locality_test.xml' ) );
+		$expectedTable1 = $expectedDataset->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty_locality' );
+		
+		$this->assertTablesEqual ( $expectedTable1, $table1 );
+						
+		
+	}
+	/**
+	 * @test
+	 */
+	public function inserts_new_state (){
+		// Arrange
+		$dbo = new ReaxmlEzrDbo ();
+	
+	
+		// Act
+		$dbo->insertEzrState("ZIM",1);
+	
+		// Assert
+		$dataSet = $this->filterDataset ( $this->getConnection ()->createDataSet () );
+		$table1 = $dataSet->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty_state' );
+		$expectedDataset = $this->filterDataset ( $this->createMySQLXMLDataSet ( __DIR__ . '/../files/expected_state_after_insert_state_test.xml' ) );
+		$expectedTable1 = $expectedDataset->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty_state' );
+	
+		$this->assertTablesEqual ( $expectedTable1, $table1 );
+	
+	
+	}
+	/**
+	 * @test
+	 */
+	public function inserts_new_country (){
+		// Arrange
+		$dbo = new ReaxmlEzrDbo ();
+	
+	
+		// Act
+		$dbo->insertEzrCountry("Lilyput",1);
+	
+		// Assert
+		$dataSet = $this->filterDataset ( $this->getConnection ()->createDataSet () );
+		$table1 = $dataSet->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty_country' );
+		$expectedDataset = $this->filterDataset ( $this->createMySQLXMLDataSet ( __DIR__ . '/../files/expected_country_after_insert_Country_test.xml' ) );
+		$expectedTable1 = $expectedDataset->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty_country' );
+	
+		$this->assertTablesEqual ( $expectedTable1, $table1 );
+	
+	
+	}
+	/**
+	 * @test
+	 */
+	public function inserts_new_category() {
+		//arrange
+		$dbo = new ReaxmlEzrDbo();
+		
+		// act
+		$id = $dbo->insertEzrCategory('Arcology');
+		
+		// assert
+		$this->assertThat($id, $this->equalTo(2),'has assigned an id');
+		
+		$dataSet = $this->filterDataset ( $this->getConnection ()->createDataSet () );
+		$table1 = $dataSet->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty_catg' );
+		$expectedDataset = $this->filterDataset ( $this->createMySQLXMLDataSet ( __DIR__ . '/../files/expected_catg_after_insert_category_test.xml' ) );
+		$expectedTable1 = $expectedDataset->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty_catg' );
+		
+		$this->assertTablesEqual ( $expectedTable1, $table1 );
+		
+		
+		
+	}
+	/**
+	 * @test
+	 */
+	public function inserts_new_agent_nameonly() {
+		//arrange
+		$dbo = new ReaxmlEzrDbo();
+		
+		//act
+		$uid = $dbo->insertEzrAgent('Bob Smith');
+		
+		// assert
+		$this->assertThat($uid, $this->equalTo(651),'hass assigned a user id');
+
+		$dataSet = $this->filterDataset ( $this->getConnection ()->createDataSet () );
+		$ezportalTable = $dataSet->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezportal' );
+		$usersTable = $dataSet->getTable ( $GLOBALS['DB_TBLPREFIX'].'users' );
+		
+		$expectedDataset = $this->filterDataset ( $this->createMySQLXMLDataSet ( __DIR__ . '/../files/expected_after_insert_new_agent_test.xml' ) );
+		$expectedEzportalTable = $expectedDataset->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezportal' );
+		$expectedUsersTable = $expectedDataset->getTable ( $GLOBALS['DB_TBLPREFIX'].'users' );
+		
+		$this->assertTablesEqual ( $expectedEzportalTable, $ezportalTable );
+		$this->assertTablesEqual ( $expectedUsersTable, $usersTable );
+		
+		
+	}
+	/**
+	 * @test
+	 */
+	public function inserts_new_agent_nameemailtelephone() {
+		//arrange
+		$dbo = new ReaxmlEzrDbo();
+	
+		//act
+		$uid = $dbo->insertEzrAgent('Bob Smith','name@domain','1234567890');
+	
+		// assert
+		$this->assertThat($uid, $this->equalTo(651),'has assigned a user id');
+	
+		$dataSet = $this->filterDataset ( $this->getConnection ()->createDataSet () );
+		$ezportalTable = $dataSet->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezportal' );
+		$usersTable = $dataSet->getTable ( $GLOBALS['DB_TBLPREFIX'].'users' );
+	
+		$expectedDataset = $this->filterDataset ( $this->createMySQLXMLDataSet ( __DIR__ . '/../files/expected_after_insert_new_agent_specifiedemailtelephone_test.xml' ) );
+		$expectedEzportalTable = $expectedDataset->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezportal' );
+		$expectedUsersTable = $expectedDataset->getTable ( $GLOBALS['DB_TBLPREFIX'].'users' );
+	
+		$this->assertTablesEqual ( $expectedEzportalTable, $ezportalTable );
+		$this->assertTablesEqual ( $expectedUsersTable, $usersTable );
+	
+	
+	}
+	
 }
