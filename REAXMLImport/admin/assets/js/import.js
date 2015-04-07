@@ -20,10 +20,21 @@ function requestImportRun(event) {
 						jQuery('#errorFileList').html(data.errorfilesHtml);
 						jQuery('#logFileList').html(data.logfilesHtml);
 					} else {
-
+						jQuery('#logContent').html(data.error);
 					}
 					jQuery('#toolbar-download > button').bind('click',
 							requestImportRun).toggleClass('disabled');
+				},
+				error : function(jqXHR, textStatus, errorThrown) {
+					if (jqXHR.responseText.length > 0) {
+						jQuery('#content').html(jqXHR.responseText);
+					} else {
+						jQuery('#content')
+								.html(
+										"<p><h1>Server Error</h1><p>Unexpected response, probably a server error.</p><p>Turn on Error Reporting in the Joomla Global Configuration and try again to see what's happening.</p><p>You may need to move the REAXML file or zip back into your input directory from your work directory first.</p>")
+					}
+					jQuery('#toolbar-refresh > button').unbind('click')
+							.toggleClass('disabled');
 				}
 			});
 }
@@ -45,10 +56,21 @@ function updateLogDisplay(event) {
 						jQuery('#errorFileList').html(data.errorfilesHtml);
 						jQuery('#logFileList').html(data.logfilesHtml);
 					} else {
-
+						jQuery('#logContent').html(data.error);
 					}
 					jQuery('#toolbar-refresh > button').bind('click',
 							updateLogDisplay).toggleClass('disabled');
+				},
+				error : function(jqXHR, textStatus, errorThrown) {
+					if (jqXHR.responseText.length > 0) {
+						jQuery('#content').html(jqXHR.responseText);
+					} else {
+						jQuery('#content')
+								.html(
+										"<p><h1>Server Error</h1><p>Unexpected response, probably a server error.</p><p>Turn on Error Reporting in the Joomla Global Configuration and try again to see what's happening.</p><p>You may need to move the REAXML file or zip back into your input directory from your work directory first.</p>")
+					}
+					jQuery('#toolbar-refresh > button').unbind('click')
+							.toggleClass('disabled');
 				}
 			});
 

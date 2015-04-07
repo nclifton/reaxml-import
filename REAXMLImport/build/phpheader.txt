@@ -1,8 +1,10 @@
 /**
+ *
  * @package Component ${name} for Joomla! 3.4
  * @version ${version}: ${filename} ${datetime}
  * @author ${author}
  * @link ${authorUrl}
  * @copyright ${copyright}
  * @license ${license}
+ *
  **/
