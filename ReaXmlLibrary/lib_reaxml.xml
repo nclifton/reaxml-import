@@ -10,7 +10,7 @@
 	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
 	<authorEmail>neil.clifton@cliftonwebfoundry.com.au</authorEmail>
 	<authorUrl>http://cliftonwebfoundry.com.au</authorUrl>
-	<version>1.2.1</version>
+	<version>1.2.5</version>
 	<description>REAXML Library</description>
 
 	<fileset>

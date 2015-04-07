@@ -80,7 +80,7 @@
 				<expandproperties />
 			</filterchain>
 		</loadfile>
-		<replaceregexp file="${fullfilename}" match="/\*\*.*\* @copyright.*\*\*/" flags="sm" replace="${phpheader}">
+		<replaceregexp file="${fullfilename}" match="/\*\*.*\* @copyright.*\*\*\/" flags="sm" replace="${phpheader}">
 		</replaceregexp>
 	</target>
 
