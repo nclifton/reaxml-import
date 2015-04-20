@@ -13,10 +13,10 @@ error_reporting ( E_ALL & ~ E_STRICT & ~ E_NOTICE );
 define ( 'DS', DIRECTORY_SEPARATOR );
 class ReaxmlEzrColImage_fname extends \ReaxmlEzrImagecolumn {
 	private static $checkedDirectories = false;
-	const XPATH_IMG = '/*/objects/img[@id="%s"]';
-	const XPATH_URL = '/*/objects/img[@id="%s"]/@url';
-	const XPATH_FILE = '/*/objects/img[@id="%s"]/@file';
-	const XPATH_FORMAT = '/*/objects/img[@id="%s"]/@format';
+	const XPATH_IMG = '//objects/img[@id="%s"]';
+	const XPATH_URL = '//objects/img[@id="%s"]/@url';
+	const XPATH_FILE = '//objects/img[@id="%s"]/@file';
+	const XPATH_FORMAT = '//objects/img[@id="%s"]/@format';
 	const IMAGES_SUBDIRECTORY = 'properties';
 	const THUMBS_SUB_SUBDIRECTORY = 'th';
 	public function getValueAt($idx) {

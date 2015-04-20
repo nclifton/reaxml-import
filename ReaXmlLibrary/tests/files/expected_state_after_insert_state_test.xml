@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<database name="joomla-reaxml">
+		<table_data name="jos_ezrealty_state">
+	<row>
+		<field name="id">1</field>
+		<field name="countid">1</field>
+		<field name="name">NSW</field>
+		<field name="alias">nsw</field>
+		<field name="declat"></field>
+		<field name="declong"></field>
+		<field name="metadesc"></field>
+		<field name="metakey"></field>
+		<field name="owncoords">0</field>
+		<field name="published">1</field>
+		<field name="language">*</field>
+		<field name="checked_out">0</field>
+		<field name="checked_out_time">0000-00-00 00:00:00</field>
+		<field name="ordering">1</field>
+	</row>
+
+	<row>
+		<field name="id">2</field>
+		<field name="countid">1</field>
+		<field name="name">VIC</field>
+		<field name="alias">vic</field>
+		<field name="declat"></field>
+		<field name="declong"></field>
+		<field name="metadesc"></field>
+		<field name="metakey"></field>
+		<field name="owncoords">0</field>
+		<field name="published">1</field>
+		<field name="language">*</field>
+		<field name="checked_out">0</field>
+		<field name="checked_out_time">0000-00-00 00:00:00</field>
+		<field name="ordering">1</field>
+	</row>
+		<row>
+		<field name="id">3</field>
+		<field name="countid">1</field>
+		<field name="name">ZIM</field>
+		<field name="alias">zim</field>
+		<field name="declat"></field>
+		<field name="declong"></field>
+		<field name="metadesc"></field>
+		<field name="metakey"></field>
+		<field name="owncoords">0</field>
+		<field name="published">1</field>
+		<field name="language">*</field>
+		<field name="checked_out">0</field>
+		<field name="checked_out_time">0000-00-00 00:00:00</field>
+		<field name="ordering">1</field>
+	</row>
+		</table_data>
+	</database>
+</mysqldump>

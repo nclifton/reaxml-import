@@ -12,5 +12,13 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
  *
  **/ 
 class ReaxmlEzrColDeclong extends \ReaxmlEzrColumn {
-
+	const XPATH_ADDRESS_LONGITUDE = '//address/longitude';
+	public function getValue() {
+		$found = $this->xml->xpath ( self::XPATH_ADDRESS_LONGITUDE );
+		if (count($found) == 0) {
+			return $this->isNew () ? '' : null;
+		} else {
+			return $found [0].'';
+		}
+	}
 }

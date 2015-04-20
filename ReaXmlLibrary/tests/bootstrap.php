@@ -11,10 +11,11 @@ error_reporting ( E_ALL );
 define ( '_JEXEC', 1 );
 
 define ( 'JPATH_BASE', '/Users/nclifton/Documents/MAMP/htdocs/reaxml' );
-define ( 'REAXML_LIBRARIES', __DIR__ . '/../lib' );
-define ( 'JPATH_LIBRARIES', JPATH_BASE . '/Libraries' );
-
 require_once JPATH_BASE . '/includes/defines.php';
+
+define ( 'REAXML_LIBRARIES', __DIR__ . '/../lib' );
+//define ( 'JPATH_LIBRARIES', JPATH_BASE . '/Libraries' );
+
 require_once JPATH_BASE . '/includes/framework.php';
 
 JLoader::setup ();

@@ -105,15 +105,17 @@ class ReaxmlEzrColFlpl1_Test extends PHPUnit_Framework_TestCase {
 		$col = new ReaxmlEzrColFlpl1 ( $xml, $dbo, $configuration );
 		$col->getValue ();
 		
+		sleep(3);
+		
 		// Assert
 		
 		$this->assertThat ( file_exists ( $this->logfile ), $this->isTrue () );
 		$log = file ( $this->logfile );
 		$matches = array();
-		$found = preg_match('/ (ERROR .*)(\b\s$)/', $log [count ( $log ) - 2],$matches);
+		$found = preg_match('/ (ERROR .*)(\b\s$)/', $log [count ( $log ) - 1],$matches);
 		
 		$this->assertThat($found , $this->greaterThan(0));
-		$this->assertThat ( $matches[1], $this->equalTo ( 'ERROR copy(http://www.realestate.com.au/tmp/floorplan1.gif): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found' ) );
+		$this->assertThat ( $matches[1], $this->equalTo ( 'ERROR Download from http://www.realestate.com.au/tmp/floorplan1.gif failed' ) );
 	}
 	/**
 	 * @test

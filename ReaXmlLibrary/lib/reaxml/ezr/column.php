@@ -115,7 +115,11 @@ abstract class ReaxmlEzrColumn extends ReaxmlDbColumn {
 		$dest = JPATH_ROOT . DIRECTORY_SEPARATOR . 'images' . DIRECTORY_SEPARATOR . 'ezrealty' . DIRECTORY_SEPARATOR . $subdir . DIRECTORY_SEPARATOR . md5 ( uniqid () ) . '.' . $ext;
 		ReaxmlImporter::LogAdd ( JText::sprintf ( 'LIB_REAXML_INFO_MESSAGE_DOWLOADING', $url ), JLog::INFO );
 		try {
-			copy ( $url, $dest );
+			$result = copy ( $url, $dest );
+			if (!$result){
+				ReaxmlImporter::LogAdd ( JText::sprintf ( 'LIB_REAXML_ERROR_MESSAGE_DOWNLOAD_FAILED', $url ), JLog::ERROR );
+				return '';
+			}
 			return basename ( $dest );
 		} catch ( Exception $e ) {
 			ReaxmlImporter::LogAdd ( $e->getMessage (), JLog::ERROR );

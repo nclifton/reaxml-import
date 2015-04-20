@@ -190,6 +190,44 @@ class ReaxmlImporter_db_Test extends Reaxml_Tests_DatabaseTestCase {
 	
 	}
 	
+	/**
+	 * @test
+	 */
+	public function import_commercial_ethanproperty(){
+	
+		// Arrange
+		copy ( __DIR__ . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . '14148_14148_20150331092716.xml', __DIR__ . DIRECTORY_SEPARATOR . 'test_input' . DIRECTORY_SEPARATOR . 'pullman_201410280550052876573.xml' );
+		$configuration = new ReaxmlConfiguration ();
+		$configuration->log_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_log';
+		$configuration->input_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_input';
+		$configuration->work_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_work';
+		$configuration->done_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_done';
+		$configuration->error_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_error';
+			
+		// Act
+		$importer = new ReaxmlImporter ();
+		$importer->setConfiguration ( $configuration );
+		$importer->import ();
+	
+		// Assert
+		$dataSet = $this->filterDataset ( $this->getConnection ()->createDataSet () );
+		$table1 = $dataSet->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty' );
+		$table2 = $dataSet->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty_images' );
+		$expectedDataset = $this->filterDataset ( $this->createMySQLXMLDataSet ( __DIR__ . '/files/expected_ezrealty_after_commercial_ethanproperty_insert_test.xml' ) );
+		$expectedTable1 = $expectedDataset->getTable (  $GLOBALS['DB_TBLPREFIX'].'ezrealty' );
+		$expectedTable2 = $expectedDataset->getTable (  $GLOBALS['DB_TBLPREFIX'].'ezrealty_images' );
+	
+		$this->assertTablesEqual ( $expectedTable1, $table1 );
+		$this->assertTablesEqual ( $expectedTable2, $table2 );
+	
+		$this->assertThat ( count ( glob_recursive ( __DIR__ . DIRECTORY_SEPARATOR . 'test_input' . DIRECTORY_SEPARATOR . '*' ) ), $this->equalTo ( 0 ), 'files in input' );
+		$this->assertThat ( count ( glob_recursive ( __DIR__ . DIRECTORY_SEPARATOR . 'test_work' . DIRECTORY_SEPARATOR . '*' ) ), $this->equalTo ( 0 ), 'files in work' );
+		$this->assertThat ( count ( glob_recursive ( __DIR__ . DIRECTORY_SEPARATOR . 'test_done' . DIRECTORY_SEPARATOR . '*' ) ), $this->equalTo ( 1 ), 'files in done' );
+		$this->assertThat ( count ( glob_recursive ( __DIR__ . DIRECTORY_SEPARATOR . 'test_error' . DIRECTORY_SEPARATOR . '*' ) ), $this->equalTo ( 0 ), 'files in error' );
+	
+	
+	}
+	
 	
 	
 	private function filterDataset($dataSet) {
