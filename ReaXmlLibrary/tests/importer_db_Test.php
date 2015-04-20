@@ -193,7 +193,7 @@ class ReaxmlImporter_db_Test extends Reaxml_Tests_DatabaseTestCase {
 	/**
 	 * @test
 	 */
-	public function import_commercial_ethanproperty(){
+	public function import_ethanproperty(){
 	
 		// Arrange
 		copy ( __DIR__ . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . '14148_14148_20150331092716.xml', __DIR__ . DIRECTORY_SEPARATOR . 'test_input' . DIRECTORY_SEPARATOR . 'pullman_201410280550052876573.xml' );
@@ -213,7 +213,7 @@ class ReaxmlImporter_db_Test extends Reaxml_Tests_DatabaseTestCase {
 		$dataSet = $this->filterDataset ( $this->getConnection ()->createDataSet () );
 		$table1 = $dataSet->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty' );
 		$table2 = $dataSet->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty_images' );
-		$expectedDataset = $this->filterDataset ( $this->createMySQLXMLDataSet ( __DIR__ . '/files/expected_ezrealty_after_commercial_ethanproperty_insert_test.xml' ) );
+		$expectedDataset = $this->filterDataset ( $this->createMySQLXMLDataSet ( __DIR__ . '/files/expected_ezrealty_after_ethanproperty_insert_test.xml' ) );
 		$expectedTable1 = $expectedDataset->getTable (  $GLOBALS['DB_TBLPREFIX'].'ezrealty' );
 		$expectedTable2 = $expectedDataset->getTable (  $GLOBALS['DB_TBLPREFIX'].'ezrealty_images' );
 	
