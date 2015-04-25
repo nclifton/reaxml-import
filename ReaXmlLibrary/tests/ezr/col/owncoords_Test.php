@@ -39,4 +39,34 @@ class ReaxmlEzrColOwncoords_Test extends PHPUnit_Framework_TestCase {
 		// Assert
 		$this->assertThat ( $value, $this->isNull());
 	}
+	/**
+	 * @test
+	 */
+	public function getValue_has_latitude() {
+		// Arrange
+		$xml = new SimpleXMLElement ( '<residential><uniqueID>foo</uniqueID><address><latitude>-37.6759953</latitude></address></residential>' );
+		$dbo = $this->getMock ( 'ReaxmlEzrDbo' );
+	
+		// Act
+		$col = new ReaxmlEzrColOwncoords ( $xml, $dbo );
+		$value = $col->getValue ();
+	
+		// Assert
+		$this->assertThat ( $value, $this->isTrue());
+	}
+	/**
+	 * @test
+	 */
+	public function getValue_has_longitude() {
+		// Arrange
+		$xml = new SimpleXMLElement ( '<residential><uniqueID>foo</uniqueID><address><longitude>144.43883449999998</longitude></address></residential>' );
+		$dbo = $this->getMock ( 'ReaxmlEzrDbo' );
+	
+		// Act
+		$col = new ReaxmlEzrColOwncoords ( $xml, $dbo );
+		$value = $col->getValue ();
+	
+		// Assert
+		$this->assertThat ( $value, $this->isTrue());
+	}
 }

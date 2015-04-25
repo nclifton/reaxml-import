@@ -4,7 +4,7 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
 /**
  *
  * @package Library REAXML Library for Joomla! 3.4
- * @version 1.2.5: bond.php 2015-04-07T14:41:26.244
+ * @version 1.3.3: bond.php 2015-04-21T14:32:48.880
  * @author Clifton IT Foundries Pty Ltd
  * @link http://cliftonwebfoundry.com.au
  * @copyright Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights Reserved
@@ -12,7 +12,13 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
  *
  **/ 
 class ReaxmlEzrColBond extends \ReaxmlEzrColumn {
+	const XPATH = '//rental/bond|//holidayRental/bond';
 	public function getValue() {
-		return $this->isNew () ? 0 : null;
+		$found = $this->xml->xpath ( self::XPATH );
+		if (count($found) == 0){
+			return $this->isNew () ? 0 : null;
+		} else {
+			return floatval($found[0]);
+		}
 	}
 }

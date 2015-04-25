@@ -9,6 +9,7 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
  * @link http://cliftonwebfoundry.com.au
  * @copyright Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights Reserved
  * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ * 
  */
 class ReaxmlEzrColFreq extends \ReaxmlEzrColumn {
 	const XPATH_RENTAL_WEEKLY = '/rental/rent[@period="weekly" or @period="week"]/@period';

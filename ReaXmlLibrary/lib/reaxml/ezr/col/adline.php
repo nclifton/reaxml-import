@@ -4,7 +4,7 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
 /**
  *
  * @package Library REAXML Library for Joomla! 3.4
- * @version 1.2.5: adline.php 2015-04-07T14:41:26.244
+ * @version 1.3.3: adline.php 2015-04-21T14:32:48.880
  * @author Clifton IT Foundries Pty Ltd
  * @link http://cliftonwebfoundry.com.au
  * @copyright Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights Reserved

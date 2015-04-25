@@ -176,6 +176,7 @@ class ReaxmlImporter_db_Test extends Reaxml_Tests_DatabaseTestCase {
 		$table1 = $dataSet->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty' );
 		$table2 = $dataSet->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty_images' );
 		$expectedDataset = $this->filterDataset ( $this->createMySQLXMLDataSet ( __DIR__ . '/files/expected_ezrealty_after_commercial_pullman_insert_test.xml' ) );
+		
 		$expectedTable1 = $expectedDataset->getTable (  $GLOBALS['DB_TBLPREFIX'].'ezrealty' );
 		$expectedTable2 = $expectedDataset->getTable (  $GLOBALS['DB_TBLPREFIX'].'ezrealty_images' );
 	
@@ -232,15 +233,17 @@ class ReaxmlImporter_db_Test extends Reaxml_Tests_DatabaseTestCase {
 	
 	private function filterDataset($dataSet) {
 		$filterDataSet = new PHPUnit_Extensions_Database_DataSet_DataSetFilter ( $dataSet );
-		$filterDataSet->setExcludeColumnsForTable ( $GLOBALS ['DB_TBLPREFIX'] . 'ezrealty', array (
+ 		$filterDataSet->setIncludeColumnsForTable($GLOBALS['DB_TBLPREFIX'].'ezrealty',array('id','propdesc'));
+ 		
+/*  		$filterDataSet->setExcludeColumnsForTable ( $GLOBALS ['DB_TBLPREFIX'] . 'ezrealty', array (
 				'hits',
 				'flpl1' ,'flpl2'
-		) );
+		) ); */
 		$filterDataSet->setIncludeColumnsForTable ( $GLOBALS ['DB_TBLPREFIX'] . 'extensions', array (
 				'params' 
 		) );
 
-		$filterDataSet->setExcludeColumnsForTable( $GLOBALS['DB_TBLPREFIX'].'ezrealty_images',array('fname'));
+		$filterDataSet->setExcludeColumnsForTable( $GLOBALS['DB_TBLPREFIX'].'ezrealty_images',array('fname')); 
 		
 		return $filterDataSet;
 	}
