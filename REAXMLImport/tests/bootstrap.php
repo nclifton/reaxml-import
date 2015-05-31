@@ -14,10 +14,10 @@ error_reporting ( E_ALL );
 define ( '_JEXEC', 1 );
 
 define ( 'JPATH_BASE', '/Users/nclifton/Documents/MAMP/htdocs/reaxml' );
-define ( 'REAXML_LIBRARIES', __DIR__ . '/../../ReaXmlLibrary/lib' );
-define ( 'JPATH_LIBRARIES', JPATH_BASE . '/Libraries' );
-
 require_once JPATH_BASE . '/includes/defines.php';
+
+define ( 'REAXML_LIBRARIES', __DIR__ . '/../../ReaXmlLibrary/lib' );
+
 require_once JPATH_BASE . '/includes/framework.php';
 
 JLoader::setup ();
@@ -44,6 +44,8 @@ define ( 'REAXML_LOG_CATEGORY', 'REAXML-Import' );
 
 include_once __DIR__.'/dbtestcase.php';
 include_once __DIR__.'/../installscript.php';
+include_once __DIR__.'/selenium/reaxml_selenium_testcase.php';
+include_once __DIR__.'/selenium/seleniumdbhelper.php';
 
 ?>
 

@@ -1,0 +1,1 @@
+This directory contains the Akeeba Restore script, part of the Akeeba Kickstart project by Akeeba Ltd

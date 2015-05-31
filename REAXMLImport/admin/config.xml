@@ -2,46 +2,49 @@
 <!-- Copyright (C) 2014 Clifton IT Foundries Pty Ltd All rights reserved. 
 	GNU General Public License version 2 or later; see LICENSE.txt -->
 <config>
-	<fieldset name="component" label="COM_REAXMLIMPORT_OPTIONS"
-		description="COM_REAXMLIMPORT_OPTIONS_DESC">
-
-		<field name="root_rel_url" type="text" default="/relative/url/path"
-			label="COM_REAXMLIMPORT_ROOT_REL_URL_LABEL" description="COM_REAXMLIMPORT_INPUT_REL_URL_DESC">
+	<fieldset name="folders" label="COM_REAXMLIMPORT_FOLDERS"
+		description="COM_REAXMLIMPORT_FOLDERS_DESC"
+		addfieldpath="/administrator/components/com_reaxmlimport/models/fields">
+		<field name="input_dir" type="folderbrowser"
+			default="input" label="COM_REAXMLIMPORT_INPUT_DIR_LABEL"
+			description="COM_REAXMLIMPORT_INPUT_DIR_DESC"
+			urlinputid="input_url">
 		</field>
-		<field name="input_dir" type="text"
-			default="/path/to/a/directory/on/the/server/input" label="COM_REAXMLIMPORT_INPUT_DIR_LABEL"
-			description="COM_REAXMLIMPORT_INPUT_DIR_DESC">
+		<field name="input_url" type="text" default="/input"
+			label="COM_REAXMLIMPORT_INPUT_URL_LABEL" description="COM_REAXMLIMPORT_INPUT_URL_DESC">
 		</field>
-		<field name="input_rel_url" type="text" default="/relative/url/path/input"
-			label="COM_REAXMLIMPORT_INPUT_REL_URL_LABEL" description="COM_REAXMLIMPORT_INPUT_REL_URL_DESC">
+		<field name="work_dir" type="folderbrowser"
+			default="work" label="COM_REAXMLIMPORT_WORK_DIR_LABEL"
+			description="COM_REAXMLIMPORT_WORK_DIR_DESC" urlinputid="work_url">
 		</field>
-		<field name="work_dir" type="text"
-			default="/path/to/a/directory/on/the/server/work" label="COM_REAXMLIMPORT_WORK_DIR_LABEL"
-			description="COM_REAXMLIMPORT_WORK_DIR_DESC">
+		<field name="work_url" type="text" default="/work"
+			label="COM_REAXMLIMPORT_WORK_URL_LABEL" description="COM_REAXMLIMPORT_WORK_URL_DESC">
 		</field>
-		<field name="work_rel_url" type="text" default="/relative/url/path/work"
-			label="COM_REAXMLIMPORT_WORK_REL_URL_LABEL" description="COM_REAXMLIMPORT_WORK_REL_URL_DESC">
+		<field name="done_dir" type="folderbrowser"
+			default="done" label="COM_REAXMLIMPORT_DONE_DIR_LABEL"
+			description="COM_REAXMLIMPORT_DONE_DIR_DESC" urlinputid="done_url">
 		</field>
-		<field name="done_dir" type="text"
-			default="/path/to/a/directory/on/the/server/done" label="COM_REAXMLIMPORT_DONE_DIR_LABEL"
-			description="COM_REAXMLIMPORT_DONE_DIR_DESC">
+		<field name="done_url" type="text" default="/done"
+			label="COM_REAXMLIMPORT_DONE_URL_LABEL" description="COM_REAXMLIMPORT_DONE_URL_DESC">
 		</field>
-		<field name="done_rel_url" type="text" default="/relative/url/path/done"
-			label="COM_REAXMLIMPORT_DONE_REL_URL_LABEL" description="COM_REAXMLIMPORT_DONE_REL_URL_DESC">
+		<field name="log_dir" type="folderbrowser"
+			default="log" label="COM_REAXMLIMPORT_LOG_DIR_LABEL"
+			description="COM_REAXMLIMPORT_LOG_DIR_DESC" urlinputid="log_url">
 		</field>
-		<field name="log_dir" type="text"
-			default="/path/to/a/directory/on/the/server/log" label="COM_REAXMLIMPORT_LOG_DIR_LABEL"
-			description="COM_REAXMLIMPORT_LOG_DIR_DESC">
+		<field name="log_url" type="text" default="/log"
+			label="COM_REAXMLIMPORT_LOG_URL_LABEL" description="COM_REAXMLIMPORT_LOG_URL_DESC">
 		</field>
-		<field name="log_rel_url" type="text" default="/relative/url/path/log"
-			label="COM_REAXMLIMPORT_LOG_REL_URL_LABEL" description="COM_REAXMLIMPORT_LOG_REL_URL_DESC">
+		<field name="error_dir" type="folderbrowser"
+			default="error" label="COM_REAXMLIMPORT_ERROR_DIR_LABEL"
+			description="COM_REAXMLIMPORT_ERROR_DIR_DESC" urlinputid="error_url">
 		</field>
-		<field name="error_dir" type="text"
-			default="/path/to/a/directory/on/the/server/error" label="COM_REAXMLIMPORT_ERROR_DIR_LABEL"
-			description="COM_REAXMLIMPORT_ERROR_DIR_DESC">
+		<field name="error_url" type="text" default="/error"
+			label="COM_REAXMLIMPORT_ERROR_URL_LABEL" description="COM_REAXMLIMPORT_ERROR_URL_DESC">
 		</field>
-		<field name="error_rel_url" type="text" default="/relative/url/path/error"
-			label="COM_REAXMLIMPORT_ERROR_REL_URL_LABEL" description="COM_REAXMLIMPORT_ERROR_REL_URL_DESC">
+	</fieldset>
+	<fieldset name="update" label="COM_REAXMLIMPORT_UPDATE" description="COM_REAXMLIMPORT_UPDATE_DESC">
+		<field name="update_dlid" type="text" default=""
+			label="COM_REAXMLIMPORT_DOWNLOAD_ID_LABEL" description="COM_REAXMLIMPORT_DOWNLOAD_ID_DESC">
 		</field>
 	</fieldset>
 	<fieldset name="permissions" label="JCONFIG_PERMISSIONS_LABEL"

@@ -4,15 +4,18 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
 /**
  *
  * @package Component REAXML Import for Joomla! 3.4
- * @version 1.2.26: display.php 2015-04-07T14:42:50.797
+ * @version 1.3.122: display.php 2015-06-01T08:16:26.590
  * @author Clifton IT Foundries Pty Ltd
  * @link http://cliftonwebfoundry.com.au
- * @copyright Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights Reserved
+ * @copyright Copyright (c) 2014, 2015 Clifton IT Foundries Pty Ltd. All rights Reserved
  * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  *
  **/
 class ReaXmlImportControllersDisplay extends JControllerBase {
 	public function execute() {
+		
+		// sneak in a step here to sync update_sites table with the update download id (in the extra_query column)
+		ReaXmlImportHelpersAdmin::updateUpdateSiteWithDownloadId();
 		
 		// Get the application
 		$app = $this->getApplication ();

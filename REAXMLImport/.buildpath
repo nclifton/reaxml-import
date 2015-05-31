@@ -5,6 +5,7 @@
 	<buildpathentry kind="src" path="vendor/composer"/>
 	<buildpathentry kind="src" path="vendor/phpunit/phpunit-mock-objects/src"/>
 	<buildpathentry combineaccessrules="false" kind="prj" path="/ReaXmlLibrary"/>
+	<buildpathentry kind="src" path="vendor/facebook/webdriver/lib"/>
 	<buildpathentry kind="src" path="vendor/sebastian/environment/src"/>
 	<buildpathentry kind="src" path="vendor/phpunit/phpunit-story/PHPUnit"/>
 	<buildpathentry kind="src" path="vendor/sebastian/recursion-context/src"/>
@@ -12,7 +13,6 @@
 	<buildpathentry kind="src" path="vendor/phpunit/php-token-stream/src"/>
 	<buildpathentry kind="src" path="vendor/phpunit/phpunit-selenium/PHPUnit"/>
 	<buildpathentry kind="src" path="vendor/phpunit/php-text-template/Text"/>
-	<buildpathentry combineaccessrules="false" kind="prj" path="/rea"/>
 	<buildpathentry kind="src" path="vendor/sebastian/exporter/src"/>
 	<buildpathentry kind="src" path="vendor/phpunit/dbunit/PHPUnit"/>
 	<buildpathentry kind="src" path="vendor/phpunit/php-code-coverage/src"/>

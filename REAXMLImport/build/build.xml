@@ -27,22 +27,24 @@
 		<format property="datetime" pattern="yyyy-MM-dd'T'HH:mm:ss.SSS" />
 	</tstamp>
 
-	<target name="create_install" depends="update_php_headers">
+	<target name="create_install" depends="update_headers">
 		<zip destfile="${installfile}" >
 			<fileset dir="." excludes=".*/**, **/.DS_Store, tests/**, build/**, .settings/**, vendor/**, composer.*"/>
 		</zip>
 	</target>
 
-	<target name="update_php_headers" depends="update_manifest">
+	<target name="update_headers" depends="update_manifest">
 		<foreach target="replace_headers" param="fullfilename" inheritall="true">
 			<param name="copyright" value="${copyright.stripped}" />
 			<param name="version" value="${newVersion}" />
 			<path>
 				<fileset dir="admin">
 					<include name="**/*.php" />
+					<include name="**/*.js" />
 				</fileset>
 				<fileset dir="site">
 					<include name="**/*.php" />
+					<include name="**/*.js" />
 				</fileset>
 			</path>
 		</foreach>
@@ -78,13 +80,17 @@
 
 	<target name="replace_headers">
 		<basename file="${fullfilename}" property="filename" />
-		<loadfile property="phpheader" srcFile="build/phpheader.txt">
+		<loadfile property="header" srcFile="build/header.txt">
 			<filterchain>
 				<expandproperties />
 			</filterchain>
 		</loadfile>
-		<replaceregexp file="${fullfilename}" match="/\*\*.*\* @copyright.*\*\*/" flags="sm" replace="${phpheader}">
+		<replaceregexp file="${fullfilename}" match="/\*\*.*\* @copyright.*\*\*/" flags="sm" replace="${header}">
 		</replaceregexp>
+	</target>
+	
+	<target name="deploy_for_test" depends="create_install">
+		<ant antfile="../REAXMLPackage/build/build.xml" target="copy_latest" inheritAll="false"/>
 	</target>
 
 </project>

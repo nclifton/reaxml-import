@@ -1,9 +1,7 @@
 <?xml version="1.0"?>
-
-<resultset statement="SELECT * FROM `joomla-reaxml`.jos_extensions
-LIMIT 0, 1000
-"
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="joomla-reaxml">
+	<table_data name="jos_extensions">
 
 	<row>
 		<field name="extension_id">1</field>
@@ -656,7 +654,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 		<field name="access">1</field>
 		<field name="protected">1</field>
 		<field name="manifest_cache">{&quot;name&quot;:&quot;Joomla! Platform&quot;,&quot;type&quot;:&quot;library&quot;,&quot;creationDate&quot;:&quot;2008&quot;,&quot;author&quot;:&quot;Joomla! Project&quot;,&quot;copyright&quot;:&quot;Copyright (C) 2005 - 2015 Open Source Matters. All rights reserved.&quot;,&quot;authorEmail&quot;:&quot;admin@joomla.org&quot;,&quot;authorUrl&quot;:&quot;http:\/\/www.joomla.org&quot;,&quot;version&quot;:&quot;13.1&quot;,&quot;description&quot;:&quot;LIB_JOOMLA_XML_DESCRIPTION&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;joomla&quot;}</field>
-		<field name="params">{&quot;mediaversion&quot;:&quot;c26c284cea1636929c80c82b514ea416&quot;}</field>
+		<field name="params">{&quot;mediaversion&quot;:&quot;cae8476c9528976a787f2350411717af&quot;}</field>
 		<field name="custom_data"></field>
 		<field name="system_data"></field>
 		<field name="checked_out">0</field>
@@ -2647,16 +2645,16 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
 	<row>
 		<field name="extension_id">10000</field>
-		<field name="name">EZ Realty</field>
+		<field name="name">Akeeba</field>
 		<field name="type">component</field>
-		<field name="element">com_ezrealty</field>
+		<field name="element">com_akeeba</field>
 		<field name="folder"></field>
 		<field name="client_id">1</field>
 		<field name="enabled">1</field>
 		<field name="access">0</field>
 		<field name="protected">0</field>
-		<field name="manifest_cache">{&quot;name&quot;:&quot;EZ Realty&quot;,&quot;type&quot;:&quot;component&quot;,&quot;creationDate&quot;:&quot;7th August 2014&quot;,&quot;author&quot;:&quot;Kathy Strickland (aka PixelBunyiP)&quot;,&quot;copyright&quot;:&quot;(C) 2006-2014 K.J. Strickland, Raptor Developments Pty Ltd T\/as Raptor Services.&quot;,&quot;authorEmail&quot;:&quot;kathy@raptorservices.com&quot;,&quot;authorUrl&quot;:&quot;www.raptorservices.com&quot;,&quot;version&quot;:&quot;7.2.0&quot;,&quot;description&quot;:&quot;\n\t\t\n\t&lt;br \/&gt;\n\t&lt;table&gt;\n\t\t&lt;tr&gt;\n\t\t\t&lt;td class=\&quot;sectionname\&quot; valign=\&quot;top\&quot;&gt;Welcome to EZ Realty - a simple Real Estate component big on features and configurable options for Joomla! 3.0x powered sites.&lt;\/td&gt;\n\t\t&lt;\/tr&gt;\n\t\t&lt;tr&gt;\n\t\t\t&lt;td&gt;&lt;br \/&gt;\n\t\t\tNow that installation is complete - it&#39;s time to set up the \n\t\t\tconfiguration area, specify your property categories, define the \n\t\t\tlocalities, states, and countries, update the configuration settings, and enter \n\t\t\tyour property listing details. &lt;br \/&gt;&lt;br \/&gt;&lt;strong&gt;Enjoy your new software!&lt;\/strong&gt;&lt;\/td&gt;\n\t\t&lt;\/tr&gt;\n\t\t&lt;\/table&gt;\n\t\t\n\t&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;ezrealty&quot;}</field>
-		<field name="params">{&quot;appliancefeats&quot;:&quot;;Dishwasher;&quot;,&quot;indoorfeats&quot;:&quot;;Air Conditioning;Vacuum System;Open Fire Place;Gas Heating;Electric Heating;Gas Ducted Heating;Solid Fuel Heating;Heating;Gas Hot Water Service;Electric Hot Water Service;Solar Hot Water Service;Built-in Robes;Ducted Cooling;Ducted Heating;Evaporative Cooling;Hydronic Heating;Reverse Cycle Air Conditioning;Split System Air Conditioning;Split System Heating;Spa;&quot;,&quot;outdoorfeats&quot;:&quot;;Spa;In Ground Pool;Above Ground Pool;Above Ground Spa;In Ground Spa;Tennis Court;Shed;Outdoor Entertainment;&quot;,&quot;buildingfeats&quot;:&quot;;Balcony;Deck;Courtyard;Floorboards;&quot;,&quot;otherfeats&quot;:&quot;;Intercom;Remote Control Garage Door;Secure Parking;Alarm System;Fully Fenced;Broadband;Pay TV;Solar Panels;Water Tank;Grey Water System;&quot;}</field>
+		<field name="manifest_cache">{&quot;name&quot;:&quot;Akeeba&quot;,&quot;type&quot;:&quot;component&quot;,&quot;creationDate&quot;:&quot;2015-04-01&quot;,&quot;author&quot;:&quot;Nicholas K. Dionysopoulos&quot;,&quot;copyright&quot;:&quot;Copyright (c)2006-2014 Nicholas K. Dionysopoulos&quot;,&quot;authorEmail&quot;:&quot;nicholas@dionysopoulos.me&quot;,&quot;authorUrl&quot;:&quot;http:\/\/www.akeebabackup.com&quot;,&quot;version&quot;:&quot;4.2.0&quot;,&quot;description&quot;:&quot;Akeeba Backup Pro - Full Joomla! site backup solution, Professional Edition&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;akeeba&quot;}</field>
+		<field name="params">{&quot;frontend_enable&quot;:&quot;0&quot;,&quot;failure_frontend_enable&quot;:&quot;0&quot;,&quot;frontend_secret_word&quot;:&quot;&quot;,&quot;frontend_email_on_finish&quot;:&quot;0&quot;,&quot;frontend_email_address&quot;:&quot;&quot;,&quot;frontend_email_subject&quot;:&quot;&quot;,&quot;frontend_email_body&quot;:&quot;&quot;,&quot;failure_timeout&quot;:180,&quot;failure_email_address&quot;:&quot;&quot;,&quot;failure_email_subject&quot;:&quot;&quot;,&quot;failure_email_body&quot;:&quot;&quot;,&quot;siteurl&quot;:&quot;http:\/\/reaxml.dev\/&quot;,&quot;jversion&quot;:&quot;1.6&quot;,&quot;jlibrariesdir&quot;:&quot;\/Users\/nclifton\/Documents\/MAMP\/htdocs\/reaxml\/libraries&quot;,&quot;lastversion&quot;:&quot;&quot;,&quot;angieupgrade&quot;:&quot;0&quot;,&quot;update_dlid&quot;:&quot;fb5b8e2a73933bba8110f66b16eece23&quot;,&quot;displayphpwarning&quot;:&quot;1&quot;,&quot;autoupdateCli&quot;:&quot;1&quot;,&quot;notificationFreq&quot;:&quot;1&quot;,&quot;notificationTime&quot;:&quot;day&quot;,&quot;notificationEmail&quot;:&quot;&quot;,&quot;stats_enabled&quot;:&quot;1&quot;,&quot;useencryption&quot;:&quot;1&quot;,&quot;dateformat&quot;:&quot;&quot;}</field>
 		<field name="custom_data"></field>
 		<field name="system_data"></field>
 		<field name="checked_out">0</field>
@@ -2667,226 +2665,6 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
 	<row>
 		<field name="extension_id">10001</field>
-		<field name="name">EZ Realty Accordion</field>
-		<field name="type">module</field>
-		<field name="element">mod_ezrealty_accordion</field>
-		<field name="folder"></field>
-		<field name="client_id">0</field>
-		<field name="enabled">1</field>
-		<field name="access">0</field>
-		<field name="protected">0</field>
-		<field name="manifest_cache">{&quot;name&quot;:&quot;EZ Realty Accordion&quot;,&quot;type&quot;:&quot;module&quot;,&quot;creationDate&quot;:&quot;24th June 2014&quot;,&quot;author&quot;:&quot;K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;copyright&quot;:&quot;(C) 2006-2014 K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;authorEmail&quot;:&quot;kathy@raptorservices.com&quot;,&quot;authorUrl&quot;:&quot;www.raptorservices.com&quot;,&quot;version&quot;:&quot;1.0.2&quot;,&quot;description&quot;:&quot;\n\t\t\n\t\t&lt;h3&gt;About EZ Realty Accordion Module&lt;\/h3&gt;\n\t\tThis module shows the property listings in a vertical orientation content accordion.  The accordion will cycle through each of the property listings automatically - and will slide each pane open. \nYou&#39;re able to configure the EZ Realty Accordion Module to display images and information with a range of features such as:-&lt;br \/&gt;&lt;br \/&gt;\n\t\t&lt;ul&gt;\n\t\t\t&lt;li&gt;define the title source&lt;\/li&gt;\n\t\t\t&lt;li&gt;define the descriptive text source, and how much to display&lt;\/li&gt;\n\t\t\t&lt;li&gt;choose the image source - eg. thumbnail, main image or panorama image - as well as the width for that image&lt;\/li&gt;\n\t\t\t&lt;li&gt;configure the display div height - which may be necessary depending on the size of images displayed, and the amount of descriptive text used.&lt;\/li&gt;\n\t\t&lt;\/ul&gt;\n\t\t&lt;br \/&gt;\n\t\tWhen setting up the EZ Realty Accordion Module - select the type of listings you want to display by using the refinement filters - eg. the listing type, whether to refine by category, country, state, or suburb.&lt;br \/&gt;&lt;br \/&gt;\n\t\t&lt;h3&gt;Common Questions about the EZ Realty Accordion Module&lt;\/h3&gt;\n&lt;strong&gt;Q. What&#39;s the best module position to use for the accordion module?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Select a module position with sufficient display width across the page for what you&#39;re showing on the page.  In most cases - a module position above or below the main page content is best - however you could use a sidebar position if just showing images in the accordion.  It really depends - so take all of these things into consideration.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n\n&lt;strong&gt;Q. Why don&#39;t I see anything - it&#39;s published?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Recheck your settings - and then check the listings you&#39;ve created.  After all - if you configure the module to use the panorama image - but havn&#39;t uploaded a panorama image for the property listings - then you won&#39;t see anything on the page output.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n\n&lt;strong&gt;Q. It&#39;s not working - or it seems to be breaking my Joomla template menu.  How do I fix it?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Test out the \&quot;Disable jQuery File\&quot; setting.  You may need to enable it or disable it - depending on what you&#39;ve already done to your site.  Make sure you&#39;ve unpublished other modules while testing this - so that you do not wrongly attribute the problem to the accordion module.&lt;\/i&gt;\n\n&lt;strong&gt;Q. Why aren&#39;t all of the listings being displayed?  I configured it to show 30 listings - but there are only 20 being displayed.&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. The accordion module has a maximum display limit of 20.  So, it will only show that number regardless of how many you enter into the total listings setting.  If there are fewer - then that&#39;s probably all the listings that are available on your site.&lt;\/i&gt;\n\n\t\t\n\t&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;mod_ezrealty_accordion&quot;}</field>
-		<field name="params">{&quot;misc_setting&quot;:&quot;&quot;,&quot;listingstype&quot;:&quot;0&quot;,&quot;listingorder&quot;:&quot;0&quot;,&quot;count&quot;:&quot;20&quot;,&quot;custom_setting&quot;:&quot;&quot;,&quot;reflistcust1&quot;:&quot;0&quot;,&quot;listcust1&quot;:&quot;&quot;,&quot;catg_setting&quot;:&quot;&quot;,&quot;reflistcat&quot;:&quot;0&quot;,&quot;listcat&quot;:&quot;&quot;,&quot;suburb_setting&quot;:&quot;&quot;,&quot;reflistsuburb&quot;:&quot;0&quot;,&quot;listsuburb&quot;:&quot;&quot;,&quot;state_setting&quot;:&quot;&quot;,&quot;refliststate&quot;:&quot;0&quot;,&quot;liststate&quot;:&quot;&quot;,&quot;country_setting&quot;:&quot;&quot;,&quot;reflistcountry&quot;:&quot;0&quot;,&quot;listcountry&quot;:&quot;&quot;,&quot;content_setting&quot;:&quot;&quot;,&quot;titlesource&quot;:&quot;1&quot;,&quot;textsource&quot;:&quot;1&quot;,&quot;textlength&quot;:&quot;250&quot;,&quot;contentheight&quot;:&quot;250&quot;,&quot;image_setting&quot;:&quot;&quot;,&quot;imgsource&quot;:&quot;0&quot;,&quot;imgwidth&quot;:&quot;3&quot;,&quot;file_setting&quot;:&quot;&quot;,&quot;disjquery&quot;:&quot;0&quot;,&quot;cache&quot;:&quot;1&quot;,&quot;cache_time&quot;:&quot;900&quot;,&quot;cachemode&quot;:&quot;itemid&quot;}</field>
-		<field name="custom_data"></field>
-		<field name="system_data"></field>
-		<field name="checked_out">0</field>
-		<field name="checked_out_time">0000-00-00 00:00:00</field>
-		<field name="ordering">0</field>
-		<field name="state">0</field>
-	</row>
-
-	<row>
-		<field name="extension_id">10002</field>
-		<field name="name">EZ Realty Thumbnails Carousel</field>
-		<field name="type">module</field>
-		<field name="element">mod_ezrealty_carousel</field>
-		<field name="folder"></field>
-		<field name="client_id">0</field>
-		<field name="enabled">1</field>
-		<field name="access">0</field>
-		<field name="protected">0</field>
-		<field name="manifest_cache">{&quot;name&quot;:&quot;EZ Realty Thumbnails Carousel&quot;,&quot;type&quot;:&quot;module&quot;,&quot;creationDate&quot;:&quot;24th June 2014&quot;,&quot;author&quot;:&quot;K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;copyright&quot;:&quot;(C) 2006-2014 K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;authorEmail&quot;:&quot;kathy@raptorservices.com&quot;,&quot;authorUrl&quot;:&quot;www.raptorservices.com&quot;,&quot;version&quot;:&quot;3.0.6&quot;,&quot;description&quot;:&quot;\n\t\t\n\t\t&lt;h3&gt;About EZ Realty Thumbnails Carousel Module&lt;\/h3&gt;\nThis module shows thumbnails of property images in a horizontal scrolling carousel. The settings can be configured to pull a range of listing images in a variety of ordering sequences. \nYou&#39;re able to configure the carousel display and operation in a number of ways too - eg:-&lt;br \/&gt;&lt;br \/&gt;\n\t\t&lt;ul&gt;\n\t\t\t&lt;li&gt;slider height&lt;\/li&gt;\n\t\t\t&lt;li&gt;carousel speed&lt;\/li&gt;\n\t\t\t&lt;li&gt;background colour&lt;\/li&gt;\n\t\t&lt;\/ul&gt;\n\t\t&lt;br \/&gt;\n\t\tWhen setting up the EZ Realty Thumbnails Carousel Module - select the type of listings you want to display by using the refinement filters - eg. the listing type, whether to refine by category, country, state, or suburb.&lt;br \/&gt;&lt;br \/&gt;\n\t\t&lt;h3&gt;Common Questions about the EZ Realty Thumbnails Carousel Module&lt;\/h3&gt;\n&lt;strong&gt;Q. What&#39;s the best module position to use for the carousel module?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Select a horizontal module position - with sufficient width to display the images scrolling across the page.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. Can it display a vertical scrolling action?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. No - it just displays as a horizontal scroll.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. Why don&#39;t I see anything displayed in the carousel?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Make sure your property listings have images, and make sure there are listings created which meet the parameters you&#39;ve specified for the module.&lt;\/i&gt;\n\t\t\n\t&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;mod_ezrealty_carousel&quot;}</field>
-		<field name="params">{&quot;misc_setting&quot;:&quot;&quot;,&quot;listingstype&quot;:&quot;0&quot;,&quot;listingorder&quot;:&quot;0&quot;,&quot;count&quot;:&quot;20&quot;,&quot;custom_setting&quot;:&quot;&quot;,&quot;reflistcust1&quot;:&quot;0&quot;,&quot;listcust1&quot;:&quot;&quot;,&quot;catg_setting&quot;:&quot;&quot;,&quot;reflistcat&quot;:&quot;0&quot;,&quot;listcat&quot;:&quot;&quot;,&quot;suburb_setting&quot;:&quot;&quot;,&quot;reflistsuburb&quot;:&quot;0&quot;,&quot;listsuburb&quot;:&quot;&quot;,&quot;state_setting&quot;:&quot;&quot;,&quot;refliststate&quot;:&quot;0&quot;,&quot;liststate&quot;:&quot;&quot;,&quot;country_setting&quot;:&quot;&quot;,&quot;reflistcountry&quot;:&quot;0&quot;,&quot;listcountry&quot;:&quot;&quot;,&quot;carousel_setting&quot;:&quot;&quot;,&quot;slideheight&quot;:&quot;100&quot;,&quot;slidespeed&quot;:&quot;2&quot;,&quot;rowgap&quot;:&quot;5&quot;,&quot;colour_setting&quot;:&quot;&quot;,&quot;carbkgr&quot;:&quot;#ffffff&quot;,&quot;bordercol&quot;:&quot;#ebebeb&quot;,&quot;gradstart&quot;:&quot;#ffffff&quot;,&quot;gradend&quot;:&quot;#ffffff&quot;,&quot;cache&quot;:&quot;1&quot;,&quot;cache_time&quot;:&quot;900&quot;,&quot;cachemode&quot;:&quot;itemid&quot;}</field>
-		<field name="custom_data"></field>
-		<field name="system_data"></field>
-		<field name="checked_out">0</field>
-		<field name="checked_out_time">0000-00-00 00:00:00</field>
-		<field name="ordering">0</field>
-		<field name="state">0</field>
-	</row>
-
-	<row>
-		<field name="extension_id">10003</field>
-		<field name="name">EZ Realty Lists</field>
-		<field name="type">module</field>
-		<field name="element">mod_ezrealty_lists</field>
-		<field name="folder"></field>
-		<field name="client_id">0</field>
-		<field name="enabled">1</field>
-		<field name="access">0</field>
-		<field name="protected">0</field>
-		<field name="manifest_cache">{&quot;name&quot;:&quot;EZ Realty Lists&quot;,&quot;type&quot;:&quot;module&quot;,&quot;creationDate&quot;:&quot;24th June 2014&quot;,&quot;author&quot;:&quot;K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;copyright&quot;:&quot;(C) 2006-2014 K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;authorEmail&quot;:&quot;kathy@raptorservices.com&quot;,&quot;authorUrl&quot;:&quot;www.raptorservices.com&quot;,&quot;version&quot;:&quot;2.0.3&quot;,&quot;description&quot;:&quot;\n\t\t\n\t\t&lt;h3&gt;About EZ Realty Lists Module&lt;\/h3&gt;\n\t\tThis module shows a configurable list display of a variety of information. You&#39;re able to setup the EZ Realty Lists Module to display information such as:-&lt;br \/&gt;&lt;br \/&gt;\n\t\t&lt;ul&gt;\n\t\t\t&lt;li&gt;property categories&lt;\/li&gt;\n\t\t\t&lt;li&gt;states&lt;\/li&gt;\n\t\t\t&lt;li&gt;suburbs&lt;\/li&gt;\n\t\t\t&lt;li&gt;recursive output of countries, state and suburbs&lt;\/li&gt;\n\t\t&lt;\/ul&gt;\n\t\t&lt;br \/&gt;\n\t\tIf displaying lists of categories, states or suburbs - you&#39;re able to select from a variety of layouts and other formatting options.&lt;br \/&gt;&lt;br \/&gt;\n\t\tMost of the configurable settings aren&#39;t applicable if displaying the recursive output - eg. totals, order, columns and other settings aren&#39;t used - as the recursive output has its own preset display.&lt;br \/&gt;&lt;br \/&gt;\n\t\tEach of the list layout options display hyperlinks to the categories, states and localities listings page which displays those properties.&lt;br \/&gt;\n\t\t&lt;h3&gt;Common Questions about the EZ Realty Lists Module&lt;\/h3&gt;\n&lt;strong&gt;Q. How many of these can I show on my site?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. You can show as many as you want - the categories, suburbs, states and\/or the recursive layout.  You just need to decide which, choose a module position, and setup the module.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. How can I display multiple copies of the same module?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Use the core Joomla \&quot;Duplicate\&quot; button in the module manager.  Consult the Joomla documentation for more information on managing modules in general.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n\n\t\t\n\t&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;mod_ezrealty_lists&quot;}</field>
-		<field name="params">{&quot;listingstype&quot;:&quot;0&quot;,&quot;item_order&quot;:&quot;0&quot;,&quot;count&quot;:&quot;&quot;,&quot;colcount&quot;:&quot;0&quot;,&quot;ezlayout&quot;:&quot;0&quot;,&quot;imgsize&quot;:&quot;1&quot;,&quot;ezicon&quot;:&quot;&quot;,&quot;bs_selectsize&quot;:&quot;12&quot;,&quot;titlepos&quot;:&quot;0&quot;,&quot;textlength&quot;:&quot;250&quot;,&quot;imgalign&quot;:&quot;left&quot;,&quot;imgwidth&quot;:&quot;120&quot;,&quot;cache&quot;:&quot;1&quot;,&quot;cache_time&quot;:&quot;900&quot;,&quot;cachemode&quot;:&quot;itemid&quot;}</field>
-		<field name="custom_data"></field>
-		<field name="system_data"></field>
-		<field name="checked_out">0</field>
-		<field name="checked_out_time">0000-00-00 00:00:00</field>
-		<field name="ordering">0</field>
-		<field name="state">0</field>
-	</row>
-
-	<row>
-		<field name="extension_id">10004</field>
-		<field name="name">EZ Realty Map</field>
-		<field name="type">module</field>
-		<field name="element">mod_ezrealty_map</field>
-		<field name="folder"></field>
-		<field name="client_id">0</field>
-		<field name="enabled">1</field>
-		<field name="access">0</field>
-		<field name="protected">0</field>
-		<field name="manifest_cache">{&quot;name&quot;:&quot;EZ Realty Map&quot;,&quot;type&quot;:&quot;module&quot;,&quot;creationDate&quot;:&quot;24th June 2014&quot;,&quot;author&quot;:&quot;K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;copyright&quot;:&quot;(C) 2006-2014 K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;authorEmail&quot;:&quot;kathy@raptorservices.com&quot;,&quot;authorUrl&quot;:&quot;www.raptorservices.com&quot;,&quot;version&quot;:&quot;3.0.6&quot;,&quot;description&quot;:&quot;\n\t\t\n\t\t&lt;h3&gt;About EZ Realty Map Module&lt;\/h3&gt;\n\t\tThis module allows you to display EZ Realty property listings on a Google map.  Mapping features for this module include:-&lt;br \/&gt;&lt;br \/&gt;\n\t\t&lt;ul&gt;\n\t\t\t&lt;li&gt;road, terrain and satellite map output&lt;\/li&gt;\n\t\t\t&lt;li&gt;streetview display&lt;\/li&gt;\n\t\t\t&lt;li&gt;pan and zoom controls&lt;\/li&gt;\n\t\t\t&lt;li&gt;popup information windows&lt;\/li&gt;\n\t\t&lt;\/ul&gt;\n\t\t&lt;br \/&gt;\n\t\tWhen setting up the EZ Realty Map Module - select the type of listings you want to display by using the refinement filters - eg. the listing type, whether to refine by category, country, state, or suburb.&lt;br \/&gt;&lt;br \/&gt;\n\n\t\t&lt;h3&gt;Common Questions about the EZ Realty Map Module&lt;\/h3&gt;\n\n&lt;strong&gt;Q. Can I display multiple maps on the same page?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. No - not at the moment.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n\n&lt;strong&gt;Q. Why isn&#39;t the map showing on the page?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. This usually happens due to publishing multiple maps on the same page.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n\n&lt;strong&gt;Q. Why is the map centered somewhere near Toowoomba - in Australia?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. The map uses a set of opening decimal coordinates, and these are defined in the mapping module parameters.  You need to assign opening decimal coordinates of relevance to your part of the world.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n\n\t\t\n\t&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;mod_ezrealty_map&quot;}</field>
-		<field name="params">{&quot;misc_setting&quot;:&quot;&quot;,&quot;listingstype&quot;:&quot;0&quot;,&quot;listingorder&quot;:&quot;0&quot;,&quot;count&quot;:&quot;20&quot;,&quot;custom_setting&quot;:&quot;&quot;,&quot;reflistcust1&quot;:&quot;0&quot;,&quot;listcust1&quot;:&quot;&quot;,&quot;catg_setting&quot;:&quot;&quot;,&quot;reflistcat&quot;:&quot;0&quot;,&quot;listcat&quot;:&quot;&quot;,&quot;suburb_setting&quot;:&quot;&quot;,&quot;reflistsuburb&quot;:&quot;0&quot;,&quot;listsuburb&quot;:&quot;&quot;,&quot;state_setting&quot;:&quot;&quot;,&quot;refliststate&quot;:&quot;0&quot;,&quot;liststate&quot;:&quot;&quot;,&quot;country_setting&quot;:&quot;&quot;,&quot;reflistcountry&quot;:&quot;0&quot;,&quot;listcountry&quot;:&quot;&quot;,&quot;content_setting&quot;:&quot;&quot;,&quot;titlesource&quot;:&quot;1&quot;,&quot;map_setting&quot;:&quot;&quot;,&quot;usealtmap&quot;:&quot;0&quot;,&quot;maplang&quot;:&quot;ru-RU&quot;,&quot;usestreetview&quot;:&quot;0&quot;,&quot;control_size&quot;:&quot;1&quot;,&quot;maplat&quot;:&quot;-27.5541330&quot;,&quot;maplong&quot;:&quot;152.0292450&quot;,&quot;mapres&quot;:&quot;12&quot;,&quot;mapheight&quot;:&quot;300&quot;,&quot;cache&quot;:&quot;1&quot;,&quot;cache_time&quot;:&quot;900&quot;,&quot;cachemode&quot;:&quot;itemid&quot;}</field>
-		<field name="custom_data"></field>
-		<field name="system_data"></field>
-		<field name="checked_out">0</field>
-		<field name="checked_out_time">0000-00-00 00:00:00</field>
-		<field name="ordering">0</field>
-		<field name="state">0</field>
-	</row>
-
-	<row>
-		<field name="extension_id">10005</field>
-		<field name="name">EZ Realty MultiDisplay of Listings</field>
-		<field name="type">module</field>
-		<field name="element">mod_ezrealty_multidisplay</field>
-		<field name="folder"></field>
-		<field name="client_id">0</field>
-		<field name="enabled">1</field>
-		<field name="access">0</field>
-		<field name="protected">0</field>
-		<field name="manifest_cache">{&quot;name&quot;:&quot;EZ Realty MultiDisplay of Listings&quot;,&quot;type&quot;:&quot;module&quot;,&quot;creationDate&quot;:&quot;24th June 2014&quot;,&quot;author&quot;:&quot;K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;copyright&quot;:&quot;(C) 2006-2014 K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;authorEmail&quot;:&quot;kathy@raptorservices.com&quot;,&quot;authorUrl&quot;:&quot;www.raptorservices.com&quot;,&quot;version&quot;:&quot;3.0.7&quot;,&quot;description&quot;:&quot;\n\t\t\n\t\t&lt;h3&gt;About EZ Realty Multidisplay Module&lt;\/h3&gt;\n\t\tThis is a flexible property listings module, allowing you to display property listings in a range of formats - eg. plain thumbnails - or images in combination with property information. \nYou&#39;re able to configure the EZ Realty Multidisplay Module to showcase your property listings in the following ways:-&lt;br \/&gt;&lt;br \/&gt;\n\t\t&lt;ul&gt;\n\t\t\t&lt;li&gt;show images in a vertical or horizontal display - or in a multi-row\/column output&lt;\/li&gt;\n\t\t\t&lt;li&gt;include a title above or below the image&lt;\/li&gt;\n\t\t\t&lt;li&gt;select from thumbnail, main image or panorama image&lt;\/li&gt;\n\t\t\t&lt;li&gt;add a configurable amount of descriptive text to the image&lt;\/li&gt;\n\t\t\t&lt;li&gt;configurable image dimensions&lt;\/li&gt;\n\t\t\t&lt;li&gt;delay image loading with the lazyloader system&lt;\/li&gt;\n\t\t\t&lt;li&gt;use popup image previews&lt;\/li&gt;\n\t\t&lt;\/ul&gt;\n\t\t&lt;br \/&gt;\n\t\tWhen setting up the EZ Realty Multidisplay Module - select the type of listings you want to display by using the refinement filters - eg. the listing type, whether to refine by category, country, state, or suburb.&lt;br \/&gt;&lt;br \/&gt;\n\t\tThen - decide where the module is to be displayed, and based on the space available - begin to define the settings for images and information - so you get a well-balanced page. The EZ Realty multidisplay module is perfect for templates which have a tabbed page feature - as you can assign a multidisplay module to each of the tabbed pages.&lt;br \/&gt;&lt;br \/&gt;\n\t\t&lt;h3&gt;Common Questions about the EZ Realty Multidisplay Module&lt;\/h3&gt;\n&lt;strong&gt;Q. Why are the images running off the page?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Check how many listings you&#39;ve configured to display - and also check the column count.  The column count controls how many items are displayed across the page - so if you have a narrow module position and a big column count - then you may need to change the column count to 1.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. I don&#39;t see any listings?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. If you&#39;ve used the refinement filters to display a certain type of listing - make sure you actually have some listings that meet the specified parameters.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. I don&#39;t see any images!  What&#39;s wrong?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Check which image source you&#39;re using.  If you&#39;ve configured the multidisplay module to use the panorama image - make sure you&#39;ve uploaded an image in the panorama image field for at least 1 property listing. The panorama image field is on the resource tab of the add\/edit property details form.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. The panorama image upload field isn&#39;t where you said it would be.&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Make sure you&#39;ve enabled use of the panorama image upload field in the EZ Realty configuration settings.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. Where do I find the EZ Realty configuration settings?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Go into the EZ Realty admin area, look at the icons across the page just below the page title.  You will see one called \&quot;Options\&quot; - click on it, and that will open up the EZ Realty configuration settings.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. It&#39;s not working - or it seems to be breaking my Joomla template menu.  How do I fix it?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Test out the \&quot;Disable jQuery File\&quot; setting or the LazyLoader setting.  You may need to enable or disable both or a combination of them - depending on what you&#39;ve already done to your site.  Make sure you&#39;ve unpublished other modules while testing this - so that you do not wrongly attribute the problem to the Multidisplay module.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. How many of these can I show on my site?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. You can show as many as you want - the categories, suburbs, states etc.  You just need to decide which, choose a module position, and setup the module.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. How can I display multiple copies of the same module?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Use the core Joomla \&quot;Duplicate\&quot; button in the module manager.  Consult the Joomla documentation for more information on managing modules in general.&lt;\/i&gt;\n\n\t\t\n\t&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;mod_ezrealty_multidisplay&quot;}</field>
-		<field name="params">{&quot;misc_setting&quot;:&quot;&quot;,&quot;displaystatus&quot;:&quot;0&quot;,&quot;marketstatus&quot;:&quot;0&quot;,&quot;listingstype&quot;:&quot;0&quot;,&quot;listingorder&quot;:&quot;0&quot;,&quot;count&quot;:&quot;20&quot;,&quot;colcount&quot;:&quot;0&quot;,&quot;showohdate&quot;:&quot;0&quot;,&quot;custom_setting&quot;:&quot;&quot;,&quot;reflistcust1&quot;:&quot;0&quot;,&quot;listcust1&quot;:&quot;&quot;,&quot;catg_setting&quot;:&quot;&quot;,&quot;reflistcat&quot;:&quot;0&quot;,&quot;listcat&quot;:&quot;&quot;,&quot;suburb_setting&quot;:&quot;&quot;,&quot;reflistsuburb&quot;:&quot;0&quot;,&quot;listsuburb&quot;:&quot;&quot;,&quot;state_setting&quot;:&quot;&quot;,&quot;refliststate&quot;:&quot;0&quot;,&quot;liststate&quot;:&quot;&quot;,&quot;country_setting&quot;:&quot;&quot;,&quot;reflistcountry&quot;:&quot;0&quot;,&quot;listcountry&quot;:&quot;&quot;,&quot;agent_setting&quot;:&quot;&quot;,&quot;reflistagent&quot;:&quot;0&quot;,&quot;listagent&quot;:&quot;&quot;,&quot;content_setting&quot;:&quot;&quot;,&quot;titlesource&quot;:&quot;1&quot;,&quot;titlepos&quot;:&quot;0&quot;,&quot;titlesize&quot;:&quot;0&quot;,&quot;textsource&quot;:&quot;1&quot;,&quot;textlength&quot;:&quot;250&quot;,&quot;textpos&quot;:&quot;0&quot;,&quot;image_setting&quot;:&quot;&quot;,&quot;imgsource&quot;:&quot;0&quot;,&quot;imgeffect&quot;:&quot;0&quot;,&quot;file_setting&quot;:&quot;&quot;,&quot;lazyload&quot;:&quot;1&quot;,&quot;disjquery&quot;:&quot;0&quot;,&quot;cache&quot;:&quot;1&quot;,&quot;cache_time&quot;:&quot;900&quot;,&quot;cachemode&quot;:&quot;itemid&quot;}</field>
-		<field name="custom_data"></field>
-		<field name="system_data"></field>
-		<field name="checked_out">0</field>
-		<field name="checked_out_time">0000-00-00 00:00:00</field>
-		<field name="ordering">0</field>
-		<field name="state">0</field>
-	</row>
-
-	<row>
-		<field name="extension_id">10006</field>
-		<field name="name">EZ Realty Patchwork</field>
-		<field name="type">module</field>
-		<field name="element">mod_ezrealty_patchwork</field>
-		<field name="folder"></field>
-		<field name="client_id">0</field>
-		<field name="enabled">1</field>
-		<field name="access">0</field>
-		<field name="protected">0</field>
-		<field name="manifest_cache">{&quot;name&quot;:&quot;EZ Realty Patchwork&quot;,&quot;type&quot;:&quot;module&quot;,&quot;creationDate&quot;:&quot;24th June 2014&quot;,&quot;author&quot;:&quot;K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;copyright&quot;:&quot;(C) 2006-2014 K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;authorEmail&quot;:&quot;kathy@raptorservices.com&quot;,&quot;authorUrl&quot;:&quot;www.raptorservices.com&quot;,&quot;version&quot;:&quot;3.0.4&quot;,&quot;description&quot;:&quot;\n\t\t\n\t\t&lt;h3&gt;About EZ Realty Patchwork Module&lt;\/h3&gt;\n\t\tThis is a slick slide-in pop-up wall of property listings designed to have its display triggered when you reach the end of the page. \nYou&#39;re able to configure the EZ Realty Patchwork Module to display images and information with a range of features such as:-&lt;br \/&gt;&lt;br \/&gt;\n\t\t&lt;ul&gt;\n\t\t\t&lt;li&gt;define the length of the title or description&lt;\/li&gt;\n\t\t\t&lt;li&gt;set the image size&lt;\/li&gt;\n\t\t\t&lt;li&gt;define the content span&lt;\/li&gt;\n\t\t&lt;\/ul&gt;\n\t\t&lt;br \/&gt;\n\t\tWhen setting up the EZ Realty Patchwork Module - select the type of listings you want to display by using the refinement filters - eg. the listing type, whether to refine by category, country, state, or suburb.&lt;br \/&gt;&lt;br \/&gt;\n\t\t&lt;h3&gt;Common Questions about the EZ Realty Patchwork Module&lt;\/h3&gt;\n&lt;strong&gt;Q. What&#39;s the best module position to use for the patchwork module?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Use the \&quot;debug\&quot; module position.  This is the very last position on the page and doesn&#39;t normally display output - which provides the perfect place to position the patchwork module so that it&#39;s display triggers when you reach the end of the page.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. It&#39;s not working - or it seems to be breaking my Joomla template menu.  How do I fix it?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Test out the \&quot;Disable jQuery File\&quot; setting.  You may need to enable it or disable it - depending on what you&#39;ve already done to your site.  Make sure you&#39;ve unpublished other modules while testing this - so that you do not wrongly attribute the problem to the patchwork module.&lt;\/i&gt;\n\n\t\t\n\t&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;mod_ezrealty_patchwork&quot;}</field>
-		<field name="params">{&quot;misc_setting&quot;:&quot;&quot;,&quot;listingstype&quot;:&quot;0&quot;,&quot;listingorder&quot;:&quot;0&quot;,&quot;count&quot;:&quot;20&quot;,&quot;custom_setting&quot;:&quot;&quot;,&quot;reflistcust1&quot;:&quot;0&quot;,&quot;listcust1&quot;:&quot;&quot;,&quot;catg_setting&quot;:&quot;&quot;,&quot;reflistcat&quot;:&quot;0&quot;,&quot;listcat&quot;:&quot;&quot;,&quot;suburb_setting&quot;:&quot;&quot;,&quot;reflistsuburb&quot;:&quot;0&quot;,&quot;listsuburb&quot;:&quot;&quot;,&quot;state_setting&quot;:&quot;&quot;,&quot;refliststate&quot;:&quot;0&quot;,&quot;liststate&quot;:&quot;&quot;,&quot;country_setting&quot;:&quot;&quot;,&quot;reflistcountry&quot;:&quot;0&quot;,&quot;listcountry&quot;:&quot;&quot;,&quot;content_setting&quot;:&quot;&quot;,&quot;titlelength&quot;:&quot;40&quot;,&quot;textlength&quot;:&quot;250&quot;,&quot;image_setting&quot;:&quot;&quot;,&quot;imgwidth&quot;:&quot;90&quot;,&quot;imgheight&quot;:&quot;60&quot;,&quot;patchwork_setting&quot;:&quot;&quot;,&quot;divwidth&quot;:&quot;330&quot;,&quot;divheight&quot;:&quot;180&quot;,&quot;file_setting&quot;:&quot;&quot;,&quot;disjquery&quot;:&quot;0&quot;,&quot;cache&quot;:&quot;1&quot;,&quot;cache_time&quot;:&quot;900&quot;,&quot;cachemode&quot;:&quot;itemid&quot;}</field>
-		<field name="custom_data"></field>
-		<field name="system_data"></field>
-		<field name="checked_out">0</field>
-		<field name="checked_out_time">0000-00-00 00:00:00</field>
-		<field name="ordering">0</field>
-		<field name="state">0</field>
-	</row>
-
-	<row>
-		<field name="extension_id">10007</field>
-		<field name="name">EZ Realty Search Module</field>
-		<field name="type">module</field>
-		<field name="element">mod_ezrealty_search</field>
-		<field name="folder"></field>
-		<field name="client_id">0</field>
-		<field name="enabled">1</field>
-		<field name="access">0</field>
-		<field name="protected">0</field>
-		<field name="manifest_cache">{&quot;name&quot;:&quot;EZ Realty Search Module&quot;,&quot;type&quot;:&quot;module&quot;,&quot;creationDate&quot;:&quot;24th June 2014&quot;,&quot;author&quot;:&quot;K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;copyright&quot;:&quot;(C) 2006-2014 K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;authorEmail&quot;:&quot;kathy@raptorservices.com&quot;,&quot;authorUrl&quot;:&quot;www.raptorservices.com&quot;,&quot;version&quot;:&quot;4.0.6&quot;,&quot;description&quot;:&quot;\n\t\t\n\t\t&lt;h3&gt;About EZ Realty Search Module&lt;\/h3&gt;\n\t\tThis module shows an EZ Realty search form for use in a module position.  You&#39;re able to achieve either a horizontal or vertical search form layout - depending on where you publish the module.  For example:-&lt;br \/&gt;&lt;br \/&gt;\n\t\t&lt;ul&gt;\n\t\t\t&lt;li&gt;publish in a sidebar position and you&#39;ll have a vertical form layout&lt;\/li&gt;\n\t\t\t&lt;li&gt;publish in a wide module position such as above or below the main page content - and you&#39;ll have a horizontal form layout&lt;\/li&gt;\n\t\t&lt;\/ul&gt;\n\t\t&lt;br \/&gt;\n\n\t\t&lt;h3&gt;Common Questions about the EZ Realty Search Module&lt;\/h3&gt;\n&lt;strong&gt;Q. Can I control which selector lists are displayed on the search form?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Yes you can - click on the \&quot;Basic Options\&quot; tab above - and configure the settings.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n\n&lt;strong&gt;Q. The width of the selector lists and keyword search field is all wrong it&#39;s too wide\/narrow.  How do I fix this?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Look in the EZ Realty search module settings on the basic options tab.  You will find a setting to enable you to define the width of selector lists and text fields.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n\n&lt;strong&gt;Q. Where does the EZ Realty Search Module post its results to?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. The search module posts its results to the EZ Realty search module results page.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n\n&lt;strong&gt;Q. How do I setup the search module results page?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Go into the Joomla menu item manager, click \&quot;New\&quot; to create a new menu item, click the blue \&quot;Select\&quot; button next to the \&quot;Menu Item Type\&quot; field, click \&quot;EZ Realty\&quot; from the list of components in the popup window, and then click on \&quot;Search Results for Search Module\&quot; from the list of EZ Realty menu item types. Then define the various menu item parameters and save.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n\n&lt;strong&gt;Q. Why doesn&#39;t the search module results page have any filters across the top like the other listings pages?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. It&#39;s the search module results page - so it&#39;s designed to just show search results derived from the search module.  Dynamic search filters are only a feature of the other listings pages.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n\n\t\t\n\t&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;mod_ezrealty_search&quot;}</field>
-		<field name="params">{&quot;bs_fieldsize&quot;:&quot;12&quot;,&quot;bs_selectsize&quot;:&quot;12&quot;,&quot;showmod_categories_select&quot;:&quot;1&quot;,&quot;showmod_transtype_select&quot;:&quot;1&quot;,&quot;showmod_marketstatus_select&quot;:&quot;1&quot;,&quot;showmod_sellers_select&quot;:&quot;1&quot;,&quot;showmod_countries_select&quot;:&quot;1&quot;,&quot;showmod_suburbs_select&quot;:&quot;1&quot;,&quot;showmod_minmaxprice_select&quot;:&quot;1&quot;,&quot;showmod_minbedsbaths_select&quot;:&quot;1&quot;,&quot;showmod_minmaxarea_select&quot;:&quot;1&quot;,&quot;showmod_minmaxland_select&quot;:&quot;1&quot;,&quot;showmod_keyword_select&quot;:&quot;1&quot;,&quot;showmod_dates_select&quot;:&quot;0&quot;,&quot;showmod_custom1_select&quot;:&quot;0&quot;,&quot;cache&quot;:&quot;1&quot;,&quot;cache_time&quot;:&quot;900&quot;,&quot;cachemode&quot;:&quot;itemid&quot;}</field>
-		<field name="custom_data"></field>
-		<field name="system_data"></field>
-		<field name="checked_out">0</field>
-		<field name="checked_out_time">0000-00-00 00:00:00</field>
-		<field name="ordering">0</field>
-		<field name="state">0</field>
-	</row>
-
-	<row>
-		<field name="extension_id">10008</field>
-		<field name="name">EZ Realty Slideshow</field>
-		<field name="type">module</field>
-		<field name="element">mod_ezrealty_slideshow</field>
-		<field name="folder"></field>
-		<field name="client_id">0</field>
-		<field name="enabled">1</field>
-		<field name="access">0</field>
-		<field name="protected">0</field>
-		<field name="manifest_cache">{&quot;name&quot;:&quot;EZ Realty Slideshow&quot;,&quot;type&quot;:&quot;module&quot;,&quot;creationDate&quot;:&quot;24th June 2014&quot;,&quot;author&quot;:&quot;K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;copyright&quot;:&quot;(C) 2006-2014 K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;authorEmail&quot;:&quot;kathy@raptorservices.com&quot;,&quot;authorUrl&quot;:&quot;www.raptorservices.com&quot;,&quot;version&quot;:&quot;1.0.3&quot;,&quot;description&quot;:&quot;\n\t\t\n\t\t&lt;h3&gt;About EZ Realty Slideshow Module&lt;\/h3&gt;\n\t\tThis is a flexible slideshow module, allowing you to display either the property panorama image, main property image which has been uploaded for the property listings - or you can use static images that you&#39;ve uploaded to the images\/slideshow directory. \nYou&#39;re able to configure the EZ Realty Panorama Module to display images with a range of features such as:-&lt;br \/&gt;&lt;br \/&gt;\n\t\t&lt;ul&gt;\n\t\t\t&lt;li&gt;responsive - so it&#39;ll adjust to the screen resolution being used&lt;\/li&gt;\n\t\t\t&lt;li&gt;image overlay - including the choice of new, auction, featured, leased, inspect and sold graphics&lt;\/li&gt;\n\t\t\t&lt;li&gt;previous\/next\/pause buttons&lt;\/li&gt;\n\t\t\t&lt;li&gt;buttons positioned either inside the image boundaries&lt;\/li&gt;\n\t\t\t&lt;li&gt;configurable image height&lt;\/li&gt;\n\t\t\t&lt;li&gt;choose from headline, small description or both&lt;\/li&gt;\n\t\t\t&lt;li&gt;transition effects&lt;\/li&gt;\n\t\t&lt;\/ul&gt;\n\t\t&lt;br \/&gt;\n\t\tWhen setting up the EZ Realty Slideshow Module - select the type of listings you want to display by using the refinement filters - eg. the listing type, whether to refine by category, country, state, or suburb.&lt;br \/&gt;&lt;br \/&gt;\n\t\tThe EZ Realty Slideshow Module is perfect as a graphic header for your Joomla template too - if you have a suitable module position.&lt;br \/&gt;&lt;br \/&gt;\n\t\t&lt;h3&gt;Common Questions about the EZ Realty Slideshow Module&lt;\/h3&gt;\n&lt;strong&gt;Q. I don&#39;t see any images!  What&#39;s wrong?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. If you&#39;ve configured the slideshow module to use the panorama image - make sure you&#39;ve uploaded an image in the panorama image field for at least 1 property listing. The panorama image field is on the resource tab of the add\/edit property details form. If you&#39;ve configured the slideshow module to use images from the slideshow directory - make sure you&#39;ve created a directory called slideshow in the core Joomla images directory - and make sure you&#39;ve uploaded some JPG files to it.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. The panorama image upload field isn&#39;t where you said it would be.&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Make sure you&#39;ve enabled use of the panorama image upload field in the EZ Realty configuration settings.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. Where do I find the EZ Realty configuration settings?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Go into the EZ Realty admin area, look at the icons across the page just below the page title.  You will see one called \&quot;Options\&quot; - click on it, and that will open up the EZ Realty configuration settings.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. How do I change the size of the image output?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. The EZ Realty slideshow module is responsive - so it spreads out to 100% of the width available to it. You control its height via 2 settings in the slideshow module settings - so read the settings information about them.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. It&#39;s not working - or it seems to be breaking my Joomla template menu.  How do I fix it?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Test out the \&quot;Disable jQuery File\&quot; setting.  You may need to enable it or disable it - depending on what you&#39;ve already done to your site.  Make sure you&#39;ve unpublished other modules while testing this - so that you do not wrongly attribute the problem to the slideshow module.&lt;\/i&gt;\n\n\t\t\n\t&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;mod_ezrealty_slideshow&quot;}</field>
-		<field name="params">{&quot;misc_setting&quot;:&quot;&quot;,&quot;listingstype&quot;:&quot;0&quot;,&quot;listingorder&quot;:&quot;0&quot;,&quot;count&quot;:&quot;20&quot;,&quot;custom_setting&quot;:&quot;&quot;,&quot;reflistcust1&quot;:&quot;0&quot;,&quot;listcust1&quot;:&quot;&quot;,&quot;catg_setting&quot;:&quot;&quot;,&quot;reflistcat&quot;:&quot;0&quot;,&quot;listcat&quot;:&quot;&quot;,&quot;suburb_setting&quot;:&quot;&quot;,&quot;reflistsuburb&quot;:&quot;0&quot;,&quot;listsuburb&quot;:&quot;&quot;,&quot;state_setting&quot;:&quot;&quot;,&quot;refliststate&quot;:&quot;0&quot;,&quot;liststate&quot;:&quot;&quot;,&quot;country_setting&quot;:&quot;&quot;,&quot;reflistcountry&quot;:&quot;0&quot;,&quot;listcountry&quot;:&quot;&quot;,&quot;content_setting&quot;:&quot;&quot;,&quot;listinginfo&quot;:&quot;0&quot;,&quot;titlesize&quot;:&quot;0&quot;,&quot;image_setting&quot;:&quot;&quot;,&quot;imgsource&quot;:&quot;0&quot;,&quot;height&quot;:&quot;50%&quot;,&quot;minHeight&quot;:&quot;200px&quot;,&quot;imgoverlay&quot;:&quot;&quot;,&quot;file_setting&quot;:&quot;&quot;,&quot;loader&quot;:&quot;pie&quot;,&quot;loaderColor&quot;:&quot;#eeeeee&quot;,&quot;loaderBgColor&quot;:&quot;#222222&quot;,&quot;loaderOpacity&quot;:&quot;.8&quot;,&quot;time&quot;:&quot;7000&quot;,&quot;transperiod&quot;:&quot;1500&quot;,&quot;easing&quot;:&quot;easeInOutExpo&quot;,&quot;fx&quot;:&quot;random&quot;,&quot;disjquery&quot;:&quot;0&quot;,&quot;cache&quot;:&quot;1&quot;,&quot;cache_time&quot;:&quot;900&quot;,&quot;cachemode&quot;:&quot;itemid&quot;}</field>
-		<field name="custom_data"></field>
-		<field name="system_data"></field>
-		<field name="checked_out">0</field>
-		<field name="checked_out_time">0000-00-00 00:00:00</field>
-		<field name="ordering">0</field>
-		<field name="state">0</field>
-	</row>
-
-	<row>
-		<field name="extension_id">10009</field>
-		<field name="name">EZ Realty Package</field>
-		<field name="type">package</field>
-		<field name="element">pkg_ezrealty</field>
-		<field name="folder"></field>
-		<field name="client_id">0</field>
-		<field name="enabled">1</field>
-		<field name="access">1</field>
-		<field name="protected">0</field>
-		<field name="manifest_cache">{&quot;name&quot;:&quot;EZ Realty Package&quot;,&quot;type&quot;:&quot;package&quot;,&quot;creationDate&quot;:&quot;7th August 2014&quot;,&quot;author&quot;:&quot;Kathy Strickland&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;authorEmail&quot;:&quot;&quot;,&quot;authorUrl&quot;:&quot;&quot;,&quot;version&quot;:&quot;7.2.0&quot;,&quot;description&quot;:&quot;The EZ Realty realestate system for Joomla!&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;pkg_ezrealty&quot;}</field>
-		<field name="params">{}</field>
-		<field name="custom_data"></field>
-		<field name="system_data"></field>
-		<field name="checked_out">0</field>
-		<field name="checked_out_time">0000-00-00 00:00:00</field>
-		<field name="ordering">0</field>
-		<field name="state">0</field>
-	</row>
-
-	<row>
-		<field name="extension_id">10010</field>
-		<field name="name">Akeeba</field>
-		<field name="type">component</field>
-		<field name="element">com_akeeba</field>
-		<field name="folder"></field>
-		<field name="client_id">1</field>
-		<field name="enabled">1</field>
-		<field name="access">0</field>
-		<field name="protected">0</field>
-		<field name="manifest_cache">{&quot;name&quot;:&quot;Akeeba&quot;,&quot;type&quot;:&quot;component&quot;,&quot;creationDate&quot;:&quot;2015-02-03&quot;,&quot;author&quot;:&quot;Nicholas K. Dionysopoulos&quot;,&quot;copyright&quot;:&quot;Copyright (c)2006-2014 Nicholas K. Dionysopoulos&quot;,&quot;authorEmail&quot;:&quot;nicholas@dionysopoulos.me&quot;,&quot;authorUrl&quot;:&quot;http:\/\/www.akeebabackup.com&quot;,&quot;version&quot;:&quot;4.1.2&quot;,&quot;description&quot;:&quot;Akeeba Backup Pro - Full Joomla! site backup solution, Professional Edition&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;akeeba&quot;}</field>
-		<field name="params">{&quot;siteurl&quot;:&quot;http:\/\/reaxml.dev\/&quot;,&quot;jlibrariesdir&quot;:&quot;\/Users\/nclifton\/Documents\/MAMP\/htdocs\/reaxml\/libraries&quot;,&quot;jversion&quot;:&quot;1.6&quot;}</field>
-		<field name="custom_data"></field>
-		<field name="system_data"></field>
-		<field name="checked_out">0</field>
-		<field name="checked_out_time">0000-00-00 00:00:00</field>
-		<field name="ordering">0</field>
-		<field name="state">0</field>
-	</row>
-
-	<row>
-		<field name="extension_id">10011</field>
-		<field name="name">plg_installer_akeebabackup</field>
-		<field name="type">plugin</field>
-		<field name="element">akeebabackup</field>
-		<field name="folder">installer</field>
-		<field name="client_id">0</field>
-		<field name="enabled">1</field>
-		<field name="access">1</field>
-		<field name="protected">0</field>
-		<field name="manifest_cache">{&quot;name&quot;:&quot;plg_installer_akeebabackup&quot;,&quot;type&quot;:&quot;plugin&quot;,&quot;creationDate&quot;:&quot;2014-03-06&quot;,&quot;author&quot;:&quot;Nicholas K. Dionysopoulos&quot;,&quot;copyright&quot;:&quot;Copyright (c)2012 Nicholas K. Dionysopoulos&quot;,&quot;authorEmail&quot;:&quot;nicholas@akeebabackup.com&quot;,&quot;authorUrl&quot;:&quot;http:\/\/www.akeebabackup.com&quot;,&quot;version&quot;:&quot;1.0&quot;,&quot;description&quot;:&quot;PLG_INSTALLER_AKEEBABACKUP_XML_DESCRIPTION&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;akeebabackup&quot;}</field>
-		<field name="params">{}</field>
-		<field name="custom_data"></field>
-		<field name="system_data"></field>
-		<field name="checked_out">0</field>
-		<field name="checked_out_time">0000-00-00 00:00:00</field>
-		<field name="ordering">0</field>
-		<field name="state">0</field>
-	</row>
-
-	<row>
-		<field name="extension_id">10012</field>
 		<field name="name">plg_quickicon_akeebabackup</field>
 		<field name="type">plugin</field>
 		<field name="element">akeebabackup</field>
@@ -2906,7 +2684,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	</row>
 
 	<row>
-		<field name="extension_id">10013</field>
+		<field name="extension_id">10002</field>
 		<field name="name">PLG_SYSTEM_AKEEBAUPDATECHECK_TITLE</field>
 		<field name="type">plugin</field>
 		<field name="element">akeebaupdatecheck</field>
@@ -2926,7 +2704,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	</row>
 
 	<row>
-		<field name="extension_id">10014</field>
+		<field name="extension_id">10003</field>
 		<field name="name">PLG_SYSTEM_BACKUPONUPDATE_TITLE</field>
 		<field name="type">plugin</field>
 		<field name="element">backuponupdate</field>
@@ -2946,17 +2724,237 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	</row>
 
 	<row>
-		<field name="extension_id">10015</field>
-		<field name="name">PLG_SRP_TITLE</field>
-		<field name="type">plugin</field>
-		<field name="element">srp</field>
-		<field name="folder">system</field>
+		<field name="extension_id">10004</field>
+		<field name="name">F0F (NEW) DO NOT REMOVE</field>
+		<field name="type">library</field>
+		<field name="element">lib_f0f</field>
+		<field name="folder"></field>
 		<field name="client_id">0</field>
-		<field name="enabled">0</field>
+		<field name="enabled">1</field>
 		<field name="access">1</field>
 		<field name="protected">0</field>
-		<field name="manifest_cache">{&quot;name&quot;:&quot;PLG_SRP_TITLE&quot;,&quot;type&quot;:&quot;plugin&quot;,&quot;creationDate&quot;:&quot;2015-02-03&quot;,&quot;author&quot;:&quot;Nicholas K. Dionysopoulos&quot;,&quot;copyright&quot;:&quot;Copyright (c)2011-2014 Nicholas K. Dionysopoulos&quot;,&quot;authorEmail&quot;:&quot;nicholas@dionysopoulos.me&quot;,&quot;authorUrl&quot;:&quot;http:\/\/www.akeebabackup.com&quot;,&quot;version&quot;:&quot;4.1.2&quot;,&quot;description&quot;:&quot;PLG_SRP_DESCRIPTION&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;srp&quot;}</field>
-		<field name="params">{&quot;profileid&quot;:&quot;1&quot;}</field>
+		<field name="manifest_cache">{&quot;name&quot;:&quot;F0F (NEW) DO NOT REMOVE&quot;,&quot;type&quot;:&quot;library&quot;,&quot;creationDate&quot;:&quot;2015-03-23 15:16:33&quot;,&quot;author&quot;:&quot;Nicholas K. Dionysopoulos \/ Akeeba Ltd&quot;,&quot;copyright&quot;:&quot;(C)2011-2014 Nicholas K. Dionysopoulos&quot;,&quot;authorEmail&quot;:&quot;nicholas@akeebabackup.com&quot;,&quot;authorUrl&quot;:&quot;https:\/\/www.akeebabackup.com&quot;,&quot;version&quot;:&quot;rev12154F7-1427116593&quot;,&quot;description&quot;:&quot;Framework-on-Framework (FOF) newer version - DO NOT REMOVE - The rapid component development framework for Joomla!. This package is the newer version of FOF, not the one shipped with Joomla! as the official Joomla! RAD Layer. The Joomla! RAD Layer has ceased development in March 2014. DO NOT UNINSTALL THIS PACKAGE, IT IS *** N O T *** A DUPLICATE OF THE &#39;FOF&#39; PACKAGE. REMOVING EITHER FOF PACKAGE WILL BREAK YOUR SITE.&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;lib_f0f&quot;}</field>
+		<field name="params">{}</field>
+		<field name="custom_data"></field>
+		<field name="system_data"></field>
+		<field name="checked_out">0</field>
+		<field name="checked_out_time">0000-00-00 00:00:00</field>
+		<field name="ordering">0</field>
+		<field name="state">0</field>
+	</row>
+
+	<row>
+		<field name="extension_id">10005</field>
+		<field name="name">AkeebaStrapper</field>
+		<field name="type">file</field>
+		<field name="element">AkeebaStrapper</field>
+		<field name="folder"></field>
+		<field name="client_id">0</field>
+		<field name="enabled">1</field>
+		<field name="access">0</field>
+		<field name="protected">0</field>
+		<field name="manifest_cache">{&quot;name&quot;:&quot;AkeebaStrapper&quot;,&quot;type&quot;:&quot;file&quot;,&quot;creationDate&quot;:&quot;2015-03-23 15:16:33&quot;,&quot;author&quot;:&quot;Nicholas K. Dionysopoulos&quot;,&quot;copyright&quot;:&quot;(C) 2012-2013 Akeeba Ltd.&quot;,&quot;authorEmail&quot;:&quot;nicholas@dionysopoulos.me&quot;,&quot;authorUrl&quot;:&quot;https:\/\/www.akeebabackup.com&quot;,&quot;version&quot;:&quot;rev12154F7-1427116593&quot;,&quot;description&quot;:&quot;Namespaced jQuery, jQuery UI and Bootstrap for Akeeba products.&quot;,&quot;group&quot;:&quot;&quot;}</field>
+		<field name="params"></field>
+		<field name="custom_data"></field>
+		<field name="system_data"></field>
+		<field name="checked_out">0</field>
+		<field name="checked_out_time">0000-00-00 00:00:00</field>
+		<field name="ordering">0</field>
+		<field name="state">0</field>
+	</row>
+
+	<row>
+		<field name="extension_id">10006</field>
+		<field name="name">EZ Realty</field>
+		<field name="type">component</field>
+		<field name="element">com_ezrealty</field>
+		<field name="folder"></field>
+		<field name="client_id">1</field>
+		<field name="enabled">1</field>
+		<field name="access">0</field>
+		<field name="protected">0</field>
+		<field name="manifest_cache">{&quot;name&quot;:&quot;EZ Realty&quot;,&quot;type&quot;:&quot;component&quot;,&quot;creationDate&quot;:&quot;7th August 2014&quot;,&quot;author&quot;:&quot;Kathy Strickland (aka PixelBunyiP)&quot;,&quot;copyright&quot;:&quot;(C) 2006-2014 K.J. Strickland, Raptor Developments Pty Ltd T\/as Raptor Services.&quot;,&quot;authorEmail&quot;:&quot;kathy@raptorservices.com&quot;,&quot;authorUrl&quot;:&quot;www.raptorservices.com&quot;,&quot;version&quot;:&quot;7.2.0&quot;,&quot;description&quot;:&quot;\n\t\t\n\t&lt;br \/&gt;\n\t&lt;table&gt;\n\t\t&lt;tr&gt;\n\t\t\t&lt;td class=\&quot;sectionname\&quot; valign=\&quot;top\&quot;&gt;Welcome to EZ Realty - a simple Real Estate component big on features and configurable options for Joomla! 3.0x powered sites.&lt;\/td&gt;\n\t\t&lt;\/tr&gt;\n\t\t&lt;tr&gt;\n\t\t\t&lt;td&gt;&lt;br \/&gt;\n\t\t\tNow that installation is complete - it&#39;s time to set up the \n\t\t\tconfiguration area, specify your property categories, define the \n\t\t\tlocalities, states, and countries, update the configuration settings, and enter \n\t\t\tyour property listing details. &lt;br \/&gt;&lt;br \/&gt;&lt;strong&gt;Enjoy your new software!&lt;\/strong&gt;&lt;\/td&gt;\n\t\t&lt;\/tr&gt;\n\t\t&lt;\/table&gt;\n\t\t\n\t&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;ezrealty&quot;}</field>
+		<field name="params">{&quot;er_bizname&quot;:&quot;REAXML DEMO&quot;,&quot;user_id&quot;:&quot;151&quot;,&quot;er_agent&quot;:&quot;Agent name&quot;,&quot;er_agenttype&quot;:&quot;&quot;,&quot;er_bizad&quot;:&quot;&quot;,&quot;er_bizsuburb&quot;:&quot;&quot;,&quot;er_bizstate&quot;:&quot;&quot;,&quot;er_bizpcode&quot;:&quot;&quot;,&quot;er_telephone&quot;:&quot;&quot;,&quot;er_mobile&quot;:&quot;&quot;,&quot;er_faxnum&quot;:&quot;&quot;,&quot;er_bizemail&quot;:&quot;Your Email address is required here&quot;,&quot;er_bizlogo&quot;:&quot;&quot;,&quot;er_pdfbkgr&quot;:&quot;&quot;,&quot;er_adminpdfbkgr&quot;:&quot;&quot;,&quot;er_bizbanner&quot;:&quot;&quot;,&quot;er_altimgupload&quot;:&quot;0&quot;,&quot;max_images&quot;:&quot;24&quot;,&quot;er_thumbquality&quot;:&quot;60&quot;,&quot;er_watermark&quot;:&quot;1&quot;,&quot;er_maxprofimgsize&quot;:&quot;80&quot;,&quot;er_pdffix&quot;:&quot;0&quot;,&quot;er_thumbcreation&quot;:&quot;gd2&quot;,&quot;newthumbwidth&quot;:&quot;200&quot;,&quot;distortimg&quot;:&quot;0&quot;,&quot;er_thumbwidth&quot;:&quot;120&quot;,&quot;thumbheight&quot;:&quot;&quot;,&quot;standard_thumb&quot;:&quot;3&quot;,&quot;feat_thumb&quot;:&quot;4&quot;,&quot;er_imgwidth&quot;:&quot;400&quot;,&quot;er_imgheight&quot;:&quot;300&quot;,&quot;er_maxwidth&quot;:&quot;700&quot;,&quot;er_maxheight&quot;:&quot;700&quot;,&quot;er_usepanorama&quot;:&quot;1&quot;,&quot;er_maxpanoimgsize&quot;:&quot;100&quot;,&quot;er_useqrcode&quot;:&quot;1&quot;,&quot;er_useflv&quot;:&quot;1&quot;,&quot;er_flvwidth&quot;:&quot;200&quot;,&quot;er_flvheight&quot;:&quot;200&quot;,&quot;er_usepdfupload&quot;:&quot;1&quot;,&quot;er_maxpdfsize&quot;:&quot;100&quot;,&quot;er_useepcupload&quot;:&quot;1&quot;,&quot;er_maxepcsize&quot;:&quot;100&quot;,&quot;er_useflplupload&quot;:&quot;1&quot;,&quot;er_maxflplsize&quot;:&quot;100&quot;,&quot;er_catthumbwidth&quot;:&quot;120&quot;,&quot;er_filtercid&quot;:&quot;0&quot;,&quot;er_filtertype&quot;:&quot;0&quot;,&quot;er_filterstreet&quot;:&quot;0&quot;,&quot;er_filterloc&quot;:&quot;0&quot;,&quot;er_filterstate&quot;:&quot;0&quot;,&quot;er_filtercount&quot;:&quot;0&quot;,&quot;er_filterseller&quot;:&quot;0&quot;,&quot;er_filter_keyword&quot;:&quot;0&quot;,&quot;er_piclist&quot;:&quot;0&quot;,&quot;er_newnotifications&quot;:&quot;0&quot;,&quot;er_udnotifications&quot;:&quot;0&quot;,&quot;er_usebasespecs&quot;:&quot;1&quot;,&quot;er_usebldg&quot;:&quot;1&quot;,&quot;er_usebsmt&quot;:&quot;1&quot;,&quot;er_useland&quot;:&quot;1&quot;,&quot;er_useutil&quot;:&quot;1&quot;,&quot;er_usefees&quot;:&quot;1&quot;,&quot;er_useparking&quot;:&quot;1&quot;,&quot;er_ruralinfo&quot;:&quot;1&quot;,&quot;er_businfo&quot;:&quot;1&quot;,&quot;er_useschools&quot;:&quot;1&quot;,&quot;er_genres&quot;:&quot;1&quot;,&quot;er_useynfeat&quot;:&quot;1&quot;,&quot;er_customspecs&quot;:&quot;1&quot;,&quot;er_ohinfo&quot;:&quot;1&quot;,&quot;er_aucinfo&quot;:&quot;1&quot;,&quot;er_meta&quot;:&quot;1&quot;,&quot;er_useadministrative&quot;:&quot;1&quot;,&quot;er_usesecondary&quot;:&quot;1&quot;,&quot;er_addnew&quot;:&quot;1&quot;,&quot;er_stateloc&quot;:&quot;1&quot;,&quot;er_country&quot;:&quot;1&quot;,&quot;er_usepc&quot;:&quot;1&quot;,&quot;use_appliancefeats&quot;:&quot;1&quot;,&quot;appliancefeats&quot;:&quot;Dishwasher;&quot;,&quot;use_indoorfeats&quot;:&quot;1&quot;,&quot;indoorfeats&quot;:&quot;Carpets;Air Conditioning;Vacuum System;Open Fire Place;Gas Heating;Electric Heating;Gas Ducted Heating;Solid Fuel Heating;Heating;Gas Hot Water Service;Electric Hot Water Service;Solar Hot Water Service;Built-in Robes;Ducted Cooling;Ducted Heating;Evaporative Cooling;Hydronic Heating;Reverse Cycle Air Conditioning;Split System Air Conditioning;Split System Heating;Spa;&quot;,&quot;use_outdoorfeats&quot;:&quot;1&quot;,&quot;outdoorfeats&quot;:&quot;Inground Pool;Spa;In Ground Pool;Above Ground Pool;Above Ground Spa;In Ground Spa;Tennis Court;Shed;Outdoor Entertainment;&quot;,&quot;use_buildingfeats&quot;:&quot;1&quot;,&quot;buildingfeats&quot;:&quot;Brick;Balcony;Deck;Courtyard;Floorboards;&quot;,&quot;use_communityfeats&quot;:&quot;1&quot;,&quot;communityfeats&quot;:&quot;Close to Schools;&quot;,&quot;use_otherfeats&quot;:&quot;1&quot;,&quot;otherfeats&quot;:&quot;Views;Intercom;Remote Control Garage Door;Secure Parking;Alarm System;Fully Fenced;Broadband;Pay TV;Solar Panels;Water Tank;Grey Water System;&quot;,&quot;er_usemarket&quot;:&quot;1&quot;,&quot;er_usemarket1&quot;:&quot;1&quot;,&quot;er_usemarket2&quot;:&quot;1&quot;,&quot;er_usemarket3&quot;:&quot;1&quot;,&quot;er_usemarket4&quot;:&quot;1&quot;,&quot;er_usemarket5&quot;:&quot;1&quot;,&quot;er_usemarket6&quot;:&quot;1&quot;,&quot;er_usemarket7&quot;:&quot;1&quot;,&quot;er_usemarket8&quot;:&quot;1&quot;,&quot;er_usemarket9&quot;:&quot;1&quot;,&quot;er_usemarket10&quot;:&quot;1&quot;,&quot;er_usetype1&quot;:&quot;1&quot;,&quot;er_usetype2&quot;:&quot;1&quot;,&quot;er_usetype3&quot;:&quot;1&quot;,&quot;er_usetype4&quot;:&quot;1&quot;,&quot;er_usetype5&quot;:&quot;1&quot;,&quot;er_usetype6&quot;:&quot;1&quot;,&quot;er_usetype7&quot;:&quot;1&quot;,&quot;er_userenttype&quot;:&quot;1&quot;,&quot;er_usefrequit&quot;:&quot;1&quot;,&quot;er_usefrequit1&quot;:&quot;1&quot;,&quot;er_usefrequit2&quot;:&quot;1&quot;,&quot;er_usefrequit3&quot;:&quot;1&quot;,&quot;er_usefrequit4&quot;:&quot;1&quot;,&quot;er_usefrequit5&quot;:&quot;1&quot;,&quot;er_usefrequit6&quot;:&quot;1&quot;,&quot;er_usefrequit7&quot;:&quot;1&quot;,&quot;er_usecouch&quot;:&quot;0&quot;,&quot;er_usestudio&quot;:&quot;0&quot;,&quot;er_maxrooms&quot;:&quot;10&quot;,&quot;er_landareaunit&quot;:&quot;1&quot;,&quot;er_acreageunit&quot;:&quot;1&quot;,&quot;er_areaunit&quot;:&quot;1&quot;,&quot;er_arealist&quot;:&quot;10;&quot;,&quot;er_usemlsid&quot;:&quot;1&quot;,&quot;er_useoffice&quot;:&quot;1&quot;,&quot;show_categories_title&quot;:&quot;1&quot;,&quot;cats_title&quot;:&quot;Browse Properties by Category&quot;,&quot;show_cats_propcount&quot;:&quot;1&quot;,&quot;show_cats_access&quot;:&quot;0&quot;,&quot;show_cats_spotlight&quot;:&quot;1&quot;,&quot;show_catspot_title&quot;:&quot;1&quot;,&quot;cats_spotlight_title&quot;:&quot;Property Spotlight&quot;,&quot;cats_spotlight_number&quot;:&quot;4&quot;,&quot;catspot_imgsource&quot;:&quot;0&quot;,&quot;show_suburbs_title&quot;:&quot;1&quot;,&quot;subs_title&quot;:&quot;Browse Properties by Suburb&quot;,&quot;show_subs_propcount&quot;:&quot;1&quot;,&quot;show_subs_spotlight&quot;:&quot;1&quot;,&quot;show_subspot_title&quot;:&quot;1&quot;,&quot;subs_spotlight_title&quot;:&quot;Property Spotlight&quot;,&quot;subs_spotlight_number&quot;:&quot;4&quot;,&quot;subs_imgsource&quot;:&quot;0&quot;,&quot;show_states_title&quot;:&quot;1&quot;,&quot;stats_title&quot;:&quot;Browse Properties by State&quot;,&quot;show_stats_propcount&quot;:&quot;1&quot;,&quot;show_stats_spotlight&quot;:&quot;1&quot;,&quot;show_statspot_title&quot;:&quot;1&quot;,&quot;stats_spotlight_title&quot;:&quot;Property Spotlight&quot;,&quot;stats_spotlight_number&quot;:&quot;4&quot;,&quot;stats_imgsource&quot;:&quot;0&quot;,&quot;show_category_title&quot;:&quot;1&quot;,&quot;show_description&quot;:&quot;1&quot;,&quot;show_description_image&quot;:&quot;0&quot;,&quot;catimg_align&quot;:&quot;left&quot;,&quot;show_suburb_title&quot;:&quot;1&quot;,&quot;show_suburb_description&quot;:&quot;1&quot;,&quot;show_suburb_image&quot;:&quot;0&quot;,&quot;suburb_resolution&quot;:&quot;15&quot;,&quot;show_state_title&quot;:&quot;1&quot;,&quot;state_resolution&quot;:&quot;8&quot;,&quot;show_ttyp_title&quot;:&quot;1&quot;,&quot;show_schres_title&quot;:&quot;1&quot;,&quot;schres_title&quot;:&quot;Property Results&quot;,&quot;show_shlist_title&quot;:&quot;1&quot;,&quot;shlist_title&quot;:&quot;My Shortlist&quot;,&quot;show_categories_select&quot;:&quot;1&quot;,&quot;show_transtype_select&quot;:&quot;1&quot;,&quot;show_marketstatus_select&quot;:&quot;1&quot;,&quot;show_sellers_select&quot;:&quot;1&quot;,&quot;show_countries_select&quot;:&quot;1&quot;,&quot;show_states_select&quot;:&quot;1&quot;,&quot;show_suburbs_select&quot;:&quot;1&quot;,&quot;show_minmaxprice_select&quot;:&quot;1&quot;,&quot;show_minbedsbaths_select&quot;:&quot;1&quot;,&quot;show_minmaxarea_select&quot;:&quot;1&quot;,&quot;show_minmaxland_select&quot;:&quot;1&quot;,&quot;show_keyword_select&quot;:&quot;1&quot;,&quot;show_dates_select&quot;:&quot;0&quot;,&quot;show_custom1_select&quot;:&quot;0&quot;,&quot;show_surrounding_select&quot;:&quot;0&quot;,&quot;er_radius_dist&quot;:&quot;15&quot;,&quot;er_radius_unit&quot;:&quot;6378.7&quot;,&quot;show_print_results&quot;:&quot;0&quot;,&quot;title_source&quot;:&quot;0&quot;,&quot;title_price&quot;:&quot;1&quot;,&quot;title_status&quot;:&quot;1&quot;,&quot;show_create_date&quot;:&quot;1&quot;,&quot;show_small_desc&quot;:&quot;1&quot;,&quot;show_icons&quot;:&quot;1&quot;,&quot;show_openhousedate&quot;:&quot;1&quot;,&quot;show_auctiondate&quot;:&quot;1&quot;,&quot;restrict_sold&quot;:&quot;0&quot;,&quot;er_uselistmap&quot;:&quot;1&quot;,&quot;er_listmapres&quot;:&quot;12&quot;,&quot;er_listmapheight&quot;:&quot;300&quot;,&quot;er_listmaplat&quot;:&quot;-27.5541330&quot;,&quot;er_listmaplong&quot;:&quot;152.0292450&quot;,&quot;show_pagination&quot;:&quot;2&quot;,&quot;which_pageclass&quot;:&quot;pagination&quot;,&quot;show_pagination_results&quot;:&quot;1&quot;,&quot;show_pagination_limit&quot;:&quot;1&quot;,&quot;show_sort_list&quot;:&quot;1&quot;,&quot;listorder1&quot;:&quot;catgtype&quot;,&quot;listorder2&quot;:&quot;transtype&quot;,&quot;listorder3&quot;:&quot;marketstatus&quot;,&quot;listorder4&quot;:&quot;sellers&quot;,&quot;listorder5&quot;:&quot;minmaxprice&quot;,&quot;listorder6&quot;:&quot;locations&quot;,&quot;listorder7&quot;:&quot;minmxbeds&quot;,&quot;listorder8&quot;:&quot;minmaxarea&quot;,&quot;listorder9&quot;:&quot;minmaxland&quot;,&quot;social_tweet&quot;:&quot;0&quot;,&quot;social_gplus&quot;:&quot;0&quot;,&quot;social_facebook&quot;:&quot;0&quot;,&quot;social_pinterest&quot;:&quot;0&quot;,&quot;disable_pinjs&quot;:&quot;0&quot;,&quot;use_print&quot;:&quot;0&quot;,&quot;er_viewrecommend&quot;:&quot;0&quot;,&quot;which_page_title&quot;:&quot;0&quot;,&quot;er_imglayout&quot;:&quot;images&quot;,&quot;er_thumbcols&quot;:&quot;4&quot;,&quot;er_imgfilesys&quot;:&quot;1&quot;,&quot;er_imglayoutwidth&quot;:&quot;0&quot;,&quot;er_layout&quot;:&quot;0&quot;,&quot;er_useprofile&quot;:&quot;1&quot;,&quot;er_proflayout&quot;:&quot;1&quot;,&quot;er_idnum&quot;:&quot;1&quot;,&quot;er_schoolprof&quot;:&quot;0&quot;,&quot;er_hoodprof&quot;:&quot;0&quot;,&quot;target&quot;:&quot;0&quot;,&quot;width&quot;:&quot;600&quot;,&quot;height&quot;:&quot;500&quot;,&quot;er_viewarrange&quot;:&quot;1&quot;,&quot;er_formtype&quot;:&quot;1&quot;,&quot;er_mailoverride&quot;:&quot;0&quot;,&quot;er_usemap&quot;:&quot;0&quot;,&quot;er_walkscore&quot;:&quot;0&quot;,&quot;er_wsapi&quot;:&quot;&quot;,&quot;er_mapres&quot;:&quot;12&quot;,&quot;er_mapheight&quot;:&quot;300&quot;,&quot;er_usesimilar&quot;:&quot;0&quot;,&quot;er_simnum&quot;:&quot;5&quot;,&quot;address_format&quot;:&quot;0&quot;,&quot;er_usealtmap&quot;:&quot;0&quot;,&quot;er_maplang&quot;:&quot;ru-RU&quot;,&quot;er_streetview&quot;:&quot;0&quot;,&quot;disable_jquery&quot;:&quot;0&quot;,&quot;popup_linktype&quot;:&quot;0&quot;,&quot;enable_bootstrap&quot;:&quot;0&quot;,&quot;icon_colour&quot;:&quot;1&quot;,&quot;page_iconcolour&quot;:&quot;0&quot;,&quot;titlecolor&quot;:&quot;title-green&quot;,&quot;mailcolor&quot;:&quot;mail-gold&quot;,&quot;butcolour&quot;:&quot;btn btn-success&quot;,&quot;butsize&quot;:&quot;btn-small&quot;,&quot;er_fieldsize&quot;:&quot;span12&quot;,&quot;er_selectsize&quot;:&quot;span12&quot;,&quot;er_currencycontrol&quot;:&quot;0&quot;,&quot;er_currencycode&quot;:&quot;&quot;,&quot;er_currencysign&quot;:&quot;$&quot;,&quot;er_currencypos&quot;:&quot;0&quot;,&quot;er_currencyformat&quot;:&quot;0&quot;,&quot;er_expmgmt&quot;:&quot;0&quot;,&quot;er_expfig&quot;:&quot;&quot;,&quot;er_expgrace&quot;:&quot;&quot;,&quot;er_shortlisting&quot;:&quot;0&quot;,&quot;er_lightboxexp&quot;:&quot;&quot;,&quot;defordering&quot;:&quot;a.id DESC&quot;,&quot;deflistorder&quot;:&quot;0&quot;,&quot;er_hideprice&quot;:&quot;1&quot;,&quot;er_dateformat&quot;:&quot;d-m-Y&quot;,&quot;use_ezportal&quot;:&quot;0&quot;,&quot;use_realtybookings&quot;:&quot;0&quot;,&quot;show_feed_link&quot;:&quot;1&quot;,&quot;feed_summary&quot;:&quot;0&quot;,&quot;er_recaptcha&quot;:&quot;0&quot;,&quot;use_jrev&quot;:&quot;0&quot;}</field>
+		<field name="custom_data"></field>
+		<field name="system_data"></field>
+		<field name="checked_out">0</field>
+		<field name="checked_out_time">0000-00-00 00:00:00</field>
+		<field name="ordering">0</field>
+		<field name="state">0</field>
+	</row>
+
+	<row>
+		<field name="extension_id">10007</field>
+		<field name="name">EZ Realty Accordion</field>
+		<field name="type">module</field>
+		<field name="element">mod_ezrealty_accordion</field>
+		<field name="folder"></field>
+		<field name="client_id">0</field>
+		<field name="enabled">1</field>
+		<field name="access">0</field>
+		<field name="protected">0</field>
+		<field name="manifest_cache">{&quot;name&quot;:&quot;EZ Realty Accordion&quot;,&quot;type&quot;:&quot;module&quot;,&quot;creationDate&quot;:&quot;24th June 2014&quot;,&quot;author&quot;:&quot;K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;copyright&quot;:&quot;(C) 2006-2014 K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;authorEmail&quot;:&quot;kathy@raptorservices.com&quot;,&quot;authorUrl&quot;:&quot;www.raptorservices.com&quot;,&quot;version&quot;:&quot;1.0.2&quot;,&quot;description&quot;:&quot;\n\t\t\n\t\t&lt;h3&gt;About EZ Realty Accordion Module&lt;\/h3&gt;\n\t\tThis module shows the property listings in a vertical orientation content accordion.  The accordion will cycle through each of the property listings automatically - and will slide each pane open. \nYou&#39;re able to configure the EZ Realty Accordion Module to display images and information with a range of features such as:-&lt;br \/&gt;&lt;br \/&gt;\n\t\t&lt;ul&gt;\n\t\t\t&lt;li&gt;define the title source&lt;\/li&gt;\n\t\t\t&lt;li&gt;define the descriptive text source, and how much to display&lt;\/li&gt;\n\t\t\t&lt;li&gt;choose the image source - eg. thumbnail, main image or panorama image - as well as the width for that image&lt;\/li&gt;\n\t\t\t&lt;li&gt;configure the display div height - which may be necessary depending on the size of images displayed, and the amount of descriptive text used.&lt;\/li&gt;\n\t\t&lt;\/ul&gt;\n\t\t&lt;br \/&gt;\n\t\tWhen setting up the EZ Realty Accordion Module - select the type of listings you want to display by using the refinement filters - eg. the listing type, whether to refine by category, country, state, or suburb.&lt;br \/&gt;&lt;br \/&gt;\n\t\t&lt;h3&gt;Common Questions about the EZ Realty Accordion Module&lt;\/h3&gt;\n&lt;strong&gt;Q. What&#39;s the best module position to use for the accordion module?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Select a module position with sufficient display width across the page for what you&#39;re showing on the page.  In most cases - a module position above or below the main page content is best - however you could use a sidebar position if just showing images in the accordion.  It really depends - so take all of these things into consideration.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n\n&lt;strong&gt;Q. Why don&#39;t I see anything - it&#39;s published?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Recheck your settings - and then check the listings you&#39;ve created.  After all - if you configure the module to use the panorama image - but havn&#39;t uploaded a panorama image for the property listings - then you won&#39;t see anything on the page output.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n\n&lt;strong&gt;Q. It&#39;s not working - or it seems to be breaking my Joomla template menu.  How do I fix it?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Test out the \&quot;Disable jQuery File\&quot; setting.  You may need to enable it or disable it - depending on what you&#39;ve already done to your site.  Make sure you&#39;ve unpublished other modules while testing this - so that you do not wrongly attribute the problem to the accordion module.&lt;\/i&gt;\n\n&lt;strong&gt;Q. Why aren&#39;t all of the listings being displayed?  I configured it to show 30 listings - but there are only 20 being displayed.&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. The accordion module has a maximum display limit of 20.  So, it will only show that number regardless of how many you enter into the total listings setting.  If there are fewer - then that&#39;s probably all the listings that are available on your site.&lt;\/i&gt;\n\n\t\t\n\t&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;mod_ezrealty_accordion&quot;}</field>
+		<field name="params">{&quot;misc_setting&quot;:&quot;&quot;,&quot;listingstype&quot;:&quot;0&quot;,&quot;listingorder&quot;:&quot;0&quot;,&quot;count&quot;:&quot;20&quot;,&quot;custom_setting&quot;:&quot;&quot;,&quot;reflistcust1&quot;:&quot;0&quot;,&quot;listcust1&quot;:&quot;&quot;,&quot;catg_setting&quot;:&quot;&quot;,&quot;reflistcat&quot;:&quot;0&quot;,&quot;listcat&quot;:&quot;&quot;,&quot;suburb_setting&quot;:&quot;&quot;,&quot;reflistsuburb&quot;:&quot;0&quot;,&quot;listsuburb&quot;:&quot;&quot;,&quot;state_setting&quot;:&quot;&quot;,&quot;refliststate&quot;:&quot;0&quot;,&quot;liststate&quot;:&quot;&quot;,&quot;country_setting&quot;:&quot;&quot;,&quot;reflistcountry&quot;:&quot;0&quot;,&quot;listcountry&quot;:&quot;&quot;,&quot;content_setting&quot;:&quot;&quot;,&quot;titlesource&quot;:&quot;1&quot;,&quot;textsource&quot;:&quot;1&quot;,&quot;textlength&quot;:&quot;250&quot;,&quot;contentheight&quot;:&quot;250&quot;,&quot;image_setting&quot;:&quot;&quot;,&quot;imgsource&quot;:&quot;0&quot;,&quot;imgwidth&quot;:&quot;3&quot;,&quot;file_setting&quot;:&quot;&quot;,&quot;disjquery&quot;:&quot;0&quot;,&quot;cache&quot;:&quot;1&quot;,&quot;cache_time&quot;:&quot;900&quot;,&quot;cachemode&quot;:&quot;itemid&quot;}</field>
+		<field name="custom_data"></field>
+		<field name="system_data"></field>
+		<field name="checked_out">0</field>
+		<field name="checked_out_time">0000-00-00 00:00:00</field>
+		<field name="ordering">0</field>
+		<field name="state">0</field>
+	</row>
+
+	<row>
+		<field name="extension_id">10008</field>
+		<field name="name">EZ Realty Thumbnails Carousel</field>
+		<field name="type">module</field>
+		<field name="element">mod_ezrealty_carousel</field>
+		<field name="folder"></field>
+		<field name="client_id">0</field>
+		<field name="enabled">1</field>
+		<field name="access">0</field>
+		<field name="protected">0</field>
+		<field name="manifest_cache">{&quot;name&quot;:&quot;EZ Realty Thumbnails Carousel&quot;,&quot;type&quot;:&quot;module&quot;,&quot;creationDate&quot;:&quot;24th June 2014&quot;,&quot;author&quot;:&quot;K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;copyright&quot;:&quot;(C) 2006-2014 K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;authorEmail&quot;:&quot;kathy@raptorservices.com&quot;,&quot;authorUrl&quot;:&quot;www.raptorservices.com&quot;,&quot;version&quot;:&quot;3.0.6&quot;,&quot;description&quot;:&quot;\n\t\t\n\t\t&lt;h3&gt;About EZ Realty Thumbnails Carousel Module&lt;\/h3&gt;\nThis module shows thumbnails of property images in a horizontal scrolling carousel. The settings can be configured to pull a range of listing images in a variety of ordering sequences. \nYou&#39;re able to configure the carousel display and operation in a number of ways too - eg:-&lt;br \/&gt;&lt;br \/&gt;\n\t\t&lt;ul&gt;\n\t\t\t&lt;li&gt;slider height&lt;\/li&gt;\n\t\t\t&lt;li&gt;carousel speed&lt;\/li&gt;\n\t\t\t&lt;li&gt;background colour&lt;\/li&gt;\n\t\t&lt;\/ul&gt;\n\t\t&lt;br \/&gt;\n\t\tWhen setting up the EZ Realty Thumbnails Carousel Module - select the type of listings you want to display by using the refinement filters - eg. the listing type, whether to refine by category, country, state, or suburb.&lt;br \/&gt;&lt;br \/&gt;\n\t\t&lt;h3&gt;Common Questions about the EZ Realty Thumbnails Carousel Module&lt;\/h3&gt;\n&lt;strong&gt;Q. What&#39;s the best module position to use for the carousel module?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Select a horizontal module position - with sufficient width to display the images scrolling across the page.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. Can it display a vertical scrolling action?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. No - it just displays as a horizontal scroll.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. Why don&#39;t I see anything displayed in the carousel?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Make sure your property listings have images, and make sure there are listings created which meet the parameters you&#39;ve specified for the module.&lt;\/i&gt;\n\t\t\n\t&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;mod_ezrealty_carousel&quot;}</field>
+		<field name="params">{&quot;misc_setting&quot;:&quot;&quot;,&quot;listingstype&quot;:&quot;0&quot;,&quot;listingorder&quot;:&quot;0&quot;,&quot;count&quot;:&quot;20&quot;,&quot;custom_setting&quot;:&quot;&quot;,&quot;reflistcust1&quot;:&quot;0&quot;,&quot;listcust1&quot;:&quot;&quot;,&quot;catg_setting&quot;:&quot;&quot;,&quot;reflistcat&quot;:&quot;0&quot;,&quot;listcat&quot;:&quot;&quot;,&quot;suburb_setting&quot;:&quot;&quot;,&quot;reflistsuburb&quot;:&quot;0&quot;,&quot;listsuburb&quot;:&quot;&quot;,&quot;state_setting&quot;:&quot;&quot;,&quot;refliststate&quot;:&quot;0&quot;,&quot;liststate&quot;:&quot;&quot;,&quot;country_setting&quot;:&quot;&quot;,&quot;reflistcountry&quot;:&quot;0&quot;,&quot;listcountry&quot;:&quot;&quot;,&quot;carousel_setting&quot;:&quot;&quot;,&quot;slideheight&quot;:&quot;100&quot;,&quot;slidespeed&quot;:&quot;2&quot;,&quot;rowgap&quot;:&quot;5&quot;,&quot;colour_setting&quot;:&quot;&quot;,&quot;carbkgr&quot;:&quot;#ffffff&quot;,&quot;bordercol&quot;:&quot;#ebebeb&quot;,&quot;gradstart&quot;:&quot;#ffffff&quot;,&quot;gradend&quot;:&quot;#ffffff&quot;,&quot;cache&quot;:&quot;1&quot;,&quot;cache_time&quot;:&quot;900&quot;,&quot;cachemode&quot;:&quot;itemid&quot;}</field>
+		<field name="custom_data"></field>
+		<field name="system_data"></field>
+		<field name="checked_out">0</field>
+		<field name="checked_out_time">0000-00-00 00:00:00</field>
+		<field name="ordering">0</field>
+		<field name="state">0</field>
+	</row>
+
+	<row>
+		<field name="extension_id">10009</field>
+		<field name="name">EZ Realty Lists</field>
+		<field name="type">module</field>
+		<field name="element">mod_ezrealty_lists</field>
+		<field name="folder"></field>
+		<field name="client_id">0</field>
+		<field name="enabled">1</field>
+		<field name="access">0</field>
+		<field name="protected">0</field>
+		<field name="manifest_cache">{&quot;name&quot;:&quot;EZ Realty Lists&quot;,&quot;type&quot;:&quot;module&quot;,&quot;creationDate&quot;:&quot;24th June 2014&quot;,&quot;author&quot;:&quot;K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;copyright&quot;:&quot;(C) 2006-2014 K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;authorEmail&quot;:&quot;kathy@raptorservices.com&quot;,&quot;authorUrl&quot;:&quot;www.raptorservices.com&quot;,&quot;version&quot;:&quot;2.0.3&quot;,&quot;description&quot;:&quot;\n\t\t\n\t\t&lt;h3&gt;About EZ Realty Lists Module&lt;\/h3&gt;\n\t\tThis module shows a configurable list display of a variety of information. You&#39;re able to setup the EZ Realty Lists Module to display information such as:-&lt;br \/&gt;&lt;br \/&gt;\n\t\t&lt;ul&gt;\n\t\t\t&lt;li&gt;property categories&lt;\/li&gt;\n\t\t\t&lt;li&gt;states&lt;\/li&gt;\n\t\t\t&lt;li&gt;suburbs&lt;\/li&gt;\n\t\t\t&lt;li&gt;recursive output of countries, state and suburbs&lt;\/li&gt;\n\t\t&lt;\/ul&gt;\n\t\t&lt;br \/&gt;\n\t\tIf displaying lists of categories, states or suburbs - you&#39;re able to select from a variety of layouts and other formatting options.&lt;br \/&gt;&lt;br \/&gt;\n\t\tMost of the configurable settings aren&#39;t applicable if displaying the recursive output - eg. totals, order, columns and other settings aren&#39;t used - as the recursive output has its own preset display.&lt;br \/&gt;&lt;br \/&gt;\n\t\tEach of the list layout options display hyperlinks to the categories, states and localities listings page which displays those properties.&lt;br \/&gt;\n\t\t&lt;h3&gt;Common Questions about the EZ Realty Lists Module&lt;\/h3&gt;\n&lt;strong&gt;Q. How many of these can I show on my site?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. You can show as many as you want - the categories, suburbs, states and\/or the recursive layout.  You just need to decide which, choose a module position, and setup the module.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. How can I display multiple copies of the same module?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Use the core Joomla \&quot;Duplicate\&quot; button in the module manager.  Consult the Joomla documentation for more information on managing modules in general.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n\n\t\t\n\t&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;mod_ezrealty_lists&quot;}</field>
+		<field name="params">{&quot;listingstype&quot;:&quot;0&quot;,&quot;item_order&quot;:&quot;0&quot;,&quot;count&quot;:&quot;&quot;,&quot;colcount&quot;:&quot;0&quot;,&quot;ezlayout&quot;:&quot;0&quot;,&quot;imgsize&quot;:&quot;1&quot;,&quot;ezicon&quot;:&quot;&quot;,&quot;bs_selectsize&quot;:&quot;12&quot;,&quot;titlepos&quot;:&quot;0&quot;,&quot;textlength&quot;:&quot;250&quot;,&quot;imgalign&quot;:&quot;left&quot;,&quot;imgwidth&quot;:&quot;120&quot;,&quot;cache&quot;:&quot;1&quot;,&quot;cache_time&quot;:&quot;900&quot;,&quot;cachemode&quot;:&quot;itemid&quot;}</field>
+		<field name="custom_data"></field>
+		<field name="system_data"></field>
+		<field name="checked_out">0</field>
+		<field name="checked_out_time">0000-00-00 00:00:00</field>
+		<field name="ordering">0</field>
+		<field name="state">0</field>
+	</row>
+
+	<row>
+		<field name="extension_id">10010</field>
+		<field name="name">EZ Realty Map</field>
+		<field name="type">module</field>
+		<field name="element">mod_ezrealty_map</field>
+		<field name="folder"></field>
+		<field name="client_id">0</field>
+		<field name="enabled">1</field>
+		<field name="access">0</field>
+		<field name="protected">0</field>
+		<field name="manifest_cache">{&quot;name&quot;:&quot;EZ Realty Map&quot;,&quot;type&quot;:&quot;module&quot;,&quot;creationDate&quot;:&quot;24th June 2014&quot;,&quot;author&quot;:&quot;K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;copyright&quot;:&quot;(C) 2006-2014 K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;authorEmail&quot;:&quot;kathy@raptorservices.com&quot;,&quot;authorUrl&quot;:&quot;www.raptorservices.com&quot;,&quot;version&quot;:&quot;3.0.6&quot;,&quot;description&quot;:&quot;\n\t\t\n\t\t&lt;h3&gt;About EZ Realty Map Module&lt;\/h3&gt;\n\t\tThis module allows you to display EZ Realty property listings on a Google map.  Mapping features for this module include:-&lt;br \/&gt;&lt;br \/&gt;\n\t\t&lt;ul&gt;\n\t\t\t&lt;li&gt;road, terrain and satellite map output&lt;\/li&gt;\n\t\t\t&lt;li&gt;streetview display&lt;\/li&gt;\n\t\t\t&lt;li&gt;pan and zoom controls&lt;\/li&gt;\n\t\t\t&lt;li&gt;popup information windows&lt;\/li&gt;\n\t\t&lt;\/ul&gt;\n\t\t&lt;br \/&gt;\n\t\tWhen setting up the EZ Realty Map Module - select the type of listings you want to display by using the refinement filters - eg. the listing type, whether to refine by category, country, state, or suburb.&lt;br \/&gt;&lt;br \/&gt;\n\n\t\t&lt;h3&gt;Common Questions about the EZ Realty Map Module&lt;\/h3&gt;\n\n&lt;strong&gt;Q. Can I display multiple maps on the same page?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. No - not at the moment.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n\n&lt;strong&gt;Q. Why isn&#39;t the map showing on the page?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. This usually happens due to publishing multiple maps on the same page.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n\n&lt;strong&gt;Q. Why is the map centered somewhere near Toowoomba - in Australia?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. The map uses a set of opening decimal coordinates, and these are defined in the mapping module parameters.  You need to assign opening decimal coordinates of relevance to your part of the world.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n\n\t\t\n\t&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;mod_ezrealty_map&quot;}</field>
+		<field name="params">{&quot;misc_setting&quot;:&quot;&quot;,&quot;listingstype&quot;:&quot;0&quot;,&quot;listingorder&quot;:&quot;0&quot;,&quot;count&quot;:&quot;20&quot;,&quot;custom_setting&quot;:&quot;&quot;,&quot;reflistcust1&quot;:&quot;0&quot;,&quot;listcust1&quot;:&quot;&quot;,&quot;catg_setting&quot;:&quot;&quot;,&quot;reflistcat&quot;:&quot;0&quot;,&quot;listcat&quot;:&quot;&quot;,&quot;suburb_setting&quot;:&quot;&quot;,&quot;reflistsuburb&quot;:&quot;0&quot;,&quot;listsuburb&quot;:&quot;&quot;,&quot;state_setting&quot;:&quot;&quot;,&quot;refliststate&quot;:&quot;0&quot;,&quot;liststate&quot;:&quot;&quot;,&quot;country_setting&quot;:&quot;&quot;,&quot;reflistcountry&quot;:&quot;0&quot;,&quot;listcountry&quot;:&quot;&quot;,&quot;content_setting&quot;:&quot;&quot;,&quot;titlesource&quot;:&quot;1&quot;,&quot;map_setting&quot;:&quot;&quot;,&quot;usealtmap&quot;:&quot;0&quot;,&quot;maplang&quot;:&quot;ru-RU&quot;,&quot;usestreetview&quot;:&quot;0&quot;,&quot;control_size&quot;:&quot;1&quot;,&quot;maplat&quot;:&quot;-27.5541330&quot;,&quot;maplong&quot;:&quot;152.0292450&quot;,&quot;mapres&quot;:&quot;12&quot;,&quot;mapheight&quot;:&quot;300&quot;,&quot;cache&quot;:&quot;1&quot;,&quot;cache_time&quot;:&quot;900&quot;,&quot;cachemode&quot;:&quot;itemid&quot;}</field>
+		<field name="custom_data"></field>
+		<field name="system_data"></field>
+		<field name="checked_out">0</field>
+		<field name="checked_out_time">0000-00-00 00:00:00</field>
+		<field name="ordering">0</field>
+		<field name="state">0</field>
+	</row>
+
+	<row>
+		<field name="extension_id">10011</field>
+		<field name="name">EZ Realty MultiDisplay of Listings</field>
+		<field name="type">module</field>
+		<field name="element">mod_ezrealty_multidisplay</field>
+		<field name="folder"></field>
+		<field name="client_id">0</field>
+		<field name="enabled">1</field>
+		<field name="access">0</field>
+		<field name="protected">0</field>
+		<field name="manifest_cache">{&quot;name&quot;:&quot;EZ Realty MultiDisplay of Listings&quot;,&quot;type&quot;:&quot;module&quot;,&quot;creationDate&quot;:&quot;24th June 2014&quot;,&quot;author&quot;:&quot;K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;copyright&quot;:&quot;(C) 2006-2014 K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;authorEmail&quot;:&quot;kathy@raptorservices.com&quot;,&quot;authorUrl&quot;:&quot;www.raptorservices.com&quot;,&quot;version&quot;:&quot;3.0.7&quot;,&quot;description&quot;:&quot;\n\t\t\n\t\t&lt;h3&gt;About EZ Realty Multidisplay Module&lt;\/h3&gt;\n\t\tThis is a flexible property listings module, allowing you to display property listings in a range of formats - eg. plain thumbnails - or images in combination with property information. \nYou&#39;re able to configure the EZ Realty Multidisplay Module to showcase your property listings in the following ways:-&lt;br \/&gt;&lt;br \/&gt;\n\t\t&lt;ul&gt;\n\t\t\t&lt;li&gt;show images in a vertical or horizontal display - or in a multi-row\/column output&lt;\/li&gt;\n\t\t\t&lt;li&gt;include a title above or below the image&lt;\/li&gt;\n\t\t\t&lt;li&gt;select from thumbnail, main image or panorama image&lt;\/li&gt;\n\t\t\t&lt;li&gt;add a configurable amount of descriptive text to the image&lt;\/li&gt;\n\t\t\t&lt;li&gt;configurable image dimensions&lt;\/li&gt;\n\t\t\t&lt;li&gt;delay image loading with the lazyloader system&lt;\/li&gt;\n\t\t\t&lt;li&gt;use popup image previews&lt;\/li&gt;\n\t\t&lt;\/ul&gt;\n\t\t&lt;br \/&gt;\n\t\tWhen setting up the EZ Realty Multidisplay Module - select the type of listings you want to display by using the refinement filters - eg. the listing type, whether to refine by category, country, state, or suburb.&lt;br \/&gt;&lt;br \/&gt;\n\t\tThen - decide where the module is to be displayed, and based on the space available - begin to define the settings for images and information - so you get a well-balanced page. The EZ Realty multidisplay module is perfect for templates which have a tabbed page feature - as you can assign a multidisplay module to each of the tabbed pages.&lt;br \/&gt;&lt;br \/&gt;\n\t\t&lt;h3&gt;Common Questions about the EZ Realty Multidisplay Module&lt;\/h3&gt;\n&lt;strong&gt;Q. Why are the images running off the page?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Check how many listings you&#39;ve configured to display - and also check the column count.  The column count controls how many items are displayed across the page - so if you have a narrow module position and a big column count - then you may need to change the column count to 1.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. I don&#39;t see any listings?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. If you&#39;ve used the refinement filters to display a certain type of listing - make sure you actually have some listings that meet the specified parameters.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. I don&#39;t see any images!  What&#39;s wrong?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Check which image source you&#39;re using.  If you&#39;ve configured the multidisplay module to use the panorama image - make sure you&#39;ve uploaded an image in the panorama image field for at least 1 property listing. The panorama image field is on the resource tab of the add\/edit property details form.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. The panorama image upload field isn&#39;t where you said it would be.&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Make sure you&#39;ve enabled use of the panorama image upload field in the EZ Realty configuration settings.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. Where do I find the EZ Realty configuration settings?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Go into the EZ Realty admin area, look at the icons across the page just below the page title.  You will see one called \&quot;Options\&quot; - click on it, and that will open up the EZ Realty configuration settings.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. It&#39;s not working - or it seems to be breaking my Joomla template menu.  How do I fix it?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Test out the \&quot;Disable jQuery File\&quot; setting or the LazyLoader setting.  You may need to enable or disable both or a combination of them - depending on what you&#39;ve already done to your site.  Make sure you&#39;ve unpublished other modules while testing this - so that you do not wrongly attribute the problem to the Multidisplay module.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. How many of these can I show on my site?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. You can show as many as you want - the categories, suburbs, states etc.  You just need to decide which, choose a module position, and setup the module.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. How can I display multiple copies of the same module?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Use the core Joomla \&quot;Duplicate\&quot; button in the module manager.  Consult the Joomla documentation for more information on managing modules in general.&lt;\/i&gt;\n\n\t\t\n\t&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;mod_ezrealty_multidisplay&quot;}</field>
+		<field name="params">{&quot;misc_setting&quot;:&quot;&quot;,&quot;displaystatus&quot;:&quot;0&quot;,&quot;marketstatus&quot;:&quot;0&quot;,&quot;listingstype&quot;:&quot;0&quot;,&quot;listingorder&quot;:&quot;0&quot;,&quot;count&quot;:&quot;20&quot;,&quot;colcount&quot;:&quot;0&quot;,&quot;showohdate&quot;:&quot;0&quot;,&quot;custom_setting&quot;:&quot;&quot;,&quot;reflistcust1&quot;:&quot;0&quot;,&quot;listcust1&quot;:&quot;&quot;,&quot;catg_setting&quot;:&quot;&quot;,&quot;reflistcat&quot;:&quot;0&quot;,&quot;listcat&quot;:&quot;&quot;,&quot;suburb_setting&quot;:&quot;&quot;,&quot;reflistsuburb&quot;:&quot;0&quot;,&quot;listsuburb&quot;:&quot;&quot;,&quot;state_setting&quot;:&quot;&quot;,&quot;refliststate&quot;:&quot;0&quot;,&quot;liststate&quot;:&quot;&quot;,&quot;country_setting&quot;:&quot;&quot;,&quot;reflistcountry&quot;:&quot;0&quot;,&quot;listcountry&quot;:&quot;&quot;,&quot;agent_setting&quot;:&quot;&quot;,&quot;reflistagent&quot;:&quot;0&quot;,&quot;listagent&quot;:&quot;&quot;,&quot;content_setting&quot;:&quot;&quot;,&quot;titlesource&quot;:&quot;1&quot;,&quot;titlepos&quot;:&quot;0&quot;,&quot;titlesize&quot;:&quot;0&quot;,&quot;textsource&quot;:&quot;1&quot;,&quot;textlength&quot;:&quot;250&quot;,&quot;textpos&quot;:&quot;0&quot;,&quot;image_setting&quot;:&quot;&quot;,&quot;imgsource&quot;:&quot;0&quot;,&quot;imgeffect&quot;:&quot;0&quot;,&quot;file_setting&quot;:&quot;&quot;,&quot;lazyload&quot;:&quot;1&quot;,&quot;disjquery&quot;:&quot;0&quot;,&quot;cache&quot;:&quot;1&quot;,&quot;cache_time&quot;:&quot;900&quot;,&quot;cachemode&quot;:&quot;itemid&quot;}</field>
+		<field name="custom_data"></field>
+		<field name="system_data"></field>
+		<field name="checked_out">0</field>
+		<field name="checked_out_time">0000-00-00 00:00:00</field>
+		<field name="ordering">0</field>
+		<field name="state">0</field>
+	</row>
+
+	<row>
+		<field name="extension_id">10012</field>
+		<field name="name">EZ Realty Patchwork</field>
+		<field name="type">module</field>
+		<field name="element">mod_ezrealty_patchwork</field>
+		<field name="folder"></field>
+		<field name="client_id">0</field>
+		<field name="enabled">1</field>
+		<field name="access">0</field>
+		<field name="protected">0</field>
+		<field name="manifest_cache">{&quot;name&quot;:&quot;EZ Realty Patchwork&quot;,&quot;type&quot;:&quot;module&quot;,&quot;creationDate&quot;:&quot;24th June 2014&quot;,&quot;author&quot;:&quot;K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;copyright&quot;:&quot;(C) 2006-2014 K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;authorEmail&quot;:&quot;kathy@raptorservices.com&quot;,&quot;authorUrl&quot;:&quot;www.raptorservices.com&quot;,&quot;version&quot;:&quot;3.0.4&quot;,&quot;description&quot;:&quot;\n\t\t\n\t\t&lt;h3&gt;About EZ Realty Patchwork Module&lt;\/h3&gt;\n\t\tThis is a slick slide-in pop-up wall of property listings designed to have its display triggered when you reach the end of the page. \nYou&#39;re able to configure the EZ Realty Patchwork Module to display images and information with a range of features such as:-&lt;br \/&gt;&lt;br \/&gt;\n\t\t&lt;ul&gt;\n\t\t\t&lt;li&gt;define the length of the title or description&lt;\/li&gt;\n\t\t\t&lt;li&gt;set the image size&lt;\/li&gt;\n\t\t\t&lt;li&gt;define the content span&lt;\/li&gt;\n\t\t&lt;\/ul&gt;\n\t\t&lt;br \/&gt;\n\t\tWhen setting up the EZ Realty Patchwork Module - select the type of listings you want to display by using the refinement filters - eg. the listing type, whether to refine by category, country, state, or suburb.&lt;br \/&gt;&lt;br \/&gt;\n\t\t&lt;h3&gt;Common Questions about the EZ Realty Patchwork Module&lt;\/h3&gt;\n&lt;strong&gt;Q. What&#39;s the best module position to use for the patchwork module?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Use the \&quot;debug\&quot; module position.  This is the very last position on the page and doesn&#39;t normally display output - which provides the perfect place to position the patchwork module so that it&#39;s display triggers when you reach the end of the page.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. It&#39;s not working - or it seems to be breaking my Joomla template menu.  How do I fix it?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Test out the \&quot;Disable jQuery File\&quot; setting.  You may need to enable it or disable it - depending on what you&#39;ve already done to your site.  Make sure you&#39;ve unpublished other modules while testing this - so that you do not wrongly attribute the problem to the patchwork module.&lt;\/i&gt;\n\n\t\t\n\t&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;mod_ezrealty_patchwork&quot;}</field>
+		<field name="params">{&quot;misc_setting&quot;:&quot;&quot;,&quot;listingstype&quot;:&quot;0&quot;,&quot;listingorder&quot;:&quot;0&quot;,&quot;count&quot;:&quot;20&quot;,&quot;custom_setting&quot;:&quot;&quot;,&quot;reflistcust1&quot;:&quot;0&quot;,&quot;listcust1&quot;:&quot;&quot;,&quot;catg_setting&quot;:&quot;&quot;,&quot;reflistcat&quot;:&quot;0&quot;,&quot;listcat&quot;:&quot;&quot;,&quot;suburb_setting&quot;:&quot;&quot;,&quot;reflistsuburb&quot;:&quot;0&quot;,&quot;listsuburb&quot;:&quot;&quot;,&quot;state_setting&quot;:&quot;&quot;,&quot;refliststate&quot;:&quot;0&quot;,&quot;liststate&quot;:&quot;&quot;,&quot;country_setting&quot;:&quot;&quot;,&quot;reflistcountry&quot;:&quot;0&quot;,&quot;listcountry&quot;:&quot;&quot;,&quot;content_setting&quot;:&quot;&quot;,&quot;titlelength&quot;:&quot;40&quot;,&quot;textlength&quot;:&quot;250&quot;,&quot;image_setting&quot;:&quot;&quot;,&quot;imgwidth&quot;:&quot;90&quot;,&quot;imgheight&quot;:&quot;60&quot;,&quot;patchwork_setting&quot;:&quot;&quot;,&quot;divwidth&quot;:&quot;330&quot;,&quot;divheight&quot;:&quot;180&quot;,&quot;file_setting&quot;:&quot;&quot;,&quot;disjquery&quot;:&quot;0&quot;,&quot;cache&quot;:&quot;1&quot;,&quot;cache_time&quot;:&quot;900&quot;,&quot;cachemode&quot;:&quot;itemid&quot;}</field>
+		<field name="custom_data"></field>
+		<field name="system_data"></field>
+		<field name="checked_out">0</field>
+		<field name="checked_out_time">0000-00-00 00:00:00</field>
+		<field name="ordering">0</field>
+		<field name="state">0</field>
+	</row>
+
+	<row>
+		<field name="extension_id">10013</field>
+		<field name="name">EZ Realty Search Module</field>
+		<field name="type">module</field>
+		<field name="element">mod_ezrealty_search</field>
+		<field name="folder"></field>
+		<field name="client_id">0</field>
+		<field name="enabled">1</field>
+		<field name="access">0</field>
+		<field name="protected">0</field>
+		<field name="manifest_cache">{&quot;name&quot;:&quot;EZ Realty Search Module&quot;,&quot;type&quot;:&quot;module&quot;,&quot;creationDate&quot;:&quot;24th June 2014&quot;,&quot;author&quot;:&quot;K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;copyright&quot;:&quot;(C) 2006-2014 K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;authorEmail&quot;:&quot;kathy@raptorservices.com&quot;,&quot;authorUrl&quot;:&quot;www.raptorservices.com&quot;,&quot;version&quot;:&quot;4.0.6&quot;,&quot;description&quot;:&quot;\n\t\t\n\t\t&lt;h3&gt;About EZ Realty Search Module&lt;\/h3&gt;\n\t\tThis module shows an EZ Realty search form for use in a module position.  You&#39;re able to achieve either a horizontal or vertical search form layout - depending on where you publish the module.  For example:-&lt;br \/&gt;&lt;br \/&gt;\n\t\t&lt;ul&gt;\n\t\t\t&lt;li&gt;publish in a sidebar position and you&#39;ll have a vertical form layout&lt;\/li&gt;\n\t\t\t&lt;li&gt;publish in a wide module position such as above or below the main page content - and you&#39;ll have a horizontal form layout&lt;\/li&gt;\n\t\t&lt;\/ul&gt;\n\t\t&lt;br \/&gt;\n\n\t\t&lt;h3&gt;Common Questions about the EZ Realty Search Module&lt;\/h3&gt;\n&lt;strong&gt;Q. Can I control which selector lists are displayed on the search form?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Yes you can - click on the \&quot;Basic Options\&quot; tab above - and configure the settings.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n\n&lt;strong&gt;Q. The width of the selector lists and keyword search field is all wrong it&#39;s too wide\/narrow.  How do I fix this?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Look in the EZ Realty search module settings on the basic options tab.  You will find a setting to enable you to define the width of selector lists and text fields.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n\n&lt;strong&gt;Q. Where does the EZ Realty Search Module post its results to?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. The search module posts its results to the EZ Realty search module results page.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n\n&lt;strong&gt;Q. How do I setup the search module results page?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Go into the Joomla menu item manager, click \&quot;New\&quot; to create a new menu item, click the blue \&quot;Select\&quot; button next to the \&quot;Menu Item Type\&quot; field, click \&quot;EZ Realty\&quot; from the list of components in the popup window, and then click on \&quot;Search Results for Search Module\&quot; from the list of EZ Realty menu item types. Then define the various menu item parameters and save.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n\n&lt;strong&gt;Q. Why doesn&#39;t the search module results page have any filters across the top like the other listings pages?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. It&#39;s the search module results page - so it&#39;s designed to just show search results derived from the search module.  Dynamic search filters are only a feature of the other listings pages.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n\n\t\t\n\t&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;mod_ezrealty_search&quot;}</field>
+		<field name="params">{&quot;bs_fieldsize&quot;:&quot;12&quot;,&quot;bs_selectsize&quot;:&quot;12&quot;,&quot;showmod_categories_select&quot;:&quot;1&quot;,&quot;showmod_transtype_select&quot;:&quot;1&quot;,&quot;showmod_marketstatus_select&quot;:&quot;1&quot;,&quot;showmod_sellers_select&quot;:&quot;1&quot;,&quot;showmod_countries_select&quot;:&quot;1&quot;,&quot;showmod_suburbs_select&quot;:&quot;1&quot;,&quot;showmod_minmaxprice_select&quot;:&quot;1&quot;,&quot;showmod_minbedsbaths_select&quot;:&quot;1&quot;,&quot;showmod_minmaxarea_select&quot;:&quot;1&quot;,&quot;showmod_minmaxland_select&quot;:&quot;1&quot;,&quot;showmod_keyword_select&quot;:&quot;1&quot;,&quot;showmod_dates_select&quot;:&quot;0&quot;,&quot;showmod_custom1_select&quot;:&quot;0&quot;,&quot;cache&quot;:&quot;1&quot;,&quot;cache_time&quot;:&quot;900&quot;,&quot;cachemode&quot;:&quot;itemid&quot;}</field>
+		<field name="custom_data"></field>
+		<field name="system_data"></field>
+		<field name="checked_out">0</field>
+		<field name="checked_out_time">0000-00-00 00:00:00</field>
+		<field name="ordering">0</field>
+		<field name="state">0</field>
+	</row>
+
+	<row>
+		<field name="extension_id">10014</field>
+		<field name="name">EZ Realty Slideshow</field>
+		<field name="type">module</field>
+		<field name="element">mod_ezrealty_slideshow</field>
+		<field name="folder"></field>
+		<field name="client_id">0</field>
+		<field name="enabled">1</field>
+		<field name="access">0</field>
+		<field name="protected">0</field>
+		<field name="manifest_cache">{&quot;name&quot;:&quot;EZ Realty Slideshow&quot;,&quot;type&quot;:&quot;module&quot;,&quot;creationDate&quot;:&quot;24th June 2014&quot;,&quot;author&quot;:&quot;K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;copyright&quot;:&quot;(C) 2006-2014 K.J. Strickland - Raptor Developments Pty Ltd&quot;,&quot;authorEmail&quot;:&quot;kathy@raptorservices.com&quot;,&quot;authorUrl&quot;:&quot;www.raptorservices.com&quot;,&quot;version&quot;:&quot;1.0.3&quot;,&quot;description&quot;:&quot;\n\t\t\n\t\t&lt;h3&gt;About EZ Realty Slideshow Module&lt;\/h3&gt;\n\t\tThis is a flexible slideshow module, allowing you to display either the property panorama image, main property image which has been uploaded for the property listings - or you can use static images that you&#39;ve uploaded to the images\/slideshow directory. \nYou&#39;re able to configure the EZ Realty Panorama Module to display images with a range of features such as:-&lt;br \/&gt;&lt;br \/&gt;\n\t\t&lt;ul&gt;\n\t\t\t&lt;li&gt;responsive - so it&#39;ll adjust to the screen resolution being used&lt;\/li&gt;\n\t\t\t&lt;li&gt;image overlay - including the choice of new, auction, featured, leased, inspect and sold graphics&lt;\/li&gt;\n\t\t\t&lt;li&gt;previous\/next\/pause buttons&lt;\/li&gt;\n\t\t\t&lt;li&gt;buttons positioned either inside the image boundaries&lt;\/li&gt;\n\t\t\t&lt;li&gt;configurable image height&lt;\/li&gt;\n\t\t\t&lt;li&gt;choose from headline, small description or both&lt;\/li&gt;\n\t\t\t&lt;li&gt;transition effects&lt;\/li&gt;\n\t\t&lt;\/ul&gt;\n\t\t&lt;br \/&gt;\n\t\tWhen setting up the EZ Realty Slideshow Module - select the type of listings you want to display by using the refinement filters - eg. the listing type, whether to refine by category, country, state, or suburb.&lt;br \/&gt;&lt;br \/&gt;\n\t\tThe EZ Realty Slideshow Module is perfect as a graphic header for your Joomla template too - if you have a suitable module position.&lt;br \/&gt;&lt;br \/&gt;\n\t\t&lt;h3&gt;Common Questions about the EZ Realty Slideshow Module&lt;\/h3&gt;\n&lt;strong&gt;Q. I don&#39;t see any images!  What&#39;s wrong?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. If you&#39;ve configured the slideshow module to use the panorama image - make sure you&#39;ve uploaded an image in the panorama image field for at least 1 property listing. The panorama image field is on the resource tab of the add\/edit property details form. If you&#39;ve configured the slideshow module to use images from the slideshow directory - make sure you&#39;ve created a directory called slideshow in the core Joomla images directory - and make sure you&#39;ve uploaded some JPG files to it.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. The panorama image upload field isn&#39;t where you said it would be.&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Make sure you&#39;ve enabled use of the panorama image upload field in the EZ Realty configuration settings.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. Where do I find the EZ Realty configuration settings?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Go into the EZ Realty admin area, look at the icons across the page just below the page title.  You will see one called \&quot;Options\&quot; - click on it, and that will open up the EZ Realty configuration settings.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. How do I change the size of the image output?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. The EZ Realty slideshow module is responsive - so it spreads out to 100% of the width available to it. You control its height via 2 settings in the slideshow module settings - so read the settings information about them.&lt;\/i&gt;&lt;br \/&gt;&lt;br \/&gt;\n&lt;strong&gt;Q. It&#39;s not working - or it seems to be breaking my Joomla template menu.  How do I fix it?&lt;\/strong&gt;&lt;br \/&gt;\n&lt;i&gt;A. Test out the \&quot;Disable jQuery File\&quot; setting.  You may need to enable it or disable it - depending on what you&#39;ve already done to your site.  Make sure you&#39;ve unpublished other modules while testing this - so that you do not wrongly attribute the problem to the slideshow module.&lt;\/i&gt;\n\n\t\t\n\t&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;mod_ezrealty_slideshow&quot;}</field>
+		<field name="params">{&quot;misc_setting&quot;:&quot;&quot;,&quot;listingstype&quot;:&quot;0&quot;,&quot;listingorder&quot;:&quot;0&quot;,&quot;count&quot;:&quot;20&quot;,&quot;custom_setting&quot;:&quot;&quot;,&quot;reflistcust1&quot;:&quot;0&quot;,&quot;listcust1&quot;:&quot;&quot;,&quot;catg_setting&quot;:&quot;&quot;,&quot;reflistcat&quot;:&quot;0&quot;,&quot;listcat&quot;:&quot;&quot;,&quot;suburb_setting&quot;:&quot;&quot;,&quot;reflistsuburb&quot;:&quot;0&quot;,&quot;listsuburb&quot;:&quot;&quot;,&quot;state_setting&quot;:&quot;&quot;,&quot;refliststate&quot;:&quot;0&quot;,&quot;liststate&quot;:&quot;&quot;,&quot;country_setting&quot;:&quot;&quot;,&quot;reflistcountry&quot;:&quot;0&quot;,&quot;listcountry&quot;:&quot;&quot;,&quot;content_setting&quot;:&quot;&quot;,&quot;listinginfo&quot;:&quot;0&quot;,&quot;titlesize&quot;:&quot;0&quot;,&quot;image_setting&quot;:&quot;&quot;,&quot;imgsource&quot;:&quot;0&quot;,&quot;height&quot;:&quot;50%&quot;,&quot;minHeight&quot;:&quot;200px&quot;,&quot;imgoverlay&quot;:&quot;&quot;,&quot;file_setting&quot;:&quot;&quot;,&quot;loader&quot;:&quot;pie&quot;,&quot;loaderColor&quot;:&quot;#eeeeee&quot;,&quot;loaderBgColor&quot;:&quot;#222222&quot;,&quot;loaderOpacity&quot;:&quot;.8&quot;,&quot;time&quot;:&quot;7000&quot;,&quot;transperiod&quot;:&quot;1500&quot;,&quot;easing&quot;:&quot;easeInOutExpo&quot;,&quot;fx&quot;:&quot;random&quot;,&quot;disjquery&quot;:&quot;0&quot;,&quot;cache&quot;:&quot;1&quot;,&quot;cache_time&quot;:&quot;900&quot;,&quot;cachemode&quot;:&quot;itemid&quot;}</field>
+		<field name="custom_data"></field>
+		<field name="system_data"></field>
+		<field name="checked_out">0</field>
+		<field name="checked_out_time">0000-00-00 00:00:00</field>
+		<field name="ordering">0</field>
+		<field name="state">0</field>
+	</row>
+
+	<row>
+		<field name="extension_id">10015</field>
+		<field name="name">EZ Realty Package</field>
+		<field name="type">package</field>
+		<field name="element">pkg_ezrealty</field>
+		<field name="folder"></field>
+		<field name="client_id">0</field>
+		<field name="enabled">1</field>
+		<field name="access">1</field>
+		<field name="protected">0</field>
+		<field name="manifest_cache">{&quot;name&quot;:&quot;EZ Realty Package&quot;,&quot;type&quot;:&quot;package&quot;,&quot;creationDate&quot;:&quot;7th August 2014&quot;,&quot;author&quot;:&quot;Kathy Strickland&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;authorEmail&quot;:&quot;&quot;,&quot;authorUrl&quot;:&quot;&quot;,&quot;version&quot;:&quot;7.2.0&quot;,&quot;description&quot;:&quot;The EZ Realty realestate system for Joomla!&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;pkg_ezrealty&quot;}</field>
+		<field name="params">{}</field>
 		<field name="custom_data"></field>
 		<field name="system_data"></field>
 		<field name="checked_out">0</field>
@@ -2967,15 +2965,15 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
 	<row>
 		<field name="extension_id">10016</field>
-		<field name="name">F0F (NEW) DO NOT REMOVE</field>
+		<field name="name">REAXML Library</field>
 		<field name="type">library</field>
-		<field name="element">lib_f0f</field>
+		<field name="element">lib_reaxml</field>
 		<field name="folder"></field>
 		<field name="client_id">0</field>
 		<field name="enabled">1</field>
 		<field name="access">1</field>
 		<field name="protected">0</field>
-		<field name="manifest_cache">{&quot;name&quot;:&quot;F0F (NEW) DO NOT REMOVE&quot;,&quot;type&quot;:&quot;library&quot;,&quot;creationDate&quot;:&quot;2015-01-06 16:06:22&quot;,&quot;author&quot;:&quot;Nicholas K. Dionysopoulos \/ Akeeba Ltd&quot;,&quot;copyright&quot;:&quot;(C)2011-2014 Nicholas K. Dionysopoulos&quot;,&quot;authorEmail&quot;:&quot;nicholas@akeebabackup.com&quot;,&quot;authorUrl&quot;:&quot;https:\/\/www.akeebabackup.com&quot;,&quot;version&quot;:&quot;rev699A630-1420553182&quot;,&quot;description&quot;:&quot;Framework-on-Framework (FOF) newer version - DO NOT REMOVE - The rapid component development framework for Joomla!. This package is the newer version of FOF, not the one shipped with Joomla! as the official Joomla! RAD Layer. The Joomla! RAD Layer has ceased development in March 2014. DO NOT UNINSTALL THIS PACKAGE, IT IS *** N O T *** A DUPLICATE OF THE &#39;FOF&#39; PACKAGE. REMOVING EITHER FOF PACKAGE WILL BREAK YOUR SITE.&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;lib_f0f&quot;}</field>
+		<field name="manifest_cache">{&quot;name&quot;:&quot;REAXML Library&quot;,&quot;type&quot;:&quot;library&quot;,&quot;creationDate&quot;:&quot;July 2014&quot;,&quot;author&quot;:&quot;Clifton IT Foundries Pty Ltd&quot;,&quot;copyright&quot;:&quot;Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights\n\t\tReserved\n\t&quot;,&quot;authorEmail&quot;:&quot;neil.clifton@cliftonwebfoundry.com.au&quot;,&quot;authorUrl&quot;:&quot;http:\/\/cliftonwebfoundry.com.au&quot;,&quot;version&quot;:&quot;1.3.3&quot;,&quot;description&quot;:&quot;REAXML Library&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;lib_reaxml&quot;}</field>
 		<field name="params">{}</field>
 		<field name="custom_data"></field>
 		<field name="system_data"></field>
@@ -2987,16 +2985,16 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
 	<row>
 		<field name="extension_id">10017</field>
-		<field name="name">AkeebaStrapper</field>
-		<field name="type">file</field>
-		<field name="element">AkeebaStrapper</field>
+		<field name="name">REAXML Import</field>
+		<field name="type">component</field>
+		<field name="element">com_reaxmlimport</field>
 		<field name="folder"></field>
-		<field name="client_id">0</field>
+		<field name="client_id">1</field>
 		<field name="enabled">1</field>
 		<field name="access">0</field>
 		<field name="protected">0</field>
-		<field name="manifest_cache">{&quot;name&quot;:&quot;AkeebaStrapper&quot;,&quot;type&quot;:&quot;file&quot;,&quot;creationDate&quot;:&quot;2015-01-06 16:06:22&quot;,&quot;author&quot;:&quot;Nicholas K. Dionysopoulos&quot;,&quot;copyright&quot;:&quot;(C) 2012-2013 Akeeba Ltd.&quot;,&quot;authorEmail&quot;:&quot;nicholas@dionysopoulos.me&quot;,&quot;authorUrl&quot;:&quot;https:\/\/www.akeebabackup.com&quot;,&quot;version&quot;:&quot;rev699A630-1420553182&quot;,&quot;description&quot;:&quot;Namespaced jQuery, jQuery UI and Bootstrap for Akeeba products.&quot;,&quot;group&quot;:&quot;&quot;}</field>
-		<field name="params"></field>
+		<field name="manifest_cache">{&quot;name&quot;:&quot;REAXML Import&quot;,&quot;type&quot;:&quot;component&quot;,&quot;creationDate&quot;:&quot;2014-07-24&quot;,&quot;author&quot;:&quot;Clifton IT Foundries Pty Ltd&quot;,&quot;copyright&quot;:&quot;Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights\n\t\tReserved\n\t&quot;,&quot;authorEmail&quot;:&quot;neil.clifton@cliftonwebfoundry.com.au&quot;,&quot;authorUrl&quot;:&quot;http:\/\/cliftonwebfoundry.com.au&quot;,&quot;version&quot;:&quot;1.3.6&quot;,&quot;description&quot;:&quot;COM_REAXMLIMPORT_XML_DESCRIPTION&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;com_reaxmlImport&quot;}</field>
+		<field name="params">{&quot;root_rel_url&quot;:&quot;\/\/ftp\/ftp&quot;,&quot;input_dir&quot;:&quot;input\/Users\/nclifton\/Documents\/MAMP\/htdocs\/reaxml\/ftp\/input&quot;,&quot;input_rel_url&quot;:&quot;\/input&quot;,&quot;work_dir&quot;:&quot;work\/Users\/nclifton\/Documents\/MAMP\/htdocs\/reaxml\/ftp\/work&quot;,&quot;work_rel_url&quot;:&quot;\/work\/ftp\/work&quot;,&quot;done_dir&quot;:&quot;done\/Users\/nclifton\/Documents\/MAMP\/htdocs\/reaxml\/ftp\/done&quot;,&quot;done_rel_url&quot;:&quot;\/done\/ftp\/done&quot;,&quot;log_dir&quot;:&quot;log\/Users\/nclifton\/Documents\/MAMP\/htdocs\/reaxml\/ftp\/log&quot;,&quot;log_rel_url&quot;:&quot;\/log\/ftp\/log&quot;,&quot;error_dir&quot;:&quot;error\/Users\/nclifton\/Documents\/MAMP\/htdocs\/reaxml\/ftp\/error&quot;,&quot;error_rel_url&quot;:&quot;\/error\/ftp\/error&quot;,&quot;update_dlid&quot;:&quot;&quot;}</field>
 		<field name="custom_data"></field>
 		<field name="system_data"></field>
 		<field name="checked_out">0</field>
@@ -3007,46 +3005,6 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
 	<row>
 		<field name="extension_id">10018</field>
-		<field name="name">REAXML Library</field>
-		<field name="type">library</field>
-		<field name="element">lib_reaxml</field>
-		<field name="folder"></field>
-		<field name="client_id">0</field>
-		<field name="enabled">1</field>
-		<field name="access">1</field>
-		<field name="protected">0</field>
-		<field name="manifest_cache">{&quot;name&quot;:&quot;REAXML Library&quot;,&quot;type&quot;:&quot;library&quot;,&quot;creationDate&quot;:&quot;July 2014&quot;,&quot;author&quot;:&quot;Clifton IT Foundries Pty Ltd&quot;,&quot;copyright&quot;:&quot;Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights\n\t\tReserved\n\t&quot;,&quot;authorEmail&quot;:&quot;neil.clifton@cliftonwebfoundry.com.au&quot;,&quot;authorUrl&quot;:&quot;http:\/\/cliftonwebfoundry.com.au&quot;,&quot;version&quot;:&quot;1.1.1&quot;,&quot;description&quot;:&quot;REAXML Library&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;lib_reaxml&quot;}</field>
-		<field name="params">{}</field>
-		<field name="custom_data"></field>
-		<field name="system_data"></field>
-		<field name="checked_out">0</field>
-		<field name="checked_out_time">0000-00-00 00:00:00</field>
-		<field name="ordering">0</field>
-		<field name="state">0</field>
-	</row>
-
-	<row>
-		<field name="extension_id">10019</field>
-		<field name="name">REAXML Import</field>
-		<field name="type">component</field>
-		<field name="element">com_reaxmlimport</field>
-		<field name="folder"></field>
-		<field name="client_id">1</field>
-		<field name="enabled">1</field>
-		<field name="access">0</field>
-		<field name="protected">0</field>
-		<field name="manifest_cache">{&quot;name&quot;:&quot;REAXML Import&quot;,&quot;type&quot;:&quot;component&quot;,&quot;creationDate&quot;:&quot;2014-07-24&quot;,&quot;author&quot;:&quot;Clifton IT Foundries Pty Ltd&quot;,&quot;copyright&quot;:&quot;Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights\n\t\tReserved\n\t&quot;,&quot;authorEmail&quot;:&quot;neil.clifton@cliftonwebfoundry.com.au&quot;,&quot;authorUrl&quot;:&quot;http:\/\/cliftonwebfoundry.com.au&quot;,&quot;version&quot;:&quot;1.1.1&quot;,&quot;description&quot;:&quot;COM_REAXMLIMPORT_XML_DESCRIPTION&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;com_reaxmlImport&quot;}</field>
-		<field name="params">{&quot;root_rel_url&quot;:&quot;\/ftp&quot;,&quot;input_dir&quot;:&quot;\/Users\/nclifton\/Documents\/MAMP\/htdocs\/reaxml\/ftp\/input&quot;,&quot;input_rel_url&quot;:&quot;\/ftp\/input&quot;,&quot;work_dir&quot;:&quot;\/Users\/nclifton\/Documents\/MAMP\/htdocs\/reaxml\/ftp\/work&quot;,&quot;work_rel_url&quot;:&quot;\/ftp\/work&quot;,&quot;done_dir&quot;:&quot;\/Users\/nclifton\/Documents\/MAMP\/htdocs\/reaxml\/ftp\/done&quot;,&quot;done_rel_url&quot;:&quot;\/ftp\/done&quot;,&quot;log_dir&quot;:&quot;\/Users\/nclifton\/Documents\/MAMP\/htdocs\/reaxml\/ftp\/log&quot;,&quot;log_rel_url&quot;:&quot;\/ftp\/log&quot;,&quot;error_dir&quot;:&quot;\/Users\/nclifton\/Documents\/MAMP\/htdocs\/reaxml\/ftp\/error&quot;,&quot;error_rel_url&quot;:&quot;\/ftp\/error&quot;}</field>
-		<field name="custom_data"></field>
-		<field name="system_data"></field>
-		<field name="checked_out">0</field>
-		<field name="checked_out_time">0000-00-00 00:00:00</field>
-		<field name="ordering">0</field>
-		<field name="state">0</field>
-	</row>
-
-	<row>
-		<field name="extension_id">10020</field>
 		<field name="name">REAXML Package</field>
 		<field name="type">package</field>
 		<field name="element">pkg_reaxml</field>
@@ -3055,7 +3013,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 		<field name="enabled">1</field>
 		<field name="access">1</field>
 		<field name="protected">0</field>
-		<field name="manifest_cache">{&quot;name&quot;:&quot;REAXML Package&quot;,&quot;type&quot;:&quot;package&quot;,&quot;creationDate&quot;:&quot;Mar 2015&quot;,&quot;author&quot;:&quot;Clifton IT Foundries Pty Ltd&quot;,&quot;copyright&quot;:&quot;Copyright (c) 2014, 2015 Clifton IT Foundries Pty Ltd. All rights\n\t\tReserved&quot;,&quot;authorEmail&quot;:&quot;neil.clifton@cliftonwebfoundry.com.au&quot;,&quot;authorUrl&quot;:&quot;&quot;,&quot;version&quot;:&quot;1.1.1&quot;,&quot;description&quot;:&quot;Package for the REAXML Import component and library\n\t&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;pkg_reaxml&quot;}</field>
+		<field name="manifest_cache">{&quot;name&quot;:&quot;REAXML Package&quot;,&quot;type&quot;:&quot;package&quot;,&quot;creationDate&quot;:&quot;May 2015&quot;,&quot;author&quot;:&quot;Clifton IT Foundries Pty Ltd&quot;,&quot;copyright&quot;:&quot;Copyright (c) 2014, 2015 Clifton IT Foundries Pty Ltd. All rights\n\t\tReserved&quot;,&quot;authorEmail&quot;:&quot;neil.clifton@cliftonwebfoundry.com.au&quot;,&quot;authorUrl&quot;:&quot;&quot;,&quot;version&quot;:&quot;1.3.24&quot;,&quot;description&quot;:&quot;Package for the REAXML Import component and library\n\t&quot;,&quot;group&quot;:&quot;&quot;,&quot;filename&quot;:&quot;pkg_reaxml&quot;}</field>
 		<field name="params">{}</field>
 		<field name="custom_data"></field>
 		<field name="system_data"></field>
@@ -3064,4 +3022,6 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 		<field name="ordering">0</field>
 		<field name="state">0</field>
 	</row>
-</resultset>
+</table_data>
+</database>
+</mysqldump>

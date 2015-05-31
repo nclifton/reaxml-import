@@ -1,8 +1,16 @@
+
+/**
+ *
+ * @package Component REAXML Import for Joomla! 3.4
+ * @version 1.3.122: import.js 2015-06-01T08:16:26.590
+ * @author Clifton IT Foundries Pty Ltd
+ * @link http://cliftonwebfoundry.com.au
+ * @copyright Copyright (c) 2014, 2015 Clifton IT Foundries Pty Ltd. All rights Reserved
+ * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ *
+ **/
 /**
  * request an import run through JQuery AJAX
- *   
- * Copyright (C) 2005 - 2014 Clifton IT Foundries Pty Ltd. All rights reserved.
- * GNU General Public License version 3 or later.
  */
 
 function requestImportRun(event) {

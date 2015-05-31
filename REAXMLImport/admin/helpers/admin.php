@@ -4,10 +4,10 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
 /**
  *
  * @package Component REAXML Import for Joomla! 3.4
- * @version 1.2.26: admin.php 2015-04-07T14:42:50.797
+ * @version 1.3.122: admin.php 2015-06-01T08:16:26.590
  * @author Clifton IT Foundries Pty Ltd
  * @link http://cliftonwebfoundry.com.au
- * @copyright Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights Reserved
+ * @copyright Copyright (c) 2014, 2015 Clifton IT Foundries Pty Ltd. All rights Reserved
  * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  *
  **/
@@ -62,5 +62,61 @@ class ReaXmlImportHelpersAdmin {
 	}
 	static function getErrorFilesHtml($model) {
 		return self::getHtmlFileList ( $model->getErrorFiles (), $model->getErrorRelUrl () );
+	}
+	private static $dbo;
+	
+	private static function getDbo(){
+		if (!isset(self::$dbo)) {
+			self::$dbo = JFactory::getDbo ();
+		}
+		return self::$dbo;
+	}
+	
+	/**
+	 * Updates the extra_query column in the update_siates table with the download id
+	 */
+	public static function updateUpdateSiteWithDownloadId() {
+		$db = self::getDbo ();
+		$query = $db->getQuery(true)
+		->select('*')
+		->from($db->qn('#__extensions'))
+		->where($db->qn('type') . ' = ' . $db->q('package'))
+		->where($db->qn('element') . ' = ' . $db->q('pkg_reaxml'));
+		$db->setQuery($query);
+		$extension = $db->loadObject();
+		if (is_object($extension))
+		{
+			$extension_id = $extension->extension_id;
+			$query = $db->getQuery(true)
+			->select($db->qn('update_site_id'))
+			->from($db->qn('#__update_sites_extensions'))
+			->where($db->qn('extension_id') . ' = ' . $db->q($extension_id));
+			$db->setQuery($query);
+			$updateSiteIds = $db->loadColumn(0);
+				
+			// Loop through all update sites
+			foreach ($updateSiteIds as $id)
+			{
+				$query = $db->getQuery(true)
+				->select('*')
+				->from($db->qn('#__update_sites'))
+				->where($db->qn('update_site_id') . ' = ' . $db->q($id));
+				$db->setQuery($query);
+				$aSite = $db->loadObject();
+				if ($aSite->enabled)
+				{
+					if (!isset($aSite->extra_query) || $aSite->extra_query != self::getDownloadId()){
+						$aSite->extra_query = 'dlid='.self::getDownloadId();
+						$db->updateObject('#__update_sites', $aSite, 'update_site_id', true);
+					}
+				}
+			}
+				
+		}
+	}
+	
+	private static function getDownloadId() {
+		$params = JComponentHelper::getParams ( 'com_reaxmlimport' );
+		return $params->get ( 'update_dlid' );
 	}
 }

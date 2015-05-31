@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="joomla-reaxml">
+	<table_data name="jos_extensions">
+
+
+	<row>
+		<field name="params">{&quot;input_dir&quot;:&quot;\/Users\/nclifton\/Documents\/MAMP\/htdocs\/reaxml\/ftp\/input&quot;,&quot;input_url&quot;:&quot;\/ftp\/input&quot;,&quot;work_dir&quot;:&quot;\/Users\/nclifton\/Documents\/MAMP\/htdocs\/reaxml\/ftp\/work&quot;,&quot;work_url&quot;:&quot;\/ftp\/work&quot;,&quot;done_dir&quot;:&quot;\/Users\/nclifton\/Documents\/MAMP\/htdocs\/reaxml\/ftp\/done&quot;,&quot;done_url&quot;:&quot;\/ftp\/done&quot;,&quot;log_dir&quot;:&quot;\/Users\/nclifton\/Documents\/MAMP\/htdocs\/reaxml\/ftp\/log&quot;,&quot;log_url&quot;:&quot;\/ftp\/log&quot;,&quot;error_dir&quot;:&quot;\/Users\/nclifton\/Documents\/MAMP\/htdocs\/reaxml\/ftp\/error&quot;,&quot;error_url&quot;:&quot;\/ftp\/error&quot;,&quot;update_dlid&quot;:&quot;&quot;}</field>
+	</row>
+
+</table_data>
+</database>
+</mysqldump>

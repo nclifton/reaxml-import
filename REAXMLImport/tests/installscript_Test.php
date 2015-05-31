@@ -42,7 +42,7 @@ class ReaxmlInstaller_Test extends Reaxml_Tests_DatabaseTestCase {
 		$expectedTable = $this->filterdataset ( $expectedDataset )->getTable ( $GLOBALS ['DB_TBLPREFIX'] . 'extensions' );
 		$this->assertTablesEqual ( $expectedTable, $table );
 		
-		assertThat(file_exists($filename))
+		assertThat(file_exists($filename));
 	}
 	private function filterdataset($dataset) {
 		$filtereddataset = new PHPUnit_Extensions_Database_DataSet_DataSetFilter ( $dataset );
