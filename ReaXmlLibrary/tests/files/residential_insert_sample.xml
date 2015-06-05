@@ -18,15 +18,14 @@
 		<price display="yes">500000</price>
 		<priceView>Between $400,000 and $600,000</priceView>
 		<address display="yes">
-			<subNumber>2</subNumber>
-			<streetNumber>39</streetNumber>
-			<street>Main Road</street>
-			<suburb display="yes">RICHMOND</suburb>
-			<state>vic</state>
-			<postcode>3121</postcode>
+			<streetNumber>12</streetNumber>
+			<street>Wyndham Avenue</street>
+			<suburb display="yes">LEUMEAH</suburb>
+			<state>NSW</state>
+			<postcode>2560</postcode>
 			<country>AUS</country>
 		</address>
-		<municipality>Yarra</municipality>
+		<municipality>Campbelltown</municipality>
 		<streetDirectory type="melways">
 			<page>44</page>
 			<reference>G7</reference>

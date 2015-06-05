@@ -1,0 +1,611 @@
+<?xml version="1.0"?>
+
+<resultset statement="SELECT params FROM `joomla-reaxml`.jos_extensions
+LIMIT 0, 1000
+"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;purchase_type&quot;:&quot;3&quot;,&quot;track_impressions&quot;:&quot;0&quot;,&quot;track_clicks&quot;:&quot;0&quot;,&quot;metakey_prefix&quot;:&quot;&quot;,&quot;save_history&quot;:&quot;1&quot;,&quot;history_limit&quot;:10}</field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;show_contact_category&quot;:&quot;hide&quot;,&quot;save_history&quot;:&quot;1&quot;,&quot;history_limit&quot;:10,&quot;show_contact_list&quot;:&quot;0&quot;,&quot;presentation_style&quot;:&quot;sliders&quot;,&quot;show_name&quot;:&quot;1&quot;,&quot;show_position&quot;:&quot;1&quot;,&quot;show_email&quot;:&quot;0&quot;,&quot;show_street_address&quot;:&quot;1&quot;,&quot;show_suburb&quot;:&quot;1&quot;,&quot;show_state&quot;:&quot;1&quot;,&quot;show_postcode&quot;:&quot;1&quot;,&quot;show_country&quot;:&quot;1&quot;,&quot;show_telephone&quot;:&quot;1&quot;,&quot;show_mobile&quot;:&quot;1&quot;,&quot;show_fax&quot;:&quot;1&quot;,&quot;show_webpage&quot;:&quot;1&quot;,&quot;show_misc&quot;:&quot;1&quot;,&quot;show_image&quot;:&quot;1&quot;,&quot;image&quot;:&quot;&quot;,&quot;allow_vcard&quot;:&quot;0&quot;,&quot;show_articles&quot;:&quot;0&quot;,&quot;show_profile&quot;:&quot;0&quot;,&quot;show_links&quot;:&quot;0&quot;,&quot;linka_name&quot;:&quot;&quot;,&quot;linkb_name&quot;:&quot;&quot;,&quot;linkc_name&quot;:&quot;&quot;,&quot;linkd_name&quot;:&quot;&quot;,&quot;linke_name&quot;:&quot;&quot;,&quot;contact_icons&quot;:&quot;0&quot;,&quot;icon_address&quot;:&quot;&quot;,&quot;icon_email&quot;:&quot;&quot;,&quot;icon_telephone&quot;:&quot;&quot;,&quot;icon_mobile&quot;:&quot;&quot;,&quot;icon_fax&quot;:&quot;&quot;,&quot;icon_misc&quot;:&quot;&quot;,&quot;show_headings&quot;:&quot;1&quot;,&quot;show_position_headings&quot;:&quot;1&quot;,&quot;show_email_headings&quot;:&quot;0&quot;,&quot;show_telephone_headings&quot;:&quot;1&quot;,&quot;show_mobile_headings&quot;:&quot;0&quot;,&quot;show_fax_headings&quot;:&quot;0&quot;,&quot;allow_vcard_headings&quot;:&quot;0&quot;,&quot;show_suburb_headings&quot;:&quot;1&quot;,&quot;show_state_headings&quot;:&quot;1&quot;,&quot;show_country_headings&quot;:&quot;1&quot;,&quot;show_email_form&quot;:&quot;1&quot;,&quot;show_email_copy&quot;:&quot;1&quot;,&quot;banned_email&quot;:&quot;&quot;,&quot;banned_subject&quot;:&quot;&quot;,&quot;banned_text&quot;:&quot;&quot;,&quot;validate_session&quot;:&quot;1&quot;,&quot;custom_reply&quot;:&quot;0&quot;,&quot;redirect&quot;:&quot;&quot;,&quot;show_category_crumb&quot;:&quot;0&quot;,&quot;metakey&quot;:&quot;&quot;,&quot;metadesc&quot;:&quot;&quot;,&quot;robots&quot;:&quot;&quot;,&quot;author&quot;:&quot;&quot;,&quot;rights&quot;:&quot;&quot;,&quot;xreference&quot;:&quot;&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;administrator&quot;:&quot;en-GB&quot;,&quot;site&quot;:&quot;en-GB&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;upload_extensions&quot;:&quot;bmp,csv,doc,gif,ico,jpg,jpeg,odg,odp,ods,odt,pdf,png,ppt,swf,txt,xcf,xls,BMP,CSV,DOC,GIF,ICO,JPG,JPEG,ODG,ODP,ODS,ODT,PDF,PNG,PPT,SWF,TXT,XCF,XLS&quot;,&quot;upload_maxsize&quot;:&quot;10&quot;,&quot;file_path&quot;:&quot;images&quot;,&quot;image_path&quot;:&quot;images&quot;,&quot;restrict_uploads&quot;:&quot;1&quot;,&quot;allowed_media_usergroup&quot;:&quot;3&quot;,&quot;check_mime&quot;:&quot;1&quot;,&quot;image_extensions&quot;:&quot;bmp,gif,jpg,png&quot;,&quot;ignore_extensions&quot;:&quot;&quot;,&quot;upload_mime&quot;:&quot;image\/jpeg,image\/gif,image\/png,image\/bmp,application\/x-shockwave-flash,application\/msword,application\/excel,application\/pdf,application\/powerpoint,text\/plain,application\/x-zip&quot;,&quot;upload_mime_illegal&quot;:&quot;text\/html&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;newsfeed_layout&quot;:&quot;_:default&quot;,&quot;save_history&quot;:&quot;1&quot;,&quot;history_limit&quot;:5,&quot;show_feed_image&quot;:&quot;1&quot;,&quot;show_feed_description&quot;:&quot;1&quot;,&quot;show_item_description&quot;:&quot;1&quot;,&quot;feed_character_count&quot;:&quot;0&quot;,&quot;feed_display_order&quot;:&quot;des&quot;,&quot;float_first&quot;:&quot;right&quot;,&quot;float_second&quot;:&quot;right&quot;,&quot;show_tags&quot;:&quot;1&quot;,&quot;category_layout&quot;:&quot;_:default&quot;,&quot;show_category_title&quot;:&quot;1&quot;,&quot;show_description&quot;:&quot;1&quot;,&quot;show_description_image&quot;:&quot;1&quot;,&quot;maxLevel&quot;:&quot;-1&quot;,&quot;show_empty_categories&quot;:&quot;0&quot;,&quot;show_subcat_desc&quot;:&quot;1&quot;,&quot;show_cat_items&quot;:&quot;1&quot;,&quot;show_cat_tags&quot;:&quot;1&quot;,&quot;show_base_description&quot;:&quot;1&quot;,&quot;maxLevelcat&quot;:&quot;-1&quot;,&quot;show_empty_categories_cat&quot;:&quot;0&quot;,&quot;show_subcat_desc_cat&quot;:&quot;1&quot;,&quot;show_cat_items_cat&quot;:&quot;1&quot;,&quot;filter_field&quot;:&quot;1&quot;,&quot;show_pagination_limit&quot;:&quot;1&quot;,&quot;show_headings&quot;:&quot;1&quot;,&quot;show_articles&quot;:&quot;0&quot;,&quot;show_link&quot;:&quot;1&quot;,&quot;show_pagination&quot;:&quot;1&quot;,&quot;show_pagination_results&quot;:&quot;1&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;enabled&quot;:&quot;0&quot;,&quot;show_date&quot;:&quot;1&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;template_positions_display&quot;:&quot;0&quot;,&quot;upload_limit&quot;:&quot;2&quot;,&quot;image_formats&quot;:&quot;gif,bmp,jpg,jpeg,png&quot;,&quot;source_formats&quot;:&quot;txt,less,ini,xml,js,php,css&quot;,&quot;font_formats&quot;:&quot;woff,ttf,otf&quot;,&quot;compressed_formats&quot;:&quot;zip&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;article_layout&quot;:&quot;_:default&quot;,&quot;show_title&quot;:&quot;1&quot;,&quot;link_titles&quot;:&quot;1&quot;,&quot;show_intro&quot;:&quot;1&quot;,&quot;show_category&quot;:&quot;1&quot;,&quot;link_category&quot;:&quot;1&quot;,&quot;show_parent_category&quot;:&quot;0&quot;,&quot;link_parent_category&quot;:&quot;0&quot;,&quot;show_author&quot;:&quot;1&quot;,&quot;link_author&quot;:&quot;0&quot;,&quot;show_create_date&quot;:&quot;0&quot;,&quot;show_modify_date&quot;:&quot;0&quot;,&quot;show_publish_date&quot;:&quot;1&quot;,&quot;show_item_navigation&quot;:&quot;1&quot;,&quot;show_vote&quot;:&quot;0&quot;,&quot;show_readmore&quot;:&quot;1&quot;,&quot;show_readmore_title&quot;:&quot;1&quot;,&quot;readmore_limit&quot;:&quot;100&quot;,&quot;show_icons&quot;:&quot;1&quot;,&quot;show_print_icon&quot;:&quot;1&quot;,&quot;show_email_icon&quot;:&quot;1&quot;,&quot;show_hits&quot;:&quot;1&quot;,&quot;show_noauth&quot;:&quot;0&quot;,&quot;show_publishing_options&quot;:&quot;1&quot;,&quot;show_article_options&quot;:&quot;1&quot;,&quot;save_history&quot;:&quot;1&quot;,&quot;history_limit&quot;:10,&quot;show_urls_images_frontend&quot;:&quot;0&quot;,&quot;show_urls_images_backend&quot;:&quot;1&quot;,&quot;targeta&quot;:0,&quot;targetb&quot;:0,&quot;targetc&quot;:0,&quot;float_intro&quot;:&quot;left&quot;,&quot;float_fulltext&quot;:&quot;left&quot;,&quot;category_layout&quot;:&quot;_:blog&quot;,&quot;show_category_title&quot;:&quot;0&quot;,&quot;show_description&quot;:&quot;0&quot;,&quot;show_description_image&quot;:&quot;0&quot;,&quot;maxLevel&quot;:&quot;1&quot;,&quot;show_empty_categories&quot;:&quot;0&quot;,&quot;show_no_articles&quot;:&quot;1&quot;,&quot;show_subcat_desc&quot;:&quot;1&quot;,&quot;show_cat_num_articles&quot;:&quot;0&quot;,&quot;show_base_description&quot;:&quot;1&quot;,&quot;maxLevelcat&quot;:&quot;-1&quot;,&quot;show_empty_categories_cat&quot;:&quot;0&quot;,&quot;show_subcat_desc_cat&quot;:&quot;1&quot;,&quot;show_cat_num_articles_cat&quot;:&quot;1&quot;,&quot;num_leading_articles&quot;:&quot;1&quot;,&quot;num_intro_articles&quot;:&quot;4&quot;,&quot;num_columns&quot;:&quot;2&quot;,&quot;num_links&quot;:&quot;4&quot;,&quot;multi_column_order&quot;:&quot;0&quot;,&quot;show_subcategory_content&quot;:&quot;0&quot;,&quot;show_pagination_limit&quot;:&quot;1&quot;,&quot;filter_field&quot;:&quot;hide&quot;,&quot;show_headings&quot;:&quot;1&quot;,&quot;list_show_date&quot;:&quot;0&quot;,&quot;date_format&quot;:&quot;&quot;,&quot;list_show_hits&quot;:&quot;1&quot;,&quot;list_show_author&quot;:&quot;1&quot;,&quot;orderby_pri&quot;:&quot;order&quot;,&quot;orderby_sec&quot;:&quot;rdate&quot;,&quot;order_date&quot;:&quot;published&quot;,&quot;show_pagination&quot;:&quot;2&quot;,&quot;show_pagination_results&quot;:&quot;1&quot;,&quot;show_feed_link&quot;:&quot;1&quot;,&quot;feed_summary&quot;:&quot;0&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;filters&quot;:{&quot;1&quot;:{&quot;filter_type&quot;:&quot;NH&quot;,&quot;filter_tags&quot;:&quot;&quot;,&quot;filter_attributes&quot;:&quot;&quot;},&quot;6&quot;:{&quot;filter_type&quot;:&quot;BL&quot;,&quot;filter_tags&quot;:&quot;&quot;,&quot;filter_attributes&quot;:&quot;&quot;},&quot;7&quot;:{&quot;filter_type&quot;:&quot;NONE&quot;,&quot;filter_tags&quot;:&quot;&quot;,&quot;filter_attributes&quot;:&quot;&quot;},&quot;2&quot;:{&quot;filter_type&quot;:&quot;NH&quot;,&quot;filter_tags&quot;:&quot;&quot;,&quot;filter_attributes&quot;:&quot;&quot;},&quot;3&quot;:{&quot;filter_type&quot;:&quot;BL&quot;,&quot;filter_tags&quot;:&quot;&quot;,&quot;filter_attributes&quot;:&quot;&quot;},&quot;4&quot;:{&quot;filter_type&quot;:&quot;BL&quot;,&quot;filter_tags&quot;:&quot;&quot;,&quot;filter_attributes&quot;:&quot;&quot;},&quot;5&quot;:{&quot;filter_type&quot;:&quot;BL&quot;,&quot;filter_tags&quot;:&quot;&quot;,&quot;filter_attributes&quot;:&quot;&quot;},&quot;10&quot;:{&quot;filter_type&quot;:&quot;BL&quot;,&quot;filter_tags&quot;:&quot;&quot;,&quot;filter_attributes&quot;:&quot;&quot;},&quot;12&quot;:{&quot;filter_type&quot;:&quot;BL&quot;,&quot;filter_tags&quot;:&quot;&quot;,&quot;filter_attributes&quot;:&quot;&quot;},&quot;8&quot;:{&quot;filter_type&quot;:&quot;NONE&quot;,&quot;filter_tags&quot;:&quot;&quot;,&quot;filter_attributes&quot;:&quot;&quot;}}}</field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;allowUserRegistration&quot;:&quot;0&quot;,&quot;new_usertype&quot;:&quot;2&quot;,&quot;guest_usergroup&quot;:&quot;9&quot;,&quot;sendpassword&quot;:&quot;1&quot;,&quot;useractivation&quot;:&quot;1&quot;,&quot;mail_to_admin&quot;:&quot;0&quot;,&quot;captcha&quot;:&quot;&quot;,&quot;frontend_userparams&quot;:&quot;1&quot;,&quot;site_language&quot;:&quot;0&quot;,&quot;change_login_name&quot;:&quot;0&quot;,&quot;reset_count&quot;:&quot;10&quot;,&quot;reset_time&quot;:&quot;1&quot;,&quot;minimum_length&quot;:&quot;4&quot;,&quot;minimum_integers&quot;:&quot;0&quot;,&quot;minimum_symbols&quot;:&quot;0&quot;,&quot;minimum_uppercase&quot;:&quot;0&quot;,&quot;save_history&quot;:&quot;1&quot;,&quot;history_limit&quot;:5,&quot;mailSubjectPrefix&quot;:&quot;&quot;,&quot;mailBodySuffix&quot;:&quot;&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;show_description&quot;:&quot;1&quot;,&quot;description_length&quot;:255,&quot;allow_empty_query&quot;:&quot;0&quot;,&quot;show_url&quot;:&quot;1&quot;,&quot;show_advanced&quot;:&quot;1&quot;,&quot;expand_advanced&quot;:&quot;0&quot;,&quot;show_date_filters&quot;:&quot;0&quot;,&quot;highlight_terms&quot;:&quot;1&quot;,&quot;opensearch_name&quot;:&quot;&quot;,&quot;opensearch_description&quot;:&quot;&quot;,&quot;batch_size&quot;:&quot;50&quot;,&quot;memory_table_limit&quot;:30000,&quot;title_multiplier&quot;:&quot;1.7&quot;,&quot;text_multiplier&quot;:&quot;0.7&quot;,&quot;meta_multiplier&quot;:&quot;1.2&quot;,&quot;path_multiplier&quot;:&quot;2.0&quot;,&quot;misc_multiplier&quot;:&quot;0.3&quot;,&quot;stemmer&quot;:&quot;snowball&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;tag_layout&quot;:&quot;_:default&quot;,&quot;save_history&quot;:&quot;1&quot;,&quot;history_limit&quot;:5,&quot;show_tag_title&quot;:&quot;0&quot;,&quot;tag_list_show_tag_image&quot;:&quot;0&quot;,&quot;tag_list_show_tag_description&quot;:&quot;0&quot;,&quot;tag_list_image&quot;:&quot;&quot;,&quot;show_tag_num_items&quot;:&quot;0&quot;,&quot;tag_list_orderby&quot;:&quot;title&quot;,&quot;tag_list_orderby_direction&quot;:&quot;ASC&quot;,&quot;show_headings&quot;:&quot;0&quot;,&quot;tag_list_show_date&quot;:&quot;0&quot;,&quot;tag_list_show_item_image&quot;:&quot;0&quot;,&quot;tag_list_show_item_description&quot;:&quot;0&quot;,&quot;tag_list_item_maximum_characters&quot;:0,&quot;return_any_or_all&quot;:&quot;1&quot;,&quot;include_children&quot;:&quot;0&quot;,&quot;maximum&quot;:200,&quot;tag_list_language_filter&quot;:&quot;all&quot;,&quot;tags_layout&quot;:&quot;_:default&quot;,&quot;all_tags_orderby&quot;:&quot;title&quot;,&quot;all_tags_orderby_direction&quot;:&quot;ASC&quot;,&quot;all_tags_show_tag_image&quot;:&quot;0&quot;,&quot;all_tags_show_tag_descripion&quot;:&quot;0&quot;,&quot;all_tags_tag_maximum_characters&quot;:20,&quot;all_tags_show_tag_hits&quot;:&quot;0&quot;,&quot;filter_field&quot;:&quot;1&quot;,&quot;show_pagination_limit&quot;:&quot;1&quot;,&quot;show_pagination&quot;:&quot;2&quot;,&quot;show_pagination_results&quot;:&quot;1&quot;,&quot;tag_field_ajax_mode&quot;:&quot;1&quot;,&quot;show_feed_link&quot;:&quot;1&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;mediaversion&quot;:&quot;3674348c8e4bca037d82448ab6233caa&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;cache&quot;:&quot;0&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;format&quot;:&quot;short&quot;,&quot;product&quot;:&quot;1&quot;,&quot;cache&quot;:&quot;0&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;serverinfo&quot;:&quot;0&quot;,&quot;siteinfo&quot;:&quot;0&quot;,&quot;counter&quot;:&quot;0&quot;,&quot;increase&quot;:&quot;0&quot;,&quot;cache&quot;:&quot;1&quot;,&quot;cache_time&quot;:&quot;900&quot;,&quot;cachemode&quot;:&quot;static&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;maximum&quot;:&quot;5&quot;,&quot;timeframe&quot;:&quot;alltime&quot;,&quot;owncache&quot;:&quot;1&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;maximum&quot;:&quot;5&quot;,&quot;matchtype&quot;:&quot;any&quot;,&quot;owncache&quot;:&quot;1&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;applysuffix&quot;:&quot;0&quot;,&quot;suffix&quot;:&quot;&quot;,&quot;verifypeer&quot;:&quot;1&quot;,&quot;user_blacklist&quot;:&quot;&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;host&quot;:&quot;&quot;,&quot;port&quot;:&quot;389&quot;,&quot;use_ldapV3&quot;:&quot;0&quot;,&quot;negotiate_tls&quot;:&quot;0&quot;,&quot;no_referrals&quot;:&quot;0&quot;,&quot;auth_method&quot;:&quot;bind&quot;,&quot;base_dn&quot;:&quot;&quot;,&quot;search_string&quot;:&quot;&quot;,&quot;users_dn&quot;:&quot;&quot;,&quot;username&quot;:&quot;admin&quot;,&quot;password&quot;:&quot;bobby7&quot;,&quot;ldap_fullname&quot;:&quot;fullName&quot;,&quot;ldap_email&quot;:&quot;mail&quot;,&quot;ldap_uid&quot;:&quot;uid&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;mode&quot;:&quot;1&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;style&quot;:&quot;xhtml&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;title&quot;:&quot;1&quot;,&quot;multipage_toc&quot;:&quot;1&quot;,&quot;showall&quot;:&quot;1&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;position&quot;:&quot;1&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;lineNumbers&quot;:&quot;1&quot;,&quot;lineWrapping&quot;:&quot;1&quot;,&quot;matchTags&quot;:&quot;1&quot;,&quot;matchBrackets&quot;:&quot;1&quot;,&quot;marker-gutter&quot;:&quot;1&quot;,&quot;autoCloseTags&quot;:&quot;1&quot;,&quot;autoCloseBrackets&quot;:&quot;1&quot;,&quot;autoFocus&quot;:&quot;1&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;tabmode&quot;:&quot;indent&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;mode&quot;:&quot;1&quot;,&quot;skin&quot;:&quot;0&quot;,&quot;mobile&quot;:&quot;0&quot;,&quot;entity_encoding&quot;:&quot;raw&quot;,&quot;lang_mode&quot;:&quot;1&quot;,&quot;text_direction&quot;:&quot;ltr&quot;,&quot;content_css&quot;:&quot;1&quot;,&quot;content_css_custom&quot;:&quot;&quot;,&quot;relative_urls&quot;:&quot;1&quot;,&quot;newlines&quot;:&quot;0&quot;,&quot;invalid_elements&quot;:&quot;script,applet,iframe&quot;,&quot;extended_elements&quot;:&quot;&quot;,&quot;html_height&quot;:&quot;550&quot;,&quot;html_width&quot;:&quot;750&quot;,&quot;resizing&quot;:&quot;1&quot;,&quot;element_path&quot;:&quot;1&quot;,&quot;fonts&quot;:&quot;1&quot;,&quot;paste&quot;:&quot;1&quot;,&quot;searchreplace&quot;:&quot;1&quot;,&quot;insertdate&quot;:&quot;1&quot;,&quot;colors&quot;:&quot;1&quot;,&quot;table&quot;:&quot;1&quot;,&quot;smilies&quot;:&quot;1&quot;,&quot;hr&quot;:&quot;1&quot;,&quot;link&quot;:&quot;1&quot;,&quot;media&quot;:&quot;1&quot;,&quot;print&quot;:&quot;1&quot;,&quot;directionality&quot;:&quot;1&quot;,&quot;fullscreen&quot;:&quot;1&quot;,&quot;alignment&quot;:&quot;1&quot;,&quot;visualchars&quot;:&quot;1&quot;,&quot;visualblocks&quot;:&quot;1&quot;,&quot;nonbreaking&quot;:&quot;1&quot;,&quot;template&quot;:&quot;1&quot;,&quot;blockquote&quot;:&quot;1&quot;,&quot;wordcount&quot;:&quot;1&quot;,&quot;advlist&quot;:&quot;1&quot;,&quot;autosave&quot;:&quot;1&quot;,&quot;contextmenu&quot;:&quot;1&quot;,&quot;inlinepopups&quot;:&quot;1&quot;,&quot;custom_plugin&quot;:&quot;&quot;,&quot;custom_button&quot;:&quot;&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;search_limit&quot;:&quot;50&quot;,&quot;search_content&quot;:&quot;1&quot;,&quot;search_archived&quot;:&quot;1&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;search_limit&quot;:&quot;50&quot;,&quot;search_content&quot;:&quot;1&quot;,&quot;search_archived&quot;:&quot;1&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;search_limit&quot;:&quot;50&quot;,&quot;search_content&quot;:&quot;1&quot;,&quot;search_archived&quot;:&quot;1&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;search_limit&quot;:&quot;50&quot;,&quot;search_content&quot;:&quot;1&quot;,&quot;search_archived&quot;:&quot;1&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;headers&quot;:&quot;NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;browsercache&quot;:&quot;0&quot;,&quot;cachetime&quot;:&quot;15&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;profile&quot;:&quot;1&quot;,&quot;queries&quot;:&quot;1&quot;,&quot;memory&quot;:&quot;1&quot;,&quot;language_files&quot;:&quot;1&quot;,&quot;language_strings&quot;:&quot;1&quot;,&quot;strip-first&quot;:&quot;1&quot;,&quot;strip-prefix&quot;:&quot;&quot;,&quot;strip-suffix&quot;:&quot;&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;autowebpage&quot;:&quot;&quot;,&quot;category&quot;:&quot;34&quot;,&quot;autopublish&quot;:&quot;0&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;autoregister&quot;:&quot;1&quot;,&quot;mail_to_user&quot;:&quot;1&quot;,&quot;forceLogout&quot;:&quot;1&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;register-require_address1&quot;:&quot;1&quot;,&quot;register-require_address2&quot;:&quot;1&quot;,&quot;register-require_city&quot;:&quot;1&quot;,&quot;register-require_region&quot;:&quot;1&quot;,&quot;register-require_country&quot;:&quot;1&quot;,&quot;register-require_postal_code&quot;:&quot;1&quot;,&quot;register-require_phone&quot;:&quot;1&quot;,&quot;register-require_website&quot;:&quot;1&quot;,&quot;register-require_favoritebook&quot;:&quot;1&quot;,&quot;register-require_aboutme&quot;:&quot;1&quot;,&quot;register-require_tos&quot;:&quot;1&quot;,&quot;register-require_dob&quot;:&quot;1&quot;,&quot;profile-require_address1&quot;:&quot;1&quot;,&quot;profile-require_address2&quot;:&quot;1&quot;,&quot;profile-require_city&quot;:&quot;1&quot;,&quot;profile-require_region&quot;:&quot;1&quot;,&quot;profile-require_country&quot;:&quot;1&quot;,&quot;profile-require_postal_code&quot;:&quot;1&quot;,&quot;profile-require_phone&quot;:&quot;1&quot;,&quot;profile-require_website&quot;:&quot;1&quot;,&quot;profile-require_favoritebook&quot;:&quot;1&quot;,&quot;profile-require_aboutme&quot;:&quot;1&quot;,&quot;profile-require_tos&quot;:&quot;1&quot;,&quot;profile-require_dob&quot;:&quot;1&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;public_key&quot;:&quot;&quot;,&quot;private_key&quot;:&quot;&quot;,&quot;theme&quot;:&quot;clean&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;search_limit&quot;:&quot;50&quot;,&quot;show_tagged_items&quot;:&quot;1&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;wrapperSmall&quot;:&quot;53&quot;,&quot;wrapperLarge&quot;:&quot;72&quot;,&quot;sitetitle&quot;:&quot;&quot;,&quot;sitedescription&quot;:&quot;&quot;,&quot;navposition&quot;:&quot;center&quot;,&quot;templatecolor&quot;:&quot;nature&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;showSiteName&quot;:&quot;0&quot;,&quot;colourChoice&quot;:&quot;0&quot;,&quot;boldText&quot;:&quot;0&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;templateColor&quot;:&quot;&quot;,&quot;logoFile&quot;:&quot;&quot;,&quot;googleFont&quot;:&quot;1&quot;,&quot;googleFontName&quot;:&quot;Open+Sans&quot;,&quot;fluidContainer&quot;:&quot;0&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;templateColor&quot;:&quot;&quot;,&quot;logoFile&quot;:&quot;&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;frontend_enable&quot;:&quot;0&quot;,&quot;failure_frontend_enable&quot;:&quot;0&quot;,&quot;frontend_secret_word&quot;:&quot;&quot;,&quot;frontend_email_on_finish&quot;:&quot;0&quot;,&quot;frontend_email_address&quot;:&quot;&quot;,&quot;frontend_email_subject&quot;:&quot;&quot;,&quot;frontend_email_body&quot;:&quot;&quot;,&quot;failure_timeout&quot;:180,&quot;failure_email_address&quot;:&quot;&quot;,&quot;failure_email_subject&quot;:&quot;&quot;,&quot;failure_email_body&quot;:&quot;&quot;,&quot;siteurl&quot;:&quot;http:\/\/reaxml.dev\/&quot;,&quot;jversion&quot;:&quot;1.6&quot;,&quot;jlibrariesdir&quot;:&quot;\/Users\/nclifton\/Documents\/MAMP\/htdocs\/reaxml\/libraries&quot;,&quot;lastversion&quot;:&quot;&quot;,&quot;angieupgrade&quot;:&quot;0&quot;,&quot;update_dlid&quot;:&quot;fb5b8e2a73933bba8110f66b16eece23&quot;,&quot;displayphpwarning&quot;:&quot;1&quot;,&quot;autoupdateCli&quot;:&quot;1&quot;,&quot;notificationFreq&quot;:&quot;1&quot;,&quot;notificationTime&quot;:&quot;day&quot;,&quot;notificationEmail&quot;:&quot;&quot;,&quot;stats_enabled&quot;:&quot;1&quot;,&quot;useencryption&quot;:&quot;1&quot;,&quot;dateformat&quot;:&quot;&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;context&quot;:&quot;mod_quickicon&quot;,&quot;enablewarning&quot;:&quot;1&quot;,&quot;warnfailed&quot;:&quot;1&quot;,&quot;maxbackupperiod&quot;:&quot;24&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;language_override&quot;:&quot;&quot;,&quot;email&quot;:&quot;&quot;,&quot;singleclick&quot;:&quot;0&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;profileid&quot;:&quot;1&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{}</field>
+	</row>
+
+	<row>
+		<field name="params"></field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;er_bizname&quot;:&quot;REAXML DEMO&quot;,&quot;user_id&quot;:&quot;151&quot;,&quot;er_agent&quot;:&quot;Agent name&quot;,&quot;er_agenttype&quot;:&quot;&quot;,&quot;er_bizad&quot;:&quot;&quot;,&quot;er_bizsuburb&quot;:&quot;&quot;,&quot;er_bizstate&quot;:&quot;&quot;,&quot;er_bizpcode&quot;:&quot;&quot;,&quot;er_telephone&quot;:&quot;&quot;,&quot;er_mobile&quot;:&quot;&quot;,&quot;er_faxnum&quot;:&quot;&quot;,&quot;er_bizemail&quot;:&quot;Your Email address is required here&quot;,&quot;er_bizlogo&quot;:&quot;&quot;,&quot;er_pdfbkgr&quot;:&quot;&quot;,&quot;er_adminpdfbkgr&quot;:&quot;&quot;,&quot;er_bizbanner&quot;:&quot;&quot;,&quot;er_altimgupload&quot;:&quot;0&quot;,&quot;max_images&quot;:&quot;24&quot;,&quot;er_thumbquality&quot;:&quot;60&quot;,&quot;er_watermark&quot;:&quot;1&quot;,&quot;er_maxprofimgsize&quot;:&quot;80&quot;,&quot;er_pdffix&quot;:&quot;0&quot;,&quot;er_thumbcreation&quot;:&quot;gd2&quot;,&quot;newthumbwidth&quot;:&quot;200&quot;,&quot;distortimg&quot;:&quot;0&quot;,&quot;er_thumbwidth&quot;:&quot;120&quot;,&quot;thumbheight&quot;:&quot;&quot;,&quot;standard_thumb&quot;:&quot;3&quot;,&quot;feat_thumb&quot;:&quot;4&quot;,&quot;er_imgwidth&quot;:&quot;400&quot;,&quot;er_imgheight&quot;:&quot;300&quot;,&quot;er_maxwidth&quot;:&quot;700&quot;,&quot;er_maxheight&quot;:&quot;700&quot;,&quot;er_usepanorama&quot;:&quot;1&quot;,&quot;er_maxpanoimgsize&quot;:&quot;100&quot;,&quot;er_useqrcode&quot;:&quot;1&quot;,&quot;er_useflv&quot;:&quot;1&quot;,&quot;er_flvwidth&quot;:&quot;200&quot;,&quot;er_flvheight&quot;:&quot;200&quot;,&quot;er_usepdfupload&quot;:&quot;1&quot;,&quot;er_maxpdfsize&quot;:&quot;100&quot;,&quot;er_useepcupload&quot;:&quot;1&quot;,&quot;er_maxepcsize&quot;:&quot;100&quot;,&quot;er_useflplupload&quot;:&quot;1&quot;,&quot;er_maxflplsize&quot;:&quot;100&quot;,&quot;er_catthumbwidth&quot;:&quot;120&quot;,&quot;er_filtercid&quot;:&quot;0&quot;,&quot;er_filtertype&quot;:&quot;0&quot;,&quot;er_filterstreet&quot;:&quot;0&quot;,&quot;er_filterloc&quot;:&quot;0&quot;,&quot;er_filterstate&quot;:&quot;0&quot;,&quot;er_filtercount&quot;:&quot;0&quot;,&quot;er_filterseller&quot;:&quot;0&quot;,&quot;er_filter_keyword&quot;:&quot;0&quot;,&quot;er_piclist&quot;:&quot;0&quot;,&quot;er_newnotifications&quot;:&quot;0&quot;,&quot;er_udnotifications&quot;:&quot;0&quot;,&quot;er_usebasespecs&quot;:&quot;1&quot;,&quot;er_usebldg&quot;:&quot;1&quot;,&quot;er_usebsmt&quot;:&quot;1&quot;,&quot;er_useland&quot;:&quot;1&quot;,&quot;er_useutil&quot;:&quot;1&quot;,&quot;er_usefees&quot;:&quot;1&quot;,&quot;er_useparking&quot;:&quot;1&quot;,&quot;er_ruralinfo&quot;:&quot;1&quot;,&quot;er_businfo&quot;:&quot;1&quot;,&quot;er_useschools&quot;:&quot;1&quot;,&quot;er_genres&quot;:&quot;1&quot;,&quot;er_useynfeat&quot;:&quot;1&quot;,&quot;er_customspecs&quot;:&quot;1&quot;,&quot;er_ohinfo&quot;:&quot;1&quot;,&quot;er_aucinfo&quot;:&quot;1&quot;,&quot;er_meta&quot;:&quot;1&quot;,&quot;er_useadministrative&quot;:&quot;1&quot;,&quot;er_usesecondary&quot;:&quot;1&quot;,&quot;er_addnew&quot;:&quot;1&quot;,&quot;er_stateloc&quot;:&quot;1&quot;,&quot;er_country&quot;:&quot;1&quot;,&quot;er_usepc&quot;:&quot;1&quot;,&quot;use_appliancefeats&quot;:&quot;1&quot;,&quot;appliancefeats&quot;:&quot;Dishwasher;&quot;,&quot;use_indoorfeats&quot;:&quot;1&quot;,&quot;indoorfeats&quot;:&quot;Carpets;Air Conditioning;Vacuum System;Open Fire Place;Gas Heating;Electric Heating;Gas Ducted Heating;Solid Fuel Heating;Heating;Gas Hot Water Service;Electric Hot Water Service;Solar Hot Water Service;Built-in Robes;Ducted Cooling;Ducted Heating;Evaporative Cooling;Hydronic Heating;Reverse Cycle Air Conditioning;Split System Air Conditioning;Split System Heating;Spa;&quot;,&quot;use_outdoorfeats&quot;:&quot;1&quot;,&quot;outdoorfeats&quot;:&quot;Inground Pool;Spa;In Ground Pool;Above Ground Pool;Above Ground Spa;In Ground Spa;Tennis Court;Shed;Outdoor Entertainment;&quot;,&quot;use_buildingfeats&quot;:&quot;1&quot;,&quot;buildingfeats&quot;:&quot;Brick;Balcony;Deck;Courtyard;Floorboards;&quot;,&quot;use_communityfeats&quot;:&quot;1&quot;,&quot;communityfeats&quot;:&quot;Close to Schools;&quot;,&quot;use_otherfeats&quot;:&quot;1&quot;,&quot;otherfeats&quot;:&quot;Views;Intercom;Remote Control Garage Door;Secure Parking;Alarm System;Fully Fenced;Broadband;Pay TV;Solar Panels;Water Tank;Grey Water System;&quot;,&quot;er_usemarket&quot;:&quot;1&quot;,&quot;er_usemarket1&quot;:&quot;1&quot;,&quot;er_usemarket2&quot;:&quot;1&quot;,&quot;er_usemarket3&quot;:&quot;1&quot;,&quot;er_usemarket4&quot;:&quot;1&quot;,&quot;er_usemarket5&quot;:&quot;1&quot;,&quot;er_usemarket6&quot;:&quot;1&quot;,&quot;er_usemarket7&quot;:&quot;1&quot;,&quot;er_usemarket8&quot;:&quot;1&quot;,&quot;er_usemarket9&quot;:&quot;1&quot;,&quot;er_usemarket10&quot;:&quot;1&quot;,&quot;er_usetype1&quot;:&quot;1&quot;,&quot;er_usetype2&quot;:&quot;1&quot;,&quot;er_usetype3&quot;:&quot;1&quot;,&quot;er_usetype4&quot;:&quot;1&quot;,&quot;er_usetype5&quot;:&quot;1&quot;,&quot;er_usetype6&quot;:&quot;1&quot;,&quot;er_usetype7&quot;:&quot;1&quot;,&quot;er_userenttype&quot;:&quot;1&quot;,&quot;er_usefrequit&quot;:&quot;1&quot;,&quot;er_usefrequit1&quot;:&quot;1&quot;,&quot;er_usefrequit2&quot;:&quot;1&quot;,&quot;er_usefrequit3&quot;:&quot;1&quot;,&quot;er_usefrequit4&quot;:&quot;1&quot;,&quot;er_usefrequit5&quot;:&quot;1&quot;,&quot;er_usefrequit6&quot;:&quot;1&quot;,&quot;er_usefrequit7&quot;:&quot;1&quot;,&quot;er_usecouch&quot;:&quot;0&quot;,&quot;er_usestudio&quot;:&quot;0&quot;,&quot;er_maxrooms&quot;:&quot;10&quot;,&quot;er_landareaunit&quot;:&quot;1&quot;,&quot;er_acreageunit&quot;:&quot;1&quot;,&quot;er_areaunit&quot;:&quot;1&quot;,&quot;er_arealist&quot;:&quot;10;&quot;,&quot;er_usemlsid&quot;:&quot;1&quot;,&quot;er_useoffice&quot;:&quot;1&quot;,&quot;show_categories_title&quot;:&quot;1&quot;,&quot;cats_title&quot;:&quot;Browse Properties by Category&quot;,&quot;show_cats_propcount&quot;:&quot;1&quot;,&quot;show_cats_access&quot;:&quot;0&quot;,&quot;show_cats_spotlight&quot;:&quot;1&quot;,&quot;show_catspot_title&quot;:&quot;1&quot;,&quot;cats_spotlight_title&quot;:&quot;Property Spotlight&quot;,&quot;cats_spotlight_number&quot;:&quot;4&quot;,&quot;catspot_imgsource&quot;:&quot;0&quot;,&quot;show_suburbs_title&quot;:&quot;1&quot;,&quot;subs_title&quot;:&quot;Browse Properties by Suburb&quot;,&quot;show_subs_propcount&quot;:&quot;1&quot;,&quot;show_subs_spotlight&quot;:&quot;1&quot;,&quot;show_subspot_title&quot;:&quot;1&quot;,&quot;subs_spotlight_title&quot;:&quot;Property Spotlight&quot;,&quot;subs_spotlight_number&quot;:&quot;4&quot;,&quot;subs_imgsource&quot;:&quot;0&quot;,&quot;show_states_title&quot;:&quot;1&quot;,&quot;stats_title&quot;:&quot;Browse Properties by State&quot;,&quot;show_stats_propcount&quot;:&quot;1&quot;,&quot;show_stats_spotlight&quot;:&quot;1&quot;,&quot;show_statspot_title&quot;:&quot;1&quot;,&quot;stats_spotlight_title&quot;:&quot;Property Spotlight&quot;,&quot;stats_spotlight_number&quot;:&quot;4&quot;,&quot;stats_imgsource&quot;:&quot;0&quot;,&quot;show_category_title&quot;:&quot;1&quot;,&quot;show_description&quot;:&quot;1&quot;,&quot;show_description_image&quot;:&quot;0&quot;,&quot;catimg_align&quot;:&quot;left&quot;,&quot;show_suburb_title&quot;:&quot;1&quot;,&quot;show_suburb_description&quot;:&quot;1&quot;,&quot;show_suburb_image&quot;:&quot;0&quot;,&quot;suburb_resolution&quot;:&quot;15&quot;,&quot;show_state_title&quot;:&quot;1&quot;,&quot;state_resolution&quot;:&quot;8&quot;,&quot;show_ttyp_title&quot;:&quot;1&quot;,&quot;show_schres_title&quot;:&quot;1&quot;,&quot;schres_title&quot;:&quot;Property Results&quot;,&quot;show_shlist_title&quot;:&quot;1&quot;,&quot;shlist_title&quot;:&quot;My Shortlist&quot;,&quot;show_categories_select&quot;:&quot;1&quot;,&quot;show_transtype_select&quot;:&quot;1&quot;,&quot;show_marketstatus_select&quot;:&quot;1&quot;,&quot;show_sellers_select&quot;:&quot;1&quot;,&quot;show_countries_select&quot;:&quot;1&quot;,&quot;show_states_select&quot;:&quot;1&quot;,&quot;show_suburbs_select&quot;:&quot;1&quot;,&quot;show_minmaxprice_select&quot;:&quot;1&quot;,&quot;show_minbedsbaths_select&quot;:&quot;1&quot;,&quot;show_minmaxarea_select&quot;:&quot;1&quot;,&quot;show_minmaxland_select&quot;:&quot;1&quot;,&quot;show_keyword_select&quot;:&quot;1&quot;,&quot;show_dates_select&quot;:&quot;0&quot;,&quot;show_custom1_select&quot;:&quot;0&quot;,&quot;show_surrounding_select&quot;:&quot;0&quot;,&quot;er_radius_dist&quot;:&quot;15&quot;,&quot;er_radius_unit&quot;:&quot;6378.7&quot;,&quot;show_print_results&quot;:&quot;0&quot;,&quot;title_source&quot;:&quot;0&quot;,&quot;title_price&quot;:&quot;1&quot;,&quot;title_status&quot;:&quot;1&quot;,&quot;show_create_date&quot;:&quot;1&quot;,&quot;show_small_desc&quot;:&quot;1&quot;,&quot;show_icons&quot;:&quot;1&quot;,&quot;show_openhousedate&quot;:&quot;1&quot;,&quot;show_auctiondate&quot;:&quot;1&quot;,&quot;restrict_sold&quot;:&quot;0&quot;,&quot;er_uselistmap&quot;:&quot;1&quot;,&quot;er_listmapres&quot;:&quot;12&quot;,&quot;er_listmapheight&quot;:&quot;300&quot;,&quot;er_listmaplat&quot;:&quot;-27.5541330&quot;,&quot;er_listmaplong&quot;:&quot;152.0292450&quot;,&quot;show_pagination&quot;:&quot;2&quot;,&quot;which_pageclass&quot;:&quot;pagination&quot;,&quot;show_pagination_results&quot;:&quot;1&quot;,&quot;show_pagination_limit&quot;:&quot;1&quot;,&quot;show_sort_list&quot;:&quot;1&quot;,&quot;listorder1&quot;:&quot;catgtype&quot;,&quot;listorder2&quot;:&quot;transtype&quot;,&quot;listorder3&quot;:&quot;marketstatus&quot;,&quot;listorder4&quot;:&quot;sellers&quot;,&quot;listorder5&quot;:&quot;minmaxprice&quot;,&quot;listorder6&quot;:&quot;locations&quot;,&quot;listorder7&quot;:&quot;minmxbeds&quot;,&quot;listorder8&quot;:&quot;minmaxarea&quot;,&quot;listorder9&quot;:&quot;minmaxland&quot;,&quot;social_tweet&quot;:&quot;0&quot;,&quot;social_gplus&quot;:&quot;0&quot;,&quot;social_facebook&quot;:&quot;0&quot;,&quot;social_pinterest&quot;:&quot;0&quot;,&quot;disable_pinjs&quot;:&quot;0&quot;,&quot;use_print&quot;:&quot;0&quot;,&quot;er_viewrecommend&quot;:&quot;0&quot;,&quot;which_page_title&quot;:&quot;0&quot;,&quot;er_imglayout&quot;:&quot;images&quot;,&quot;er_thumbcols&quot;:&quot;4&quot;,&quot;er_imgfilesys&quot;:&quot;1&quot;,&quot;er_imglayoutwidth&quot;:&quot;0&quot;,&quot;er_layout&quot;:&quot;0&quot;,&quot;er_useprofile&quot;:&quot;1&quot;,&quot;er_proflayout&quot;:&quot;1&quot;,&quot;er_idnum&quot;:&quot;1&quot;,&quot;er_schoolprof&quot;:&quot;0&quot;,&quot;er_hoodprof&quot;:&quot;0&quot;,&quot;target&quot;:&quot;0&quot;,&quot;width&quot;:&quot;600&quot;,&quot;height&quot;:&quot;500&quot;,&quot;er_viewarrange&quot;:&quot;1&quot;,&quot;er_formtype&quot;:&quot;1&quot;,&quot;er_mailoverride&quot;:&quot;0&quot;,&quot;er_usemap&quot;:&quot;0&quot;,&quot;er_walkscore&quot;:&quot;0&quot;,&quot;er_wsapi&quot;:&quot;&quot;,&quot;er_mapres&quot;:&quot;12&quot;,&quot;er_mapheight&quot;:&quot;300&quot;,&quot;er_usesimilar&quot;:&quot;0&quot;,&quot;er_simnum&quot;:&quot;5&quot;,&quot;address_format&quot;:&quot;0&quot;,&quot;er_usealtmap&quot;:&quot;0&quot;,&quot;er_maplang&quot;:&quot;ru-RU&quot;,&quot;er_streetview&quot;:&quot;0&quot;,&quot;disable_jquery&quot;:&quot;0&quot;,&quot;popup_linktype&quot;:&quot;0&quot;,&quot;enable_bootstrap&quot;:&quot;0&quot;,&quot;icon_colour&quot;:&quot;1&quot;,&quot;page_iconcolour&quot;:&quot;0&quot;,&quot;titlecolor&quot;:&quot;title-green&quot;,&quot;mailcolor&quot;:&quot;mail-gold&quot;,&quot;butcolour&quot;:&quot;btn btn-success&quot;,&quot;butsize&quot;:&quot;btn-small&quot;,&quot;er_fieldsize&quot;:&quot;span12&quot;,&quot;er_selectsize&quot;:&quot;span12&quot;,&quot;er_currencycontrol&quot;:&quot;0&quot;,&quot;er_currencycode&quot;:&quot;&quot;,&quot;er_currencysign&quot;:&quot;$&quot;,&quot;er_currencypos&quot;:&quot;0&quot;,&quot;er_currencyformat&quot;:&quot;0&quot;,&quot;er_expmgmt&quot;:&quot;0&quot;,&quot;er_expfig&quot;:&quot;&quot;,&quot;er_expgrace&quot;:&quot;&quot;,&quot;er_shortlisting&quot;:&quot;0&quot;,&quot;er_lightboxexp&quot;:&quot;&quot;,&quot;defordering&quot;:&quot;a.id DESC&quot;,&quot;deflistorder&quot;:&quot;0&quot;,&quot;er_hideprice&quot;:&quot;1&quot;,&quot;er_dateformat&quot;:&quot;d-m-Y&quot;,&quot;use_ezportal&quot;:&quot;0&quot;,&quot;use_realtybookings&quot;:&quot;0&quot;,&quot;show_feed_link&quot;:&quot;1&quot;,&quot;feed_summary&quot;:&quot;0&quot;,&quot;er_recaptcha&quot;:&quot;0&quot;,&quot;use_jrev&quot;:&quot;0&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;misc_setting&quot;:&quot;&quot;,&quot;listingstype&quot;:&quot;0&quot;,&quot;listingorder&quot;:&quot;0&quot;,&quot;count&quot;:&quot;20&quot;,&quot;custom_setting&quot;:&quot;&quot;,&quot;reflistcust1&quot;:&quot;0&quot;,&quot;listcust1&quot;:&quot;&quot;,&quot;catg_setting&quot;:&quot;&quot;,&quot;reflistcat&quot;:&quot;0&quot;,&quot;listcat&quot;:&quot;&quot;,&quot;suburb_setting&quot;:&quot;&quot;,&quot;reflistsuburb&quot;:&quot;0&quot;,&quot;listsuburb&quot;:&quot;&quot;,&quot;state_setting&quot;:&quot;&quot;,&quot;refliststate&quot;:&quot;0&quot;,&quot;liststate&quot;:&quot;&quot;,&quot;country_setting&quot;:&quot;&quot;,&quot;reflistcountry&quot;:&quot;0&quot;,&quot;listcountry&quot;:&quot;&quot;,&quot;content_setting&quot;:&quot;&quot;,&quot;titlesource&quot;:&quot;1&quot;,&quot;textsource&quot;:&quot;1&quot;,&quot;textlength&quot;:&quot;250&quot;,&quot;contentheight&quot;:&quot;250&quot;,&quot;image_setting&quot;:&quot;&quot;,&quot;imgsource&quot;:&quot;0&quot;,&quot;imgwidth&quot;:&quot;3&quot;,&quot;file_setting&quot;:&quot;&quot;,&quot;disjquery&quot;:&quot;0&quot;,&quot;cache&quot;:&quot;1&quot;,&quot;cache_time&quot;:&quot;900&quot;,&quot;cachemode&quot;:&quot;itemid&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;misc_setting&quot;:&quot;&quot;,&quot;listingstype&quot;:&quot;0&quot;,&quot;listingorder&quot;:&quot;0&quot;,&quot;count&quot;:&quot;20&quot;,&quot;custom_setting&quot;:&quot;&quot;,&quot;reflistcust1&quot;:&quot;0&quot;,&quot;listcust1&quot;:&quot;&quot;,&quot;catg_setting&quot;:&quot;&quot;,&quot;reflistcat&quot;:&quot;0&quot;,&quot;listcat&quot;:&quot;&quot;,&quot;suburb_setting&quot;:&quot;&quot;,&quot;reflistsuburb&quot;:&quot;0&quot;,&quot;listsuburb&quot;:&quot;&quot;,&quot;state_setting&quot;:&quot;&quot;,&quot;refliststate&quot;:&quot;0&quot;,&quot;liststate&quot;:&quot;&quot;,&quot;country_setting&quot;:&quot;&quot;,&quot;reflistcountry&quot;:&quot;0&quot;,&quot;listcountry&quot;:&quot;&quot;,&quot;carousel_setting&quot;:&quot;&quot;,&quot;slideheight&quot;:&quot;100&quot;,&quot;slidespeed&quot;:&quot;2&quot;,&quot;rowgap&quot;:&quot;5&quot;,&quot;colour_setting&quot;:&quot;&quot;,&quot;carbkgr&quot;:&quot;#ffffff&quot;,&quot;bordercol&quot;:&quot;#ebebeb&quot;,&quot;gradstart&quot;:&quot;#ffffff&quot;,&quot;gradend&quot;:&quot;#ffffff&quot;,&quot;cache&quot;:&quot;1&quot;,&quot;cache_time&quot;:&quot;900&quot;,&quot;cachemode&quot;:&quot;itemid&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;listingstype&quot;:&quot;0&quot;,&quot;item_order&quot;:&quot;0&quot;,&quot;count&quot;:&quot;&quot;,&quot;colcount&quot;:&quot;0&quot;,&quot;ezlayout&quot;:&quot;0&quot;,&quot;imgsize&quot;:&quot;1&quot;,&quot;ezicon&quot;:&quot;&quot;,&quot;bs_selectsize&quot;:&quot;12&quot;,&quot;titlepos&quot;:&quot;0&quot;,&quot;textlength&quot;:&quot;250&quot;,&quot;imgalign&quot;:&quot;left&quot;,&quot;imgwidth&quot;:&quot;120&quot;,&quot;cache&quot;:&quot;1&quot;,&quot;cache_time&quot;:&quot;900&quot;,&quot;cachemode&quot;:&quot;itemid&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;misc_setting&quot;:&quot;&quot;,&quot;listingstype&quot;:&quot;0&quot;,&quot;listingorder&quot;:&quot;0&quot;,&quot;count&quot;:&quot;20&quot;,&quot;custom_setting&quot;:&quot;&quot;,&quot;reflistcust1&quot;:&quot;0&quot;,&quot;listcust1&quot;:&quot;&quot;,&quot;catg_setting&quot;:&quot;&quot;,&quot;reflistcat&quot;:&quot;0&quot;,&quot;listcat&quot;:&quot;&quot;,&quot;suburb_setting&quot;:&quot;&quot;,&quot;reflistsuburb&quot;:&quot;0&quot;,&quot;listsuburb&quot;:&quot;&quot;,&quot;state_setting&quot;:&quot;&quot;,&quot;refliststate&quot;:&quot;0&quot;,&quot;liststate&quot;:&quot;&quot;,&quot;country_setting&quot;:&quot;&quot;,&quot;reflistcountry&quot;:&quot;0&quot;,&quot;listcountry&quot;:&quot;&quot;,&quot;content_setting&quot;:&quot;&quot;,&quot;titlesource&quot;:&quot;1&quot;,&quot;map_setting&quot;:&quot;&quot;,&quot;usealtmap&quot;:&quot;0&quot;,&quot;maplang&quot;:&quot;ru-RU&quot;,&quot;usestreetview&quot;:&quot;0&quot;,&quot;control_size&quot;:&quot;1&quot;,&quot;maplat&quot;:&quot;-27.5541330&quot;,&quot;maplong&quot;:&quot;152.0292450&quot;,&quot;mapres&quot;:&quot;12&quot;,&quot;mapheight&quot;:&quot;300&quot;,&quot;cache&quot;:&quot;1&quot;,&quot;cache_time&quot;:&quot;900&quot;,&quot;cachemode&quot;:&quot;itemid&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;misc_setting&quot;:&quot;&quot;,&quot;displaystatus&quot;:&quot;0&quot;,&quot;marketstatus&quot;:&quot;0&quot;,&quot;listingstype&quot;:&quot;0&quot;,&quot;listingorder&quot;:&quot;0&quot;,&quot;count&quot;:&quot;20&quot;,&quot;colcount&quot;:&quot;0&quot;,&quot;showohdate&quot;:&quot;0&quot;,&quot;custom_setting&quot;:&quot;&quot;,&quot;reflistcust1&quot;:&quot;0&quot;,&quot;listcust1&quot;:&quot;&quot;,&quot;catg_setting&quot;:&quot;&quot;,&quot;reflistcat&quot;:&quot;0&quot;,&quot;listcat&quot;:&quot;&quot;,&quot;suburb_setting&quot;:&quot;&quot;,&quot;reflistsuburb&quot;:&quot;0&quot;,&quot;listsuburb&quot;:&quot;&quot;,&quot;state_setting&quot;:&quot;&quot;,&quot;refliststate&quot;:&quot;0&quot;,&quot;liststate&quot;:&quot;&quot;,&quot;country_setting&quot;:&quot;&quot;,&quot;reflistcountry&quot;:&quot;0&quot;,&quot;listcountry&quot;:&quot;&quot;,&quot;agent_setting&quot;:&quot;&quot;,&quot;reflistagent&quot;:&quot;0&quot;,&quot;listagent&quot;:&quot;&quot;,&quot;content_setting&quot;:&quot;&quot;,&quot;titlesource&quot;:&quot;1&quot;,&quot;titlepos&quot;:&quot;0&quot;,&quot;titlesize&quot;:&quot;0&quot;,&quot;textsource&quot;:&quot;1&quot;,&quot;textlength&quot;:&quot;250&quot;,&quot;textpos&quot;:&quot;0&quot;,&quot;image_setting&quot;:&quot;&quot;,&quot;imgsource&quot;:&quot;0&quot;,&quot;imgeffect&quot;:&quot;0&quot;,&quot;file_setting&quot;:&quot;&quot;,&quot;lazyload&quot;:&quot;1&quot;,&quot;disjquery&quot;:&quot;0&quot;,&quot;cache&quot;:&quot;1&quot;,&quot;cache_time&quot;:&quot;900&quot;,&quot;cachemode&quot;:&quot;itemid&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;misc_setting&quot;:&quot;&quot;,&quot;listingstype&quot;:&quot;0&quot;,&quot;listingorder&quot;:&quot;0&quot;,&quot;count&quot;:&quot;20&quot;,&quot;custom_setting&quot;:&quot;&quot;,&quot;reflistcust1&quot;:&quot;0&quot;,&quot;listcust1&quot;:&quot;&quot;,&quot;catg_setting&quot;:&quot;&quot;,&quot;reflistcat&quot;:&quot;0&quot;,&quot;listcat&quot;:&quot;&quot;,&quot;suburb_setting&quot;:&quot;&quot;,&quot;reflistsuburb&quot;:&quot;0&quot;,&quot;listsuburb&quot;:&quot;&quot;,&quot;state_setting&quot;:&quot;&quot;,&quot;refliststate&quot;:&quot;0&quot;,&quot;liststate&quot;:&quot;&quot;,&quot;country_setting&quot;:&quot;&quot;,&quot;reflistcountry&quot;:&quot;0&quot;,&quot;listcountry&quot;:&quot;&quot;,&quot;content_setting&quot;:&quot;&quot;,&quot;titlelength&quot;:&quot;40&quot;,&quot;textlength&quot;:&quot;250&quot;,&quot;image_setting&quot;:&quot;&quot;,&quot;imgwidth&quot;:&quot;90&quot;,&quot;imgheight&quot;:&quot;60&quot;,&quot;patchwork_setting&quot;:&quot;&quot;,&quot;divwidth&quot;:&quot;330&quot;,&quot;divheight&quot;:&quot;180&quot;,&quot;file_setting&quot;:&quot;&quot;,&quot;disjquery&quot;:&quot;0&quot;,&quot;cache&quot;:&quot;1&quot;,&quot;cache_time&quot;:&quot;900&quot;,&quot;cachemode&quot;:&quot;itemid&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;bs_fieldsize&quot;:&quot;12&quot;,&quot;bs_selectsize&quot;:&quot;12&quot;,&quot;showmod_categories_select&quot;:&quot;1&quot;,&quot;showmod_transtype_select&quot;:&quot;1&quot;,&quot;showmod_marketstatus_select&quot;:&quot;1&quot;,&quot;showmod_sellers_select&quot;:&quot;1&quot;,&quot;showmod_countries_select&quot;:&quot;1&quot;,&quot;showmod_suburbs_select&quot;:&quot;1&quot;,&quot;showmod_minmaxprice_select&quot;:&quot;1&quot;,&quot;showmod_minbedsbaths_select&quot;:&quot;1&quot;,&quot;showmod_minmaxarea_select&quot;:&quot;1&quot;,&quot;showmod_minmaxland_select&quot;:&quot;1&quot;,&quot;showmod_keyword_select&quot;:&quot;1&quot;,&quot;showmod_dates_select&quot;:&quot;0&quot;,&quot;showmod_custom1_select&quot;:&quot;0&quot;,&quot;cache&quot;:&quot;1&quot;,&quot;cache_time&quot;:&quot;900&quot;,&quot;cachemode&quot;:&quot;itemid&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;misc_setting&quot;:&quot;&quot;,&quot;listingstype&quot;:&quot;0&quot;,&quot;listingorder&quot;:&quot;0&quot;,&quot;count&quot;:&quot;20&quot;,&quot;custom_setting&quot;:&quot;&quot;,&quot;reflistcust1&quot;:&quot;0&quot;,&quot;listcust1&quot;:&quot;&quot;,&quot;catg_setting&quot;:&quot;&quot;,&quot;reflistcat&quot;:&quot;0&quot;,&quot;listcat&quot;:&quot;&quot;,&quot;suburb_setting&quot;:&quot;&quot;,&quot;reflistsuburb&quot;:&quot;0&quot;,&quot;listsuburb&quot;:&quot;&quot;,&quot;state_setting&quot;:&quot;&quot;,&quot;refliststate&quot;:&quot;0&quot;,&quot;liststate&quot;:&quot;&quot;,&quot;country_setting&quot;:&quot;&quot;,&quot;reflistcountry&quot;:&quot;0&quot;,&quot;listcountry&quot;:&quot;&quot;,&quot;content_setting&quot;:&quot;&quot;,&quot;listinginfo&quot;:&quot;0&quot;,&quot;titlesize&quot;:&quot;0&quot;,&quot;image_setting&quot;:&quot;&quot;,&quot;imgsource&quot;:&quot;0&quot;,&quot;height&quot;:&quot;50%&quot;,&quot;minHeight&quot;:&quot;200px&quot;,&quot;imgoverlay&quot;:&quot;&quot;,&quot;file_setting&quot;:&quot;&quot;,&quot;loader&quot;:&quot;pie&quot;,&quot;loaderColor&quot;:&quot;#eeeeee&quot;,&quot;loaderBgColor&quot;:&quot;#222222&quot;,&quot;loaderOpacity&quot;:&quot;.8&quot;,&quot;time&quot;:&quot;7000&quot;,&quot;transperiod&quot;:&quot;1500&quot;,&quot;easing&quot;:&quot;easeInOutExpo&quot;,&quot;fx&quot;:&quot;random&quot;,&quot;disjquery&quot;:&quot;0&quot;,&quot;cache&quot;:&quot;1&quot;,&quot;cache_time&quot;:&quot;900&quot;,&quot;cachemode&quot;:&quot;itemid&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{}</field>
+	</row>
+
+	<row>
+		<field name="params">{}</field>
+	</row>
+
+	<row>
+		<field name="params">{&quot;input_dir&quot;:&quot;\/Users\/nclifton\/Documents\/MAMP\/htdocs\/reaxml\/ftp\/input&quot;,&quot;input_url&quot;:&quot;\/ftp\/input&quot;,&quot;work_dir&quot;:&quot;\/Users\/nclifton\/Documents\/MAMP\/htdocs\/reaxml\/ftp\/work&quot;,&quot;work_url&quot;:&quot;\/ftp\/work&quot;,&quot;done_dir&quot;:&quot;\/Users\/nclifton\/Documents\/MAMP\/htdocs\/reaxml\/ftp\/done&quot;,&quot;done_url&quot;:&quot;\/ftp\/done&quot;,&quot;log_dir&quot;:&quot;\/Users\/nclifton\/Documents\/MAMP\/htdocs\/reaxml\/ftp\/log&quot;,&quot;log_url&quot;:&quot;\/ftp\/log&quot;,&quot;error_dir&quot;:&quot;\/Users\/nclifton\/Documents\/MAMP\/htdocs\/reaxml\/ftp\/error&quot;,&quot;error_url&quot;:&quot;\/ftp\/error&quot;,&quot;usemap&quot;:&quot;0&quot;,&quot;update_dlid&quot;:&quot;&quot;}</field>
+	</row>
+
+	<row>
+		<field name="params">{}</field>
+	</row>
+</resultset>

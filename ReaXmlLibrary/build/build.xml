@@ -83,5 +83,9 @@
 		<replaceregexp file="${fullfilename}" match="/\*\*.*\* @copyright.*\*\*\/" flags="sm" replace="${phpheader}">
 		</replaceregexp>
 	</target>
+	
+	<target name="deploy_for_test" depends="create_install">
+		<ant antfile="../REAXMLPackage/build/build.xml" target="copy_latest" inheritAll="false"/>
+	</target>
 
 </project>

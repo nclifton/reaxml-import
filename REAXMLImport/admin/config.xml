@@ -42,6 +42,14 @@
 			label="COM_REAXMLIMPORT_ERROR_URL_LABEL" description="COM_REAXMLIMPORT_ERROR_URL_DESC">
 		</field>
 	</fieldset>
+	<fieldset name="usemap" label="COM_REAXMLIMPORT_MAPDATA" description="COM_REAXMLIMPORT_MAPDATA_DESC">
+		<field name="usemap" type="radio" default="0"
+			label="COM_REAXMLIMPORT_USEMAP_LABEL" description="COM_REAXMLIMPORT_USEMAP_DESC">
+			<option value="0">COM_REAXMLIMPORT_USEMAP_NEVER</option>
+			<option value="1">COM_REAXMLIMPORT_USEMAP_IF_NEW</option>
+			<option value="2">COM_REAXMLIMPORT_USEMAP_ALWAYS</option>
+		</field>
+	</fieldset>
 	<fieldset name="update" label="COM_REAXMLIMPORT_UPDATE" description="COM_REAXMLIMPORT_UPDATE_DESC">
 		<field name="update_dlid" type="text" default=""
 			label="COM_REAXMLIMPORT_DOWNLOAD_ID_LABEL" description="COM_REAXMLIMPORT_DOWNLOAD_ID_DESC">

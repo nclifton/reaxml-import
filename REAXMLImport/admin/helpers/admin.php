@@ -4,7 +4,7 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
 /**
  *
  * @package Component REAXML Import for Joomla! 3.4
- * @version 1.3.122: admin.php 2015-06-01T08:16:26.590
+ * @version 1.4.3: admin.php 2015-06-10T01:14:12.284
  * @author Clifton IT Foundries Pty Ltd
  * @link http://cliftonwebfoundry.com.au
  * @copyright Copyright (c) 2014, 2015 Clifton IT Foundries Pty Ltd. All rights Reserved
@@ -48,7 +48,7 @@ class ReaXmlImportHelpersAdmin {
 		JHtml::stylesheet ( JUri::base () . 'components/com_reaxmlimport/assets/css/import.css' );
 	}
 	static function getLogFilesHtml($model) {
-		return self::getHtmlFileList ( $model->getLogFiles (), $model->getLogRelUrl () );
+		return self::getHtmlFileList ( $model->getLogFiles (), $model->getLogUrl () );
 	}
 	private static function getHtmlFileList($files, $relUrl) {
 		$content = '';
@@ -58,10 +58,10 @@ class ReaXmlImportHelpersAdmin {
 		return $content;
 	}
 	static function getInputFilesHtml($model) {
-		return self::getHtmlFileList ( $model->getInputFiles (), $model->getInputRelUrl () );
+		return self::getHtmlFileList ( $model->getInputFiles (), $model->getInputUrl () );
 	}
 	static function getErrorFilesHtml($model) {
-		return self::getHtmlFileList ( $model->getErrorFiles (), $model->getErrorRelUrl () );
+		return self::getHtmlFileList ( $model->getErrorFiles (), $model->getErrorUrl () );
 	}
 	private static $dbo;
 	

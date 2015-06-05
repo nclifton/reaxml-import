@@ -2,15 +2,15 @@
 defined ( '_JEXEC' ) or die ( 'Restricted access' );
 
 /**
- * 
- * @package Library REAXML Library for Joomla! 3.3
- * @version 1.1.1: image_fname.php 2015-03-26T07:04:19.350
+ *
+ * @package Library REAXML Library for Joomla! 3.4
+ * @version 1.4.8: image_fname.php 2015-07-01T05:31:35.565
  * @author Clifton IT Foundries Pty Ltd
  * @link http://cliftonwebfoundry.com.au
- * @copyright Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights Reserved
+ * @copyright Copyright (c) 2014, 2015 Clifton IT Foundries Pty Ltd. All rights Reserved
  * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
- *      
- */
+ *
+ **/ 
 error_reporting ( E_ALL & ~ E_STRICT & ~ E_NOTICE );
 define ( 'DS', DIRECTORY_SEPARATOR );
 class ReaxmlEzrColImage_fname extends \ReaxmlEzrImagecolumn {

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="joomla-reaxml">
+	<table_data name="jos_extensions">
+
+
+	<row>
+		<field name="params">{&quot;input_dir&quot;:&quot;input&quot;,&quot;input_url&quot;:&quot;\/input&quot;,&quot;work_dir&quot;:&quot;work&quot;,&quot;work_url&quot;:&quot;\/work&quot;,&quot;done_dir&quot;:&quot;done&quot;,&quot;done_url&quot;:&quot;\/done&quot;,&quot;log_dir&quot;:&quot;log&quot;,&quot;log_url&quot;:&quot;\/log&quot;,&quot;error_dir&quot;:&quot;error&quot;,&quot;error_url&quot;:&quot;\/error&quot;,&quot;usemap&quot;:&quot;1&quot;,&quot;update_dlid&quot;:&quot;&quot;}</field>
+	</row>
+
+</table_data>
+</database>
+</mysqldump>

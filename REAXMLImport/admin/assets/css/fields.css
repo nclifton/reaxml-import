@@ -1,4 +1,97 @@
 
-div#reaxmlimport-config-panel {
+#reaxmlimport-config-frame {
+	width:100%;
+	height:100%;
+}
+iframe{
+	border: none;
+}
+#reaxmlimport-config-panel{
+	border:none;
+	border-image-width: 0;
+}
+#reaxmlimport-config-frame body.contentpane.component{
+	padding-left: 0;
+	padding-right: 0;
+}
+.ui-dialog .ui-dialog-content {
+	padding: 15px;
+}
 
+.folderbrowser-controls-container .inline-form {
+	display: -webkit-box; 			/* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box; 				/* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox; 			/* TWEENER - IE 10 */
+	display: -webkit-flex; 			/* NEW - Chrome */
+	-webkit-flex-direction: row; 	/* Safari 6.1+ */
+	-webkit-align-items: center; 	/* Safari 7.0+ */
+	display: flex; 					/* NEW, Spec - Opera 12.1, Firefox 20+ */
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+}
+#folderbrowser-container .folderbrowser-controls-container #adminForm.inline-form #folder {
+	align-self: center;
+	margin: 0 0 0 0;
+}
+#folderbrowser-container .folderbrowser-controls-container #adminForm.inline-form button.btn {
+	display:block;
+	margin: 0 0 0 5px;
+	height:100%;
+}
+#folderbrowser-container .folderbrowser-controls-container #adminForm.inline-form button.btn-primary {
+	width:80px;
+}
+#folderbrowser-container .folderbrowser-controls-container #adminForm.inline-form button.btn-success {
+	width:90px;
+}
+
+#folderbrowser-container .folderbrowser-controls-container #adminForm.inline-form button.btn div{
+	float:right;
+	display:block;
+}
+#folderbrowser-container .folderbrowser-controls-container #adminForm.inline-form button.btn div.ui-icon{
+	float: left;
+	display:block;
+	background-image: url("images/ui-icons_ffffff_256x240.png");
+}
+
+#folderbrowser-container .folderbrowser-breadcrumb-container ul.breadcrumb li[class^="item"]:after{
+	content: "\00a0 \2022";
+}
+#folderbrowser-container .folderbrowser-breadcrumb-container ul.breadcrumb li.active:after{
+	content: "";
+}
+#folderbrowser-container .folderbrowser-folders-container ul.folders {
+	display: -webkit-box; 			/* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box; 				/* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox; 			/* TWEENER - IE 10 */
+	display: -webkit-flex; 			/* NEW - Chrome */
+	-webkit-flex-direction: row; 	/* Safari 6.1+ */
+	-webkit-align-items: left; 		/* Safari 7.0+ */
+    -webkit-justify-content: space-around; /* Safari 6.1+ */
+    -webkit-flex-wrap: wrap; 		/* Safari 6.1+ */
+   	display: flex; 					/* NEW, Spec - Opera 12.1, Firefox 20+ */
+	flex-direction: row;
+	align-items: left;
+ 	justify-content: flex-start;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+#folderbrowser-container .folderbrowser-folders-container ul.folders li {
+	display: -webkit-box; 			/* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box; 				/* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox; 			/* TWEENER - IE 10 */
+	display: -webkit-flex; 			/* NEW - Chrome */
+	-webkit-flex-direction: row; 	/* Safari 6.1+ */
+    -webkit-flex-wrap: nowrap; 		/* Safari 6.1+ */
+   	display: flex; 					/* NEW, Spec - Opera 12.1, Firefox 20+ */
+	flex-direction: row;
+    flex-wrap: nowrap;
+	padding: 0 10px 0 0;	
+}
+#folderbrowser-container .folderbrowser-folders-container ul.folders li .ui-icon {
+	background-image: url("images/ui-icons_2e83ff_256x240.png");
+	margin-left:10px;
+	margin-right:5px;
 }

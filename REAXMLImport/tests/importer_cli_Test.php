@@ -54,18 +54,13 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
 		$this->cleanDirectories ();
 	}
 	public function cleanDirectories() {
-		$this->recursiveUnlink ( __DIR__ . DIRECTORY_SEPARATOR . 'test_done' . DIRECTORY_SEPARATOR . '*' );
-		$this->recursiveUnlink ( __DIR__ . DIRECTORY_SEPARATOR . 'test_work' . DIRECTORY_SEPARATOR . '*' );
-		$this->recursiveUnlink ( __DIR__ . DIRECTORY_SEPARATOR . 'test_input' . DIRECTORY_SEPARATOR . '*' );
-		$this->recursiveUnlink ( __DIR__ . DIRECTORY_SEPARATOR . 'test_error' . DIRECTORY_SEPARATOR . '*' );
-		$this->recursiveUnlink ( __DIR__ . DIRECTORY_SEPARATOR . 'test_log' . DIRECTORY_SEPARATOR . '*' );
+		$this->recursiveUnlink ( __DIR__ . DIRECTORY_SEPARATOR . '/test_done/*' );
+		$this->recursiveUnlink ( __DIR__ . DIRECTORY_SEPARATOR . '/test_work/*' );
+		$this->recursiveUnlink ( __DIR__ . DIRECTORY_SEPARATOR . '/test_input/*' );
+		$this->recursiveUnlink ( __DIR__ . DIRECTORY_SEPARATOR . '/test_error/*' );
+		$this->recursiveUnlink ( __DIR__ . DIRECTORY_SEPARATOR . '/test_log/*' );
 	}
-	public function import() {
-		$configuration = $this->getConfiguration ();
-		$importer = new ReaxmlImporter ();
-		$importer->setConfiguration ( $configuration );
-		return $importer->import ();
-	}
+
 	/**
 	 *
 	 * @return PHPUnit_Extensions_Database_DataSet_IDataSet
@@ -79,7 +74,7 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
 	 */
 	public function import_commercial_pullman() {
 		// Arrange
-		copy ( __DIR__ . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'pullman_201410280550052876573.xml', __DIR__ . DIRECTORY_SEPARATOR . 'test_input' . DIRECTORY_SEPARATOR . 'pullman_201410280550052876573.xml' );
+		copy ( __DIR__ . '/files/pullman_201410280550052876573.xml', __DIR__ . '/test_input/pullman_201410280550052876573.xml' );
 		
 		// Act
 		include __DIR__ . '/../admin/cli/reaxml-importer.php';
@@ -106,7 +101,11 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
 		$filterDataSet->setExcludeColumnsForTable ( $GLOBALS ['DB_TBLPREFIX'] . 'ezrealty', array (
 				'hits',
 				'flpl1',
-				'flpl2' 
+				'flpl2',
+				'declat',
+				'declong',
+				'propdesc',
+				'smalldesc'
 		) );
 		$filterDataSet->setIncludeColumnsForTable ( $GLOBALS ['DB_TBLPREFIX'] . 'extensions', array (
 				'params' 

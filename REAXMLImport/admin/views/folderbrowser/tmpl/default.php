@@ -16,6 +16,7 @@ $document->addScriptDeclaration('
 function reaxml_folderbrowser_useThis(inputid,urlinputid) {
 	parent.reaxml_folderbrowser_useThis(inputid,urlinputid);
 }');
+$document->addStyleSheet('/administrator/components/com_reaxmlimport/assets/css/fields.css');
 
 ?>
 <div id="folderbrowser-container">
@@ -29,8 +30,8 @@ function reaxml_folderbrowser_useThis(inputid,urlinputid) {
 			<input type="hidden" name="urlinputid" value="<?php echo $this->getUrlinputid()?>" />
 			<input id="url" type="hidden" name="url" value="<?php echo $this->getUrl() ?>" />
 			<input id="folder" name="folder" class="input-xlarge" type="text" value="<?php echo $this->getFolder()?>" /> 
-			<button class="btn btn-primary" onclick="document.form.adminForm.submit(); return false;">Go</button> 
-			<button class="btn btn-success" onclick="reaxml_folderbrowser_useThis('<?php echo $this->getInputid()?>','<?php echo $this->getUrlinputid()?>'); return false;">Use</button> 
+			<button class="btn btn-primary" onclick="document.form.adminForm.submit(); return false;"><div class=" ui-icon ui-icon-arrowreturnthick-1-e">&nbsp;</div><div>Go</div></button> 
+			<button class="btn btn-success" onclick="reaxml_folderbrowser_useThis('<?php echo $this->getInputid()?>','<?php echo $this->getUrlinputid()?>'); return false;"><div class=" ui-icon ui-icon-check">&nbsp;</div><div>Use</div></button> 
 		</form>
 	</div>
 	<div class="folderbrowser-breadcrumb-container">
@@ -50,7 +51,7 @@ function reaxml_folderbrowser_useThis(inputid,urlinputid) {
 		<ul class="folders">
 				<?php foreach ($this->getSubFolderList() as $key => $folder) { ?>
 			<li class="<?php echo $key; ?>">
-				<a href="<?php echo $this->getSelectSubFolderUrl( $key );?>"><?php echo $folder;?></a>
+				<span class="ui-icon ui-icon-folder-collapsed" >&nbsp;</span><a href="<?php echo $this->getSelectSubFolderUrl( $key );?>"><?php echo $folder;?></a>
 			</li>
 				<?php } ?>
 		</ul>

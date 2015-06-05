@@ -24,7 +24,22 @@ class ReaxmlEzrColSmalldesc_Test extends PHPUnit_Framework_TestCase {
 		$this->assertThat ( $value, $this->equalTo ( 'Don\'t pass up an opportunity like this! First to inspect will buy! Close to local amenities and schools. Features lavishly appointed bathrooms, modern kitchen, rustic outhouse. Don\'t pass up an opportunity like this! First to inspect will buy! Close to lo' ) );
 	}
 
-
+	/**
+	 * @test
+	 */
+	public function getValueWithTagsInDescription() {
+	
+		// Arrange
+		$xml = new SimpleXMLElement ( '<residential><uniqueID>foo</uniqueID><description>&lt;div&gt;Don&#39;t pass up an opportunity like this! First to inspect will buy! Close to local amenities and schools. &lt;br/&gt;Features lavishly appointed bathrooms, modern kitchen, rustic outhouse. Don&#39;t pass up an opportunity like this! First to inspect will buy! Close to local amenities and schools. Features lavishly appointed bathrooms, modern kitchen, rustic outhouse.&lt;/div&gt;</description></residential>' );
+	
+		// Act
+		$col = new ReaxmlEzrColSmalldesc ( $xml  );
+		$value = $col->getValue ();
+	
+		// Assert
+		$this->assertThat ( $value, $this->equalTo ( 'Don\'t pass up an opportunity like this! First to inspect will buy! Close to local amenities and schools. Features lavishly appointed bathrooms, modern kitchen, rustic outhouse. Don\'t pass up an opportunity like this! First to inspect will buy! Close to lo' ) );
+	}
+	
 	/**
 	 * @test
 	 */

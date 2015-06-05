@@ -2,7 +2,7 @@
 /**
  *
  * @package Component REAXML Import for Joomla! 3.4
- * @version 1.3.122: reaxml-importer.php 2015-06-01T08:16:26.590
+ * @version 1.4.3: reaxml-importer.php 2015-06-10T01:14:12.284
  * @author Clifton IT Foundries Pty Ltd
  * @link http://cliftonwebfoundry.com.au
  * @copyright Copyright (c) 2014, 2015 Clifton IT Foundries Pty Ltd. All rights Reserved
@@ -129,6 +129,12 @@ class ReaxmlImporterCLI extends JApplicationCli {
 		$configuration->done_dir = $params->get ( 'done_dir' );
 		$configuration->error_dir = $params->get ( 'error_dir' );
 		$configuration->log_dir = $params->get ( 'log_dir' );
+		$configuration->input_url = $params->get ( 'input_url' );
+		$configuration->work_url = $params->get ( 'work_url' );
+		$configuration->done_url = $params->get ( 'done_url' );
+		$configuration->error_url = $params->get ( 'error_url' );
+		$configuration->log_url = $params->get ( 'log_url' );
+		$configuration->usemap = $params->get ( 'usemap' , 0);
 		return $configuration;
 	}
 }

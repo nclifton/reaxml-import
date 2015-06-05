@@ -19,7 +19,7 @@ class configuration_Test extends reaxml_selenium_TestCase {
 	/**
 	 * @test
 	 */
-	public function can_enter_folder_configuration_id() {
+	public function can_do_folder_configuration() {
 		$this->timeouts ()->implicitWait ( 10000 );
 		$this->loadExtension ();
 		$link = $this->byLinkText ( 'Components' );
@@ -147,6 +147,86 @@ class configuration_Test extends reaxml_selenium_TestCase {
 				'params' 
 		) );
 		return $filtereddataset;
+	}
+	/**
+	 * @test
+	 */
+	public function can_set_no_usemap(){
+		$this->timeouts ()->implicitWait ( 10000 );
+		$this->loadExtension ();
+		$link = $this->byLinkText ( 'Components' );
+		$link->click ();
+		$link = $this->byLinkText ( 'REAXML Import' );
+		$link->click ();
+		$button = $this->byXpath ( '//button[contains(.,"Options")]' );
+		$button->click ();
+		sleep(1); //wait for document ready scripts to complete
+		$this->byLinkText ( 'Map Data' )->click();
+		$this->byId ( 'jform_usemap0' )->click();
+
+		$this->byXpath ( '//button[contains(.,"Save & Close")]' )->click ();		
+		
+		$dataSet = new PHPUnit_Extensions_Database_DataSet_QueryDataSet ( $this->getConnection () );
+		$dataSet->addTable ( $GLOBALS ['DB_TBLPREFIX'] . 'extensions', 'SELECT params FROM ' . $GLOBALS ['DB_TBLPREFIX'] . 'extensions WHERE element=\'com_reaxmlimport\'' );
+		
+		$table = $this->filterdataset ( $dataSet )->getTable ( $GLOBALS ['DB_TBLPREFIX'] . 'extensions' );
+		$expectedDataset = $this->loadXMLDataSet ( __DIR__ . '/../files/expected-extensions-afteroptionssave_nousemap.xml' );
+		$expectedTable = $this->filterdataset ( $expectedDataset )->getTable ( $GLOBALS ['DB_TBLPREFIX'] . 'extensions' );
+		$this->assertTablesEqual ( $expectedTable, $table );		
+	}
+	/**
+	 * @test
+	 */
+	public function can_set_usemap_ifnew(){
+		$this->timeouts ()->implicitWait ( 10000 );
+		$this->loadExtension ();
+		$link = $this->byLinkText ( 'Components' );
+		$link->click ();
+		$link = $this->byLinkText ( 'REAXML Import' );
+		$link->click ();
+		$button = $this->byXpath ( '//button[contains(.,"Options")]' );
+		$button->click ();
+		sleep(1); //wait for document ready scripts to complete
+		$this->byLinkText ( 'Map Data' )->click();;
+		$this->byId ( 'jform_usemap1' )->click();
+
+		$this->byXpath ( '//button[contains(.,"Save & Close")]' )->click ();
+		
+		$dataSet = new PHPUnit_Extensions_Database_DataSet_QueryDataSet ( $this->getConnection () );
+		$dataSet->addTable ( $GLOBALS ['DB_TBLPREFIX'] . 'extensions', 'SELECT params FROM ' . $GLOBALS ['DB_TBLPREFIX'] . 'extensions WHERE element=\'com_reaxmlimport\'' );
+		
+		$table = $this->filterdataset ( $dataSet )->getTable ( $GLOBALS ['DB_TBLPREFIX'] . 'extensions' );
+		$expectedDataset = $this->loadXMLDataSet ( __DIR__ . '/../files/expected-extensions-afteroptionssave-usemapifnew.xml' );
+		$expectedTable = $this->filterdataset ( $expectedDataset )->getTable ( $GLOBALS ['DB_TBLPREFIX'] . 'extensions' );
+		$this->assertTablesEqual ( $expectedTable, $table );
+		
+	}
+	/**
+	 * @test
+	 */
+	public function can_set_usemap_always(){
+		$this->timeouts ()->implicitWait ( 10000 );
+		$this->loadExtension ();
+		$link = $this->byLinkText ( 'Components' );
+		$link->click ();
+		$link = $this->byLinkText ( 'REAXML Import' );
+		$link->click ();
+		$button = $this->byXpath ( '//button[contains(.,"Options")]' );
+		$button->click ();
+		sleep(1); //wait for document ready scripts to complete
+		$this->byLinkText ( 'Map Data' )->click();;
+		$this->byId ( 'jform_usemap2' )->click();
+
+		$this->byXpath ( '//button[contains(.,"Save & Close")]' )->click ();
+		
+		$dataSet = new PHPUnit_Extensions_Database_DataSet_QueryDataSet ( $this->getConnection () );
+		$dataSet->addTable ( $GLOBALS ['DB_TBLPREFIX'] . 'extensions', 'SELECT params FROM ' . $GLOBALS ['DB_TBLPREFIX'] . 'extensions WHERE element=\'com_reaxmlimport\'' );
+		
+		$table = $this->filterdataset ( $dataSet )->getTable ( $GLOBALS ['DB_TBLPREFIX'] . 'extensions' );
+		$expectedDataset = $this->loadXMLDataSet ( __DIR__ . '/../files/expected-extensions-afteroptionssave-usemapalways.xml' );
+		$expectedTable = $this->filterdataset ( $expectedDataset )->getTable ( $GLOBALS ['DB_TBLPREFIX'] . 'extensions' );
+		$this->assertTablesEqual ( $expectedTable, $table );
+		
 	}
 }
 ?>

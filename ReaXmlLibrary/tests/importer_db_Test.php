@@ -153,7 +153,7 @@ class ReaxmlImporter_db_Test extends Reaxml_Tests_DatabaseTestCase {
 	
 	
 	/**
-	 * @test
+	 * @skip
 	 */
 	public function import_commercial_pullman(){
 	
@@ -192,7 +192,7 @@ class ReaxmlImporter_db_Test extends Reaxml_Tests_DatabaseTestCase {
 	}
 	
 	/**
-	 * @test
+	 * @skip
 	 */
 	public function import_ethanproperty(){
 	

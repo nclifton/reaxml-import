@@ -61,13 +61,49 @@ class ReaxmlEzrColOwner_Test extends PHPUnit_Framework_TestCase {
 	/**
 	 * @test
 	 */
+	public function getValue_altxml_notfoundindb_addsagent() {
+	
+		// Arrange
+		$xml = new SimpleXMLElement ( '<residential><listingAgent id="1"><name>PETER PAZIOS</name>'.
+				'<telephone type="mobile">0411 289 964</telephone><email>peter@pullman-williams.com.au</email>'.
+				'</listingAgent><listingAgent id="2" /><listingAgent id="3" /></residential>' );
+		$dbo = $this->getMock ( 'ReaxmlEzrDbo' );
+		$dbo->expects ( $this->once () )
+			->method ( 'lookupEzrAgentUidUsingAgentName' )
+			->with ( $this->logicalAnd($this->equalTo ( 'PETER PAZIOS' ),
+				$this->isType ( 'string' )) )->willReturn ( false );
+		$dbo->expects ( $this->once () )
+			->method ( 'insertEzrAgent' )
+			->with ( $this->logicalAnd( $this->equalTo ( 'PETER PAZIOS' ),
+						$this->isType ( 'string' )),
+					$this->logicalAnd( $this->equalTo('peter@pullman-williams.com.au'),
+						$this->isType ( 'string' )),
+					$this->logicalAnd($this->equalTo('0411 289 964') ,
+						$this->isType ( 'string' )))
+			->willReturn ( 770 );
+	
+		// Act
+		$col = new ReaxmlEzrColOwner( $xml, $dbo );
+		$value = $col->getValue ();
+	
+		// Assert
+		$this->assertThat ( $value, $this->equalTo ( 770 ) );
+	}
+	/**
+	 * @test
+	 */
 	public function getValue_notfoundindb_addsagent_withspecifiedemailandtelephone() {
 	
 		// Arrange
-		$xml = new SimpleXMLElement ( '<residential><listingAgent><name>Bob Smith</name><email>name@domain</email><telephone>1234567890</telephone></listingAgent></residential>' );
+		$xml = new SimpleXMLElement ( '<residential><listingAgent><name>Bob Smith</name><email>name@domain</email>'.
+				'<telephone>1234567890</telephone></listingAgent></residential>' );
 		$dbo = $this->getMock ( 'ReaxmlEzrDbo' );
-		$dbo->expects ( $this->once () )->method ( 'lookupEzrAgentUidUsingAgentName' )->with ( $this->equalTo ( 'Bob Smith' ) )->willReturn ( false );
-		$dbo->expects ( $this->once () )->method ( 'insertEzrAgent' )->with ( $this->equalTo ( 'Bob Smith' ),$this->equalTo('name@domain'),$this->equalTo('1234567890') )->willReturn ( 770 );
+		$dbo->expects ( $this->once () )
+			->method ( 'lookupEzrAgentUidUsingAgentName' )
+			->with ( $this->equalTo ( 'Bob Smith' ) )
+			->willReturn ( false );
+		$dbo->expects ( $this->once () )->method ( 'insertEzrAgent' )->with ( $this->equalTo ( 'Bob Smith' ),
+				$this->equalTo('name@domain'),$this->equalTo('1234567890') )->willReturn ( 770 );
 	
 		// Act
 		$col = new ReaxmlEzrColOwner( $xml, $dbo );

@@ -3,14 +3,14 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
 
 /**
  *
- * @package Library REAXML Library for Joomla! 3.3
- * @version 0.0.79: freq.php 2015-03-20T17:13:33.572
+ * @package Library REAXML Library for Joomla! 3.4
+ * @version 1.4.8: freq.php 2015-07-01T05:31:35.565
  * @author Clifton IT Foundries Pty Ltd
  * @link http://cliftonwebfoundry.com.au
- * @copyright Copyright (c) 2014 Clifton IT Foundries Pty Ltd. All rights Reserved
+ * @copyright Copyright (c) 2014, 2015 Clifton IT Foundries Pty Ltd. All rights Reserved
  * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
- * 
- */
+ *
+ **/ 
 class ReaxmlEzrColFreq extends \ReaxmlEzrColumn {
 	const XPATH_RENTAL_WEEKLY = '/rental/rent[@period="weekly" or @period="week"]/@period';
 	const XPATH_HOLIDAY_RENTAL_WEEKLY = '/holidayRental/rent[@period="weekly" or @period="week"]/@period';

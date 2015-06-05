@@ -44,7 +44,7 @@ class folderbrowser_Test extends reaxml_selenium_TestCase {
 		$buttons = $this->elements($this->using('css selector')->value('form[name="adminForm"] button'));
 		$this->assertThat ( count($buttons), $this->equalTo(2));
 		$this->assertThat ( $buttons[0]->attribute('onclick'), $this->equalTo('document.form.adminForm.submit(); return false;' ));
-		$this->assertThat ( $buttons[1]->attribute('onclick'), $this->equalTo('reaxml_folderbrowser_useThis(\'jform_input_dir\'); return false;' ));
+		$this->assertThat ( $buttons[1]->attribute('onclick'), $this->equalTo('reaxml_folderbrowser_useThis(\'jform_input_dir\',\'jform_input_url\'); return false;' ));
 
 		$items = $this->elements($this->using('css selector')->value('ul.breadcrumb li'));
 		$this->assertThat ( count($items), $this->equalTo(8));

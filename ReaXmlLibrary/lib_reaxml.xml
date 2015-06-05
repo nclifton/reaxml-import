@@ -10,7 +10,7 @@
 	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
 	<authorEmail>neil.clifton@cliftonwebfoundry.com.au</authorEmail>
 	<authorUrl>http://cliftonwebfoundry.com.au</authorUrl>
-	<version>1.3.3</version>
+	<version>1.4.8</version>
 	<description>REAXML Library</description>
 
 	<fileset>
@@ -24,8 +24,9 @@
 	<files folder="lib/reaxml">
 		<folder>db</folder>
 		<folder>ezr</folder>
-		<filename>configuration.php</filename>
-		<filename>importer.php</filename>
+		<folder>configuration</folder>
+		<folder>importer</folder>
+		<folder>maphelper</folder>
 		<filename>index.html</filename>
 		<filename>gpl-3.0.txt</filename>
 	</files>

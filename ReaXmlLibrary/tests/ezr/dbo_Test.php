@@ -49,6 +49,8 @@ class ReaxmlDbo_Test extends Reaxml_Tests_DatabaseTestCase {
 		
 		$configuration = new ReaxmlConfiguration ();
 		$configuration->work_dir = __DIR__ . '/../../files';
+		$configuration = new ReaxmlConfiguration();
+		$configuration->usemap=1;
 		
 		// Act
 		$dbo = new ReaxmlEzrDbo ();
@@ -126,6 +128,8 @@ class ReaxmlDbo_Test extends Reaxml_Tests_DatabaseTestCase {
 		$configuration->work_dir = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'files';
 		$row = new ReaxmlEzrRow ( $xml, $dbo, $configuration );
 		$images = new ReaxmlEzrImages ( $xml, $dbo, $configuration, $row );
+		$configuration = new ReaxmlConfiguration();
+		$configuration->usemap=0;
 		
 		// Act
 		$dbo->insert ( $row, $images );
