@@ -1,9 +1,5 @@
 <project default="create_install" basedir="..">
 
-	<description> 
-	build file
-	</description>
-
 	<!-- Task definition -->
 	<!-- Define classpath for ant-contrib tasks -->
 	<taskdef resource="net/sf/antcontrib/antlib.xml" />

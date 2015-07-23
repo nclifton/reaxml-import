@@ -8,13 +8,13 @@ class UConfig
 	const verboseOutput = '1';
 
 	// Temporary directory
-	const tempDir = '/Users/nclifton/Documents/marseclipse/workspace/reaxml-import/REAXMLImport/tests/unite/tmp';
+	const tempDir = '/Users/nclifton/git/reaxml-import/REAXMLImport/tests/unite/tmp';
 	
 	// Logs directory
-	const logDir = '/Users/nclifton/Documents/marseclipse/workspace/reaxml-import/REAXMLImport/tests/unite/log';	
+	const logDir = '/Users/nclifton/git/reaxml-import/REAXMLImport/tests/unite/log';	
 	
 	// Inbox directory
-	const inboxDir = '/Users/nclifton/Documents/marseclipse/workspace/reaxml-import/REAXMLImport/tests/unite/inbox';	
+	const inboxDir = '/Users/nclifton/git/reaxml-import/REAXMLImport/tests/unite/inbox';	
 	
 	// When true, XML files are not erased.
 	const keepxml = true;

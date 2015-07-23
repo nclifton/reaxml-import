@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <unite>
 
 	<siteInfo>
@@ -6,7 +6,9 @@
 		<deletePackage>0</deletePackage>
 		<localLog>site-reaxml.dev.log</localLog>
 		<emailSysop>0</emailSysop>
-        <absolutepath>/Users/nclifton/Documents/MAMP/htdocs/reaxml</absolutepath>
+		<name>REAXML TEST SITE</name>
+		<email>website@reaxmltest</email>
+        <absolutepath>/Users/nclifton/git/reaxml-import/REAXMLImport/tests/htdocs</absolutepath>
         <adminID>624</adminID>
         <adminUser>admin</adminUser>
         <adminPassword>admin</adminPassword>

@@ -19,6 +19,12 @@ if (! function_exists ( 'glob_recursive' )) {
 class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
 	
 	/**
+	 * @var \Guzzle\Http\Client
+	 */
+	private $mailcatcher;
+	
+	
+	/**
 	 * @beforeclass
 	 */
 	public function classsetup() {
@@ -32,7 +38,9 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
 		), JLog::ALL, array (
 				REAXML_LOG_CATEGORY 
 		) );
-	}
+
+
+    }
 	private function recursiveUnlink($pattern) {
 		foreach ( glob_recursive ( $pattern ) as $file ) {
 			if (! is_dir ( $file )) {
@@ -52,7 +60,16 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
 	public function setUp() {
 		parent::setUp ();
 		$this->cleanDirectories ();
-	}
+
+		$this->mailcatcher = new \Guzzle\Http\Client('http://127.0.0.1:1080');
+		
+		// clean emails between tests
+		$this->cleanMessages();
+
+        $lang = JFactory::getLanguage();
+        $lang->load('lib_reaxml', realpath(__DIR__.'/../../ReaXmlLibrary'), 'en-GB', true);
+
+    }
 	public function cleanDirectories() {
 		$this->recursiveUnlink ( __DIR__ . DIRECTORY_SEPARATOR . '/test_done/*' );
 		$this->recursiveUnlink ( __DIR__ . DIRECTORY_SEPARATOR . '/test_work/*' );
@@ -72,11 +89,25 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
 	/**
 	 * @test
 	 */
+	public function bad_xml_file_handling(){
+		// Arrange
+		copy ( __DIR__ . '/files/bad.xml', __DIR__ . '/test_input/bad.xml' );
+
+        // Act
+		include __DIR__ . '/../admin/cli/reaxml-importer.php';
+		
+		// connect to mailcatcher
+		self::assertEmailIsSent("email sent?");
+	}
+	
+	/**
+	 * @test
+	 */
 	public function import_commercial_pullman() {
 		// Arrange
 		copy ( __DIR__ . '/files/pullman_201410280550052876573.xml', __DIR__ . '/test_input/pullman_201410280550052876573.xml' );
-		
-		// Act
+
+        // Act
 		include __DIR__ . '/../admin/cli/reaxml-importer.php';
 		
 		// Assert
@@ -95,6 +126,10 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
 		$this->assertThat ( count ( glob_recursive ( __DIR__ . DIRECTORY_SEPARATOR . 'test_work' . DIRECTORY_SEPARATOR . '*' ) ), $this->equalTo ( 0 ), 'files in work' );
 		$this->assertThat ( count ( glob_recursive ( __DIR__ . DIRECTORY_SEPARATOR . 'test_done' . DIRECTORY_SEPARATOR . '*' ) ), $this->equalTo ( 1 ), 'files in done' );
 		$this->assertThat ( count ( glob_recursive ( __DIR__ . DIRECTORY_SEPARATOR . 'test_error' . DIRECTORY_SEPARATOR . '*' ) ), $this->equalTo ( 0 ), 'files in error' );
+
+		// connect to mailcatcher
+		self::assertEmailIsSent("email sent?");
+
 	}
 	private function filterDataset($dataSet) {
 		$filterDataSet = new PHPUnit_Extensions_Database_DataSet_DataSetFilter ( $dataSet );
@@ -116,5 +151,103 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
 		) );
 		
 		return $filterDataSet;
+	}
+	public function cleanMessages()
+	{
+		$this->mailcatcher->delete('/messages')->send();
+	}
+	
+	public function getLastMessage()
+	{
+		$messages = $this->getMessages();
+		if (empty($messages)) {
+			$this->fail("No messages received");
+		}
+		// messages are in descending order
+		return reset($messages);
+	}
+	
+	public function getMessages()
+	{
+		$jsonResponse = $this->mailcatcher->get('/messages')->send();
+		return json_decode($jsonResponse->getBody());
+	}
+	public function assertEmailIsSent($description = '')
+	{
+		$this->assertNotEmpty($this->getMessages(), $description);
+	}
+	
+	public function assertEmailSubjectContains($needle, $email, $description = '')
+	{
+		$this->assertContains($needle, $email->subject, $description);
+	}
+	
+	public function assertEmailSubjectEquals($expected, $email, $description = '')
+	{
+		$this->assertContains($expected, $email->subject, $description);
+	}
+	public function dumpMessageHtmlBody($email,$wheredir){
+		$response = $this->mailcatcher->get("/messages/{$email->id}.html")->send();
+		$body = (string)$response->getBody();
+		file_put_contents("{$wheredir}/email{$email->id}.html",$body) ;
+	}
+	public function dumpMessagePlainBody($email,$wheredir){
+		$response = $this->mailcatcher->get("/messages/{$email->id}.plain")->send();
+		$body = (string)$response->getBody();
+		file_put_contents("{$wheredir}/email{$email->id}.txt",$body) ;
+	}
+	public function dumpAllMessagesHtmlBody($wheredir){
+		foreach ($this->getMessages() as $email) {
+			$this->dumpMessageHtmlBody($email,$wheredir);
+		}
+	}
+	public function dumpAllMessagesPlainBody($wheredir){
+		foreach ($this->getMessages() as $email) {
+			$this->dumpMessagePlainBody($email,$wheredir);
+		}
+	}
+	public function assertEmailHtmlContains($needle, $email, $description = '')
+	{
+		$response = $this->mailcatcher->get("/messages/{$email->id}.html")->send();
+		$body = (string)$response->getBody();
+		$this->assertContains($needle, $body, $description);
+	}
+	public function assertEmailHtmlContainsRegex($pattern, $email, $description = '')
+	{
+		$response = $this->mailcatcher->get("/messages/{$email->id}.html")->send();
+		$body = (string)$response->getBody();
+		$this->assertRegExp($pattern, $body, $description);
+	}
+	
+	public function assertEmailTextContains($needle, $email, $description = '')
+	{
+		$response = $this->mailcatcher->get("/messages/{$email->id}.plain")->send();
+		$this->assertContains($needle, (string)$response->getBody(), $description);
+	}
+	
+	public function assertEmailSenderEquals($expected, $email, $description = '')
+	{
+		$response = $this->mailcatcher->get("/messages/{$email->id}.json")->send();
+		$email = json_decode($response->getBody());
+		$this->assertEquals($expected, $email->sender, $description);
+	}
+	public function assertEmailHasAttachments($expected, $email, $description = '')
+	{
+		$response = $this->mailcatcher->get("/messages/{$email->id}.json")->send();
+		$email = json_decode($response->getBody());
+		$this->assertEquals($expected, count($email->attachments), $description);
+	}
+	
+	public function assertEmailRecipientsContain($needle, $email, $description = '')
+	{
+		$response = $this->mailcatcher->get("/messages/{$email->id}.json")->send();
+		$email = json_decode($response->getBody());
+		$this->assertContains($needle, $email->recipients, $description);
+	}
+	public function assertEmailRecipientsNotContain($needle, $email, $description = '')
+	{
+		$response = $this->mailcatcher->get("/messages/{$email->id}.json")->send();
+		$email = json_decode($response->getBody());
+		$this->assertNotContains($needle, $email->recipients, $description);
 	}
 }

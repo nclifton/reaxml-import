@@ -2,18 +2,17 @@
 
 /**
  *
- * @copyright Copyright (C) 2014 Clifton IT Foundries Pty Ltd All rights reserved.
+ * @copyright Copyright (C) 2014,2015 Clifton IT Foundries Pty Ltd All rights reserved.
  * @license GNU General Public License version 2 or later; see LICENSE.txt
  *         
  */
 
-error_reporting ( E_ALL );
-
-// /Users/nclifton/Documents/MAMP/htdocs/ezrea/libraries' );// /Users/nclifton/Documents/MAMP/htdocs/ezrea/libraries
 
 define ( '_JEXEC', 1 );
 
-define ( 'JPATH_BASE', '/Users/nclifton/Documents/MAMP/htdocs/reaxml' );
+require_once(realpath(__DIR__.'/../vendor/autoload.php'));
+
+define ( 'JPATH_BASE', realpath(__DIR__.'/../tests/htdocs') );
 require_once JPATH_BASE . '/includes/defines.php';
 
 define ( 'REAXML_LIBRARIES', __DIR__ . '/../../ReaXmlLibrary/lib' );
@@ -22,15 +21,7 @@ require_once JPATH_BASE . '/includes/framework.php';
 
 JLoader::setup ();
 
-// autoloader for the classes under test
-
-include_once ('AutoLoader.php');
 // Register the directory to your include files
-
-ReaxmlTestingAutoLoader::registerDirectory ( REAXML_LIBRARIES . '/reaxml' );
-ReaxmlTestingAutoLoader::registerDirectory ( REAXML_LIBRARIES . '/reaxml/db' );
-ReaxmlTestingAutoLoader::registerDirectory ( REAXML_LIBRARIES . '/reaxml/ezr' );
-ReaxmlTestingAutoLoader::registerDirectory ( REAXML_LIBRARIES . '/reaxml/ezr/col' );
 
 JLoader::registerPrefix ( 'Reaxml', REAXML_LIBRARIES . '/reaxml' );
 JLoader::registerPrefix ( 'ReaxmlDb', REAXML_LIBRARIES . '/reaxml/db' );

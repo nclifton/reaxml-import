@@ -6,7 +6,7 @@
 
 
 	<row>
-		<field name="params">{&quot;input_dir&quot;:&quot;input&quot;,&quot;input_url&quot;:&quot;\/input&quot;,&quot;work_dir&quot;:&quot;work&quot;,&quot;work_url&quot;:&quot;\/work&quot;,&quot;done_dir&quot;:&quot;done&quot;,&quot;done_url&quot;:&quot;\/done&quot;,&quot;log_dir&quot;:&quot;log&quot;,&quot;log_url&quot;:&quot;\/log&quot;,&quot;error_dir&quot;:&quot;error&quot;,&quot;error_url&quot;:&quot;\/error&quot;,&quot;usemap&quot;:&quot;0&quot;,&quot;update_dlid&quot;:&quot;&quot;}</field>
+		<field name="params">{&quot;input_dir&quot;:&quot;input&quot;,&quot;input_url&quot;:&quot;\/input&quot;,&quot;work_dir&quot;:&quot;work&quot;,&quot;work_url&quot;:&quot;\/work&quot;,&quot;done_dir&quot;:&quot;done&quot;,&quot;done_url&quot;:&quot;\/done&quot;,&quot;log_dir&quot;:&quot;log&quot;,&quot;log_url&quot;:&quot;\/log&quot;,&quot;error_dir&quot;:&quot;error&quot;,&quot;error_url&quot;:&quot;\/error&quot;,"send_success":1,"send_nofiles":0,"done_mail_to":"","error_mail_to":"","mail_from_address":"","mail_from_name":"","subject":"REAXML Import Notification: {status}",&quot;usemap&quot;:0,&quot;update_dlid&quot;:&quot;&quot;}</field>
 	</row>
 
 </table_data>

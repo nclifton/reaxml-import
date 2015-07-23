@@ -46,7 +46,7 @@ abstract class reaxml_selenium_TestCase extends PHPUnit_Extensions_Selenium2Test
 		$button = $this->byCssSelector ( 'input[value="Upload & Install"]' );
 		$button->click ();
 		$message = $this->byCssSelector ( 'div.alert-success p' );
-		$this->assertRegExp ( '/Installing package was successful./', $message->text () );
+		$this->assertRegExp ( '/Installation of the package was successful./', $message->text () );
 	}
 	public function getConnection(){
 		return $this->dbHelper->getConnection();
