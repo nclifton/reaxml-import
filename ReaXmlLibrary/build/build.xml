@@ -114,7 +114,7 @@
     <property name="phpunit.executable.loc" location="../vendor/bin/phpunit" />
     <property name="bootstrap.php.log" location="${tests.dir.loc}/bootstrap.php"/>
     <property name="mailcatcher.smtp.port" value="1025"/>
-    <property name="matccatcher.port" value="1080"/>
+    <property name="mailcatcher.http.port" value="1080"/>
 
 
     <target name="php-check">
@@ -210,7 +210,12 @@
     </target>
 
     <target name="start-mailcatcher" depends="mailcatcher-check" >
-        <exec executable="${mailcatcher}"/>
+        <exec executable="${mailcatcher}">
+            <arg value="--smtp-port"/>
+            <arg value="${mailcatcher.smtp.port"/>
+            <arg value="--http-port"/>
+            <arg value="${mailcatcher.http.port"/>
+        </exec>
     </target>
 
     <target name="start-servers" depends="start-mailcatcher">
@@ -230,20 +235,21 @@
             <replace path="/phpunit/php/var[@name='DB_PASSWD']/@value" withText="${db.password}" />
             <replace path="/phpunit/php/var[@name='DB_DBNAME']/@value" withText="${db.name}" />
             <replace path="/phpunit/php/var[@name='DB_TBLPREFIX']/@value" withText="${db.table-prefix}" />
+            <replace path="/phpunit/php/var[@name='MAILCATCHER_HTTP_PORT']/@value" withText="${mailcatcher.http.port}" />
             <replace path="/phpunit/logging/log[@type='junit']/@target" withText="${test-results.dir.loc}/logfile.xml" />
             <replace path="/phpunit/logging/log[@type='testdox-html']/@target" withText="${test-results.dir.loc}/testdox.html" />
         </xmltask>
     </target>
 
-    <target name="create_dirs">
-        <mkdir dir="${test.dir.loc}/test_input"/>
-        <mkdir dir="${test.dir.loc}/test_work"/>
-        <mkdir dir="${test.dir.loc}/test_done"/>
-        <mkdir dir="${test.dir.loc}/test_error"/>
-        <mkdir dir="${test.dir.loc}/test_log"/>
+    <target name="create-test-dirs">
+        <mkdir dir="${tests.dir.loc}/test_input"/>
+        <mkdir dir="${tests.dir.loc}/test_work"/>
+        <mkdir dir="${tests.dir.loc}/test_done"/>
+        <mkdir dir="${tests.dir.loc}/test_error"/>
+        <mkdir dir="${tests.dir.loc}/test_log"/>
     </target>
 
-    <target name="test" depends="create_dirs,start-servers,clear-test-results,php-check,phpunit-xml">
+    <target name="test" depends="create-test-dirs,start-servers,clear-test-results,php-check,phpunit-xml">
 
         <exec executable="${php}" failonerror="true" dir="${tests.dir.loc}">
             <arg value="-c"/>

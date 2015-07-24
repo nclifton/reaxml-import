@@ -44,7 +44,7 @@ class ReaxmlImporter_Test extends PHPUnit_Framework_TestCase
     {
         $this->cleanDirectories();
 
-        $this->mailcatcher = new \Guzzle\Http\Client('http://127.0.0.1:1080');
+        $this->mailcatcher = new \Guzzle\Http\Client('http://127.0.0.1:'.$GLOBALS['MAILCATCHER_HTTP_PORT']);
 
         // clean emails between tests
         $this->cleanMessages();
