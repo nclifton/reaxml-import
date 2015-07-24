@@ -101,10 +101,11 @@ class ReaxmlDbo_Test extends Reaxml_Tests_DatabaseTestCase {
 		<uniqueID>foo</uniqueID>
 		<price display="yes">6000000</price>
 	</residential>' );
-		
+		$configuration = new ReaxmlConfiguration ();
+
 		// Act
 		$dbo = new ReaxmlEzrDbo ();
-		$row = new ReaxmlEzrRow ( $xml, $dbo );
+		$row = new ReaxmlEzrRow ( $xml, $dbo, $configuration );
 		$dbo->update ( $row );
 		
 		// Assert
@@ -200,7 +201,9 @@ class ReaxmlDbo_Test extends Reaxml_Tests_DatabaseTestCase {
 		// Assert
 		$dataSet = $this->filterDataset ( $this->getConnection ()->createDataSet () );
 		$table1 = $dataSet->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty_country' );
-		$expectedDataset = $this->filterDataset ( $this->createMySQLXMLDataSet ( realpath(__DIR__ . '/../files/expected_country_after_insert_Country_test.xml') ) );
+		$xmlFile = realpath(__DIR__ . '/../files/expected_country_after_insert_Country_test.xml');
+		echo "looking for: $xmlFile";
+		$expectedDataset = $this->filterDataset ( $this->createMySQLXMLDataSet ($xmlFile) );
 		$expectedTable1 = $expectedDataset->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty_country' );
 	
 		$this->assertTablesEqual ( $expectedTable1, $table1 );
