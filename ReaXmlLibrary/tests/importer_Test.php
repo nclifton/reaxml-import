@@ -146,87 +146,6 @@ class ReaxmlImporter_Test extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @skip
-     * @expectedException Exception
-     * @expectedExceptionMessage Log directory junk does not exist
-     */
-    public function throws_exception_when_log_dir_doesnt_exist()
-    {
-
-        // Arrange
-        $configuration = new ReaxmlConfiguration ();
-        $configuration->log_dir = 'junk';
-
-        // Act
-        $importer = new ReaxmlImporter();
-        $importer->setConfiguration($configuration);
-
-        // Assert
-    }
-
-    /**
-     * @skip
-     */
-    public function finds_files_to_import()
-    {
-
-        // Arrange
-        copy(__DIR__ . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'Sample_Floorplan.jpg', __DIR__ . DIRECTORY_SEPARATOR . 'test_input' . DIRECTORY_SEPARATOR . 'Sample_Floorplan.jpg');
-        copy(__DIR__ . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'residential_insert_sample.xml', __DIR__ . DIRECTORY_SEPARATOR . 'test_input' . DIRECTORY_SEPARATOR . 'residential_insert_sample.xml');
-        copy(__DIR__ . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'junk.txt', __DIR__ . DIRECTORY_SEPARATOR . 'test_input' . DIRECTORY_SEPARATOR . 'junk.txt');
-        copy(__DIR__ . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'hello.pdf', __DIR__ . DIRECTORY_SEPARATOR . 'test_input' . DIRECTORY_SEPARATOR . 'hello.pdf');
-        copy(__DIR__ . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'hello.doc', __DIR__ . DIRECTORY_SEPARATOR . 'test_input' . DIRECTORY_SEPARATOR . 'hello.doc');
-        copy(__DIR__ . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'hello.xls', __DIR__ . DIRECTORY_SEPARATOR . 'test_input' . DIRECTORY_SEPARATOR . 'hello.xls');
-
-        $configuration = new ReaxmlConfiguration ();
-        $configuration->log_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_log';
-        $configuration->input_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_input';
-        $configuration->work_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_work';
-        $configuration->done_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_done';
-        $configuration->error_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_error';
-        $importer = new ReaxmlImporter ();
-        $importer->setConfiguration($configuration);
-
-        // Act
-        $importer->moveInputToWork();
-
-        // Assert
-
-        $this->assertThat(count(glob_recursive(__DIR__ . DIRECTORY_SEPARATOR . 'test_input' . DIRECTORY_SEPARATOR . '*')), $this->equalTo(1), 'input');
-        $this->assertThat(count(glob_recursive(__DIR__ . DIRECTORY_SEPARATOR . 'test_work' . DIRECTORY_SEPARATOR . '*')), $this->equalTo(5), 'work');
-        $this->assertThat(count(glob_recursive(__DIR__ . DIRECTORY_SEPARATOR . 'test_done' . DIRECTORY_SEPARATOR . '*')), $this->equalTo(0), 'done');
-        $this->assertThat(count(glob_recursive(__DIR__ . DIRECTORY_SEPARATOR . 'test_error' . DIRECTORY_SEPARATOR . '*')), $this->equalTo(0), 'error');
-    }
-
-    /**
-     * @skip
-     */
-    public function opens_and_moves_zip_files()
-    {
-        // Arrange
-        copy(__DIR__ . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'Sample.zip', __DIR__ . DIRECTORY_SEPARATOR . 'test_input' . DIRECTORY_SEPARATOR . 'Sample.zip');
-
-        $configuration = new ReaxmlConfiguration ();
-        $configuration->log_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_log';
-        $configuration->input_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_input';
-        $configuration->work_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_work';
-        $configuration->done_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_done';
-        $configuration->error_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_error';
-        $importer = new ReaxmlImporter ();
-        $importer->setConfiguration($configuration);
-
-        // Act
-        $importer->moveInputToWork();
-
-        // Assert
-
-        $this->assertThat(count(glob_recursive(__DIR__ . DIRECTORY_SEPARATOR . 'test_input' . DIRECTORY_SEPARATOR . '*')), $this->equalTo(0), 'input');
-        $this->assertThat(count(glob_recursive(__DIR__ . DIRECTORY_SEPARATOR . 'test_work' . DIRECTORY_SEPARATOR . '*')), $this->equalTo(6), 'work');
-        $this->assertThat(count(glob_recursive(__DIR__ . DIRECTORY_SEPARATOR . 'test_done' . DIRECTORY_SEPARATOR . '*')), $this->equalTo(0), 'done');
-        $this->assertThat(count(glob_recursive(__DIR__ . DIRECTORY_SEPARATOR . 'test_error' . DIRECTORY_SEPARATOR . '*')), $this->equalTo(0), 'error');
-    }
-
-    /**
      * @test
      * @depends sends_mail_nofiles
      */
@@ -325,35 +244,6 @@ class ReaxmlImporter_Test extends PHPUnit_Framework_TestCase
 
         // Act
         $importer->import();
-
-        // Assert
-
-        $this->assertThat(count(glob_recursive(__DIR__ . DIRECTORY_SEPARATOR . 'test_input' . DIRECTORY_SEPARATOR . '*')), $this->equalTo(0), 'input');
-        $this->assertThat(count(glob_recursive(__DIR__ . DIRECTORY_SEPARATOR . 'test_work' . DIRECTORY_SEPARATOR . '*')), $this->equalTo(0), 'work');
-        $this->assertThat(count(glob_recursive(__DIR__ . DIRECTORY_SEPARATOR . 'test_done' . DIRECTORY_SEPARATOR . '*')), $this->equalTo(1), 'done');
-        $this->assertThat(count(glob_recursive(__DIR__ . DIRECTORY_SEPARATOR . 'test_error' . DIRECTORY_SEPARATOR . '*')), $this->equalTo(0), 'error');
-    }
-
-    /**
-     * @skip
-     */
-    public function import_updatewithdrawn()
-    {
-        // Arrange
-        copy(__DIR__ . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'residential_updatelistingwithdrawn_sample.xml', __DIR__ . DIRECTORY_SEPARATOR . 'test_input' . DIRECTORY_SEPARATOR . 'residential_updatelistingwithdrawn_sample.xml');
-
-        $configuration = new ReaxmlConfiguration ();
-        $configuration->log_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_log';
-        $configuration->input_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_input';
-        $configuration->work_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_work';
-        $configuration->done_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_done';
-        $configuration->error_dir = __DIR__ . DIRECTORY_SEPARATOR . 'test_error';
-        $importer = new ReaxmlImporter();
-        $importer->setConfiguration($configuration);
-        $importer->setParams($this->getMockParams());
-
-        // Act
-        $importer->start();
 
         // Assert
 
