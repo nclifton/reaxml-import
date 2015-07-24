@@ -141,7 +141,7 @@ class ReaxmlDbo_Test extends Reaxml_Tests_DatabaseTestCase {
 		$expectedDataset = $this->filterDataset ( $this->createMySQLXMLDataSet ( __DIR__ . '/../files/expected_ezrealty_after_insert_test.xml' ) );
 		$expectedTable1 = $expectedDataset->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty_images' );
 		
-		$this->assertThat( $table1->getRowCount() , $this->equalTo($expectedTable1->getRowCount()));
+		$this->assertThat( $table1->getRowCount() , $this->equalTo($expectedTable1->getRowCount()),'row count');
 
 	}
 	

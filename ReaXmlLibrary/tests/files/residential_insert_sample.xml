@@ -89,7 +89,7 @@
 				format="jpg" />
 			<img id="a" modTime="2009-01-01-12:30:00" file="camden-camelot-house.jpg"
 				format="jpg" />
-			<floorplan id="1" modTime="2009-01-01-12:30:00" file="cample_cloorplan.jpg" format="jpg" />
+			<floorplan id="1" modTime="2009-01-01-12:30:00" file="sample_floorplan.jpg" format="jpg" />
 		</objects>
 	</residential>
 </propertyList>
