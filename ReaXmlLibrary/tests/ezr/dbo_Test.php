@@ -201,9 +201,7 @@ class ReaxmlDbo_Test extends Reaxml_Tests_DatabaseTestCase {
 		// Assert
 		$dataSet = $this->filterDataset ( $this->getConnection ()->createDataSet () );
 		$table1 = $dataSet->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty_country' );
-		$xmlFile = realpath(__DIR__ . '/../files/expected_country_after_insert_Country_test.xml');
-		echo "looking for: $xmlFile";
-		$expectedDataset = $this->filterDataset ( $this->createMySQLXMLDataSet ($xmlFile) );
+		$expectedDataset = $this->filterDataset ( $this->createMySQLXMLDataSet (realpath(__DIR__ . '/../files').'/expected_country_after_insert_country_test.xml') );
 		$expectedTable1 = $expectedDataset->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty_country' );
 	
 		$this->assertTablesEqual ( $expectedTable1, $table1 );
