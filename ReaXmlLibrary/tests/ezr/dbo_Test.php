@@ -195,12 +195,12 @@ class ReaxmlDbo_Test extends Reaxml_Tests_DatabaseTestCase {
 	
 	
 		// Act
-		$dbo->insertEzrCountry("Lilyput",1);
+		$dbo->insertEzrCountry("Lilyput");
 	
 		// Assert
 		$dataSet = $this->filterDataset ( $this->getConnection ()->createDataSet () );
 		$table1 = $dataSet->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty_country' );
-		$expectedDataset = $this->filterDataset ( $this->createMySQLXMLDataSet ( __DIR__ . '/../files/expected_country_after_insert_Country_test.xml' ) );
+		$expectedDataset = $this->filterDataset ( $this->createMySQLXMLDataSet ( realpath(__DIR__ . '/../files/expected_country_after_insert_Country_test.xml') ) );
 		$expectedTable1 = $expectedDataset->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty_country' );
 	
 		$this->assertTablesEqual ( $expectedTable1, $table1 );

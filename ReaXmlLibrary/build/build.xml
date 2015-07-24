@@ -113,6 +113,8 @@
     <property name="test-results.dir.loc" location="${test-results.dir}" />
     <property name="phpunit.executable.loc" location="../vendor/bin/phpunit" />
     <property name="bootstrap.php.log" location="${tests.dir.loc}/bootstrap.php"/>
+    <property name="mailcatcher.smtp.port" value="1025"/>
+    <property name="matccatcher.port" value="1080"/>
 
 
     <target name="php-check">
@@ -233,8 +235,15 @@
         </xmltask>
     </target>
 
+    <target name="create_dirs">
+        <mkdir dir="${test.dir.loc}/test_input"/>
+        <mkdir dir="${test.dir.loc}/test_work"/>
+        <mkdir dir="${test.dir.loc}/test_done"/>
+        <mkdir dir="${test.dir.loc}/test_error"/>
+        <mkdir dir="${test.dir.loc}/test_log"/>
+    </target>
 
-    <target name="test" depends="start-servers,clear-test-results,php-check,phpunit-xml">
+    <target name="test" depends="create_dirs,start-servers,clear-test-results,php-check,phpunit-xml">
 
         <exec executable="${php}" failonerror="true" dir="${tests.dir.loc}">
             <arg value="-c"/>

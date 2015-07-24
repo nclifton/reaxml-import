@@ -1,7 +1,0 @@
-com.dubture.composer.corebuildpath.includes.excludes=<buildpathentry kind\="src" path\="vendor"/>\n
-com.dubture.composer.corecomposer_phar=/usr/local/bin/composer
-com.dubture.composer.corephp_executable=/Applications/MAMP/bin/php/php5.6.2/bin/php
-com.dubture.composer.coresaveaction.buildpath=True
-com.dubture.composer.coresaveaction.update=True
-com.dubture.composer.coreuse_project_phar=false
-eclipse.preferences.version=1
