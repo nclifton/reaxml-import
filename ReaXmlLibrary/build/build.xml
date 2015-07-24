@@ -212,9 +212,9 @@
     <target name="start-mailcatcher" depends="mailcatcher-check" >
         <exec executable="${mailcatcher}">
             <arg value="--smtp-port"/>
-            <arg value="${mailcatcher.smtp.port"/>
+            <arg value="${mailcatcher.smtp.port}"/>
             <arg value="--http-port"/>
-            <arg value="${mailcatcher.http.port"/>
+            <arg value="${mailcatcher.http.port}"/>
         </exec>
     </target>
 
