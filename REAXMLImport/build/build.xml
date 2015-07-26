@@ -16,8 +16,8 @@
 
 	<property name="manifestfile" value="com_reaxmlimport.xml" />
 	<property name="installfile" value="../REAXMLPackage/packages/com_reaxmlimport.zip" />
+
 	<property name="htdocs.dir" value="./tests/htdocs"/>
-	<property name="db.password" value="root"/>
     <property name="unite.xml" value="./tests/unite/inbox/site-reaxml.dev.xml"/>
 	<property name="unite.log.dir" value="./tests/unite/log" />
     <mkdir dir="${unite.log.dir}"/>
