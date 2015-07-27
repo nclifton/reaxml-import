@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<project default="create_install" basedir="..">
+<project default="create_install" basedir=".">
 
 	<!-- Task definition -->
 	<!-- Define classpath for ant-contrib tasks -->
@@ -10,35 +10,43 @@
 	<property name="db.password" value="root" />
 	<property name="db.name" value="joomla-reaxml" />
 	<property name="db.table-prefix" value="jos_" />
-	<property name="builddir" location="./build" />
-	<property name="parentdir" location="." />
-	<property name="composer" location="./composer.phar" />
+	<property name="builddir" location="." />
+	<property name="parentdir" location=".." />
+	<property name="composer" location="${parentdir}/composer.phar" />
 
-	<property name="manifestfile" value="com_reaxmlimport.xml" />
-	<property name="installfile" value="../REAXMLPackage/packages/com_reaxmlimport.zip" />
+	<property name="manifestfile" value="${parentdir}/com_reaxmlimport.xml" />
+    <property name="package.dir" value="${parentdir}/../REAXMLPackage"/>
+    <property name="package.dir.loc" value="${package.dir}"/>
+	<property name="installfile" value="${package.dir.loc}/packages/com_reaxmlimport.zip" />
 
-	<property name="htdocs.dir" value="./tests/htdocs"/>
-    <property name="unite.xml" value="./tests/unite/inbox/site-reaxml.dev.xml"/>
-	<property name="unite.log.dir" value="./tests/unite/log" />
+    <property name="tests.dir" location="${parentdir}/tests"/>
+
+	<property name="htdocs.dir" value="${tests.dir}/htdocs"/>
+    <property name="unite.xml" value="${tests.dir}/unite/inbox/site-reaxml.dev.xml"/>
+	<property name="unite.log.dir" value="${tests.dir}/unite/log" />
     <mkdir dir="${unite.log.dir}"/>
+
 	<property name="php.ini" value="/Applications/MAMP/bin/php/php5.5.26/conf/php.ini"/>
     <property name="php.ini.loc" location="${php.ini}"/>
+    <property name="httpd.bin" value="/Applications/MAMP/Library/bin/httpd"/>
     <property name="httpd.conf" value="/Applications/MAMP/conf/apache/httpd.conf"/>
     <property name="httpd-vhosts.conf" value="/Applications/MAMP/conf/apache/extra/httpd-vhosts.conf"/>
-    <property name="test.httpd.conf.dir" value="./tests/httpd"/>
+    <property name="test.httpd.conf.dir" value="${tests.dir}/httpd"/>
     <mkdir dir="${test.httpd.conf.dir}"/>
     <property name="test.httpd.conf.dir.loc" location="${test.httpd.conf.dir}"/>
     <property name="test.httpd.conf" value="${test.httpd.conf.dir.loc}/httpd.conf"/>
     <property name="test.httpd-vhosts.conf" value="${test.httpd.conf.dir.loc}/httpd-vhosts.conf"/>
     <property name="servername" value="reaxml.dev"/>
-    <property name="test-results.dir" value="./tests/test-results" />
+    <property name="test-results.dir" value="${tests.dir}/test-results" />
     <mkdir dir="${test-results.dir}"/>
     <property name="firefox.app" value="/Applications/Firefox.app"/>
     <property name="selenium-server.jar" value="/usr/local/bin/selenium-server-standalone-2.46.0-4.jar" />
     <property name="selenium-server.jar.location" location="${selenium-server.jar}" />
-    <property name="phpunit.xml" value="./tests/phpunit.xml" />
+    <property name="phpunit.xml" value="${tests.dir}/phpunit.xml" />
     <property name="phpunit.xml.loc" location="${phpunit.xml}" />
-
+    <property name="mailcatcher.smtp.port" value="1025"/>
+    <property name="mailcatcher.http.port" value="1080"/>
+    <property name="mailcatcher.http.host" value="127.0.0.1"/>
 
     <scriptdef name="increment_version" language="javascript">
 		<attribute name="current" />
@@ -153,7 +161,15 @@
     <target name="build" depends="composer,joomla-build">
     </target>
 
-    <target name="test" depends="start-servers,clear-test-results,php-check,phpunit-xml">
+    <target name="create-test-dirs">
+        <mkdir dir="${tests.dir}/test_input"/>
+        <mkdir dir="${tests.dir}/test_work"/>
+        <mkdir dir="${tests.dir}/test_done"/>
+        <mkdir dir="${tests.dir}/test_log"/>
+        <mkdir dir="${tests.dir}/test_error"/>
+    </target>
+
+    <target name="test" depends="create-test-dirs,start-servers,clear-test-results,php-check,phpunit-xml">
         <property name="phpunit.executable.loc" location="./vendor/bin/phpunit" />
         <property name="tests.dir.loc" location="./tests"/>
 
@@ -228,8 +244,22 @@
         </condition>
     </target>
 
-    <target name="start-mailcatcher" depends="mailcatcher-check" >
-        <exec executable="${mailcatcher}"/>
+    <target name="joomla-use-mailcatcher">
+
+        <property name="joomla-configuration.loc" location="${htdocs.dir}/configuration.php"/>
+        <replaceregexp file="${joomla-configuration.loc}" match="(\$smtphost[^']*')[^']*" replace="\1${mailcatcher.http.host}"/>
+        <replaceregexp file="${joomla-configuration.loc}" match="(\$smtpsecure[^']*')[^']*" replace="\1none"/>
+        <replaceregexp file="${joomla-configuration.loc}" match="(\$smtpport[^']*')[^']*" replace="\1${mailcatcher.http.port}"/>
+
+    </target>
+
+    <target name="start-mailcatcher" depends="mailcatcher-check,joomla-use-mailcatcher" >
+        <exec executable="${mailcatcher}">
+            <arg value="--smtp-port"/>
+            <arg value="${mailcatcher.smtp.port}"/>
+            <arg value="--http-port"/>
+            <arg value="${mailcatcher.http.port}"/>
+        </exec>
     </target>
 
 
@@ -345,14 +375,15 @@
 	</target>
 
 	<target name="start-webserver" depends="sudo-check,configure-vhost,add-vhost">
-		<property name="httpd.bin" location="/Applications/MAMP/Library/bin/httpd"/>
+
+		<property name="httpd.bin.loc" location="/Applications/MAMP/Library/bin/httpd"/>
         <property name="test.httpd.conf.loc" location="${test.httpd.conf}"/>
 		<exec executable="${sudo}">
-			<arg line="${httpd.bin} -k stop"/>
+			<arg line="${httpd.bin.loc} -k stop"/>
 		</exec>
         <sleep seconds="2"/>
         <exec executable="${sudo}">
-            <arg line="${httpd.bin} -f ${test.httpd.conf.loc} -k start"/>
+            <arg line="${httpd.bin.loc} -f ${test.httpd.conf.loc} -k start"/>
         </exec>
 	</target>
 
