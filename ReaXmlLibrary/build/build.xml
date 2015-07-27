@@ -115,6 +115,7 @@
     <property name="bootstrap.php.log" location="${tests.dir.loc}/bootstrap.php"/>
     <property name="mailcatcher.smtp.port" value="1025"/>
     <property name="mailcatcher.http.port" value="1080"/>
+    <property name="mailcatcher.http.host" value="127.0.0.1"/>
 
 
     <target name="php-check">
@@ -209,7 +210,7 @@
         </condition>
     </target>
 
-    <target name="start-mailcatcher" depends="mailcatcher-check" >
+    <target name="start-mailcatcher" depends="mailcatcher-check,phpunit-xml" >
         <exec executable="${mailcatcher}">
             <arg value="--smtp-port"/>
             <arg value="${mailcatcher.smtp.port}"/>

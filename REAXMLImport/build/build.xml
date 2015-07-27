@@ -203,6 +203,7 @@
             <replace path="/phpunit/php/var[@name='DB_USER']/@value" withText="${db.username}" />
             <replace path="/phpunit/php/var[@name='DB_PASSWD']/@value" withText="${db.password}" />
             <replace path="/phpunit/php/var[@name='DB_DBNAME']/@value" withText="${db.name}" />
+            <replace path="/phpunit/php/var[@name='MAILCATCHER_HTTP_PORT']/@value" withText="${mailcatcher.http.port}" />
             <replace path="/phpunit/php/var[@name='DB_TBLPREFIX']/@value" withText="${db.table-prefix}" />
             <replace path="/phpunit/testsuites/testsuite/directory[1]/text()" withText="${tests.dir.loc}" />
             <replace path="/phpunit/testsuites/testsuite/directory[2]/text()" withText="${selenium.tests.dir.loc}" />
