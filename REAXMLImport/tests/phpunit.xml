@@ -23,5 +23,10 @@
 	<selenium>
 		<browser browser="*firefox /Applications/Firefox.app" host="localhost" name="firefox" port="4444" timeout="30000"/>
 	</selenium>
+	<listeners>
+		<listener class="SeleniumTestListener" file="../tests/selenium/testlistener.php">
+
+		</listener>
+	</listeners>
 
 </phpunit>
