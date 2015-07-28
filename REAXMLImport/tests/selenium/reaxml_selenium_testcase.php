@@ -15,7 +15,7 @@ abstract class reaxml_selenium_TestCase extends PHPUnit_Extensions_Selenium2Test
 	public function setUp(){
 		$this->dbHelper->setUp();
 		$this->setBrowser ( 'firefox' );
-		$this->setBrowserUrl ( 'http://reaxml.dev' );
+		$this->setBrowserUrl ( 'http://'.$GLOBALS ['SERVER_NAME'] );
 		$this->setHost('localhost');
 		$this->setPort(4444);
 		$this->setSeleniumServerRequestsTimeout(60);
@@ -23,7 +23,7 @@ abstract class reaxml_selenium_TestCase extends PHPUnit_Extensions_Selenium2Test
 	}
 	
 	public function adminLogin() {
-		$this->url('http://reaxml.dev/administrator');
+		$this->url('http://'.$GLOBALS ['SERVER_NAME'].'/administrator');
 		$usernameInput = $this->byId('mod-login-username');
 		$usernameInput->value('admin');
 		$this->assertEquals('admin', $usernameInput->value());

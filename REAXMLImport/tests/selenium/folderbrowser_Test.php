@@ -23,7 +23,7 @@ class folderbrowser_Test extends reaxml_selenium_TestCase {
 		$this->timeouts ()->implicitWait ( 10000 );
 		$this->loadExtension ();
 
-        $this->url ( 'http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.urlencode (realpath(__DIR__.'/../htdocs/ftp')) );
+        $this->url ( 'http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.urlencode (realpath(__DIR__.'/../htdocs/ftp')) );
 		$this->assertThat ( $this->byCssSelector ( 'form[name="adminForm"]' ), $this->anything () );
 		$this->assertThat ( $this->byCssSelector ( 'form[name="adminForm"] input[name="option"]' )->attribute('type'), $this->equalTo ('hidden') );
 		$this->assertThat ( $this->byCssSelector ( 'form[name="adminForm"] input[name="option"]' )->attribute('value'), $this->equalTo ('com_reaxmlimport') );
@@ -55,7 +55,7 @@ class folderbrowser_Test extends reaxml_selenium_TestCase {
         for($i=0;$i<count($items)-1;$i++) {
             $tpath .= $i==1?$folders[$i]:'/'.$folders[$i];
             $this->assertThat($items[$i]->attribute('class'), $this->equalTo('item' . ($i + 1)));
-            $this->assertThat($items[$i]->byTag('a')->attribute('href'), $this->equalTo('http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder=' . urlencode($tpath)));
+            $this->assertThat($items[$i]->byTag('a')->attribute('href'), $this->equalTo('http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder=' . urlencode($tpath)));
             $this->assertThat($items[$i]->byTag('a')->text(), $this->matchesRegularExpression('%' . ($i==0?'/':$folders[$i]) . '%i'));
 
         }
@@ -66,19 +66,19 @@ class folderbrowser_Test extends reaxml_selenium_TestCase {
 		$this->assertThat ( count($items), $this->equalTo(5));
         $encodedpath = urlencode($path);
 		$this->assertThat ( $items[0]->attribute('class') , $this->matchesRegularExpression('/\bitem1\b/'));
-		$this->assertThat ( $items[0]->byTag('a')->attribute('href'), $this->equalTo('http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.$encodedpath.'%2Fdone' ));
+		$this->assertThat ( $items[0]->byTag('a')->attribute('href'), $this->equalTo('http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.$encodedpath.'%2Fdone' ));
 		$this->assertThat ( $items[0]->byTag('a')->text(), $this->matchesRegularExpression ( '/done/' ) );
 		$this->assertThat ( $items[1]->attribute('class') , $this->matchesRegularExpression('/\bitem2\b/'));
-		$this->assertThat ( $items[1]->byTag('a')->attribute('href'), $this->equalTo('http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.$encodedpath.'%2Ferror' ));
+		$this->assertThat ( $items[1]->byTag('a')->attribute('href'), $this->equalTo('http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.$encodedpath.'%2Ferror' ));
 		$this->assertThat ( $items[1]->byTag('a')->text(), $this->matchesRegularExpression ( '/error/' ) );
 		$this->assertThat ( $items[2]->attribute('class') , $this->matchesRegularExpression('/\bitem3\b/'));
-		$this->assertThat ( $items[2]->byTag('a')->attribute('href'), $this->equalTo('http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.$encodedpath.'%2Finput' ));
+		$this->assertThat ( $items[2]->byTag('a')->attribute('href'), $this->equalTo('http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.$encodedpath.'%2Finput' ));
 		$this->assertThat ( $items[2]->byTag('a')->text(), $this->matchesRegularExpression ( '/input/' ) );
 		$this->assertThat ( $items[3]->attribute('class') , $this->matchesRegularExpression('/\bitem4\b/'));
-		$this->assertThat ( $items[3]->byTag('a')->attribute('href'), $this->equalTo('http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.$encodedpath.'%2Flog' ));
+		$this->assertThat ( $items[3]->byTag('a')->attribute('href'), $this->equalTo('http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.$encodedpath.'%2Flog' ));
 		$this->assertThat ( $items[3]->byTag('a')->text(), $this->matchesRegularExpression ( '/log/' ) );
 		$this->assertThat ( $items[4]->attribute('class') , $this->matchesRegularExpression('/\bitem5\b/'));
-		$this->assertThat ( $items[4]->byTag('a')->attribute('href'), $this->equalTo('http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.$encodedpath.'%2Fwork' ));
+		$this->assertThat ( $items[4]->byTag('a')->attribute('href'), $this->equalTo('http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.$encodedpath.'%2Fwork' ));
 		$this->assertThat ( $items[4]->byTag('a')->text(), $this->matchesRegularExpression ( '/work/' ) );
 		
 	}
@@ -131,7 +131,7 @@ class folderbrowser_Test extends reaxml_selenium_TestCase {
 		$this->timeouts ()->implicitWait ( 10000 );
 		$this->loadExtension ();
 		
-		$this->url ( 'http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.urlencode ('input') );
+		$this->url ( 'http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.urlencode ('input') );
 		$this->assertThat ( $this->byCssSelector ( 'form[name="adminForm"] input[name="folder"]' )->attribute('value'), $this->equalTo (realpath(__DIR__.'/../htdocs')) );
 		
 	}
@@ -144,7 +144,7 @@ class folderbrowser_Test extends reaxml_selenium_TestCase {
 		$this->timeouts ()->implicitWait ( 10000 );
 		$this->loadExtension ();
 		
-		$this->url ( 'http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.urlencode (realpath(__DIR__.'/../htdocs/ftp')) );
+		$this->url ( 'http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.urlencode (realpath(__DIR__.'/../htdocs/ftp')) );
 		$this->byCssSelector('li.item8 a')->click();
 		
 		$this->assertThat ( $this->byCssSelector ( 'form[name="adminForm"] input[name="option"]' )->attribute('type'), $this->equalTo ('hidden') );
@@ -173,7 +173,7 @@ class folderbrowser_Test extends reaxml_selenium_TestCase {
         for($i=0;$i<count($items)-1;$i++) {
             $tpath .= $i==1?$folders[$i]:'/'.$folders[$i];
             $this->assertThat($items[$i]->attribute('class'), $this->equalTo('item' . ($i + 1)));
-            $this->assertThat($items[$i]->byTag('a')->attribute('href'), $this->equalTo('http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder=' . urlencode($tpath)));
+            $this->assertThat($items[$i]->byTag('a')->attribute('href'), $this->equalTo('http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder=' . urlencode($tpath)));
             $this->assertThat($items[$i]->byTag('a')->text(), $this->matchesRegularExpression('%' . ($i==0?'/':$folders[$i]) . '%i'));
 
         }
@@ -190,7 +190,7 @@ class folderbrowser_Test extends reaxml_selenium_TestCase {
 		$this->timeouts ()->implicitWait ( 10000 );
 		$this->loadExtension ();
 	
-		$this->url ( 'http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.urlencode (realpath(__DIR__.'/../htdocs/ftp')) );
+		$this->url ( 'http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.urlencode (realpath(__DIR__.'/../htdocs/ftp')) );
 		$this->byCssSelector('#folder')->value('/input');
 		$this->byCssSelector('button.btn-primary')->click();
 	
@@ -220,7 +220,7 @@ class folderbrowser_Test extends reaxml_selenium_TestCase {
         for($i=0;$i<count($items)-1;$i++) {
             $tpath .= $i==1?$folders[$i]:'/'.$folders[$i];
             $this->assertThat($items[$i]->attribute('class'), $this->equalTo('item' . ($i + 1)));
-            $this->assertThat($items[$i]->byTag('a')->attribute('href'), $this->equalTo('http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder=' . urlencode($tpath)));
+            $this->assertThat($items[$i]->byTag('a')->attribute('href'), $this->equalTo('http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder=' . urlencode($tpath)));
             $this->assertThat($items[$i]->byTag('a')->text(), $this->matchesRegularExpression('%' . ($i==0?'/':$folders[$i]) . '%i'));
 
         }
@@ -237,7 +237,7 @@ class folderbrowser_Test extends reaxml_selenium_TestCase {
 		$this->timeouts ()->implicitWait ( 10000 );
 		$this->loadExtension ();
 	
-		$this->url ( 'http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.urlencode (realpath(__DIR__.'/../htdocs')) );
+		$this->url ( 'http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.urlencode (realpath(__DIR__.'/../htdocs')) );
 		$this->byCssSelector('ul.folders li.item6 a')->click();
 	
 		$this->assertThat ( $this->byCssSelector ( 'form[name="adminForm"] input[name="option"]' )->attribute('type'), $this->equalTo ('hidden') );
@@ -266,7 +266,7 @@ class folderbrowser_Test extends reaxml_selenium_TestCase {
         for($i=0;$i<count($items)-1;$i++) {
             $tpath .= $i==1?$folders[$i]:'/'.$folders[$i];
             $this->assertThat($items[$i]->attribute('class'), $this->equalTo('item' . ($i + 1)));
-            $this->assertThat($items[$i]->byTag('a')->attribute('href'), $this->equalTo('http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder=' . urlencode($tpath)));
+            $this->assertThat($items[$i]->byTag('a')->attribute('href'), $this->equalTo('http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder=' . urlencode($tpath)));
             $this->assertThat($items[$i]->byTag('a')->text(), $this->matchesRegularExpression('%' . ($i==0?'/':$folders[$i]) . '%i'));
 
         }
@@ -277,19 +277,19 @@ class folderbrowser_Test extends reaxml_selenium_TestCase {
 		$this->assertThat ( count($items), $this->equalTo(5));
         $encodedpath = urlencode($path);
         $this->assertThat ( $items[0]->attribute('class') , $this->matchesRegularExpression('/\bitem1\b/'));
-		$this->assertThat ( $items[0]->byTag('a')->attribute('href'), $this->equalTo('http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.$encodedpath.'%2Fdone' ));
+		$this->assertThat ( $items[0]->byTag('a')->attribute('href'), $this->equalTo('http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.$encodedpath.'%2Fdone' ));
 		$this->assertThat ( $items[0]->byTag('a')->text(), $this->matchesRegularExpression ( '/done/' ) );
 		$this->assertThat ( $items[1]->attribute('class') , $this->matchesRegularExpression('/\bitem2\b/'));
-		$this->assertThat ( $items[1]->byTag('a')->attribute('href'), $this->equalTo('http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.$encodedpath.'%2Ferror' ));
+		$this->assertThat ( $items[1]->byTag('a')->attribute('href'), $this->equalTo('http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.$encodedpath.'%2Ferror' ));
 		$this->assertThat ( $items[1]->byTag('a')->text(), $this->matchesRegularExpression ( '/error/' ) );
 		$this->assertThat ( $items[2]->attribute('class') , $this->matchesRegularExpression('/\bitem3\b/'));
-		$this->assertThat ( $items[2]->byTag('a')->attribute('href'), $this->equalTo('http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.$encodedpath.'%2Finput' ));
+		$this->assertThat ( $items[2]->byTag('a')->attribute('href'), $this->equalTo('http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.$encodedpath.'%2Finput' ));
 		$this->assertThat ( $items[2]->byTag('a')->text(), $this->matchesRegularExpression ( '/input/' ) );
 		$this->assertThat ( $items[3]->attribute('class') , $this->matchesRegularExpression('/\bitem4\b/'));
-		$this->assertThat ( $items[3]->byTag('a')->attribute('href'), $this->equalTo('http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.$encodedpath.'%2Flog' ));
+		$this->assertThat ( $items[3]->byTag('a')->attribute('href'), $this->equalTo('http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.$encodedpath.'%2Flog' ));
 		$this->assertThat ( $items[3]->byTag('a')->text(), $this->matchesRegularExpression ( '/log/' ) );
 		$this->assertThat ( $items[4]->attribute('class') , $this->matchesRegularExpression('/\bitem5\b/'));
-		$this->assertThat ( $items[4]->byTag('a')->attribute('href'), $this->equalTo('http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.$encodedpath.'%2Fwork' ));
+		$this->assertThat ( $items[4]->byTag('a')->attribute('href'), $this->equalTo('http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.$encodedpath.'%2Fwork' ));
 		$this->assertThat ( $items[4]->byTag('a')->text(), $this->matchesRegularExpression ( '/work/' ) );
 		
 	}

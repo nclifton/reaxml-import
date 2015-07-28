@@ -224,6 +224,8 @@
             <replace path="/phpunit/php/var[@name='DB_DBNAME']/@value" withText="${db.name}" />
             <replace path="/phpunit/php/var[@name='MAILCATCHER_HTTP_PORT']/@value" withText="${mailcatcher.http.port}" />
             <replace path="/phpunit/php/var[@name='DB_TBLPREFIX']/@value" withText="${db.table-prefix}" />
+            <replace path="/phpunit/php/var[@name='SERVER_NAME']/@value" withText="${servername}" />
+            <replace path="/phpunit/php/server[@name='HTTP_HOST']/@value" withText="${servername}" />
             <replace path="/phpunit/testsuites/testsuite/directory[1]/text()" withText="${tests.dir.loc}" />
             <replace path="/phpunit/testsuites/testsuite/directory[2]/text()" withText="${selenium.tests.dir.loc}" />
             <replace path="/phpunit/logging/log[@type='junit']/@target" withText="${test-results.dir.loc}/logfile.xml" />

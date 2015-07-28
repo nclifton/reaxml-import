@@ -33,6 +33,7 @@ class Install_update_Test extends reaxml_selenium_TestCase
 		$this->assertRegExp('/Extension Manager: Install/', $pageTitle->text());
 		$link = $this->byLinkText('Update Sites');
 		$link->click();
+		sleep(2);
 		$updateSiteListing = $this->byXpath('//table[@class="table table-striped"]/tbody/tr[6]/td[3]');
 		$this->assertRegExp('/REAXML Package/', $updateSiteListing->text());
 		
