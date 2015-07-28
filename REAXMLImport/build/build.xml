@@ -55,6 +55,10 @@
     <property name="mailcatcher.http.port" value="1080"/>
     <property name="mailcatcher.http.host" value="127.0.0.1"/>
 
+    <property name="akeeba-backup.output_directory.loc" location="${tests.dir.loc}/unite/inbox" />
+    <property name="akeeba-backup.archive_name" value="site-reaxml.dev"/>
+
+
     <scriptdef name="increment_version" language="javascript">
 		<attribute name="current" />
 		<attribute name="property" />
@@ -320,6 +324,7 @@
 
         <property name="unite.php" value="${tests.dir.loc}/unite/unite.php"/>
         <property name="unite.php.loc" location="${unite.php}"/>
+        <delete dir="${htdocs.dir}"/>
 		<mkdir dir="${htdocs.dir}"/>
         <property name="htdocs.dir.loc" location="${htdocs.dir}"/>
         <property name="php.ini.loc" location="${php.ini}"/>
@@ -410,5 +415,17 @@
             <arg line="${httpd.bin.loc} -f ${test.httpd.conf.loc} -k start"/>
         </exec>
 	</target>
+
+    <target name="akeeba-backup" depends="php-check" description="creates a deployable archive of the site using Akeeba Backup">
+        <property name="akeeba-backup.php" value="${htdocs.dir}/cli/akeeba-backup.php" />
+        <property name="akeeba-backup.php.loc" location="${akeeba-backup.php}" />
+        <exec executable="${php}" failonerror="true">
+            <arg value="${akeeba-backup.php.loc}" />
+            <arg value="--profile=2" />
+            <arg value="--description=Deploy to Test" />
+            <arg value="--override=akeeba.basic.output_directory=${akeeba-backup.output_directory.loc}" />
+            <arg value="--override=akeeba.basic.archive_name=${akeeba-backup.archive_name}" />
+        </exec>
+    </target>
 
 </project>

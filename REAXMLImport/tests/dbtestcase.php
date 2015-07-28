@@ -7,6 +7,8 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
  * @license GNU General Public License version 2 or later; see LICENSE.txt
  *         
  */
+
+
 abstract class Reaxml_Tests_DatabaseTestCase extends PHPUnit_Extensions_Database_TestCase {
 	private static $pdo = null;
 	private $conn = null;
@@ -23,8 +25,17 @@ abstract class Reaxml_Tests_DatabaseTestCase extends PHPUnit_Extensions_Database
 		return self::$pdo->query ( 'SHOW COLUMNS FROM '.$GLOBALS ['DB_DBNAME'].'.'.$GLOBALS['DB_TBLPREFIX'].'ezrealty' );
 	}
 	protected static function restoreJoomla(){
+        self::rmdir_recursive(realpath(__DIR__.'/htdocs'));
 		shell_exec('php '.__DIR__.'/../unite/unite.php');
 		sleep(2); // wait for clean up to complete
 	}
+    protected static function rmdir_recursive($dir) {
+        foreach(scandir($dir) as $file) {
+            if ('.' === $file || '..' === $file) continue;
+            if (is_dir("$dir/$file")) self::rmdir_recursive("$dir/$file");
+            else unlink("$dir/$file");
+        }
+        rmdir($dir);
+    }
 
 }
