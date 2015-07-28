@@ -5,6 +5,12 @@
 	<!-- Define classpath for ant-contrib tasks -->
 	<taskdef resource="net/sf/antcontrib/antlib.xml" />
 	<taskdef name="xmltask" classname="com.oopsconsultancy.xmltask.ant.XmlTask" />
+    <taskdef resource="net/sf/antcontrib/antcontrib.properties">
+        <classpath>
+            <pathelement
+                    location="./ant-lib/ant-contrib.jar"/>
+        </classpath>
+    </taskdef>
 
 	<property name="db.username" value="root" />
 	<property name="db.password" value="root" />
