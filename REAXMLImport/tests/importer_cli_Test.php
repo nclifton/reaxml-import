@@ -97,7 +97,7 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
 	}
 	
 	/**
-	 * @skip
+	 * @test
 	 */
 	public function bad_xml_file_handling(){
 		// Arrange
@@ -127,7 +127,7 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
 	}
 	
 	/**
-	 * @test
+	 * @skip
 	 */
 	public function import_commercial_pullman() {
 		// Arrange
