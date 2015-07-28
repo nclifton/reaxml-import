@@ -2,7 +2,9 @@
 
 abstract class reaxml_selenium_TestCase extends PHPUnit_Extensions_Selenium2TestCase{
 	private $dbHelper;
-	
+	protected $filepattern = 'screenshot_%s_%s.png';
+
+
 	function __construct(){
 		$this->dbHelper = new Reaxml_Tests_Selenium_DatabaseTestCase_Helper();
 	}
@@ -57,6 +59,14 @@ abstract class reaxml_selenium_TestCase extends PHPUnit_Extensions_Selenium2Test
 	protected function assertTablesEqual ( $expectedTable, $table ){
 		$this->dbHelper->assertTablesEqual ( $expectedTable, $table );
 	}
+	protected function saveScreenshot($suffix=''){
+		sleep(2);
+		$filedata = $this->currentScreenshot();
+		$file= sprintf($this->filepattern,$this->getName().$suffix,time());
 
+		file_put_contents($file, $filedata);
+
+		print("Screen shot saved to ".$file."\n");
+	}
 }
 ?>

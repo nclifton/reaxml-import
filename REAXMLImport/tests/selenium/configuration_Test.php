@@ -293,19 +293,19 @@ class configuration_Test extends reaxml_selenium_TestCase {
 
         $this->assertThat($this->byId ( 'jform_send_success0' )->attribute('checked'), $this->equalTo('true'));
         $this->assertThat($this->byId ( 'jform_send_success1' )->attribute('checked'), $this->isNull());
-        $this->byCssSelector ( 'label.btn[for="jform_send_success1"' )->click();
+        $this->byCssSelector ( 'label.btn[for="jform_send_success1"]' )->click();
         $this->assertThat($this->byId ( 'jform_send_success0' )->attribute('checked'), $this->isNull());
         $this->assertThat($this->byId ( 'jform_send_success1' )->attribute('checked'), $this->equalTo('true'));
-        $this->byCssSelector ( 'label.btn[for="jform_send_success0"' )->click();
+        $this->byCssSelector ( 'label.btn[for="jform_send_success0"]' )->click();
         $this->assertThat($this->byId ( 'jform_send_success0' )->attribute('checked'), $this->equalTo('true'));
         $this->assertThat($this->byId ( 'jform_send_success1' )->attribute('checked'), $this->isNull());
 
         $this->assertThat($this->byId ( 'jform_send_nofiles0' )->attribute('checked'), $this->isNull());
         $this->assertThat($this->byId ( 'jform_send_nofiles1' )->attribute('checked'), $this->equalTo('true'));
-        $this->byCssSelector ( 'label.btn[for="jform_send_nofiles0"' )->click();
+        $this->byCssSelector ( 'label.btn[for="jform_send_nofiles0"]' )->click();
         $this->assertThat($this->byId ( 'jform_send_nofiles0' )->attribute('checked'), $this->equalTo('true'));
         $this->assertThat($this->byId ( 'jform_send_nofiles1' )->attribute('checked'), $this->isNull());
-        $this->byCssSelector ( 'label.btn[for="jform_send_nofiles1"' )->click();
+        $this->byCssSelector ( 'label.btn[for="jform_send_nofiles1"]' )->click();
         $this->assertThat($this->byId ( 'jform_send_nofiles0' )->attribute('checked'), $this->isNull());
         $this->assertThat($this->byId ( 'jform_send_nofiles1' )->attribute('checked'), $this->equalTo('true'));
 

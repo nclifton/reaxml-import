@@ -51,7 +51,7 @@ class Import_Test extends reaxml_selenium_TestCase {
 	 * @after
 	 */
 	public static function after() {
-//		parent::restoreJoomla ();
+		parent::restoreJoomla ();
 	}
 	
 	/**
@@ -59,7 +59,7 @@ class Import_Test extends reaxml_selenium_TestCase {
 	 */
 	public function configure_and_import() {
 		
-		copy ( __DIR__.'/../files/import_test.xml', realpath(__DIR__.'/../htdocs/ftp/input').'/import_Test.xml' );
+		copy ( realpath(__DIR__.'/../files').'/import_test.xml', realpath(__DIR__.'/../htdocs/ftp/input').'/import_test.xml' );
 		
 		$this->timeouts ()->implicitWait ( 10000 );
 		$this->loadExtension ();

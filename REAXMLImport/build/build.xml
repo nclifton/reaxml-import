@@ -190,6 +190,7 @@
             </path>
             <sequential>
                 <replaceregexp file="@{file}" flags="g" match="\\\/Users\\\/nclifton\\\/Documents\\\/MAMP\\\/htdocs\\\/reaxml" replace="${htdocs.dir.loc.encoded}" />
+                <replaceregexp file="@{file}" flags="g" match="\\\/Users\\\/nclifton\\\/git\\\/reaxml-import\\\/REAXMLImport\\\/tests\\\/htdocs" replace="${htdocs.dir.loc.encoded}" />
             </sequential>
         </for>
     </target>
