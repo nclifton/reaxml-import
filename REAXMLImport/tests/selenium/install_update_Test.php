@@ -21,7 +21,7 @@ class Install_update_Test extends reaxml_selenium_TestCase
 	
 	
 	/**
-	 * @test
+	 * @skip
 	 */
 	public function update_information_available() {
 		$this->loadExtension();
