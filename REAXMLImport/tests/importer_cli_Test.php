@@ -42,7 +42,7 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
 
 
     }
-	private function recursiveUnlink($pattern) {
+	private static function recursiveUnlink($pattern) {
 		foreach ( glob_recursive ( $pattern ) as $file ) {
 			if (! is_dir ( $file )) {
 				unlink ( $file );
@@ -63,7 +63,7 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
 		//parent::restoreJoomla ();
 		parent::setUp ();
 
-		$this->cleanDirectories ();
+		self::cleanDirectories ();
 
 		$this->mailcatcher = new \Guzzle\Http\Client('http://127.0.0.1:'.$GLOBALS['MAILCATCHER_HTTP_PORT']);
 		
@@ -78,14 +78,16 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
 	 * @after
 	 */
 	public static function after() {
-		//parent::restoreJoomla ();
+		parent::restoreJoomla ();
+		self::cleanDirectories ();
+
 	}
-	public function cleanDirectories() {
-		$this->recursiveUnlink ( __DIR__ . DIRECTORY_SEPARATOR . '/test_done/*' );
-		$this->recursiveUnlink ( __DIR__ . DIRECTORY_SEPARATOR . '/test_work/*' );
-		$this->recursiveUnlink ( __DIR__ . DIRECTORY_SEPARATOR . '/test_input/*' );
-		$this->recursiveUnlink ( __DIR__ . DIRECTORY_SEPARATOR . '/test_error/*' );
-		$this->recursiveUnlink ( __DIR__ . DIRECTORY_SEPARATOR . '/test_log/*' );
+	public static function cleanDirectories() {
+		self::recursiveUnlink ( __DIR__ . DIRECTORY_SEPARATOR . '/test_done/*' );
+        self::recursiveUnlink ( __DIR__ . DIRECTORY_SEPARATOR . '/test_work/*' );
+        self::recursiveUnlink ( __DIR__ . DIRECTORY_SEPARATOR . '/test_input/*' );
+        self::recursiveUnlink ( __DIR__ . DIRECTORY_SEPARATOR . '/test_error/*' );
+        self::recursiveUnlink ( __DIR__ . DIRECTORY_SEPARATOR . '/test_log/*' );
 	}
 
 	/**
