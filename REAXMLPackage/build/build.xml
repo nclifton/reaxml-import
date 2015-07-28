@@ -12,7 +12,6 @@
 	<property name="manifestfile" value="pkg_reaxml.xml" />
 	<property name="installfileDir" value="packed/" />
 	<property name="installfilePrefix" value="pkg_reaxml-" />
-	<property name="alphaRemoteDir" value="~/public_html/reaxml-alpha/" />
 	<property name="releaseRemoteDir" value="~/public_html/cwf-extras/" />
 
 	<scriptdef name="increment_version" language="javascript">
@@ -40,11 +39,6 @@
 	
 	<target name="copy_latest" depends="create_install">
 		<copy file="${installfileDir}${installfilePrefix}${newVersion}.zip" tofile="${installfileDir}${installfilePrefix}latest.zip"></copy>
-	</target>
-	
-	<target name="alpha_upload" depends="create_install">
-		<sshexec host="vmres10.auserver.com.au" username="cliftonw" keyfile="~/.ssh/id_rsa" command="mkdir ${alphaRemoteDir}${newVersion}"/>
-		<scp keyfile="~/.ssh/id_rsa" todir="cliftonw@vmres10.auserver.com.au:${alphaRemoteDir}${newVersion}" localFile="${installfileDir}${installfilePrefix}${newVersion}.zip"></scp>
 	</target>
 	
 	<target name="release_upload" depends="create_install">
