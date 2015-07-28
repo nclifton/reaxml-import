@@ -145,11 +145,9 @@ class folderbrowser_Test extends reaxml_selenium_TestCase {
 		$this->loadExtension ();
 		
 		$this->url ( 'http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.urlencode (realpath(__DIR__.'/../htdocs/ftp')) );
-		$this->saveScreenshot('a');
         $items = $this->elements($this->using('css selector')->value('ul.breadcrumb li'));
 
         $this->byCssSelector('li.item'.(count($items)-1).' a')->click();
-		$this->saveScreenshot('b');
 
 		$this->assertThat ( $this->byCssSelector ( 'form[name="adminForm"] input[name="option"]' )->attribute('type'), $this->equalTo ('hidden') );
 		$this->assertThat ( $this->byCssSelector ( 'form[name="adminForm"] input[name="option"]' )->attribute('value'), $this->equalTo ('com_reaxmlimport') );
@@ -166,7 +164,6 @@ class folderbrowser_Test extends reaxml_selenium_TestCase {
 		$this->assertThat ( $this->byCssSelector ( 'form[name="adminForm"] input[name="url"]' )->attribute('type'), $this->equalTo ('hidden') );
 		$this->assertThat ( $this->byCssSelector ( 'form[name="adminForm"] input[name="url"]' )->attribute('value'), $this->equalTo ('/') );
 		$this->assertThat ( $this->byCssSelector ( 'form[name="adminForm"] input[name="folder"]' )->attribute('type'), $this->equalTo ('text') );
-		$this->saveScreenshot('c');
 		$this->assertThat ( $this->byCssSelector ( 'form[name="adminForm"] input[name="folder"]' )->attribute('value'), $this->equalTo (realpath(__DIR__.'/../htdocs')) );
 
         $path = realpath(__DIR__.'/../htdocs');
