@@ -28,6 +28,7 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
 	 * @beforeclass
 	 */
 	public function classsetup() {
+        parent::restoreJoomla ();
 		$dt = new DateTime ();
 		$logfile = 'REAXMLImport-' . $dt->format ( 'YmdHis' ) . '.log';
 		JLog::addLogger ( array (
@@ -58,7 +59,10 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
 	 * @before
 	 */
 	public function setUp() {
+
+		parent::restoreJoomla ();
 		parent::setUp ();
+
 		$this->cleanDirectories ();
 
 		$this->mailcatcher = new \Guzzle\Http\Client('http://127.0.0.1:'.$GLOBALS['MAILCATCHER_HTTP_PORT']);
@@ -70,6 +74,12 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
         $lang->load('lib_reaxml', realpath(__DIR__.'/../../ReaXmlLibrary'), 'en-GB', true);
 
     }
+	/**
+	 * @after
+	 */
+	public static function after() {
+		parent::restoreJoomla ();
+	}
 	public function cleanDirectories() {
 		$this->recursiveUnlink ( __DIR__ . DIRECTORY_SEPARATOR . '/test_done/*' );
 		$this->recursiveUnlink ( __DIR__ . DIRECTORY_SEPARATOR . '/test_work/*' );
@@ -93,6 +103,22 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
 		// Arrange
 		copy ( __DIR__ . '/files/bad.xml', __DIR__ . '/test_input/bad.xml' );
 
+        $params = JComponentHelper::getParams('com_reaxmlimport');
+
+        $params->set('input_dir',__DIR__ . '/test_input');
+        $params->set('work_dir',__DIR__ . '/test_work');
+        $params->set('done_dir',__DIR__ . '/test_done');
+        $params->set('error_dir',__DIR__ . '/test_error');
+        $params->set('log_dir',__DIR__ . '/test_log');
+        $params->set('send_success',1);
+        $params->set('send_nofiles',0);
+        $params->set('done_mail_to','done@reaxml.test');
+        $params->set('error_mail_to','error@reaxml.test');
+        $params->set('mail_from_address','reaxml.importer@reaxml.test');
+        $params->set('mail_from_name','REAXML Import Test');
+        $params->set('subject','REAXML Import {status} Notification');
+        $params->set('usemap', 2);
+
         // Act
 		include __DIR__ . '/../admin/cli/reaxml-importer.php';
 		
@@ -106,6 +132,21 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
 	public function import_commercial_pullman() {
 		// Arrange
 		copy ( __DIR__ . '/files/pullman_201410280550052876573.xml', __DIR__ . '/test_input/pullman_201410280550052876573.xml' );
+
+        $params->set('input_dir',__DIR__ . '/test_input');
+        $params->set('work_dir',__DIR__ . '/test_work');
+        $params->set('done_dir',__DIR__ . '/test_done');
+        $params->set('error_dir',__DIR__ . '/test_error');
+        $params->set('log_dir',__DIR__ . '/test_log');
+        $params->set('send_success',1);
+        $params->set('send_nofiles',0);
+        $params->set('done_mail_to','done@reaxml.test');
+        $params->set('error_mail_to','error@reaxml.test');
+        $params->set('mail_from_address','reaxml.importer@reaxml.test');
+        $params->set('mail_from_name','REAXML Import Test');
+        $params->set('subject','REAXML Import {status} Notification');
+        $params->set('usemap', 2);
+
 
         // Act
 		include __DIR__ . '/../admin/cli/reaxml-importer.php';

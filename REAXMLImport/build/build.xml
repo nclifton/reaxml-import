@@ -19,30 +19,31 @@
     <property name="package.dir.loc" value="${package.dir}"/>
 	<property name="installfile" value="${package.dir.loc}/packages/com_reaxmlimport.zip" />
 
-    <property name="tests.dir" location="${parentdir}/tests"/>
+    <property name="tests.dir.loc" location="${parentdir}/tests"/>
 
-	<property name="htdocs.dir" value="${tests.dir}/htdocs"/>
-    <property name="unite.xml" value="${tests.dir}/unite/inbox/site-reaxml.dev.xml"/>
-	<property name="unite.log.dir" value="${tests.dir}/unite/log" />
+	<property name="htdocs.dir" value="${tests.dir.loc}/htdocs"/>
+    <property name="unite.xml" value="${tests.dir.loc}/unite/inbox/site-reaxml.dev.xml"/>
+	<property name="unite.log.dir" value="${tests.dir.loc}/unite/log" />
     <mkdir dir="${unite.log.dir}"/>
 
 	<property name="php.ini" value="/Applications/MAMP/bin/php/php5.5.26/conf/php.ini"/>
     <property name="php.ini.loc" location="${php.ini}"/>
     <property name="httpd.bin" value="/Applications/MAMP/Library/bin/httpd"/>
+    <property name="httpd.bin.loc" location="${httpd.bin}"/>
     <property name="httpd.conf" value="/Applications/MAMP/conf/apache/httpd.conf"/>
     <property name="httpd-vhosts.conf" value="/Applications/MAMP/conf/apache/extra/httpd-vhosts.conf"/>
-    <property name="test.httpd.conf.dir" value="${tests.dir}/httpd"/>
+    <property name="test.httpd.conf.dir" value="${tests.dir.loc}/httpd"/>
     <mkdir dir="${test.httpd.conf.dir}"/>
     <property name="test.httpd.conf.dir.loc" location="${test.httpd.conf.dir}"/>
     <property name="test.httpd.conf" value="${test.httpd.conf.dir.loc}/httpd.conf"/>
     <property name="test.httpd-vhosts.conf" value="${test.httpd.conf.dir.loc}/httpd-vhosts.conf"/>
     <property name="servername" value="reaxml.dev"/>
-    <property name="test-results.dir" value="${tests.dir}/test-results" />
+    <property name="test-results.dir" value="${tests.dir.loc}/test-results" />
     <mkdir dir="${test-results.dir}"/>
     <property name="firefox.app" value="/Applications/Firefox.app"/>
     <property name="selenium-server.jar" value="/usr/local/bin/selenium-server-standalone-2.46.0-4.jar" />
     <property name="selenium-server.jar.location" location="${selenium-server.jar}" />
-    <property name="phpunit.xml" value="${tests.dir}/phpunit.xml" />
+    <property name="phpunit.xml" value="${tests.dir.loc}/phpunit.xml" />
     <property name="phpunit.xml.loc" location="${phpunit.xml}" />
     <property name="mailcatcher.smtp.port" value="1025"/>
     <property name="mailcatcher.http.port" value="1080"/>
@@ -162,16 +163,29 @@
     </target>
 
     <target name="create-test-dirs">
-        <mkdir dir="${tests.dir}/test_input"/>
-        <mkdir dir="${tests.dir}/test_work"/>
-        <mkdir dir="${tests.dir}/test_done"/>
-        <mkdir dir="${tests.dir}/test_log"/>
-        <mkdir dir="${tests.dir}/test_error"/>
+        <mkdir dir="${tests.dir.loc}/test_input"/>
+        <mkdir dir="${tests.dir.loc}/test_work"/>
+        <mkdir dir="${tests.dir.loc}/test_done"/>
+        <mkdir dir="${tests.dir.loc}/test_log"/>
+        <mkdir dir="${tests.dir.loc}/test_error"/>
     </target>
 
-    <target name="test" depends="create-test-dirs,start-servers,clear-test-results,php-check,phpunit-xml">
-        <property name="phpunit.executable.loc" location="./vendor/bin/phpunit" />
-        <property name="tests.dir.loc" location="./tests"/>
+    <target name="fix-dbunit-seed-files">
+        <property name="htdocs.dir.loc"  location="${htdocs.dir}"/>
+        <propertyregex property="htdocs.dir.loc.encoded" input="${htdocs.dir.loc}" regexp="\/" replace="\\\\\\\\\\\\\\\\\\\\\/" global="true"/>
+
+        <for param="file" parallel="true">
+            <path>
+                <fileset dir="${tests.dir.loc}/files" includes="*.xml"/>
+            </path>
+            <sequential>
+                <replaceregexp file="@{file}" flags="g" match="\\\/Users\\\/nclifton\\\/Documents\\\/MAMP\\\/htdocs\\\/reaxml" replace="${htdocs.dir.loc.encoded}" />
+            </sequential>
+        </for>
+    </target>
+
+    <target name="test" depends="create-test-dirs,start-servers,clear-test-results,php-check,phpunit-xml,fix-dbunit-seed-files">
+        <property name="phpunit.executable.loc" location="${parentdir}/vendor/bin/phpunit" />
 
          <exec executable="${php}" failonerror="true" dir="${tests.dir.loc}">
              <arg value="-c"/>
@@ -194,9 +208,8 @@
         <property name="test-results.dir.loc" location="${test-results.dir}" />
         <property name="firefox.app.loc" location="${firefox.app}"/>
         <property name="firefox-browser-selenium" value="*firefox ${firefox.app.loc}"/>
-        <property name="tests.dir.loc" location="./tests"/>
-        <property name="selenium.tests.dir.loc" location="./tests/selenium"/>
-        <property name="bootstrap.php.log" location="./tests/bootstrap.php"/>
+        <property name="selenium.tests.dir.loc" location="${tests.dir.loc}/selenium"/>
+        <property name="bootstrap.php.log" location="${tests.dir.loc}/bootstrap.php"/>
         <xmltask source="${phpunit.xml.loc}" dest="${phpunit.xml.loc}">
             <replace path="/phpunit/@bootstrap" withText="${bootstrap.php.log}" />
             <replace path="/phpunit/php/var[@name='DB_DSN']/@value" withText="mysql:dbname=${db.name};host=localhost" />
@@ -233,7 +246,7 @@
 
     <target name="stop-selenium-server">
         <echo message="Stopping Selenium RC server" />
-        <get taskname="selenium-shutdown" src="http://localhost:4444/selenium-server/driver/?cmd=shutDownSeleniumServer" dest="../tests/test-results/selenium-shutdown-dest.txt" ignoreerrors="true" />
+        <get taskname="selenium-shutdown" src="http://localhost:4444/selenium-server/driver/?cmd=shutDownSeleniumServer" dest="${tests.dir.loc}/test-results/selenium-shutdown-dest.txt" ignoreerrors="true" />
         <echo taskname="selenium-shutdown" message="DGF Errors during shutdown are expected" />
     </target>
 
@@ -250,7 +263,7 @@
         <property name="joomla-configuration.loc" location="${htdocs.dir}/configuration.php"/>
         <replaceregexp file="${joomla-configuration.loc}" match="(\$smtphost[^']*')[^']*" replace="\1${mailcatcher.http.host}"/>
         <replaceregexp file="${joomla-configuration.loc}" match="(\$smtpsecure[^']*')[^']*" replace="\1none"/>
-        <replaceregexp file="${joomla-configuration.loc}" match="(\$smtpport[^']*')[^']*" replace="\1${mailcatcher.http.port}"/>
+        <replaceregexp file="${joomla-configuration.loc}" match="(\$smtpport[^']*')[^']*" replace="\1${mailcatcher.smtp.port}"/>
 
     </target>
 
@@ -273,15 +286,13 @@
     </target>
 
 	<target name="unite-config">
-		<property name="unite.tmp.dir" value="tests/unite/tmp" />
+		<property name="unite.tmp.dir" value="${tests.dir.loc}/unite/tmp" />
         <mkdir dir="${unite.tmp.dir}"/>
 		<property name="unite.tmp.dir.loc" location="${unite.tmp.dir}"/>
-		<property name="unite.inbox.dir" value="tests/unite/inbox" />
+		<property name="unite.inbox.dir" value="${tests.dir.loc}/unite/inbox" />
 		<property name="unite.inbox.dir.loc" location="${unite.inbox.dir}"/>
         <property name="unite.log.dir.loc" location="${unite.log.dir}"/>
-
-		<property name="unite.config.file.loc" location="tests/unite/config.php"/>
-
+		<property name="unite.config.file.loc" location="${tests.dir.loc}/unite/config.php"/>
 		<replaceregexp file="${unite.config.file.loc}" match="(const tempDir = ')(.*)(';)" replace="\1${unite.tmp.dir.loc}\3"/>
 		<replaceregexp file="${unite.config.file.loc}" match="(const logDir = ')(.*)(';)" replace="\1${unite.log.dir.loc}\3"/>
 		<replaceregexp file="${unite.config.file.loc}" match="(const inboxDir = ')(.*)(';)" replace="\1${unite.inbox.dir.loc}\3"/>
@@ -299,7 +310,7 @@
 
 	<target name="joomla-build" depends="php-check,unite-config,unite-xml">
 
-        <property name="unite.php" value="tests/unite/unite.php"/>
+        <property name="unite.php" value="${tests.dir.loc}/unite/unite.php"/>
         <property name="unite.php.loc" location="${unite.php}"/>
 		<mkdir dir="${htdocs.dir}"/>
         <property name="htdocs.dir.loc" location="${htdocs.dir}"/>
@@ -375,14 +386,18 @@
 		</condition>
 	</target>
 
-	<target name="start-webserver" depends="sudo-check,configure-vhost,add-vhost">
+    <target name="stop-webserver" depends="sudo-check">
 
-		<property name="httpd.bin.loc" location="/Applications/MAMP/Library/bin/httpd"/>
+        <exec executable="${sudo}">
+            <arg line="${httpd.bin.loc} -k stop"/>
+        </exec>
+
+        <sleep seconds="10"/>
+
+    </target>
+	<target name="start-webserver" depends="sudo-check,configure-vhost,add-vhost,stop-webserver">
+
         <property name="test.httpd.conf.loc" location="${test.httpd.conf}"/>
-		<exec executable="${sudo}">
-			<arg line="${httpd.bin.loc} -k stop"/>
-		</exec>
-        <sleep seconds="2"/>
         <exec executable="${sudo}">
             <arg line="${httpd.bin.loc} -f ${test.httpd.conf.loc} -k start"/>
         </exec>

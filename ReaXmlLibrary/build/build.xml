@@ -209,8 +209,17 @@
             </not>
         </condition>
     </target>
+    <target name="joomla-use-mailcatcher">
 
-    <target name="start-mailcatcher" depends="mailcatcher-check,phpunit-xml" >
+        <property name="joomla-configuration.loc" location="${htdocs.dir}/configuration.php"/>
+        <replaceregexp file="${joomla-configuration.loc}" match="(\$smtphost[^']*')[^']*" replace="\1${mailcatcher.http.host}"/>
+        <replaceregexp file="${joomla-configuration.loc}" match="(\$smtpsecure[^']*')[^']*" replace="\1none"/>
+        <replaceregexp file="${joomla-configuration.loc}" match="(\$smtpport[^']*')[^']*" replace="\1${mailcatcher.smtp.port}"/>
+
+    </target>
+
+
+    <target name="start-mailcatcher" depends="mailcatcher-check,phpunit-xml,joomla-use-mailcatcher" >
         <exec executable="${mailcatcher}">
             <arg value="--smtp-port"/>
             <arg value="${mailcatcher.smtp.port}"/>

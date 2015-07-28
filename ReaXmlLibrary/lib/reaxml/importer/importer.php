@@ -255,6 +255,8 @@ class ReaxmlImporter
             }
 
             $sendstatus = $mailer->Send();
+            self::LogAdd('sending mail', JLog::INFO);
+
             if ($sendstatus !== true) {
                 echo 'Error sending email: ' . $sendstatus->__toString();
             }

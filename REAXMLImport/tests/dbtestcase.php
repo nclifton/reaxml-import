@@ -22,4 +22,9 @@ abstract class Reaxml_Tests_DatabaseTestCase extends PHPUnit_Extensions_Database
 	protected function getColumns() {
 		return self::$pdo->query ( 'SHOW COLUMNS FROM '.$GLOBALS ['DB_DBNAME'].'.'.$GLOBALS['DB_TBLPREFIX'].'ezrealty' );
 	}
+	protected static function restoreJoomla(){
+		shell_exec('php '.__DIR__.'/../unite/unite.php');
+		sleep(2); // wait for clean up to complete
+	}
+
 }
