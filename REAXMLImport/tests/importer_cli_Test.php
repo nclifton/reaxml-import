@@ -60,7 +60,7 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
 	 */
 	public function setUp() {
 
-		parent::restoreJoomla ();
+		//parent::restoreJoomla ();
 		parent::setUp ();
 
 		$this->cleanDirectories ();
@@ -78,7 +78,7 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
 	 * @after
 	 */
 	public static function after() {
-		parent::restoreJoomla ();
+		//parent::restoreJoomla ();
 	}
 	public function cleanDirectories() {
 		$this->recursiveUnlink ( __DIR__ . DIRECTORY_SEPARATOR . '/test_done/*' );
@@ -97,7 +97,7 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
 	}
 	
 	/**
-	 * @test
+	 * @skip
 	 */
 	public function bad_xml_file_handling(){
 		// Arrange
@@ -133,7 +133,9 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
 		// Arrange
 		copy ( __DIR__ . '/files/pullman_201410280550052876573.xml', __DIR__ . '/test_input/pullman_201410280550052876573.xml' );
 
-        $params->set('input_dir',__DIR__ . '/test_input');
+		$params = JComponentHelper::getParams('com_reaxmlimport');
+
+		$params->set('input_dir',__DIR__ . '/test_input');
         $params->set('work_dir',__DIR__ . '/test_work');
         $params->set('done_dir',__DIR__ . '/test_done');
         $params->set('error_dir',__DIR__ . '/test_error');
@@ -160,6 +162,10 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
 		$expectedTable1 = $expectedDataset->getTable ( $GLOBALS ['DB_TBLPREFIX'] . 'ezrealty' );
 		$expectedTable2 = $expectedDataset->getTable ( $GLOBALS ['DB_TBLPREFIX'] . 'ezrealty_images' );
 		
+
+		$this->assertThat($table1->getRowCount(),$this->equalTo($expectedTable1->getRowCount()),'property count');
+		$this->assertThat($table2->getRowCount(),$this->equalTo($expectedTable2->getRowCount()),'image count');
+
 		$this->assertTablesEqual ( $expectedTable1, $table1 );
 		$this->assertTablesEqual ( $expectedTable2, $table2 );
 		
