@@ -1,8 +1,4 @@
-<project default="create_install" basedir="..">
-
-	<description> 
-	build file
-	</description>
+<project default="create_install" basedir=".">
 
 	<!-- Task definition -->
 	<!-- Define classpath for ant-contrib tasks -->
@@ -87,5 +83,195 @@
 	<target name="deploy_for_test" depends="create_install">
 		<ant antfile="../REAXMLPackage/build/build.xml" target="copy_latest" inheritAll="false"/>
 	</target>
+
+	<!-- ================== CI Build and test targets below ===================== -->
+
+    <property name="parentdir" location=".." />
+    <property name="builddir" location="${parentdir}/build" />
+	<property name="db.username" value="root" />
+	<property name="db.password" value="root" />
+	<property name="db.name" value="joomla-reaxml" />
+	<property name="db.table-prefix" value="jos_" />
+	<property name="composer" location="../composer.phar" />
+    <property name="htdocs.dir" value="../../REAXMLImport/tests/htdocs"/>
+    <property name="unite.dir" value="../../REAXMLImport/tests/unite"/>
+    <property name="unite.dir.loc" location="${unite.dir}"/>
+    <property name="unite.xml" value="${unite.dir.loc}/inbox/site-reaxml.dev.xml"/>
+    <property name="unite.log.dir" value="${unite.dir.loc}/log" />
+    <mkdir dir="${unite.log.dir}"/>
+    <property name="unite.inbox.dir" value="${unite.dir.loc}/inbox" />
+    <property name="unite.tmp.dir" value="${unite.dir.loc}/tmp" />
+    <mkdir dir="${unite.tmp.dir}"/>
+    <property name="unite.php" value="${unite.dir.loc}/unite.php"/>
+    <property name="php.ini" value="/Applications/MAMP/bin/php/php5.5.26/conf/php.ini"/>
+    <property name="php.ini.loc" location="${php.ini}"/>
+    <property name="tests.dir.loc" location="../tests"/>
+    <property name="test-results.dir" value="${tests.dir.loc}/test-results" />
+    <mkdir dir="${test-results.dir}"/>
+    <property name="phpunit.xml" value="${tests.dir.loc}/phpunit.xml" />
+    <property name="phpunit.xml.loc" location="${phpunit.xml}" />
+    <property name="test-results.dir.loc" location="${test-results.dir}" />
+    <property name="phpunit.executable.loc" location="../vendor/bin/phpunit" />
+    <property name="bootstrap.php.log" location="${tests.dir.loc}/bootstrap.php"/>
+    <property name="mailcatcher.smtp.port" value="1025"/>
+    <property name="mailcatcher.http.port" value="1080"/>
+    <property name="mailcatcher.http.host" value="127.0.0.1"/>
+
+
+    <target name="php-check">
+		<condition property="php" value="php">
+			<not>
+				<isset property="${php}" />
+			</not>
+		</condition>
+	</target>
+
+	<target name="composer-check">
+		<available file="${composer}" property="composer.present" />
+	</target>
+
+	<target name="composer-download" depends="composer-check" unless="composer.present">
+		<property name="composer.noselfupdate" value="true" />
+		<get src="https://getcomposer.org/composer.phar" dest="${composer}" />
+	</target>
+
+	<target name="composer-selfupdate" depends="php-check,composer-download" unless="composer.noselfupdate">
+		<exec executable="${php}" dir="${parentdir}">
+			<arg value="-c"/>
+			<arg value="${php.ini.loc}"/>
+			<arg value="${composer}" />
+			<arg value="self-update" />
+			<arg value="--quiet" />
+		</exec>
+	</target>
+
+	<target name="composer" depends="composer-selfupdate" unless="composer.noupdate">
+		<exec executable="${php}" dir="${parentdir}">
+			<arg value="-c"/>
+			<arg value="${php.ini.loc}"/>
+			<arg value="${composer}" />
+			<arg value="update" />
+		</exec>
+	</target>
+
+    <target name="unite-config">
+
+        <property name="unite.tmp.dir.loc" location="${unite.tmp.dir}"/>
+        <property name="unite.inbox.dir.loc" location="${unite.inbox.dir}"/>
+        <property name="unite.log.dir.loc" location="${unite.log.dir}"/>
+        <property name="unite.config.file.loc" location="${unite.dir.loc}/config.php"/>
+
+        <replaceregexp file="${unite.config.file.loc}" match="(const tempDir = ')(.*)(';)" replace="\1${unite.tmp.dir.loc}\3"/>
+        <replaceregexp file="${unite.config.file.loc}" match="(const logDir = ')(.*)(';)" replace="\1${unite.log.dir.loc}\3"/>
+        <replaceregexp file="${unite.config.file.loc}" match="(const inboxDir = ')(.*)(';)" replace="\1${unite.inbox.dir.loc}\3"/>
+        <replaceregexp file="${unite.config.file.loc}" match="(const keepxml = ')(.*)(';)" replace="\1false\3"/>
+    </target>
+
+    <target name="unite-xml">
+        <property name="unite.xml.loc" location="${unite.xml}"/>
+        <property name="htdocs.dir.loc" location="${htdocs.dir}"/>
+        <xmltask source="${unite.xml.loc}" dest="${unite.xml.loc}">
+            <replace path="/unite/siteInfo/absolutepath/text()" withText="${htdocs.dir.loc}" />
+            <replace path="unite/databaseInfo/database/dbpass/text()" withText="${db.password}" />
+        </xmltask>
+    </target>
+
+    <target name="joomla-build" depends="php-check,unite-config,unite-xml">
+
+        <property name="unite.php.loc" location="${unite.php}"/>
+        <mkdir dir="${htdocs.dir}"/>
+        <property name="htdocs.dir.loc" location="${htdocs.dir}"/>
+        <property name="php.ini.loc" location="${php.ini}"/>
+        <exec executable="${php}" outputProperty="unite.log">
+            <arg value="-c"/>
+            <arg file="${php.ini.loc}"/>
+            <arg value="-f"/>
+            <arg file="${unite.php.loc}"/>
+        </exec>
+        <echo message="${unite.log}"/>
+        <fail message="unite execution failed">
+            <condition>
+                <contains string="${unite.log}" substring="Total definitions executed successfuly : 0" />
+            </condition>
+        </fail>
+        <delete file="akeeba.log"/>
+        <delete file="akeeba.cli.log"/>
+        <delete file="${unite.log.dir}/unite.log.php"/>
+    </target>
+
+	<target name="build" depends="composer,joomla-build">
+	</target>
+
+    <target name="mailcatcher-check">
+        <condition property="mailcatcher" value="/usr/bin/mailcatcher">
+            <not>
+                <isset property="${mailcatcher}" />
+            </not>
+        </condition>
+    </target>
+    <target name="joomla-use-mailcatcher">
+
+        <property name="joomla-configuration.loc" location="${htdocs.dir}/configuration.php"/>
+        <replaceregexp file="${joomla-configuration.loc}" match="(\$smtphost[^']*')[^']*" replace="\1${mailcatcher.http.host}"/>
+        <replaceregexp file="${joomla-configuration.loc}" match="(\$smtpsecure[^']*')[^']*" replace="\1none"/>
+        <replaceregexp file="${joomla-configuration.loc}" match="(\$smtpport[^']*')[^']*" replace="\1${mailcatcher.smtp.port}"/>
+
+    </target>
+
+
+    <target name="start-mailcatcher" depends="mailcatcher-check,phpunit-xml,joomla-use-mailcatcher" >
+        <exec executable="${mailcatcher}">
+            <arg value="--smtp-port"/>
+            <arg value="${mailcatcher.smtp.port}"/>
+            <arg value="--http-port"/>
+            <arg value="${mailcatcher.http.port}"/>
+        </exec>
+    </target>
+
+    <target name="start-servers" depends="start-mailcatcher">
+    </target>
+
+    <target name="clear-test-results">
+        <property name="test-results.dir.loc" location="${test-results.dir}" />
+        <delete>
+            <fileset dir="${test-results.dir.loc}" includes="*.*" />
+        </delete>
+    </target>
+    <target name="phpunit-xml" >
+        <xmltask source="${phpunit.xml.loc}" dest="${phpunit.xml.loc}">
+            <replace path="/phpunit/@bootstrap" withText="${bootstrap.php.log}" />
+            <replace path="/phpunit/php/var[@name='DB_DSN']/@value" withText="mysql:dbname=${db.name};host=localhost" />
+            <replace path="/phpunit/php/var[@name='DB_USER']/@value" withText="${db.username}" />
+            <replace path="/phpunit/php/var[@name='DB_PASSWD']/@value" withText="${db.password}" />
+            <replace path="/phpunit/php/var[@name='DB_DBNAME']/@value" withText="${db.name}" />
+            <replace path="/phpunit/php/var[@name='DB_TBLPREFIX']/@value" withText="${db.table-prefix}" />
+            <replace path="/phpunit/php/var[@name='MAILCATCHER_HTTP_PORT']/@value" withText="${mailcatcher.http.port}" />
+            <replace path="/phpunit/logging/log[@type='junit']/@target" withText="${test-results.dir.loc}/logfile.xml" />
+            <replace path="/phpunit/logging/log[@type='testdox-html']/@target" withText="${test-results.dir.loc}/testdox.html" />
+        </xmltask>
+    </target>
+
+    <target name="create-test-dirs">
+        <mkdir dir="${tests.dir.loc}/test_input"/>
+        <mkdir dir="${tests.dir.loc}/test_work"/>
+        <mkdir dir="${tests.dir.loc}/test_done"/>
+        <mkdir dir="${tests.dir.loc}/test_error"/>
+        <mkdir dir="${tests.dir.loc}/test_log"/>
+    </target>
+
+    <target name="test" depends="create-test-dirs,start-servers,clear-test-results,php-check,phpunit-xml">
+
+        <exec executable="${php}" failonerror="true" dir="${tests.dir.loc}">
+            <arg value="-c"/>
+            <arg value="${php.ini.loc}"/>
+            <arg value="${phpunit.executable.loc}"/>
+            <arg value="-c" />
+            <arg value="${phpunit.xml.loc}" />
+            <arg value="--testsuite"/>
+            <arg value="all"/>
+        </exec>
+
+    </target>
+
 
 </project>

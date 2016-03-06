@@ -2,7 +2,9 @@
 
 abstract class reaxml_selenium_TestCase extends PHPUnit_Extensions_Selenium2TestCase{
 	private $dbHelper;
-	
+	protected $filepattern = 'screenshot_%s_%s.png';
+
+
 	function __construct(){
 		$this->dbHelper = new Reaxml_Tests_Selenium_DatabaseTestCase_Helper();
 	}
@@ -15,7 +17,7 @@ abstract class reaxml_selenium_TestCase extends PHPUnit_Extensions_Selenium2Test
 	public function setUp(){
 		$this->dbHelper->setUp();
 		$this->setBrowser ( 'firefox' );
-		$this->setBrowserUrl ( 'http://reaxml.dev' );
+		$this->setBrowserUrl ( 'http://'.$GLOBALS ['SERVER_NAME'] );
 		$this->setHost('localhost');
 		$this->setPort(4444);
 		$this->setSeleniumServerRequestsTimeout(60);
@@ -23,7 +25,7 @@ abstract class reaxml_selenium_TestCase extends PHPUnit_Extensions_Selenium2Test
 	}
 	
 	public function adminLogin() {
-		$this->url('http://reaxml.dev/administrator');
+		$this->url('http://'.$GLOBALS ['SERVER_NAME'].'/administrator');
 		$usernameInput = $this->byId('mod-login-username');
 		$usernameInput->value('admin');
 		$this->assertEquals('admin', $usernameInput->value());
@@ -46,7 +48,7 @@ abstract class reaxml_selenium_TestCase extends PHPUnit_Extensions_Selenium2Test
 		$button = $this->byCssSelector ( 'input[value="Upload & Install"]' );
 		$button->click ();
 		$message = $this->byCssSelector ( 'div.alert-success p' );
-		$this->assertRegExp ( '/Installing package was successful./', $message->text () );
+		$this->assertRegExp ( '/Installation of the package was successful./', $message->text () );
 	}
 	public function getConnection(){
 		return $this->dbHelper->getConnection();
@@ -57,6 +59,14 @@ abstract class reaxml_selenium_TestCase extends PHPUnit_Extensions_Selenium2Test
 	protected function assertTablesEqual ( $expectedTable, $table ){
 		$this->dbHelper->assertTablesEqual ( $expectedTable, $table );
 	}
+	protected function saveScreenshot($suffix=''){
+		sleep(2);
+		$filedata = $this->currentScreenshot();
+		$file= sprintf($this->filepattern,$this->getName().$suffix,time());
 
+		file_put_contents($file, $filedata);
+
+		print("Screen shot saved to ".$file."\n");
+	}
 }
 ?>

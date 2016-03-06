@@ -2,7 +2,7 @@
 /**
  *
  * @package Component REAXML Import for Joomla! 3.4
- * @version 1.4.3: reaxml-importer.php 2015-06-10T01:14:12.284
+ * @version 1.5.11: reaxml-importer.php 2015-07-24T00:42:53.638
  * @author Clifton IT Foundries Pty Ltd
  * @link http://cliftonwebfoundry.com.au
  * @copyright Copyright (c) 2014, 2015 Clifton IT Foundries Pty Ltd. All rights Reserved
@@ -105,37 +105,44 @@ require_once JPATH_LIBRARIES . '/cms.php';
 JLoader::import('joomla.application.cli');
 
 // load classes
-JLoader::registerPrefix ( 'Reaxml', JPATH_LIBRARIES . '/reaxml' );
+if (file_exists(JPATH_LIBRARIES . '/reaxml')) {
+	JLoader::registerPrefix('Reaxml', JPATH_LIBRARIES . '/reaxml');
+}
 JLoader::import ( 'reaxml.configuration' );
 JLoader::import ( 'reaxml.importer' );
 
 // CLI joomla application class
-class ReaxmlImporterCLI extends JApplicationCli {
-	public function execute() {
-		
-		$configuration = $this->getConfiguration ();
-		$importer = new ReaxmlImporter ();
-		$importer->setShowLog ( true );
-		$importer->setConfiguration ( $configuration );
-		return $importer->import ();
-	}
-	
-	// setup the configuration object
-	private function getConfiguration() {
-		$params = JComponentHelper::getParams ( 'com_reaxmlimport' );
-		$configuration = new ReaxmlConfiguration ();
-		$configuration->input_dir = $params->get ( 'input_dir' );
-		$configuration->work_dir = $params->get ( 'work_dir' );
-		$configuration->done_dir = $params->get ( 'done_dir' );
-		$configuration->error_dir = $params->get ( 'error_dir' );
-		$configuration->log_dir = $params->get ( 'log_dir' );
-		$configuration->input_url = $params->get ( 'input_url' );
-		$configuration->work_url = $params->get ( 'work_url' );
-		$configuration->done_url = $params->get ( 'done_url' );
-		$configuration->error_url = $params->get ( 'error_url' );
-		$configuration->log_url = $params->get ( 'log_url' );
-		$configuration->usemap = $params->get ( 'usemap' , 0);
-		return $configuration;
+if (!class_exists('ReaxmlImporterCLI')) {
+	class ReaxmlImporterCLI extends JApplicationCli
+	{
+		public function execute()
+		{
+
+			$configuration = $this->getConfiguration();
+			$importer = new ReaxmlImporter ();
+			$importer->setShowLog(true);
+			$importer->setConfiguration($configuration);
+			return $importer->import();
+		}
+
+		// setup the configuration object
+		private function getConfiguration()
+		{
+			$params = JComponentHelper::getParams('com_reaxmlimport');
+			$configuration = new ReaxmlConfiguration ();
+			$configuration->input_dir = $params->get('input_dir');
+			$configuration->work_dir = $params->get('work_dir');
+			$configuration->done_dir = $params->get('done_dir');
+			$configuration->error_dir = $params->get('error_dir');
+			$configuration->log_dir = $params->get('log_dir');
+			$configuration->input_url = $params->get('input_url');
+			$configuration->work_url = $params->get('work_url');
+			$configuration->done_url = $params->get('done_url');
+			$configuration->error_url = $params->get('error_url');
+			$configuration->log_url = $params->get('log_url');
+			$configuration->usemap = $params->get('usemap', 0);
+			return $configuration;
+		}
 	}
 }
 

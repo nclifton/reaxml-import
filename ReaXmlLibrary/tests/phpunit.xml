@@ -1,24 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<phpunit verbose="true" bootstrap="bootstrap.php">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<phpunit bootstrap="/Users/nclifton/git/reaxml-import/ReaXmlLibrary/tests/bootstrap.php" verbose="true">
 	<php>
-		<var name="DB_DSN" value="mysql:dbname=joomla-reaxml;host=localhost" />
-		<var name="DB_USER" value="root" />
-		<var name="DB_PASSWD" value="root" />
-		<var name="DB_DBNAME" value="joomla-reaxml" />
-		<var name="DB_TBLPREFIX" value="jos_" />
-		<server name="HTTP_USER_AGENT" value="Mozilla/5.0 (Windows NT 5.1) AppleWebKit/535.6 (KHTML, like Gecko) Chrome/16.0.897.0 Safari/535.6" />
-		<server name="HTTP_HOST" value="localhost" />
+		<var name="DB_DSN" value="mysql:dbname=joomla-reaxml;host=localhost"/>
+		<var name="DB_USER" value="root"/>
+		<var name="DB_PASSWD" value="root"/>
+		<var name="DB_DBNAME" value="joomla-reaxml"/>
+		<var name="DB_TBLPREFIX" value="jos_"/>
+        <var name="MAILCATCHER_HTTP_PORT" value="1080"/>
+		<server name="HTTP_USER_AGENT" value="Mozilla/5.0 (Windows NT 5.1) AppleWebKit/535.6 (KHTML, like Gecko) Chrome/16.0.897.0 Safari/535.6"/>
+		<server name="HTTP_HOST" value="localhost"/>
 	</php>
 	<logging>
-		<log type="junit" target="test-results/logfile.xml"
-			logIncompleteSkipped="false" />
-		<log type="testdox-html" target="test-results/testdox.html" />
+		<log logIncompleteSkipped="false" target="/Users/nclifton/git/reaxml-import/ReaXmlLibrary/tests/test-results/logfile.xml" type="junit"/>
+		<log target="/Users/nclifton/git/reaxml-import/ReaXmlLibrary/tests/test-results/testdox.html" type="testdox-html"/>
 	</logging>
 
 	<testsuites>
 		<testsuite name="all">
 			<file>importer_Test.php</file>
 			<file>importer_db_Test.php</file>
+			<file>maphelper_Test.php</file>
 			<directory>ezr</directory>
 			<directory>ezr/col</directory>
 		</testsuite>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<propertyList date="2014-10-28-05:50:05" username="wdg" password="WDG4rea">
+  <commercial modTime="2014-10-28-05:50:03" status="current">
+    <agentID>PUWSTM</agentID>
+    <uniqueID>2571892</uniqueID>
+    <commercialAuthority value="forsale" />
+    <exclusivity value="exclusive" />
+    <commercialListingType value="sale" />
+    <listingAgent id="1">
+      <name>PETER PAZIOS</name>
+      <telephone type="mobile">0411 289 964</telephone>
+      <email>peter@pullman-williams.com.au</email>
+    </listingAgent>
+    <listingAgent id="2" />
+    <listingAgent id="3" />
+    <price tax="exclusive" display="yes">1300000.00</price>
+    <isMultiple value="no" />
+    <address display="yes">
+      <subNumber />
+      <streetNumber>44</streetNumber>
+      <street>Peachtree Road</street>
+      <suburb display="yes">PENRITH</suburb>
+      <state>NSW</state>
+      <postcode>2750</postcode>
+      <country>AUSTRALIA</country>
+    </address>
+    <commercialCategory id="1" name="Industrial/Warehouse" />
+    <headline>FREESTANDING FACTORY WITH POTENTIAL</headline>
+    <description>* Five roller doors
+* Configured as three individual units
+* All units have offices and amenities
+* Good loading and parking areas
+* Building can be adapted as showroom
+* Good Natural light to warehousing area
+* Available with vacant possession</description>
+    <landDetails>
+      <area unit="squareMeter">2184</area>
+    </landDetails>
+    <buildingDetails>
+      <area unit="squareMeter">1071</area>
+    </buildingDetails>
+    <externalLink href="" />
+    <videoLink href="" />
+    <objects>
+      <img id="m" url="http://admin.pullman-williams.com.au/upload/images/5623594-image-M.jpg" format="jpg" />
+    </objects>
+    <miniweb>
+      <uri id="1" />
+    </miniweb>
+  </commercial>

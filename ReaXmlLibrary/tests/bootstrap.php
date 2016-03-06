@@ -10,7 +10,8 @@ error_reporting ( E_ALL );
 
 define ( '_JEXEC', 1 );
 
-define ( 'JPATH_BASE', '/Users/nclifton/Documents/MAMP/htdocs/reaxml' );
+define ( 'JPATH_BASE', realpath(__DIR__ .'/../../REAXMLImport/tests/htdocs') );
+define ( 'JPATH_ROOT', realpath(__DIR__ .'/../../REAXMLImport/tests/htdocs') );
 require_once JPATH_BASE . '/includes/defines.php';
 
 define ( 'REAXML_LIBRARIES', __DIR__ . '/../lib' );
@@ -35,7 +36,6 @@ JLoader::registerPrefix ( 'ReaxmlEzr', REAXML_LIBRARIES . '/reaxml/ezr' );
 JLoader::registerPrefix ( 'ReaxmlEzrCol', REAXML_LIBRARIES . '/reaxml/ezr/col' );
 
 $lang = JFactory::getLanguage ();
-echo getcwd () . "\n";
 $lang->load ( 'lib_reaxml', __DIR__ . '/..', 'en-GB', true );
 
 define ( 'REAXML_LOG_CATEGORY', 'REAXML-Import' );

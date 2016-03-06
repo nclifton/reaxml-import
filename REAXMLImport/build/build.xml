@@ -1,18 +1,65 @@
-<project default="create_install" basedir="..">
-
-	<description> 
-	build file
-	</description>
+<?xml version="1.0" encoding="UTF-8" ?>
+<project default="create_install" basedir=".">
 
 	<!-- Task definition -->
 	<!-- Define classpath for ant-contrib tasks -->
 	<taskdef resource="net/sf/antcontrib/antlib.xml" />
 	<taskdef name="xmltask" classname="com.oopsconsultancy.xmltask.ant.XmlTask" />
+    <taskdef resource="net/sf/antcontrib/antcontrib.properties">
+        <classpath>
+            <pathelement
+                    location="./ant-lib/ant-contrib.jar"/>
+        </classpath>
+    </taskdef>
 
-	<property name="manifestfile" value="com_reaxmlimport.xml" />
-	<property name="installfile" value="../REAXMLPackage/packages/com_reaxmlimport.zip" />
+	<property name="db.username" value="root" />
+	<property name="db.password" value="root" />
+	<property name="db.name" value="joomla-reaxml" />
+	<property name="db.table-prefix" value="jos_" />
+	<property name="builddir" location="." />
+	<property name="parentdir" location=".." />
+	<property name="composer" location="${parentdir}/composer.phar" />
 
-	<scriptdef name="increment_version" language="javascript">
+	<property name="manifestfile" value="${parentdir}/com_reaxmlimport.xml" />
+    <property name="package.dir" value="${parentdir}/../REAXMLPackage"/>
+    <property name="package.dir.loc" value="${package.dir}"/>
+	<property name="installfile" value="${package.dir.loc}/packages/com_reaxmlimport.zip" />
+
+    <property name="tests.dir.loc" location="${parentdir}/tests"/>
+
+	<property name="htdocs.dir" value="${tests.dir.loc}/htdocs"/>
+    <property name="unite.xml" value="${tests.dir.loc}/unite/inbox/site-reaxml.dev.xml"/>
+	<property name="unite.log.dir" value="${tests.dir.loc}/unite/log" />
+    <mkdir dir="${unite.log.dir}"/>
+
+	<property name="php.ini" value="/Applications/MAMP/bin/php/php5.5.26/conf/php.ini"/>
+    <property name="php.ini.loc" location="${php.ini}"/>
+    <property name="httpd.bin" value="/Applications/MAMP/Library/bin/httpd"/>
+    <property name="httpd.bin.loc" location="${httpd.bin}"/>
+    <property name="httpd.conf" value="/Applications/MAMP/conf/apache/httpd.conf"/>
+    <property name="httpd-vhosts.conf" value="/Applications/MAMP/conf/apache/extra/httpd-vhosts.conf"/>
+    <property name="test.httpd.conf.dir" value="${tests.dir.loc}/httpd"/>
+    <mkdir dir="${test.httpd.conf.dir}"/>
+    <property name="test.httpd.conf.dir.loc" location="${test.httpd.conf.dir}"/>
+    <property name="test.httpd.conf" value="${test.httpd.conf.dir.loc}/httpd.conf"/>
+    <property name="test.httpd-vhosts.conf" value="${test.httpd.conf.dir.loc}/httpd-vhosts.conf"/>
+    <property name="servername" value="reaxml.dev"/>
+    <property name="test-results.dir" value="${tests.dir.loc}/test-results" />
+    <mkdir dir="${test-results.dir}"/>
+    <property name="firefox.app" value="/Applications/Firefox.app"/>
+    <property name="selenium-server.jar" value="/usr/local/bin/selenium-server-standalone-2.46.0-4.jar" />
+    <property name="selenium-server.jar.location" location="${selenium-server.jar}" />
+    <property name="phpunit.xml" value="${tests.dir.loc}/phpunit.xml" />
+    <property name="phpunit.xml.loc" location="${phpunit.xml}" />
+    <property name="mailcatcher.smtp.port" value="1025"/>
+    <property name="mailcatcher.http.port" value="1080"/>
+    <property name="mailcatcher.http.host" value="127.0.0.1"/>
+
+    <property name="akeeba-backup.output_directory.loc" location="${tests.dir.loc}/unite/inbox" />
+    <property name="akeeba-backup.archive_name" value="site-reaxml.dev"/>
+
+
+    <scriptdef name="increment_version" language="javascript">
 		<attribute name="current" />
 		<attribute name="property" />
 		<![CDATA[
@@ -33,6 +80,11 @@
 		</zip>
 	</target>
 
+
+    <target name="deploy_for_test" depends="create_install">
+        <ant antfile="../REAXMLPackage/build/build.xml" target="copy_latest" inheritAll="false"/>
+    </target>
+
 	<target name="update_headers" depends="update_manifest">
 		<foreach target="replace_headers" param="fullfilename" inheritall="true">
 			<param name="copyright" value="${copyright.stripped}" />
@@ -52,12 +104,12 @@
 
 	<target name="update_manifest" depends="get_version" unless="skipIncrement">
 		<echo>newversion=${newVersion}</echo>
-		<xmltask source="${manifestfile}" dest="${manifestfile}">
-			<replace path="/extension/version/text()" withText="${newVersion}" />
+		<xmltask    source="${manifestfile}" dest="${manifestfile}">
+           <replace path="/extension/version/text()" withText="${newVersion}" />
 		</xmltask>
 	</target>
 
-	<target name="get_version" depends="increment_version" if="skipIncrement">
+	<target name="get_version" depends="increment_version" if="skipIncrement" >
 		<property name="newVersion" value="${version}" />
 	</target>
 
@@ -88,9 +140,293 @@
 		<replaceregexp file="${fullfilename}" match="/\*\*.*\* @copyright.*\*\*/" flags="sm" replace="${header}">
 		</replaceregexp>
 	</target>
-	
-	<target name="deploy_for_test" depends="create_install">
-		<ant antfile="../REAXMLPackage/build/build.xml" target="copy_latest" inheritAll="false"/>
+
+    <target name="composer-check">
+        <available file="${composer}" property="composer.present" />
+    </target>
+
+    <target name="composer-download" depends="composer-check" unless="composer.present">
+        <property name="composer.noselfupdate" value="true" />
+        <get src="https://getcomposer.org/composer.phar" dest="${composer}" />
+    </target>
+
+    <target name="composer-selfupdate" depends="php-check,composer-download" unless="composer.noselfupdate">
+        <exec executable="${php}" dir="${parentdir}">
+            <arg value="-c"/>
+            <arg value="${php.ini.loc}"/>
+            <arg value="${composer}" />
+            <arg value="self-update" />
+            <arg value="--quiet" />
+        </exec>
+    </target>
+
+    <target name="composer" depends="composer-selfupdate" unless="composer.noupdate">
+        <exec executable="${php}" dir="${parentdir}">
+            <arg value="-c"/>
+            <arg value="${php.ini.loc}"/>
+            <arg value="${composer}" />
+            <arg value="update" />
+        </exec>
+    </target>
+
+    <target name="build" depends="composer,joomla-build">
+    </target>
+
+    <target name="create-test-dirs">
+        <mkdir dir="${tests.dir.loc}/test_input"/>
+        <mkdir dir="${tests.dir.loc}/test_work"/>
+        <mkdir dir="${tests.dir.loc}/test_done"/>
+        <mkdir dir="${tests.dir.loc}/test_log"/>
+        <mkdir dir="${tests.dir.loc}/test_error"/>
+    </target>
+
+    <target name="fix-dbunit-seed-files">
+        <property name="htdocs.dir.loc"  location="${htdocs.dir}"/>
+        <propertyregex property="htdocs.dir.loc.encoded" input="${htdocs.dir.loc}" regexp="\/" replace="\\\\\\\\\\\\\\\\\\\\\/" global="true"/>
+
+        <for param="file" parallel="true">
+            <path>
+                <fileset dir="${tests.dir.loc}/files" includes="*.xml"/>
+            </path>
+            <sequential>
+                <replaceregexp file="@{file}" flags="g" match="\\\/Users\\\/nclifton\\\/Documents\\\/MAMP\\\/htdocs\\\/reaxml" replace="${htdocs.dir.loc.encoded}" />
+                <replaceregexp file="@{file}" flags="g" match="\\\/Users\\\/nclifton\\\/git\\\/reaxml-import\\\/REAXMLImport\\\/tests\\\/htdocs" replace="${htdocs.dir.loc.encoded}" />
+            </sequential>
+        </for>
+    </target>
+
+    <target name="test" depends="create-test-dirs,start-servers,clear-test-results,php-check,phpunit-xml,fix-dbunit-seed-files">
+        <property name="phpunit.executable.loc" location="${parentdir}/vendor/bin/phpunit" />
+
+         <exec executable="${php}" failonerror="true" dir="${tests.dir.loc}">
+             <arg value="-c"/>
+             <arg value="${php.ini.loc}"/>
+             <arg value="${phpunit.executable.loc}"/>
+             <arg value="-c" />
+             <arg value="${phpunit.xml.loc}" />
+        </exec>
+
+        <!-- Stop the Selenium RC server -->
+        <antcall target="stop-selenium-server" />
+
+    </target>
+
+    <target name="start-servers" depends="start-webserver,start-selenium-server,start-mailcatcher">
+
+    </target>
+
+    <target name="phpunit-xml" >
+        <property name="test-results.dir.loc" location="${test-results.dir}" />
+        <property name="firefox.app.loc" location="${firefox.app}"/>
+        <property name="firefox-browser-selenium" value="*firefox ${firefox.app.loc}"/>
+        <property name="selenium.tests.dir.loc" location="${tests.dir.loc}/selenium"/>
+        <property name="bootstrap.php.log" location="${tests.dir.loc}/bootstrap.php"/>
+        <xmltask source="${phpunit.xml.loc}" dest="${phpunit.xml.loc}">
+            <replace path="/phpunit/@bootstrap" withText="${bootstrap.php.log}" />
+            <replace path="/phpunit/php/var[@name='DB_DSN']/@value" withText="mysql:dbname=${db.name};host=localhost" />
+            <replace path="/phpunit/php/var[@name='DB_USER']/@value" withText="${db.username}" />
+            <replace path="/phpunit/php/var[@name='DB_PASSWD']/@value" withText="${db.password}" />
+            <replace path="/phpunit/php/var[@name='DB_DBNAME']/@value" withText="${db.name}" />
+            <replace path="/phpunit/php/var[@name='MAILCATCHER_HTTP_PORT']/@value" withText="${mailcatcher.http.port}" />
+            <replace path="/phpunit/php/var[@name='DB_TBLPREFIX']/@value" withText="${db.table-prefix}" />
+            <replace path="/phpunit/php/var[@name='SERVER_NAME']/@value" withText="${servername}" />
+            <replace path="/phpunit/php/server[@name='HTTP_HOST']/@value" withText="${servername}" />
+            <replace path="/phpunit/testsuites/testsuite/directory[1]/text()" withText="${tests.dir.loc}" />
+            <replace path="/phpunit/testsuites/testsuite/directory[2]/text()" withText="${selenium.tests.dir.loc}" />
+            <replace path="/phpunit/logging/log[@type='junit']/@target" withText="${test-results.dir.loc}/logfile.xml" />
+            <replace path="/phpunit/logging/log[@type='testdox-html']/@target" withText="${test-results.dir.loc}/testdox.html" />
+            <replace path="/phpunit/selenium/browser[@name='firefox']/@browser" withText="${firefox-browser-selenium}" />
+        </xmltask>
+    </target>
+
+    <target name="clear-test-results">
+        <property name="test-results.dir.loc" location="${test-results.dir}" />
+        <delete>
+            <fileset dir="${test-results.dir.loc}" includes="*.*" />
+        </delete>
+    </target>
+
+    <target name="start-selenium-server">
+        <property name="firefox.profile.property.directive" value="-Dwebdriver.firefox.profile=test-debug"/>
+        <property name="chrome.driver.property.directive" value="-Dwebdriver.chrome.driver=/usr/bin/chromedriver"/>
+        <property name="test-results.dir.loc" location="${test-results.dir}" />
+        <echo message="Starting Selenium RC server (runs as a separate process)" />
+        <java jar="${selenium-server.jar.location}" fork="true" spawn="true">
+            <arg line="-log ${test-results.dir.loc}/selenium.log ${firefox.profile.property.directive} ${chrome.driver.property.directive}" />
+        </java>
+        <sleep seconds="5"/>
+    </target>
+
+    <target name="stop-selenium-server">
+        <echo message="Stopping Selenium RC server" />
+        <get taskname="selenium-shutdown" src="http://localhost:4444/selenium-server/driver/?cmd=shutDownSeleniumServer" dest="${tests.dir.loc}/test-results/selenium-shutdown-dest.txt" ignoreerrors="true" />
+        <echo taskname="selenium-shutdown" message="DGF Errors during shutdown are expected" />
+    </target>
+
+    <target name="mailcatcher-check">
+        <condition property="mailcatcher" value="/usr/bin/mailcatcher">
+            <not>
+                <isset property="${mailcatcher}" />
+            </not>
+        </condition>
+    </target>
+
+    <target name="joomla-use-mailcatcher">
+
+        <property name="joomla-configuration.loc" location="${htdocs.dir}/configuration.php"/>
+        <replaceregexp file="${joomla-configuration.loc}" match="(\$smtphost[^']*')[^']*" replace="\1${mailcatcher.http.host}"/>
+        <replaceregexp file="${joomla-configuration.loc}" match="(\$smtpsecure[^']*')[^']*" replace="\1none"/>
+        <replaceregexp file="${joomla-configuration.loc}" match="(\$smtpport[^']*')[^']*" replace="\1${mailcatcher.smtp.port}"/>
+
+    </target>
+
+    <target name="start-mailcatcher" depends="mailcatcher-check,joomla-use-mailcatcher" >
+        <exec executable="${mailcatcher}">
+            <arg value="--smtp-port"/>
+            <arg value="${mailcatcher.smtp.port}"/>
+            <arg value="--http-port"/>
+            <arg value="${mailcatcher.http.port}"/>
+        </exec>
+    </target>
+
+
+    <target name="php-check">
+        <condition property="php" value="php">
+            <not>
+                <isset property="${php}" />
+            </not>
+        </condition>
+    </target>
+
+	<target name="unite-config">
+		<property name="unite.tmp.dir" value="${tests.dir.loc}/unite/tmp" />
+        <mkdir dir="${unite.tmp.dir}"/>
+		<property name="unite.tmp.dir.loc" location="${unite.tmp.dir}"/>
+		<property name="unite.inbox.dir" value="${tests.dir.loc}/unite/inbox" />
+		<property name="unite.inbox.dir.loc" location="${unite.inbox.dir}"/>
+        <property name="unite.log.dir.loc" location="${unite.log.dir}"/>
+		<property name="unite.config.file.loc" location="${tests.dir.loc}/unite/config.php"/>
+		<replaceregexp file="${unite.config.file.loc}" match="(const tempDir = ')(.*)(';)" replace="\1${unite.tmp.dir.loc}\3"/>
+		<replaceregexp file="${unite.config.file.loc}" match="(const logDir = ')(.*)(';)" replace="\1${unite.log.dir.loc}\3"/>
+		<replaceregexp file="${unite.config.file.loc}" match="(const inboxDir = ')(.*)(';)" replace="\1${unite.inbox.dir.loc}\3"/>
+		<replaceregexp file="${unite.config.file.loc}" match="(const keepxml = ')(.*)(';)" replace="\1false\3"/>
 	</target>
+
+    <target name="unite-xml">
+        <property name="unite.xml.loc" location="${unite.xml}"/>
+        <property name="htdocs.dir.loc" location="${htdocs.dir}"/>
+		<xmltask source="${unite.xml.loc}" dest="${unite.xml.loc}">
+			<replace path="/unite/siteInfo/absolutepath/text()" withText="${htdocs.dir.loc}" />
+			<replace path="unite/databaseInfo/database/dbpass/text()" withText="${db.password}" />
+		</xmltask>
+    </target>
+
+	<target name="joomla-build" depends="php-check,unite-config,unite-xml">
+
+        <property name="unite.php" value="${tests.dir.loc}/unite/unite.php"/>
+        <property name="unite.php.loc" location="${unite.php}"/>
+        <delete dir="${htdocs.dir}"/>
+		<mkdir dir="${htdocs.dir}"/>
+        <property name="htdocs.dir.loc" location="${htdocs.dir}"/>
+        <property name="php.ini.loc" location="${php.ini}"/>
+		<exec executable="${php}" outputProperty="unite.log">
+			<arg value="-c"/>
+			<arg file="${php.ini.loc}"/>
+			<arg value="-f"/>
+			<arg file="${unite.php.loc}"/>
+		</exec>
+		<echo message="${unite.log}"/>
+		<fail message="unite execution failed">
+			<condition>
+				<contains string="${unite.log}" substring="Total definitions executed successfuly : 0" />
+			</condition>
+		</fail>
+		<delete file="akeeba.log"/>
+		<delete file="akeeba.cli.log"/>
+		<delete file="${unite.log.dir}/unite.log.php"/>
+	</target>
+
+    <target name="vhost-check" depends="copy-http-config">
+
+        <replaceregexp file="${test.httpd.conf}" match="#*(Include\s).*(\/httpd-vhosts\.conf)" replace="\1${test.httpd.conf.dir.loc}\2"/>
+
+        <condition property="vhost-exists" else="false">
+            <resourcecontains resource="${test.httpd-vhosts.conf}" substring="ServerName ${servername}"/>
+        </condition>
+
+    </target>
+
+    <target name="add-vhost" depends="vhost-check,copy-http-config" unless="vhost-exists">
+        <echo message="adding virtual host ${servername}"/>
+        <property name="htdocs.dir.loc" location="${htdocs.dir}"/>
+
+        <echo file="${test.httpd-vhosts.conf}">
+&lt;VirtualHost *:80&gt;
+    DocumentRoot "${htdocs.dir.loc}"
+    ServerName ${servername}
+    &lt;Directory "${htdocs.dir.loc}"&gt;
+        Options All
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    &lt;/Directory&gt;
+&lt;/VirtualHost&gt;
+        </echo>
+
+    </target>
+
+    <target name="copy-http-config">
+
+        <copy file="${httpd.conf}" todir="${test.httpd.conf.dir.loc}"/>
+        <copy file="${httpd-vhosts.conf}" todir="${test.httpd.conf.dir.loc}" />
+
+    </target>
+
+	<target name="configure-vhost" depends="vhost-check" if="vhost-exists">
+        <echo message="modifying virtual host ${servername}"/>
+        <property name="htdocs.dir.loc" location="${htdocs.dir}"/>
+
+		<replaceregexp file="${test.httpd-vhosts.conf}" flags="s"
+					   match='(&lt;VirtualHost \*:80&gt;\s*DocumentRoot\s*")[^"]*("\s*ServerName\s${servername}\s*&lt;Directory\s*")[^"]*("&gt;[^&lt;]*&lt;\/Directory&gt;\s*&lt;\/VirtualHost&gt;)'
+					replace="\1${htdocs.dir.loc}\2${htdocs.dir.loc}\3"/>
+
+	</target>
+
+	<target name="sudo-check">
+		<condition property="sudo" value="sudo">
+			<not>
+				<isset property="${sudo}" />
+			</not>
+		</condition>
+	</target>
+
+    <target name="stop-webserver" depends="sudo-check">
+
+        <exec executable="${sudo}">
+            <arg line="${httpd.bin.loc} -k stop"/>
+        </exec>
+
+        <sleep seconds="10"/>
+
+    </target>
+	<target name="start-webserver" depends="sudo-check,configure-vhost,add-vhost,stop-webserver">
+
+        <property name="test.httpd.conf.loc" location="${test.httpd.conf}"/>
+        <exec executable="${sudo}">
+            <arg line="${httpd.bin.loc} -f ${test.httpd.conf.loc} -k start"/>
+        </exec>
+	</target>
+
+    <target name="akeeba-backup" depends="php-check" description="creates a deployable archive of the site using Akeeba Backup">
+        <property name="akeeba-backup.php" value="${htdocs.dir}/cli/akeeba-backup.php" />
+        <property name="akeeba-backup.php.loc" location="${akeeba-backup.php}" />
+        <exec executable="${php}" failonerror="true">
+            <arg value="${akeeba-backup.php.loc}" />
+            <arg value="--profile=2" />
+            <arg value="--description=Deploy to Test" />
+            <arg value="--override=akeeba.basic.output_directory=${akeeba-backup.output_directory.loc}" />
+            <arg value="--override=akeeba.basic.archive_name=${akeeba-backup.archive_name}" />
+        </exec>
+    </target>
 
 </project>

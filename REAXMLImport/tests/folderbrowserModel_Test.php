@@ -22,9 +22,9 @@ class FolderbrowserModel_Test extends PHPUnit_Framework_TestCase {
 	public function suppliesCorrectUrl(){
 		//Arrange
 		$model = new ReaXmlImportModelsFolderbrowser();
-		$model->setFolder('/Users/nclifton/Documents/MAMP/htdocs/reaxml/ftp');
+		$model->setFolder(realpath(__DIR__.'/htdocs/ftp'));
 		$model->setInputid('jform_input_dir');
-		$model->setCurrenturi('http://reaxml.dev/administrator/index.php');
+		$model->setCurrenturi('http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php');
 		
 		// Act
 		$url = $model->getUrl();
@@ -38,9 +38,9 @@ class FolderbrowserModel_Test extends PHPUnit_Framework_TestCase {
 	public function suppliesRootUrlWhenFolderNotUnderSitePath(){
 		//Arrange
 		$model = new ReaXmlImportModelsFolderbrowser();
-		$model->setFolder('/Users/nclifton/Documents/MAMP/htdocs');
+		$model->setFolder(realpath(__DIR__.'/../'));
 		$model->setInputid('jform_input_dir');
-		$model->setCurrenturi('http://reaxml.dev/administrator/index.php');
+		$model->setCurrenturi('http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php');
 	
 		// Act
 		$url = $model->getUrl();
@@ -54,9 +54,9 @@ class FolderbrowserModel_Test extends PHPUnit_Framework_TestCase {
 	public function suppliesRootUrlWhenFolderIsSitePath(){
 		//Arrange
 		$model = new ReaXmlImportModelsFolderbrowser();
-		$model->setFolder('/Users/nclifton/Documents/MAMP/htdocs/reaxml');
+		$model->setFolder(realpath(__DIR__.'/htdocs'));
 		$model->setInputid('jform_input_dir');
-		$model->setCurrenturi('http://reaxml.dev/administrator/index.php');
+		$model->setCurrenturi('http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php');
 	
 		// Act
 		$url = $model->getUrl();
@@ -70,34 +70,29 @@ class FolderbrowserModel_Test extends PHPUnit_Framework_TestCase {
 	public function suppliesUsableFolderList(){
 		//Arrange
 		$model = new ReaXmlImportModelsFolderbrowser();
-		$model->setFolder('/Users/nclifton/Documents/MAMP/htdocs/reaxml/ftp');
+		$model->setFolder(realpath(__DIR__.'/htdocs/ftp'));
 		$model->setInputid('jform_input_dir');
 		$model->setUrlinputid('jform_input_url');
-		$model->setCurrenturi('http://reaxml.dev/administrator/index.php');
-		
-		
+		$model->setCurrenturi('http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php');
+
+		$path = realpath(__DIR__.'/htdocs/ftp');
+		$folders = explode('/',$path);
+
 		//Act
 		$list = $model->getFolderList();
 
 		//Assert
-		$this->assertThat(count($list), $this->equalTo(8));
-		$this->assertThat($list['item1'], $this->equalTo('/'));
-		$this->assertThat($model->getSelectFolderUrl('item1') , $this->equalTo('http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder=%2F'));
-		$this->assertThat($list['item2'], $this->equalTo('Users'));		
-		$this->assertThat($model->getSelectFolderUrl('item2') , $this->equalTo('http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder=%2FUsers'));
-		$this->assertThat($list['item3'], $this->equalTo('nclifton'));
-		$this->assertThat($model->getSelectFolderUrl('item3') , $this->equalTo('http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder=%2FUsers%2Fnclifton'));
-		$this->assertThat($list['item4'], $this->equalTo('Documents'));
-		$this->assertThat($model->getSelectFolderUrl('item4') , $this->equalTo('http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder=%2FUsers%2Fnclifton%2FDocuments'));
-		$this->assertThat($list['item5'], $this->equalTo('MAMP'));
-		$this->assertThat($model->getSelectFolderUrl('item5') , $this->equalTo('http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder=%2FUsers%2Fnclifton%2FDocuments%2FMAMP'));
-		$this->assertThat($list['item6'], $this->equalTo('htdocs'));
-		$this->assertThat($model->getSelectFolderUrl('item6') , $this->equalTo('http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder=%2FUsers%2Fnclifton%2FDocuments%2FMAMP%2Fhtdocs'));
-		$this->assertThat($list['item7'], $this->equalTo('reaxml'));
-		$this->assertThat($model->getSelectFolderUrl('item7') , $this->equalTo('http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder=%2FUsers%2Fnclifton%2FDocuments%2FMAMP%2Fhtdocs%2Freaxml'));
-		$this->assertThat($list['item8 active'], $this->equalTo('ftp'));
-		$this->assertThat($model->getSelectFolderUrl('item8') , $this->equalTo(''));
-		
+
+		$this->assertThat ( count($list), $this->equalTo(count($folders)));
+
+		$tpath = '';
+		for($i=0;$i<count($list)-1;$i++) {
+			$tpath .= $i==1?$folders[$i]:'/'.$folders[$i];
+			$this->assertThat($list['item'.($i+1)], $this->equalTo(($i==0?'/':$folders[$i])));
+			$this->assertThat($model->getSelectFolderUrl('item'.($i+1)) , $this->equalTo('http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder=' . urlencode($tpath)));
+		}
+
+
 	}
 
 	/**
@@ -108,9 +103,9 @@ class FolderbrowserModel_Test extends PHPUnit_Framework_TestCase {
 		$model = new ReaXmlImportModelsFolderbrowser();
 		$model->setFolder('input');
 		$model->setInputid('jform_input_dir');
-		$model->setCurrenturi('http://reaxml.dev/administrator/index.php');
+		$model->setCurrenturi('http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php');
 
-		$this->assertThat($model->getFolder(), $this->equalTo('/Users/nclifton/Documents/MAMP/htdocs/reaxml'));
+		$this->assertThat($model->getFolder(), $this->equalTo(realpath(__DIR__.'/htdocs')));
 	}
 	/**
 	 * @test
@@ -119,28 +114,32 @@ class FolderbrowserModel_Test extends PHPUnit_Framework_TestCase {
 	
 		//Arrange
 		$model = new ReaXmlImportModelsFolderbrowser();
-		$model->setFolder('/Users/nclifton/Documents/MAMP/htdocs/reaxml/ftp');
+		$model->setFolder(realpath(__DIR__.'/htdocs/ftp'));
 		$model->setInputid('jform_input_dir');
 		$model->setUrlinputid('jform_input_url');
-		$model->setCurrenturi('http://reaxml.dev/administrator/index.php');
-		
-		//Act
+		$model->setCurrenturi('http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php');
+
+        $path = realpath(__DIR__.'/htdocs/ftp');
+        $folders = explode('/',$path);
+
+        //Act
 		$list = $model->getSubFolderList();
 		
 		//Assert
 		$this->assertThat(count($list), $this->equalTo(5));
+        $root = urlencode(realpath(__DIR__.'/htdocs'));
 		$this->assertThat($list['item1'], $this->equalTo('done'));
-		$this->assertThat($model->getSelectSubFolderUrl('item1') , $this->equalTo('http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder=%2FUsers%2Fnclifton%2FDocuments%2FMAMP%2Fhtdocs%2Freaxml%2Fftp%2Fdone'));
+		$this->assertThat($model->getSelectSubFolderUrl('item1') , $this->equalTo('http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.$root.'%2Fftp%2Fdone'));
 		$this->assertThat($list['item2'], $this->equalTo('error'));
-		$this->assertThat($model->getSelectSubFolderUrl('item2') , $this->equalTo('http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder=%2FUsers%2Fnclifton%2FDocuments%2FMAMP%2Fhtdocs%2Freaxml%2Fftp%2Ferror'));
+		$this->assertThat($model->getSelectSubFolderUrl('item2') , $this->equalTo('http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.$root.'%2Fftp%2Ferror'));
 		$this->assertThat($list['item3'], $this->equalTo('input'));
-		$this->assertThat($model->getSelectSubFolderUrl('item3') , $this->equalTo('http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder=%2FUsers%2Fnclifton%2FDocuments%2FMAMP%2Fhtdocs%2Freaxml%2Fftp%2Finput'));
+		$this->assertThat($model->getSelectSubFolderUrl('item3') , $this->equalTo('http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.$root.'%2Fftp%2Finput'));
 		$this->assertThat($list['item4'], $this->equalTo('log'));
-		$this->assertThat($model->getSelectSubFolderUrl('item4') , $this->equalTo('http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder=%2FUsers%2Fnclifton%2FDocuments%2FMAMP%2Fhtdocs%2Freaxml%2Fftp%2Flog'));
+		$this->assertThat($model->getSelectSubFolderUrl('item4') , $this->equalTo('http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.$root.'%2Fftp%2Flog'));
 		$this->assertThat($list['item5'], $this->equalTo('work'));
-		$this->assertThat($model->getSelectSubFolderUrl('item5') , $this->equalTo('http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder=%2FUsers%2Fnclifton%2FDocuments%2FMAMP%2Fhtdocs%2Freaxml%2Fftp%2Fwork'));
+		$this->assertThat($model->getSelectSubFolderUrl('item5') , $this->equalTo('http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.$root.'%2Fftp%2Fwork'));
 		
-		$this->assertThat($model->getSelectSubFolderUrl('itemX') , $this->equalTo('http://reaxml.dev/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder=%2FUsers%2Fnclifton%2FDocuments%2FMAMP%2Fhtdocs%2Freaxml%2Fftp'));
+		$this->assertThat($model->getSelectSubFolderUrl('itemX') , $this->equalTo('http://'.$GLOBALS ['SERVER_NAME'].'/administrator/index.php?option=com_reaxmlimport&controller=config&view=folderbrowser&tmpl=component&inputid=jform_input_dir&urlinputid=jform_input_url&folder='.$root.'%2Fftp'));
 		
 	
 	}

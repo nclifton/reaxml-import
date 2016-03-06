@@ -51,7 +51,7 @@ class Import_Test extends reaxml_selenium_TestCase {
 	 * @after
 	 */
 	public static function after() {
-//		parent::restoreJoomla ();
+		parent::restoreJoomla ();
 	}
 	
 	/**
@@ -59,7 +59,7 @@ class Import_Test extends reaxml_selenium_TestCase {
 	 */
 	public function configure_and_import() {
 		
-		copy ( __DIR__.'/../files/import_test.xml', '/Users/nclifton/Documents/MAMP/htdocs/reaxml/ftp/input/import_Test.xml' );
+		copy ( realpath(__DIR__.'/../files').'/import_test.xml', realpath(__DIR__.'/../htdocs/ftp/input').'/import_test.xml' );
 		
 		$this->timeouts ()->implicitWait ( 10000 );
 		$this->loadExtension ();
@@ -84,7 +84,7 @@ class Import_Test extends reaxml_selenium_TestCase {
 		$this->byCssSelector('button.btn-success')->click();
 		$this->frame(null);
 		
-		$this->assertThat ($this->byId('jform_input_dir')->value(), $this->equalTo('/Users/nclifton/Documents/MAMP/htdocs/reaxml/ftp/input'));
+		$this->assertThat ($this->byId('jform_input_dir')->value(), $this->equalTo(realpath(__DIR__.'/../htdocs/ftp/input')));
 		$this->assertThat ($this->byId('jform_input_url')->value(), $this->equalTo('/ftp/input'));	
 
 		// click the second folder browser button
@@ -97,7 +97,7 @@ class Import_Test extends reaxml_selenium_TestCase {
 		$this->byCssSelector('button.btn-success')->click();
 		$this->frame(null);
 		
-		$this->assertThat ($this->byId('jform_work_dir')->value(), $this->equalTo('/Users/nclifton/Documents/MAMP/htdocs/reaxml/ftp/work'));
+		$this->assertThat ($this->byId('jform_work_dir')->value(), $this->equalTo(realpath(__DIR__.'/../htdocs/ftp/work')));
 		$this->assertThat ($this->byId('jform_work_url')->value(), $this->equalTo('/ftp/work'));
 		
 		// click the third folder browser button
@@ -110,7 +110,7 @@ class Import_Test extends reaxml_selenium_TestCase {
 		$this->byCssSelector('button.btn-success')->click();
 		$this->frame(null);
 		
-		$this->assertThat ($this->byId('jform_done_dir')->value(), $this->equalTo('/Users/nclifton/Documents/MAMP/htdocs/reaxml/ftp/done'));
+		$this->assertThat ($this->byId('jform_done_dir')->value(), $this->equalTo(realpath(__DIR__.'/../htdocs/ftp/done')));
 		$this->assertThat ($this->byId('jform_done_url')->value(), $this->equalTo('/ftp/done'));
 		
 		// click the fourth folder browser button
@@ -123,7 +123,7 @@ class Import_Test extends reaxml_selenium_TestCase {
 		$this->byCssSelector('button.btn-success')->click();
 		$this->frame(null);
 		
-		$this->assertThat ($this->byId('jform_log_dir')->value(), $this->equalTo('/Users/nclifton/Documents/MAMP/htdocs/reaxml/ftp/log'));
+		$this->assertThat ($this->byId('jform_log_dir')->value(), $this->equalTo(realpath(__DIR__.'/../htdocs/ftp/log')));
 		$this->assertThat ($this->byId('jform_log_url')->value(), $this->equalTo('/ftp/log'));
 		
 		// click the fifth folder browser button
@@ -136,11 +136,11 @@ class Import_Test extends reaxml_selenium_TestCase {
 		$this->byCssSelector('button.btn-success')->click();
 		$this->frame(null);
 		
-		$this->assertThat ($this->byId('jform_error_dir')->value(), $this->equalTo('/Users/nclifton/Documents/MAMP/htdocs/reaxml/ftp/error'));
+		$this->assertThat ($this->byId('jform_error_dir')->value(), $this->equalTo(realpath(__DIR__.'/../htdocs/ftp/error')));
 		$this->assertThat ($this->byId('jform_error_url')->value(), $this->equalTo('/ftp/error'));
 		
 		$this->byLinkText ( 'Map Data' )->click();;
-		$this->byId ( 'jform_usemap2' )->click();
+		$this->byCssSelector ( 'label[for="jform_usemap2"]' )->click();
 		
 		$this->byXpath ( '//button[contains(.,"Save & Close")]' )->click ();
 		

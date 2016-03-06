@@ -42,9 +42,71 @@
 			label="COM_REAXMLIMPORT_ERROR_URL_LABEL" description="COM_REAXMLIMPORT_ERROR_URL_DESC">
 		</field>
 	</fieldset>
+	<fieldset name="notifications" label="COM_REAXMLIMPORT_NOTIFICATIONS" description="COM_REAXMLIMPORT_NOTIFICATIONS_DESC">
+        <field name="send_success"
+               type="radio"
+               class="btn-group btn-group-yesno"
+               label="COM_REAXMLIMPORT_SEND_SUCCESS_LABEL"
+               description="COM_REAXMLIMPORT_SEND_SUCCESS_LABEL_DESC"
+               default="1"
+               filter="integer" >
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+        <field name="send_nofiles"
+               type="radio"
+               class="btn-group btn-group-yesno"
+               label="COM_REAXMLIMPORT_SEND_NOFILES_LABEL"
+               description="COM_REAXMLIMPORT_SEND_NOFILES_LABEL_DESC"
+               default="0"
+               filter="integer" >
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+        <field name="done_mail_to"
+               type="email"
+               class="inputbox"
+               validate="email"
+               label="COM_REAXMLIMPORT_DONE_MAIL_TO_LABEL"
+               description="COM_REAXMLIMPORT_DONE_MAIL_TO_LABEL_DESC"
+               size="500" >
+        </field>
+        <field name="error_mail_to"
+               type="email"
+               class="inputbox"
+               validate="email"
+               label="COM_REAXMLIMPORT_ERROR_MAIL_TO_LABEL"
+               description="COM_REAXMLIMPORT_ERROR_MAIL_TO_LABEL_DESC"
+               size="500" >
+        </field>
+        <field name="mail_from_address"
+               type="email"
+               class="inputbox"
+               validate="email"
+               label="COM_REAXMLIMPORT_MAIL_FROM_ADDRESS_LABEL"
+               description="COM_REAXMLIMPORT_MAIL_FROM_ADDRESS_LABEL_DESC"
+               size="50" >
+        </field>
+        <field name="mail_from_name"
+               type="text"
+               class="inputbox"
+               label="COM_REAXMLIMPORT_MAIL_FROM_NAME_LABEL"
+               description="COM_REAXMLIMPORT_MAIL_FROM_NAME_LABEL_DESC"
+               size="50" >
+        </field>
+        <field name="subject"
+               type="text"
+               class="inputbox"
+               default="REAXML Import Notification: {status}"
+               label="COM_REAXMLIMPORT_SUBJECT_LABEL"
+               description="COM_REAXMLIMPORT_SUBJECT_LABEL_DESC"
+               size="255" >
+        </field>
+	</fieldset>
 	<fieldset name="usemap" label="COM_REAXMLIMPORT_MAPDATA" description="COM_REAXMLIMPORT_MAPDATA_DESC">
-		<field name="usemap" type="radio" default="0"
-			label="COM_REAXMLIMPORT_USEMAP_LABEL" description="COM_REAXMLIMPORT_USEMAP_DESC">
+		<field name="usemap" type="radio" default="0" filter="integer"
+               class="btn-group"
+               label="COM_REAXMLIMPORT_USEMAP_LABEL" description="COM_REAXMLIMPORT_USEMAP_DESC">
 			<option value="0">COM_REAXMLIMPORT_USEMAP_NEVER</option>
 			<option value="1">COM_REAXMLIMPORT_USEMAP_IF_NEW</option>
 			<option value="2">COM_REAXMLIMPORT_USEMAP_ALWAYS</option>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="joomla-reaxml">
+	<table_data name="jos_extensions">
+
+	<row>
+		<field name="params">{&quot;input_dir&quot;:&quot;input&quot;,&quot;input_url&quot;:&quot;\/input&quot;,&quot;work_dir&quot;:&quot;work&quot;,&quot;work_url&quot;:&quot;\/work&quot;,&quot;done_dir&quot;:&quot;done&quot;,&quot;done_url&quot;:&quot;\/done&quot;,&quot;log_dir&quot;:&quot;log&quot;,&quot;log_url&quot;:&quot;\/log&quot;,&quot;error_dir&quot;:&quot;error&quot;,&quot;error_url&quot;:&quot;\/error&quot;,&quot;send_success&quot;:1,&quot;send_nofiles&quot;:0,&quot;done_mail_to&quot;:&quot;done@reaxml.test&quot;,&quot;error_mail_to&quot;:&quot;error@reaxml.test&quot;,&quot;mail_from_address&quot;:&quot;reaxml.importer@reaxml.test&quot;,&quot;mail_from_name&quot;:&quot;REAXML Import Test&quot;,&quot;subject&quot;:&quot;REAXML Import &#123;status&#125; Notification&quot;,&quot;usemap&quot;:0,&quot;update_dlid&quot;:&quot;&quot;}</field>
+	</row>
+
+</table_data>
+</database>
+</mysqldump>

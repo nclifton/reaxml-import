@@ -101,10 +101,11 @@ class ReaxmlDbo_Test extends Reaxml_Tests_DatabaseTestCase {
 		<uniqueID>foo</uniqueID>
 		<price display="yes">6000000</price>
 	</residential>' );
-		
+		$configuration = new ReaxmlConfiguration ();
+
 		// Act
 		$dbo = new ReaxmlEzrDbo ();
-		$row = new ReaxmlEzrRow ( $xml, $dbo );
+		$row = new ReaxmlEzrRow ( $xml, $dbo, $configuration );
 		$dbo->update ( $row );
 		
 		// Assert
@@ -140,7 +141,7 @@ class ReaxmlDbo_Test extends Reaxml_Tests_DatabaseTestCase {
 		$expectedDataset = $this->filterDataset ( $this->createMySQLXMLDataSet ( __DIR__ . '/../files/expected_ezrealty_after_insert_test.xml' ) );
 		$expectedTable1 = $expectedDataset->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty_images' );
 		
-		$this->assertThat( $table1->getRowCount() , $this->equalTo($expectedTable1->getRowCount()));
+		$this->assertThat( $table1->getRowCount() , $this->equalTo($expectedTable1->getRowCount()),'row count');
 
 	}
 	
@@ -195,12 +196,12 @@ class ReaxmlDbo_Test extends Reaxml_Tests_DatabaseTestCase {
 	
 	
 		// Act
-		$dbo->insertEzrCountry("Lilyput",1);
+		$dbo->insertEzrCountry("Lilyput");
 	
 		// Assert
 		$dataSet = $this->filterDataset ( $this->getConnection ()->createDataSet () );
 		$table1 = $dataSet->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty_country' );
-		$expectedDataset = $this->filterDataset ( $this->createMySQLXMLDataSet ( __DIR__ . '/../files/expected_country_after_insert_Country_test.xml' ) );
+		$expectedDataset = $this->filterDataset ( $this->createMySQLXMLDataSet (realpath(__DIR__ . '/../files').'/expected_country_after_insert_country_test.xml') );
 		$expectedTable1 = $expectedDataset->getTable ( $GLOBALS['DB_TBLPREFIX'].'ezrealty_country' );
 	
 		$this->assertTablesEqual ( $expectedTable1, $table1 );
