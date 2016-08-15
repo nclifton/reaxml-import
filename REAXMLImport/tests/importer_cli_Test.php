@@ -40,8 +40,19 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
 				REAXML_LOG_CATEGORY 
 		) );
 
-
     }
+
+    /**
+     * @param $pattern
+     *
+     *
+     * @since version
+     * @after
+     */
+    public function tearDown(){
+        parent::restoreJoomla ();
+    }
+
 	private static function recursiveUnlink($pattern) {
 		foreach ( glob_recursive ( $pattern ) as $file ) {
 			if (! is_dir ( $file )) {
@@ -61,11 +72,11 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
 	public function setUp() {
 
 		//parent::restoreJoomla ();
-		parent::setUp ();
-
+        parent::restoreJoomla ();
 		self::cleanDirectories ();
+        parent::setUp ();
 
-		$this->mailcatcher = new \Guzzle\Http\Client('http://127.0.0.1:'.$GLOBALS['MAILCATCHER_HTTP_PORT']);
+        $this->mailcatcher = new \Guzzle\Http\Client('http://127.0.0.1:'.$GLOBALS['MAILCATCHER_HTTP_PORT']);
 		
 		// clean emails between tests
 		$this->cleanMessages();
@@ -88,7 +99,8 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
         self::recursiveUnlink ( __DIR__ . DIRECTORY_SEPARATOR . '/test_input/*' );
         self::recursiveUnlink ( __DIR__ . DIRECTORY_SEPARATOR . '/test_error/*' );
         self::recursiveUnlink ( __DIR__ . DIRECTORY_SEPARATOR . '/test_log/*' );
-	}
+
+    }
 
 	/**
 	 *
@@ -120,6 +132,7 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
         $params->set('mail_from_name','REAXML Import Test');
         $params->set('subject','REAXML Import {status} Notification');
         $params->set('usemap', 2);
+        $params->set('default_country','Australia');
 
         // Act
 		include __DIR__ . '/../admin/cli/reaxml-importer.php';
@@ -129,11 +142,11 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
 	}
 	
 	/**
-	 * @skip
+	 * @test
 	 */
 	public function import_commercial_pullman() {
 		// Arrange
-		copy ( __DIR__ . '/files/pullman_201410280550052876573.xml', __DIR__ . '/test_input/pullman_201410280550052876573.xml' );
+		copy ( __DIR__ . '/files/pullman_smalltest.xml', __DIR__ . '/test_input/pullman_smalltest.xml' );
 
 		$params = JComponentHelper::getParams('com_reaxmlimport');
 
@@ -150,26 +163,14 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
         $params->set('mail_from_name','REAXML Import Test');
         $params->set('subject','REAXML Import {status} Notification');
         $params->set('usemap', 2);
-
+        $params->set('default_country','Australia');
 
         // Act
 		include __DIR__ . '/../admin/cli/reaxml-importer.php';
 		
 		// Assert
-		$dataSet = $this->filterDataset ( $this->getConnection ()->createDataSet () );
-		$table1 = $dataSet->getTable ( $GLOBALS ['DB_TBLPREFIX'] . 'ezrealty' );
-		$table2 = $dataSet->getTable ( $GLOBALS ['DB_TBLPREFIX'] . 'ezrealty_images' );
-		
-		$expectedDataset = $this->filterDataset ( $this->createMySQLXMLDataSet ( __DIR__ . '/files/expected_ezrealty_after_commercial_pullman_insert_test.xml' ) );
-		$expectedTable1 = $expectedDataset->getTable ( $GLOBALS ['DB_TBLPREFIX'] . 'ezrealty' );
-		$expectedTable2 = $expectedDataset->getTable ( $GLOBALS ['DB_TBLPREFIX'] . 'ezrealty_images' );
-		
 
-		$this->assertThat($table1->getRowCount(),$this->equalTo($expectedTable1->getRowCount()),'property count');
-		$this->assertThat($table2->getRowCount(),$this->equalTo($expectedTable2->getRowCount()),'image count');
-
-		$this->assertTablesEqual ( $expectedTable1, $table1 );
-		$this->assertTablesEqual ( $expectedTable2, $table2 );
+        $this->compareRelevantTables(__DIR__ . '/files/expected_ezrealty_after_small_commercial_pullman_insert_test.xml');
 		
 		$this->assertThat ( count ( glob_recursive ( __DIR__ . DIRECTORY_SEPARATOR . 'test_input' . DIRECTORY_SEPARATOR . '*' ) ), $this->equalTo ( 0 ), 'files in input' );
 		$this->assertThat ( count ( glob_recursive ( __DIR__ . DIRECTORY_SEPARATOR . 'test_work' . DIRECTORY_SEPARATOR . '*' ) ), $this->equalTo ( 0 ), 'files in work' );
@@ -180,16 +181,53 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
 		self::assertEmailIsSent("email sent?");
 
 	}
-	private function filterDataset($dataSet) {
+    /**
+     * @test
+     */
+    public function import_comaus() {
+        // Arrange
+        copy ( __DIR__ . '/files/commaus_2016-08-12_01-24-07_210.xml', __DIR__ . '/test_input/commaus_2016-08-12_01-24-07_210.xml' );
+
+        $params = JComponentHelper::getParams('com_reaxmlimport');
+
+        $params->set('input_dir',__DIR__ . '/test_input');
+        $params->set('work_dir',__DIR__ . '/test_work');
+        $params->set('done_dir',__DIR__ . '/test_done');
+        $params->set('error_dir',__DIR__ . '/test_error');
+        $params->set('log_dir',__DIR__ . '/test_log');
+        $params->set('send_success',1);
+        $params->set('send_nofiles',0);
+        $params->set('done_mail_to','done@reaxml.test');
+        $params->set('error_mail_to','error@reaxml.test');
+        $params->set('mail_from_address','reaxml.importer@reaxml.test');
+        $params->set('mail_from_name','REAXML Import Test');
+        $params->set('subject','REAXML Import {status} Notification');
+        $params->set('usemap', 2);
+        $params->set('default_country','Australia');
+
+        // Act
+        include __DIR__ . '/../admin/cli/reaxml-importer.php';
+
+        // Assert
+        $this->compareRelevantTables(__DIR__ . '/files/expected_ezrealty_after_comaus.xml');
+
+        $this->assertThat ( count ( glob_recursive ( __DIR__ . DIRECTORY_SEPARATOR . 'test_input' . DIRECTORY_SEPARATOR . '*' ) ), $this->equalTo ( 0 ), 'files in input' );
+        $this->assertThat ( count ( glob_recursive ( __DIR__ . DIRECTORY_SEPARATOR . 'test_work' . DIRECTORY_SEPARATOR . '*' ) ), $this->equalTo ( 0 ), 'files in work' );
+        $this->assertThat ( count ( glob_recursive ( __DIR__ . DIRECTORY_SEPARATOR . 'test_done' . DIRECTORY_SEPARATOR . '*' ) ), $this->equalTo ( 1 ), 'files in done' );
+        $this->assertThat ( count ( glob_recursive ( __DIR__ . DIRECTORY_SEPARATOR . 'test_error' . DIRECTORY_SEPARATOR . '*' ) ), $this->equalTo ( 0 ), 'files in error' );
+
+        // connect to mailcatcher
+        self::assertEmailIsSent("email sent?");
+
+    }
+
+
+    private function filterDataset($dataSet) {
 		$filterDataSet = new PHPUnit_Extensions_Database_DataSet_DataSetFilter ( $dataSet );
 		$filterDataSet->setExcludeColumnsForTable ( $GLOBALS ['DB_TBLPREFIX'] . 'ezrealty', array (
 				'hits',
-				'flpl1',
-				'flpl2',
-				'declat',
-				'declong',
-				'propdesc',
-				'smalldesc'
+                'lastupdate',
+                'expdate'
 		) );
 		$filterDataSet->setIncludeColumnsForTable ( $GLOBALS ['DB_TBLPREFIX'] . 'extensions', array (
 				'params' 
@@ -299,4 +337,44 @@ class ReaxmlImporterCli_Test extends Reaxml_Tests_DatabaseTestCase {
 		$email = json_decode($response->getBody());
 		$this->assertNotContains($needle, $email->recipients, $description);
 	}
+
+    /**
+     * @param $xmlFile
+     *
+     *
+     * @since version
+     */
+    private function compareRelevantTables($xmlFile)
+    {
+        $dataSet = $this->getConnection()->createDataSet();
+        $filteredDataSet = $this->filterDataset($dataSet);
+        $propertiesTableName = $GLOBALS ['DB_TBLPREFIX'] . 'ezrealty';
+        $filteredPropertiesTable = $filteredDataSet->getTable($propertiesTableName);
+        $imagesTableName = $GLOBALS ['DB_TBLPREFIX'] . 'ezrealty_images';
+        $filteredImagesTable = $filteredDataSet->getTable($imagesTableName);
+
+        $expectedDataSet = $this->createMySQLXMLDataSet($xmlFile);
+        $expectedFilteredDataSet = $this->filterDataset($expectedDataSet);
+        $expectedFilteredPropertiesTable = $expectedFilteredDataSet->getTable($propertiesTableName);
+        $expectedFilteredImagesTable = $expectedFilteredDataSet->getTable($imagesTableName);
+
+        $this->assertThat($filteredPropertiesTable->getRowCount(), $this->equalTo($expectedFilteredPropertiesTable->getRowCount()), 'property count');
+        $this->assertThat($filteredImagesTable->getRowCount(), $this->equalTo($expectedFilteredImagesTable->getRowCount()), 'image count');
+
+        $expectedPropertiesTable = $expectedDataSet->getTable($propertiesTableName);
+        $propertiesTable = $dataSet->getTable($propertiesTableName);
+        for ($i = 0; $i < $expectedPropertiesTable->getRowCount(); $i++) {
+            $expectedRow = $expectedPropertiesTable->getRow($i);
+            $row = $propertiesTable->getRow($i);
+            $columns = $filteredPropertiesTable->getTableMetaData()->getColumns();
+            foreach ($columns as $col) {
+                $value = $row[$col];
+                $expectedValue = $expectedRow[$col];
+                $this->assertEquals($expectedValue, $value, "row $i " . $col);
+            }
+        }
+
+        $this->assertTablesEqual($expectedFilteredPropertiesTable, $filteredPropertiesTable);
+        $this->assertTablesEqual($expectedFilteredImagesTable, $filteredImagesTable);
+    }
 }

@@ -19,6 +19,7 @@
 	<property name="builddir" location="." />
 	<property name="parentdir" location=".." />
 	<property name="composer" location="${parentdir}/composer.phar" />
+    <property name="reaxmlpackagedir" location="${parentdir}/../REAXMLPackage" />
 
 	<property name="manifestfile" value="${parentdir}/com_reaxmlimport.xml" />
     <property name="package.dir" value="${parentdir}/../REAXMLPackage"/>
@@ -76,13 +77,13 @@
 
 	<target name="create_install" depends="update_headers">
 		<zip destfile="${installfile}" >
-			<fileset dir="." excludes=".*/**, **/.DS_Store, tests/**, build/**, .settings/**, vendor/**, composer.*"/>
+			<fileset dir="${parentdir}" excludes=".*/**, **/.DS_Store, tests/**, build/**, .settings/**, vendor/**, composer.*"/>
 		</zip>
 	</target>
 
 
-    <target name="deploy_for_test" depends="create_install">
-        <ant antfile="../REAXMLPackage/build/build.xml" target="copy_latest" inheritAll="false"/>
+    <target name="package" depends="create_install">
+        <ant antfile="${reaxmlpackagedir}/build/build.xml" target="copy_latest" inheritAll="false"/>
     </target>
 
 	<target name="update_headers" depends="update_manifest">
@@ -90,11 +91,11 @@
 			<param name="copyright" value="${copyright.stripped}" />
 			<param name="version" value="${newVersion}" />
 			<path>
-				<fileset dir="admin">
+				<fileset dir="${parentdir}/admin">
 					<include name="**/*.php" />
 					<include name="**/*.js" />
 				</fileset>
-				<fileset dir="site">
+				<fileset dir="${parentdir}/site">
 					<include name="**/*.php" />
 					<include name="**/*.js" />
 				</fileset>
@@ -132,7 +133,7 @@
 
 	<target name="replace_headers">
 		<basename file="${fullfilename}" property="filename" />
-		<loadfile property="header" srcFile="build/header.txt">
+		<loadfile property="header" srcFile="${parentdir}/build/header.txt">
 			<filterchain>
 				<expandproperties />
 			</filterchain>
@@ -389,7 +390,6 @@
 		<replaceregexp file="${test.httpd-vhosts.conf}" flags="s"
 					   match='(&lt;VirtualHost \*:80&gt;\s*DocumentRoot\s*")[^"]*("\s*ServerName\s${servername}\s*&lt;Directory\s*")[^"]*("&gt;[^&lt;]*&lt;\/Directory&gt;\s*&lt;\/VirtualHost&gt;)'
 					replace="\1${htdocs.dir.loc}\2${htdocs.dir.loc}\3"/>
-
 	</target>
 
 	<target name="sudo-check">
@@ -401,16 +401,13 @@
 	</target>
 
     <target name="stop-webserver" depends="sudo-check">
-
         <exec executable="${sudo}">
             <arg line="${httpd.bin.loc} -k stop"/>
         </exec>
-
         <sleep seconds="10"/>
-
     </target>
-	<target name="start-webserver" depends="sudo-check,configure-vhost,add-vhost,stop-webserver">
 
+	<target name="start-webserver" depends="sudo-check,configure-vhost,add-vhost,stop-webserver">
         <property name="test.httpd.conf.loc" location="${test.httpd.conf}"/>
         <exec executable="${sudo}">
             <arg line="${httpd.bin.loc} -f ${test.httpd.conf.loc} -k start"/>

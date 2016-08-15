@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unite scripting="02_angie">
+  <siteInfo>
+    <package>drupal_7.41_multi_different_db.jpa</package>
+    <deletePackage>0</deletePackage>
+    <localLog>test.log</localLog>
+    <emailSysop>0</emailSysop>
+    <name>My Shiny Restored Site</name>
+    <email>site@example.com</email>
+    <absolutepath>path/to/the/new/site</absolutepath>
+
+    <adminID>1</adminID>
+    <adminUser>admin</adminUser>
+    <adminEmail>admin@example.com</adminEmail>
+    <adminPassword>unite</adminPassword>
+
+    <sites>
+      <domain>newsite.com</domain>
+      <site>
+        <key>newsite.com.slave</key>
+        <name>My Shiny Slave Site</name>
+        <email>slave@example.com</email>
+        <adminID>1</adminID>
+        <adminUser>admin</adminUser>
+        <adminEmail>admin@example.com</adminEmail>
+        <adminPassword>unite</adminPassword>
+      </site>
+    </sites>
+  </siteInfo>
+
+  <databaseInfo>
+    <database name="site">
+      <changecollation>0</changecollation>
+      <dbdriver>mysqli</dbdriver>
+      <dbhost>localhost</dbhost>
+      <dbuser>root</dbuser>
+      <dbpass>root</dbpass>
+      <dbname>unite</dbname>
+      <dbprefix>unite_</dbprefix>
+
+      <existing>drop</existing>
+      <foreignkey>1</foreignkey>
+      <noautovalue>1</noautovalue>
+      <replace>0</replace>
+      <utf8db>0</utf8db>
+      <utf8tables>0</utf8tables>
+      <utf8mb4>0</utf8mb4>
+    </database>
+    <!-- You can find this key by looking inside the database.ini file in ANGIE -->
+    <database name="f5f343818-old-domain.slave-drupal7_multi_slave">
+      <changecollation>0</changecollation>
+      <dbdriver>mysqli</dbdriver>
+      <dbhost>localhost</dbhost>
+      <dbuser>root</dbuser>
+      <dbpass>root</dbpass>
+      <dbname>unite_slave</dbname>
+      <dbprefix>slave_</dbprefix>
+
+      <existing>drop</existing>
+      <foreignkey>1</foreignkey>
+      <noautovalue>1</noautovalue>
+      <replace>0</replace>
+      <utf8db>0</utf8db>
+      <utf8tables>0</utf8tables>
+      <utf8mb4>0</utf8mb4>
+    </database>
+  </databaseInfo>
+
+</unite>

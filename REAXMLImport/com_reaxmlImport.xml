@@ -3,14 +3,14 @@
 	<name>REAXML Import</name>
 	<author>Clifton IT Foundries Pty Ltd</author>
 	<authorEmail>neil.clifton@cliftonwebfoundry.com.au</authorEmail>
-	<creationDate>May 2015</creationDate>
-	<copyright>Copyright (c) 2014, 2015 Clifton IT Foundries Pty Ltd. All rights
+	<creationDate>August 2016</creationDate>
+	<copyright>Copyright (c) 2014, 2015, 2016 Clifton IT Foundries Pty Ltd. All rights
 		Reserved
 	</copyright>
 	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
 	<authorEmail>neil.clifton@cliftonwebfoundry.com.au</authorEmail>
 	<authorUrl>http://cliftonwebfoundry.com.au</authorUrl>
-	<version>1.5.11</version>
+	<version>1.5.26</version>
 	<description>COM_REAXMLIMPORT_XML_DESCRIPTION</description>
 
 	<scriptfile>installscript.php</scriptfile>

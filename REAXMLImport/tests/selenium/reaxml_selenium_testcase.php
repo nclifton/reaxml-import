@@ -10,13 +10,22 @@ abstract class reaxml_selenium_TestCase extends PHPUnit_Extensions_Selenium2Test
 	}
 
 	protected static function restoreJoomla(){
-		shell_exec('php '.__DIR__.'/../unite/unite.php');
+	    $output = [];
+        $exitcode = 0;
+        $workDir = realpath(__DIR__ . '/../unite');
+        exec('cd ' . $workDir .'&& php unite.php',$output,$exitcode);
+        foreach ($output as $line){
+            echo $line."\n";
+            if ($line == 'Total definitions failed to run        : 1')
+                exit(1);
+        }
+
 		sleep(2); // wait for clean up to complete
 	}
 
 	public function setUp(){
 		$this->dbHelper->setUp();
-		$this->setBrowser ( 'firefox' );
+		$this->setBrowser ( 'chrome' );
 		$this->setBrowserUrl ( 'http://'.$GLOBALS ['SERVER_NAME'] );
 		$this->setHost('localhost');
 		$this->setPort(4444);
@@ -30,7 +39,8 @@ abstract class reaxml_selenium_TestCase extends PHPUnit_Extensions_Selenium2Test
 		$usernameInput->value('admin');
 		$this->assertEquals('admin', $usernameInput->value());
 		$passwordInput = $this->byId('mod-login-password');
-		$passwordInput->value("admin\r");
+		$passwordInput->value("admin");
+        $this->byCssSelector('button[tabindex="3"]')->click();
 		$pageTitle = $this->byCssSelector('h1.page-title');
 		$this->assertRegExp('/Control Panel/', $pageTitle->text());
 	}
@@ -38,16 +48,18 @@ abstract class reaxml_selenium_TestCase extends PHPUnit_Extensions_Selenium2Test
 		$this->adminLogin ();
 		$link = $this->byLinkText ( 'Extensions' );
 		$link->click ();
-		$link = $this->byLinkText ( 'Extension Manager' );
+		$link = $this->byLinkText ( 'Manage' );
 		$link->click ();
-		sleep(1);
+		sleep(2);
 		$pageTitle = $this->byCssSelector ( 'h1.page-title' );
-		$this->assertRegExp ( '/Extension Manager: Install/', $pageTitle->text () );
+		$this->assertRegExp ( '/Extensions: Install/', $pageTitle->text () );
 		$installPackage = $this->byId ( 'install_package' );
-		$installPackage->value ( __DIR__ . '/../../../REAXMLPackage/packed/pkg_reaxml-latest.zip' );
-		$button = $this->byCssSelector ( 'input[value="Upload & Install"]' );
+        $filespec = realpath(__DIR__ . '/../../../REAXMLPackage/packed/pkg_reaxml-latest.zip');
+        $installPackage->value ($filespec);
+		$button = $this->byId ( 'installbutton_package' );
 		$button->click ();
-		$message = $this->byCssSelector ( 'div.alert-success p' );
+        sleep(4);
+        $message = $this->byCssSelector ( 'div.alert-success .alert-message' );
 		$this->assertRegExp ( '/Installation of the package was successful./', $message->text () );
 	}
 	public function getConnection(){

@@ -2,10 +2,10 @@
 /**
  *
  * @package Component REAXML Import for Joomla! 3.4
- * @version 1.5.11: import.js 2015-07-24T00:42:53.638
+ * @version 1.5.26: import.js 2016-08-15T02:12:57.600
  * @author Clifton IT Foundries Pty Ltd
  * @link http://cliftonwebfoundry.com.au
- * @copyright Copyright (c) 2014, 2015 Clifton IT Foundries Pty Ltd. All rights Reserved
+ * @copyright Copyright (c) 2014, 2015, 2016 Clifton IT Foundries Pty Ltd. All rights Reserved
  * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  *
  **/

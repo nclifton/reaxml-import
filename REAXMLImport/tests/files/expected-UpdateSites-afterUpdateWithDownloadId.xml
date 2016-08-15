@@ -45,12 +45,22 @@
 
 			<row>
 				<field name="update_site_id">5</field>
+				<field name="name">FOF 3.x</field>
+				<field name="type">extension</field>
+				<field name="location">http://cdn.akeebabackup.com/updates/fof3.xml</field>
+				<field name="enabled">1</field>
+				<field name="last_check_timestamp">1471023731</field>
+				<field name="extra_query"></field>
+			</row>
+
+			<row>
+				<field name="update_site_id">5</field>
 				<field name="name">Akeeba Backup Professional</field>
 				<field name="type">extension</field>
 				<field name="location">http://cdn.akeebabackup.com/updates/abpro.xml</field>
 				<field name="enabled">1</field>
 				<field name="last_check_timestamp">1430388929</field>
-				<field name="extra_query">dlid=fb5b8e2a73933bba8110f66b16eece23</field>
+				<field name="extra_query">dlid=</field>
 			</row>
 
 			<row>

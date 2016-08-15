@@ -30,9 +30,10 @@ class configuration_Test extends reaxml_selenium_TestCase {
 		$button->click ();
 		sleep(1); //wait for document ready scripts to complete
 		$this->assertThat ( $this->byCssSelector ( 'h1.page-title' )->text (), $this->matchesRegularExpression ( '/REAXML Import Component Configuration Options/' ) );
-		$this->assertThat ( $this->byCssSelector ( '#configTabs li.active a' )->text (), $this->matchesRegularExpression ( '/Folders/' ) );
+		$this->assertThat ( $this->byCssSelector ( '#configTabs li a[href="#folders"]' )->text (), $this->matchesRegularExpression ( '/Folders/' ) );
+        $this->byCssSelector ( '#configTabs li a[href="#folders"]' )->click();
 		$this->assertThat ( $this->byId ( 'folders' )->displayed (), $this->isTrue () );
-		$this->assertThat ( $this->byCssSelector ( '#folders p.tab-description' )->text (), $this->matchesRegularExpression ( '/Specify the folders used by the REAXML Import component./' ) );
+		$this->assertThat ( $this->byCssSelector ( '#folders .tab-description' )->text (), $this->matchesRegularExpression ( '/Specify the folders used by the REAXML Import component./' ) );
 		$this->assertFieldLabelText ( 'input_dir', 'Absolute directory specification for the directory where the importer will find REAXML files containing property information to be used to update the site\'s property database.', 'Input directory' );
 		$this->assertFieldLabelText ( 'input_url', 'The URL for the input directory on the web server.', 'Input URL' );
 		$this->assertFieldLabelText ( 'work_dir', 'Absolute directory specification for the directory where the importer will move the REAXML files while it is processing them.', 'Work directory' );
@@ -44,7 +45,7 @@ class configuration_Test extends reaxml_selenium_TestCase {
 		$this->assertFieldLabelText ( 'error_dir', 'Absolute directory specification for the directory where the importer will leave REAXML files it could not process for some reason \(See the logs\).', 'Error directory' );
 		$this->assertFieldLabelText ( 'error_url', 'The URL for the error directory on the web server.', 'Error URL' );
 		$this->assertThat ( $this->byCssSelector ( 'button.folder-browser-button' ), $this->anything () );
-		$this->assertThat ( $this->byXpath ( '//head/script[@type="text/javascript" and @src="/administrator/components/com_reaxmlimport/assets/js/fields.js"]' ), $this->anything () );
+		$this->assertThat ( $this->byXpath ( '//head/script[@src="/administrator/components/com_reaxmlimport/assets/js/fields.js"]' ), $this->anything () );
 		$this->assertThat ( $this->byCssSelector ( 'body div#reaxmlimport-config-panel iframe#reaxmlimport-config-frame[src=""]' ), $this->anything () );
 		$uidialog = $this->byId ( 'reaxmlimport-config-panel' )->byXPath('parent::*');
 		$this->assertThat ( $uidialog->css ( 'position' ), $this->equalTo ( 'absolute' ) );
@@ -118,35 +119,27 @@ class configuration_Test extends reaxml_selenium_TestCase {
 		$this->assertThat ($this->byId('jform_error_url')->value(), $this->equalTo('/ftp/error'));
 		
 		$this->byXpath ( '//button[contains(.,"Save & Close")]' )->click ();
-		
-		$dataSet = new PHPUnit_Extensions_Database_DataSet_QueryDataSet ( $this->getConnection () );
-		$dataSet->addTable ( $GLOBALS ['DB_TBLPREFIX'] . 'extensions', 'SELECT params FROM ' . $GLOBALS ['DB_TBLPREFIX'] . 'extensions WHERE element=\'com_reaxmlimport\'' );
-		
-		$table = $this->filterdataset ( $dataSet )->getTable ( $GLOBALS ['DB_TBLPREFIX'] . 'extensions' );
-		$expectedDataset = $this->loadXMLDataSet ( __DIR__ . '/../files/expected-extensions-afteroptionssave.xml' );
-		$expectedTable = $this->filterdataset ( $expectedDataset )->getTable ( $GLOBALS ['DB_TBLPREFIX'] . 'extensions' );
-        $this->assertThat($table->getRowCount() , $this->equalTo($expectedTable->getRowCount()));
-        for ($i=0; $i < $table->getRowCount(); $i++) {
-            $cols = $table->getTableMetaData()->getColumns();
-            foreach ($cols as $name) {
-                $value = $table->getValue($i, $name);
-                $expected = $expectedTable->getValue($i, $name);
-                $this->assertThat($value, $this->equalTo($expected), $name);
-            }
-        }
+
+        $this->checkOptionsInDb('expected-extensions-afteroptionssave.xml');
+
 	}
 	private function assertFieldLabelText($field, $description, $label) {
-		$this->assertThat ( $this->getTitle($field), $this->matchesRegularExpression (
-            '/<strong>' . $label . '<\/strong><br \/>' . $description . '/') );
+		$this->assertThat ( $this->getTooltipTitle($field), $this->matchesRegularExpression (
+            '/' . $label . '/'));
+        $this->assertThat ( $this->getTooltipContent($field), $this->matchesRegularExpression (
+            '/' . $description . '/') );
 		$this->assertThat ( $this->byId ( 'jform_' . $field . '-lbl' )->text (), $this->matchesRegularExpression ( '/' . $label . '/' ) );
 	}
-	private function getTitle($field){
-		$title = $this->byId ( 'jform_' . $field . '-lbl' )->attribute ( 'data-original-title' );
+	private function getTooltipContent($field){
+		$title = $this->byId ( 'jform_' . $field . '-lbl' )->attribute ( 'data-content' );
 		if ($title == null){
 			return $this->byId ( 'jform_' . $field . '-lbl' )->attribute ( 'title' );
 		}
 		return $title;
 	}
+    private function getTooltipTitle($field){
+        return $this->byId ( 'jform_' . $field . '-lbl' )->attribute ( 'data-original-title' );
+    }
 	private function filterdataset($dataset) {
 		$filtereddataset = new PHPUnit_Extensions_Database_DataSet_DataSetFilter ( $dataset );
 		$filtereddataset->addIncludeTables ( array (
@@ -174,23 +167,10 @@ class configuration_Test extends reaxml_selenium_TestCase {
         sleep(2);
 		$this->byCssSelector ( 'label[for="jform_usemap0"]' )->click();
 
-		$this->byXpath ( '//button[contains(.,"Save & Close")]' )->click ();		
-		
-		$dataSet = new PHPUnit_Extensions_Database_DataSet_QueryDataSet ( $this->getConnection () );
-		$dataSet->addTable ( $GLOBALS ['DB_TBLPREFIX'] . 'extensions', 'SELECT params FROM ' . $GLOBALS ['DB_TBLPREFIX'] . 'extensions WHERE element=\'com_reaxmlimport\'' );
-		
-		$table = $this->filterdataset ( $dataSet )->getTable ( $GLOBALS ['DB_TBLPREFIX'] . 'extensions' );
-		$expectedDataset = $this->loadXMLDataSet ( __DIR__ . '/../files/expected-extensions-afteroptionssave_nousemap.xml' );
-		$expectedTable = $this->filterdataset ( $expectedDataset )->getTable ( $GLOBALS ['DB_TBLPREFIX'] . 'extensions' );
-        $this->assertThat($table->getRowCount() , $this->equalTo($expectedTable->getRowCount()));
-        for ($i=0; $i < $table->getRowCount(); $i++) {
-            $cols = $table->getTableMetaData()->getColumns();
-            foreach ($cols as $name) {
-                $value = $table->getValue($i, $name);
-                $expected = $expectedTable->getValue($i, $name);
-                $this->assertThat($value, $this->equalTo($expected), $name);
-            }
-        }
+		$this->byXpath ( '//button[contains(.,"Save & Close")]' )->click ();
+
+        $this->checkOptionsInDb('expected-extensions-afteroptionssave-nousemap.xml');
+
 	}
 	/**
 	 * @test
@@ -210,23 +190,9 @@ class configuration_Test extends reaxml_selenium_TestCase {
 		$this->byCssSelector ( 'label[for="jform_usemap1"]' )->click();
 
 		$this->byXpath ( '//button[contains(.,"Save & Close")]' )->click ();
-		
-		$dataSet = new PHPUnit_Extensions_Database_DataSet_QueryDataSet ( $this->getConnection () );
-		$dataSet->addTable ( $GLOBALS ['DB_TBLPREFIX'] . 'extensions', 'SELECT params FROM ' . $GLOBALS ['DB_TBLPREFIX'] . 'extensions WHERE element=\'com_reaxmlimport\'' );
-		
-		$table = $this->filterdataset ( $dataSet )->getTable ( $GLOBALS ['DB_TBLPREFIX'] . 'extensions' );
-		$expectedDataset = $this->loadXMLDataSet ( __DIR__ . '/../files/expected-extensions-afteroptionssave-usemapifnew.xml' );
-		$expectedTable = $this->filterdataset ( $expectedDataset )->getTable ( $GLOBALS ['DB_TBLPREFIX'] . 'extensions' );
-        $this->assertThat($table->getRowCount() , $this->equalTo($expectedTable->getRowCount()));
-        for ($i=0; $i < $table->getRowCount(); $i++) {
-            $cols = $table->getTableMetaData()->getColumns();
-            foreach ($cols as $name) {
-                $value = $table->getValue($i, $name);
-                $expected = $expectedTable->getValue($i, $name);
-                $this->assertThat($value, $this->equalTo($expected), $name);
-            }
-        }
-		
+
+        $this->checkOptionsInDb('expected-extensions-afteroptionssave-usemapifnew.xml');
+
 	}
 	/**
 	 * @test
@@ -246,26 +212,13 @@ class configuration_Test extends reaxml_selenium_TestCase {
 		$this->byCssSelector ( 'label[for="jform_usemap2"]' )->click();
 
 		$this->byXpath ( '//button[contains(.,"Save & Close")]' )->click ();
-		
-		$dataSet = new PHPUnit_Extensions_Database_DataSet_QueryDataSet ( $this->getConnection () );
-		$dataSet->addTable ( $GLOBALS ['DB_TBLPREFIX'] . 'extensions', 'SELECT params FROM ' . $GLOBALS ['DB_TBLPREFIX'] . 'extensions WHERE element=\'com_reaxmlimport\'' );
-		
-		$table = $this->filterdataset ( $dataSet )->getTable ( $GLOBALS ['DB_TBLPREFIX'] . 'extensions' );
-		$expectedDataset = $this->loadXMLDataSet ( __DIR__ . '/../files/expected-extensions-afteroptionssave-usemapalways.xml' );
-		$expectedTable = $this->filterdataset ( $expectedDataset )->getTable ( $GLOBALS ['DB_TBLPREFIX'] . 'extensions' );
-        $this->assertThat($table->getRowCount() , $this->equalTo($expectedTable->getRowCount()));
-        for ($i=0; $i < $table->getRowCount(); $i++) {
-            $cols = $table->getTableMetaData()->getColumns();
-            foreach ($cols as $name) {
-                $value = $table->getValue($i, $name);
-                $expected = $expectedTable->getValue($i, $name);
-                $this->assertThat($value, $this->equalTo($expected), $name);
-            }
-        }
+
+        $this->checkOptionsInDb('expected-extensions-afteroptionssave-usemapalways.xml');
 
 	}
 
 	/**
+     * @since 3.1
 	 * @test
 	 */
 	public function can_set_mail_configuration(){
@@ -278,11 +231,12 @@ class configuration_Test extends reaxml_selenium_TestCase {
 		$button = $this->byXpath ( '//button[contains(.,"Options")]' );
 		$button->click ();
 		sleep(1); //wait for document ready scripts to complete
-        $this->assertThat ( $this->byCssSelector ( '#configTabs li.active a' )->text (), $this->matchesRegularExpression ( '/Folders/' ) );
+        $this->assertThat ( $this->byCssSelector ( '#configTabs li a[href="#folders"]' )->text (), $this->matchesRegularExpression ( '/Folders/' ) );
+        $this->byCssSelector ( '#configTabs li a[href="#folders"]' )->click();
         $this->assertThat ( $this->byLinkText ( 'Notifications' )->displayed(), $this->isTrue ());
         $this->byLinkText ( 'Notifications' )->click();
         $this->assertThat ( $this->byId ( 'notifications' )->displayed () , $this->isTrue ());
-		$this->assertThat ( $this->byCssSelector ( '#notifications p.tab-description' )->text (), $this->stringContains ( 'Specify how REAXML Import component will provide notifications.' ) );
+		$this->assertThat ( $this->byCssSelector ( '#notifications .tab-description' )->text (), $this->stringContains ( 'Specify how REAXML Import component will provide notifications.' ) );
  		$this->assertFieldLabelText ( 'send_success', 'Do you want REAXML Import to send notifications when an import run is successful\?', 'Send on success' );
         $this->assertFieldLabelText ( 'send_nofiles', 'Do you want REAXML Import to send notifications when an import ran but no XML files were found in the input directory\?', 'Send when no files' );
         $this->assertFieldLabelText ( 'done_mail_to', 'Where do you want to the notifications sent to\? Enter the email address here.', 'Send to Address' );
@@ -323,15 +277,54 @@ class configuration_Test extends reaxml_selenium_TestCase {
 
         $this->byXpath ( '//button[contains(.,"Save & Close")]' )->click ();
 
-        $dataSet = new PHPUnit_Extensions_Database_DataSet_QueryDataSet ( $this->getConnection () );
-        $dataSet->addTable ( $GLOBALS ['DB_TBLPREFIX'] . 'extensions', 'SELECT params FROM ' . $GLOBALS ['DB_TBLPREFIX'] . 'extensions WHERE element=\'com_reaxmlimport\'' );
+        $this->checkOptionsInDb('expected-extensions-afteroptionssave-notifications.xml');
 
-        $table = $this->filterdataset ( $dataSet )->getTable ( $GLOBALS ['DB_TBLPREFIX'] . 'extensions' );
-        $expectedDataset = $this->loadXMLDataSet ( __DIR__ . '/../files/expected-extensions-afteroptionssave-notifications.xml' );
-        $expectedTable = $this->filterdataset ( $expectedDataset )->getTable ( $GLOBALS ['DB_TBLPREFIX'] . 'extensions' );
+    }
 
-        $this->assertThat($table->getRowCount() , $this->equalTo($expectedTable->getRowCount()));
-        for ($i=0; $i < $table->getRowCount(); $i++) {
+    /**
+     * @since 3.6
+     * @test
+     */
+    public function can_set_default_country (){
+        $this->loadExtension();
+        $link = $this->byLinkText ( 'Components' );
+        $link->click ();
+        $link = $this->byLinkText ( 'REAXML Import' );
+        $link->click ();
+        sleep(2);
+        $button = $this->byXpath ( '//button[contains(.,"Options")]' );
+        $button->click ();
+        sleep(1); //wait for document ready scripts to complete
+        $this->assertThat ( $this->byCssSelector ( '#configTabs li a[href="#folders"]' )->text (), $this->matchesRegularExpression ( '/Folders/' ) );
+        $this->byCssSelector ( '#configTabs li a[href="#folders"]' )->click();
+        $this->assertThat ( $this->byLinkText ( 'Defaults' )->displayed(), $this->isTrue ());
+        $this->byLinkText ( 'Defaults' )->click();
+        $this->assertThat ( $this->byCssSelector ( '#defaults .tab-description' )->text (), $this->stringContains ( 'Specify various default values for missing field values in imports.' ) );
+        $this->assertFieldLabelText ( 'default_country', 'Default country name for property Address\. Should be a country name found in EZ-Realty\.', 'Address\/Country' );
+        $this->select($this->byId('jform_default_country'))->selectOptionByValue('Australia');
+        $this->byXpath ( '//button[contains(.,"Save & Close")]' )->click ();
+
+        $this->checkOptionsInDb('expected-extensions-afteroptionssave-defaults.xml');
+
+    }
+
+    /**
+     * @param $str
+     *
+     *
+     * @since version
+     */
+    private function checkOptionsInDb($str)
+    {
+        $dataSet = new PHPUnit_Extensions_Database_DataSet_QueryDataSet ($this->getConnection());
+        $dataSet->addTable($GLOBALS ['DB_TBLPREFIX'] . 'extensions', 'SELECT params FROM ' . $GLOBALS ['DB_TBLPREFIX'] . 'extensions WHERE element=\'com_reaxmlimport\'');
+
+        $table = $this->filterdataset($dataSet)->getTable($GLOBALS ['DB_TBLPREFIX'] . 'extensions');
+        $expectedDataset = $this->loadXMLDataSet(__DIR__ . '/../files/' . $str);
+        $expectedTable = $this->filterdataset($expectedDataset)->getTable($GLOBALS ['DB_TBLPREFIX'] . 'extensions');
+
+        $this->assertThat($table->getRowCount(), $this->equalTo($expectedTable->getRowCount()));
+        for ($i = 0; $i < $table->getRowCount(); $i++) {
             $cols = $table->getTableMetaData()->getColumns();
             foreach ($cols as $name) {
                 $value = $table->getValue($i, $name);
@@ -340,6 +333,13 @@ class configuration_Test extends reaxml_selenium_TestCase {
             }
         }
     }
-
 }
+/*
+ *
+Expected :'{"input_dir":"input","input_url":"\/input","work_dir":"work","work_url":"\/work","done_dir":"done","done_url":"\/done","log_dir":"log","log_url":"\/log","error_dir":"error","error_url":"\/error","send_success":1,"send_nofiles":0,"done_mail_to":"","error_mail_to":"","mail_from_address":"","mail_from_name":"","subject":"REAXML Import Notification: {status}","usemap":0,"default_country":"Australia","update_dlid":""}'
+Actual   :'{"input_dir":"input","input_url":"\/input","work_dir":"work","work_url":"\/work","done_dir":"done","done_url":"\/done","log_dir":"log","log_url":"\/log","error_dir":"error","error_url":"\/error","send_success":1,"send_nofiles":0,"done_mail_to":"","error_mail_to":"","mail_from_address":"","mail_from_name":"","subject":"REAXML Import Notification: {status}","usemap":0,"default_country":"Australia","update_dlid":""}'
+
+ *
+ */
+
 ?>

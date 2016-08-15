@@ -225,6 +225,7 @@ class Import_Test extends reaxml_selenium_TestCase {
 		$filtereddataset->setIncludeColumnsForTable ( $GLOBALS ['DB_TBLPREFIX'] . 'extensions', array (
 				'params' 
 		) ); */
+        $filtereddataset->setExcludeColumnsForTable($GLOBALS ['DB_TBLPREFIX'] . 'extensions',['custom3']);
 		return $filtereddataset;
 	}
 

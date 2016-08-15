@@ -2,10 +2,10 @@
 /**
  *
  * @package Component REAXML Import for Joomla! 3.4
- * @version 1.5.11: reaxml-importer.php 2015-07-24T00:42:53.638
+ * @version 1.5.26: reaxml-importer.php 2016-08-15T02:12:57.600
  * @author Clifton IT Foundries Pty Ltd
  * @link http://cliftonwebfoundry.com.au
- * @copyright Copyright (c) 2014, 2015 Clifton IT Foundries Pty Ltd. All rights Reserved
+ * @copyright Copyright (c) 2014, 2015, 2016 Clifton IT Foundries Pty Ltd. All rights Reserved
  * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  *
  **/
@@ -101,6 +101,9 @@ require_once JPATH_LIBRARIES . '/import.legacy.php';
 // Bootstrap the CMS libraries.
 require_once JPATH_LIBRARIES . '/cms.php';
 
+// Import the configuration.
+require_once JPATH_CONFIGURATION . '/configuration.php';
+
 // Load the JApplicationCli class
 JLoader::import('joomla.application.cli');
 
@@ -141,7 +144,9 @@ if (!class_exists('ReaxmlImporterCLI')) {
 			$configuration->error_url = $params->get('error_url');
 			$configuration->log_url = $params->get('log_url');
 			$configuration->usemap = $params->get('usemap', 0);
-			return $configuration;
+            $configuration->default_country = $params->get('default_country', 0);
+
+            return $configuration;
 		}
 	}
 }

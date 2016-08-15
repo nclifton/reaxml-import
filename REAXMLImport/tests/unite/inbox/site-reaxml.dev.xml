@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <unite>
+	<!--<s3>-->
+	    <!--<secretkey>/9z5OmzxlTQ/lDRN2QV7JD6mmFwDdYyZ12phk7SX</secretkey>-->
+	    <!--<accesskey>AKIAJT4HN4P63CYVQ2HA</accesskey>-->
+	    <!--<bucket>cwf-cwf</bucket>-->
+	    <!--<filename>akeeba-backup/reaxml/site-dev-test.jpa</filename>-->
+	<!--</s3>-->
 
 	<siteInfo>
-		<package>site-reaxml.dev.jpa</package>
-		<deletePackage>0</deletePackage>
+		<!--<package from="s3">site-dev-test.jpa</package>-->
+        <package>site-dev-test.jpa</package>
+        <deletePackage>0</deletePackage>
 		<localLog>site-reaxml.dev.log</localLog>
 		<emailSysop>0</emailSysop>
 		<name>REAXML TEST SITE</name>
 		<email>website@reaxmltest</email>
         <absolutepath>/Users/nclifton/git/reaxml-import/REAXMLImport/tests/htdocs</absolutepath>
-        <adminID>624</adminID>
         <adminUser>admin</adminUser>
         <adminPassword>admin</adminPassword>
 	</siteInfo>
@@ -17,7 +23,7 @@
 	<databaseInfo>
 		<database name="site">
 			<changecollation>0</changecollation>
-			<dbdriver>mysql</dbdriver>
+			<dbdriver>mysqli</dbdriver>
 			<dbhost>localhost</dbhost>
 			<dbuser>root</dbuser>
 			<dbpass>root</dbpass>

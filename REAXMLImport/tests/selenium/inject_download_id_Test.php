@@ -36,7 +36,12 @@ class inject_download_id_Test extends reaxml_selenium_TestCase {
 		$this->assertTrue ( $this->byId ( 'update' )->displayed () );
 		$this->assertTrue ( $this->byId ( 'jform_update_dlid-lbl' )->displayed () );
 		$labelTitle = $this->byID ( 'jform_update_dlid-lbl' )->attribute ( 'data-original-title' );
-		$this->assertEquals ( '<strong>Download ID</strong><br />This is required to enable live updates of this extension. Please visit https://cliftonwebfoundry.com.au/profile to get your personal Download ID.', $labelTitle );
+        $labelContent = $this->byID ( 'jform_update_dlid-lbl' )->attribute ( 'data-content' );
+
+
+        $this->assertEquals ( 'Download ID', $labelTitle );
+        $this->assertEquals ( 'This is required to enable live updates of this extension. Please visit '
+            . 'https://cliftonwebfoundry.com.au/profile to get your personal Download ID.', $labelContent );
 		$this->assertRegExp ( '/Download ID/', $this->byId ( 'jform_update_dlid-lbl' )->text () );
 		$this->assertTrue ( $this->byId ( 'jform_update_dlid' )->displayed () );
 		$this->byId ( 'jform_update_dlid' )->value ( '9fea9accd48b745c0c5d71f2213e2c3d' );

@@ -1,0 +1,102 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE propertyList SYSTEM "http://reaxml.realestate.com.au/propertyList.dtd">
+<propertyList date="2016-08-12-01:24:07" username="commaust" password="commaust">
+<rental modTime="2016-08-12-01:10" status="current">
+<agentID>26027</agentID>
+<clientID>chehader</clientID>
+<uniqueID>10080404</uniqueID>
+<authority value="exclusive" />
+
+
+<listingAgent id="1">
+<name>Lena Allouche</name>
+<agentid>340595</agentid>
+<telephone type="mobile">0424 172 685</telephone>
+<telephone type="BH">8260 4333</telephone>
+<email>rentals@triorealty.com.au</email>
+</listingAgent>
+
+<dateAvailable>2016-08-01-00:00</dateAvailable>
+<rent display="yes" period="week">360</rent>
+<priceView></priceView>
+<bond>2160</bond>
+
+
+
+<address display="yes">
+<country>AUSTRALIA</country>
+<streetNumber>9</streetNumber>
+<street>Caroona Ave</street>
+<suburb display="yes">MODBURY HEIGHTS</suburb>
+<state>SA</state>
+<postcode>5092</postcode>
+</address>
+<category name="House"/>
+<headline><![CDATA[Brand New Three Bedroom Home]]></headline>
+<description><![CDATA[This New Three Bedroom home close to the school and transport boast many features.
+- Master Bedroom with ensuite and walk in robe.
+- 2nd & 3rd Bedroom built-in wardrobes
+- Spacious Kitchen with Stainless steel appliances, gas hotplates and plenty of cupboards
+- open plan family area leading out to a paved entertaining area.
+- Main bathroom with deep bath
+- Floating floors through-out
+- ducted heating and cooling through out.
+- lock up carport under main roof.
+- Low maintenance gardens
+Take a dive past and call Trio Realty 82604333 Realty to arrange a viewing time.]]></description>
+<features>
+<bedrooms>3</bedrooms>
+<bathrooms>2</bathrooms>
+<garages>1</garages>
+<carports>0</carports>
+<airConditioning>1</airConditioning>
+<pool>0</pool>
+<alarmSystem>0</alarmSystem>
+<otherFeatures>Built-In Wardrobes,Close to Schools,Close to Shops,Close to Transport,Secure Parking</otherFeatures>
+</features>
+<holiday value="no" />
+<inspectionTimes></inspectionTimes>
+<images>
+<img id="m" modTime="2016-07-28-11:31" url="http://mydesktop.aunz.s3-website-ap-southeast-2.amazonaws.com/chehader/photos/7115-CaroonaAveModburyHeights923.JPG"/>
+<img id="a" modTime="2016-07-28-11:31" url="http://mydesktop.aunz.s3-website-ap-southeast-2.amazonaws.com/chehader/photos/7091-CaroonaAveModburyHeights91.JPG"/>
+<img id="b" modTime="2016-07-28-11:31" url="http://mydesktop.aunz.s3-website-ap-southeast-2.amazonaws.com/chehader/photos/28298-CaroonaAveModburyHeights93.JPG"/>
+<img id="c" modTime="2016-07-28-11:31" url="http://mydesktop.aunz.s3-website-ap-southeast-2.amazonaws.com/chehader/photos/7834-CaroonaAveModburyHeights925.JPG"/>
+<img id="d" modTime="2016-07-28-11:31" url="http://mydesktop.aunz.s3-website-ap-southeast-2.amazonaws.com/chehader/photos/16487-CaroonaAveModburyHeights917.JPG"/>
+<img id="e" modTime="2016-07-28-11:31" url="http://mydesktop.aunz.s3-website-ap-southeast-2.amazonaws.com/chehader/photos/16881-CaroonaAveModburyHeights929.JPG"/>
+<img id="f" modTime="2016-07-28-11:31" url="http://mydesktop.aunz.s3-website-ap-southeast-2.amazonaws.com/chehader/photos/30537-CaroonaAveModburyHeights930.JPG"/>
+<img id="g" modTime="2016-07-28-11:31" url="http://mydesktop.aunz.s3-website-ap-southeast-2.amazonaws.com/chehader/photos/26494-CaroonaAveModburyHeights97.JPG"/>
+<img id="h" modTime="2016-07-28-11:31" url="http://mydesktop.aunz.s3-website-ap-southeast-2.amazonaws.com/chehader/photos/10559-CaroonaAveModburyHeights98.JPG"/>
+<img id="i" modTime="2016-07-28-11:31" url="http://mydesktop.aunz.s3-website-ap-southeast-2.amazonaws.com/chehader/photos/18649-CaroonaAveModburyHeights912.JPG"/>
+<img id="j" modTime="2016-07-28-11:31" url="http://mydesktop.aunz.s3-website-ap-southeast-2.amazonaws.com/chehader/photos/31412-CaroonaAveModburyHeights915.JPG"/>
+<img id="k" />
+<img id="l" />
+<img id="n" />
+<img id="o" />
+<img id="p" />
+<img id="q" />
+<img id="r" />
+<img id="s" />
+<img id="t" />
+<img id="u" />
+<img id="v" />
+<img id="w" />
+<img id="x" />
+<img id="y" />
+<img id="z" />
+</images>
+<objects>
+<floorplan id="1" />
+</objects>
+
+<FeatureProperty>0</FeatureProperty>
+<Geocode>
+<GoogleKey><![CDATA[]]></GoogleKey>
+<Latitude><![CDATA[-34.8176924]]></Latitude>
+<Longitude><![CDATA[138.6676277]]></Longitude>
+</Geocode>
+
+<allowances><furnished>0</furnished>
+</allowances>
+</rental>
+</propertyList>
+   

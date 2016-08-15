@@ -1,0 +1,187 @@
+<propertyList date="2014-10-28-05:50:05" username="wdg" password="WDG4rea">
+  <commercial modTime="2014-10-28-05:50:03" status="current">
+    <agentID>PUWSTM</agentID>
+    <uniqueID>2571892</uniqueID>
+    <commercialAuthority value="forsale" />
+    <exclusivity value="exclusive" />
+    <commercialListingType value="sale" />
+    <listingAgent id="1">
+      <name>PETER PAZIOS</name>
+      <telephone type="mobile">0411 289 964</telephone>
+      <email>peter@pullman-williams.com.au</email>
+    </listingAgent>
+    <listingAgent id="2" />
+    <listingAgent id="3" />
+    <price tax="exclusive" display="yes">1300000.00</price>
+    <isMultiple value="no" />
+    <address display="yes">
+      <subNumber />
+      <streetNumber>44</streetNumber>
+      <street>Peachtree Road</street>
+      <suburb display="yes">PENRITH</suburb>
+      <state>NSW</state>
+      <postcode>2750</postcode>
+    </address>
+    <commercialCategory id="1" name="Industrial/Warehouse" />
+    <headline>FREESTANDING FACTORY WITH POTENTIAL</headline>
+    <description><![CDATA[* Five roller doors
+* Configured as three individual units
+* All units have offices and amenities
+* Good loading and parking areas
+* Building can be adapted as showroom
+* Good Natural light to warehousing area
+* Available with vacant possession]]></description>
+    <landDetails>
+      <area unit="squareMeter">2184</area>
+    </landDetails>
+    <buildingDetails>
+      <area unit="squareMeter">1071</area>
+    </buildingDetails>
+    <externalLink href="" />
+    <videoLink href="" />
+    <objects>
+      <img id="m" url="http://admin.pullman-williams.com.au/upload/images/5623594-image-M.jpg" format="jpg" />
+    </objects>
+    <miniweb>
+      <uri id="1" />
+    </miniweb>
+  </commercial>
+  <commercial modTime="2014-10-28-05:50:03" status="current">
+    <agentID>PUWSTM</agentID>
+    <uniqueID>2709341</uniqueID>
+    <commercialAuthority />
+    <exclusivity value="exclusive" />
+    <commercialListingType value="lease" />
+    <listingAgent id="1">
+      <name>GLEN ROBERTSON</name>
+      <telephone type="mobile">0414 672 729</telephone>
+      <email>glen@pullman-williams.com.au</email>
+    </listingAgent>
+    <listingAgent id="2" />
+    <listingAgent id="3" />
+    <commercialRent tax="exclusive" period="annual">36000.00</commercialRent>
+    <isMultiple value="no" />
+    <address display="yes">
+      <subNumber />
+      <streetNumber>Unit D, 21</streetNumber>
+      <street>Power Street</street>
+      <suburb display="yes">ST MARYS</suburb>
+      <state>NSW</state>
+      <postcode>2760</postcode>
+      <country>AUSTRALIA</country>
+    </address>
+    <commercialCategory id="1" name="Industrial/Warehouse" />
+    <headline>GREAT STORAGE FOR CHEAP RENT</headline>
+    <description><![CDATA[* Wooden floors
+* Fluro lights throughout
+* Three small roller doors
+* One large sliding door
+* Front and rear entrance
+* Front loading dock
+* On street parking]]></description>
+    <buildingDetails>
+      <area unit="squareMeter">800</area>
+    </buildingDetails>
+    <externalLink href="" />
+    <videoLink href="" />
+    <objects>
+      <img id="a" url="http://admin.pullman-williams.com.au/upload/images/5656101-image-A.jpg" format="jpg" />
+      <img id="b" />
+      <img id="c" />
+      <img id="d" />
+      <img id="e" />
+      <img id="f" />
+      <img id="g" />
+      <img id="h" />
+      <img id="i" />
+      <img id="j" />
+      <img id="k" />
+      <img id="l" />
+      <img id="m" url="http://admin.pullman-williams.com.au/upload/images/5656101-image-M.jpg" format="jpg" />
+      <img id="n" />
+      <img id="o" />
+      <img id="p" />
+      <img id="q" />
+      <img id="r" />
+      <img id="s" />
+      <img id="t" />
+      <img id="u" />
+      <img id="v" />
+      <img id="w" />
+      <img id="x" />
+      <img id="y" />
+      <img id="z" />
+    </objects>
+    <miniweb>
+      <uri id="1" />
+    </miniweb>
+  </commercial>
+  <commercial modTime="2014-10-28-05:50:03" status="current">
+    <agentID>PUWSTM</agentID>
+    <uniqueID>3222432</uniqueID>
+    <commercialAuthority />
+    <exclusivity value="exclusive" />
+    <commercialListingType value="lease" />
+    <listingAgent id="1">
+      <name>FRANK BLEFARI</name>
+      <telephone type="mobile">0414 314 731</telephone>
+      <email>frank@pullman-williams.com.au</email>
+    </listingAgent>
+    <listingAgent id="2" />
+    <listingAgent id="3" />
+    <commercialRent tax="exclusive" period="annual">25500.00</commercialRent>
+    <isMultiple value="no" />
+    <address display="yes">
+      <subNumber />
+      <streetNumber>23/541</streetNumber>
+      <street>High Street</street>
+      <suburb display="yes">PENRITH</suburb>
+      <state>NSW</state>
+      <postcode>2750</postcode>
+      <country>AUSTRALIA</country>
+    </address>
+    <commercialCategory id="1" name="Retail" />
+    <headline>POPULAR CBD ARCADE</headline>
+    <description><![CDATA[* Would suite professional rooms
+* Located in Skipton's arcade
+* Council car park at rear
+* Long term traders in arcade
+* Large windows at front and rear of premises]]></description>
+    <buildingDetails>
+      <area unit="squareMeter">147</area>
+    </buildingDetails>
+    <externalLink href="" />
+    <videoLink href="" />
+    <objects>
+      <img id="a" url="http://admin.pullman-williams.com.au/upload/images/5748418-image-A.jpg" format="jpg" />
+      <img id="b" url="http://admin.pullman-williams.com.au/upload/images/5748418-image-B.jpg" format="jpg" />
+      <img id="c" />
+      <img id="d" />
+      <img id="e" />
+      <img id="f" />
+      <img id="g" />
+      <img id="h" />
+      <img id="i" />
+      <img id="j" />
+      <img id="k" />
+      <img id="l" />
+      <img id="m" url="http://admin.pullman-williams.com.au/upload/images/5748418-image-M.jpg" format="jpg" />
+      <img id="n" />
+      <img id="o" />
+      <img id="p" />
+      <img id="q" />
+      <img id="r" />
+      <img id="s" />
+      <img id="t" />
+      <img id="u" />
+      <img id="v" />
+      <img id="w" />
+      <img id="x" />
+      <img id="y" />
+      <img id="z" />
+    </objects>
+    <miniweb>
+      <uri id="1" />
+    </miniweb>
+  </commercial>
+</propertyList>

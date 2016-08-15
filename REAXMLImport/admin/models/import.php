@@ -4,10 +4,10 @@ defined ( '_JEXEC' ) or die ( 'Restricted access' );
 /**
  *
  * @package Component REAXML Import for Joomla! 3.4
- * @version 1.5.11: import.php 2015-07-24T00:42:53.638
+ * @version 1.5.26: import.php 2016-08-15T02:12:57.600
  * @author Clifton IT Foundries Pty Ltd
  * @link http://cliftonwebfoundry.com.au
- * @copyright Copyright (c) 2014, 2015 Clifton IT Foundries Pty Ltd. All rights Reserved
+ * @copyright Copyright (c) 2014, 2015, 2016 Clifton IT Foundries Pty Ltd. All rights Reserved
  * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  *
  **/
@@ -24,7 +24,9 @@ class ReaXmlImportModelsImport extends JModelBase {
 		$configuration->error_dir = $params->get ( 'error_dir' );
 		$configuration->log_dir = $params->get ( 'log_dir' );
 		$configuration->usemap = $params->get( 'usemap' );
-		return $configuration;
+        $configuration->default_country = $params->get( 'default_country' );
+
+        return $configuration;
 	}
 	public function getLatestLog() {
 		$params = JComponentHelper::getParams ( 'com_reaxmlimport' );

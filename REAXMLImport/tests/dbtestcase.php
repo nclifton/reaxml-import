@@ -25,17 +25,36 @@ abstract class Reaxml_Tests_DatabaseTestCase extends PHPUnit_Extensions_Database
 		return self::$pdo->query ( 'SHOW COLUMNS FROM '.$GLOBALS ['DB_DBNAME'].'.'.$GLOBALS['DB_TBLPREFIX'].'ezrealty' );
 	}
 	protected static function restoreJoomla(){
-        self::rmdir_recursive(realpath(__DIR__.'/htdocs'));
-		shell_exec('php '.__DIR__.'/../unite/unite.php');
-		sleep(2); // wait for clean up to complete
+        $output = [];
+        $exitcode = 0;
+        $path1 = __DIR__ . '/unite';
+        $workDir = realpath($path1);
+        $path = __DIR__ . '/htdocs';
+        $htdocs = realpath($path);
+
+        exec('rm -r '.$htdocs.' && mkdir '.$htdocs,$output,$exitcode);
+        foreach ($output as $line){
+            echo $line."\n";
+            if ($line == 'Total definitions failed to run        : 1')
+                exit(1);
+        }
+        exec('cd ' . $workDir .' && php unite.php',$output,$exitcode);
+        foreach ($output as $line){
+            echo $line."\n";
+            if ($line == 'Total definitions failed to run        : 1')
+                exit(1);
+        }
 	}
     protected static function rmdir_recursive($dir) {
-        foreach(scandir($dir) as $file) {
-            if ('.' === $file || '..' === $file) continue;
-            if (is_dir("$dir/$file")) self::rmdir_recursive("$dir/$file");
-            else unlink("$dir/$file");
+        if (!empty($dir)) {
+            foreach(scandir($dir) as $file) {
+                if ('.' === $file || '..' === $file) continue;
+                if (is_dir("$dir/$file")) self::rmdir_recursive("$dir/$file");
+                else unlink("$dir/$file");
+            }
+            rmdir($dir);
         }
-        rmdir($dir);
+
     }
 
 }
