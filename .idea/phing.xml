@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhingConfiguration">
+    <buildFilePaths>
+      <buildFile options="" path="file://$PROJECT_DIR$/build.xml">
+        <option name="properties">
+          <list>
+            <property name="lib_extension" value="lib_reaxml" />
+            <property name="version" value="1.6.0" />
+            <property name="com_extension" value="com_reaxmlimport" />
+          </list>
+        </option>
+        <targetsToHide>
+          <target value="_prepare" />
+          <target value="_build" />
+          <target value="_dist" />
+          <target value="_clean" />
+          <target value="_sync" />
+          <target value="_media" />
+          <target value="_module" />
+          <target value="_component" />
+          <target value="_plugin" />
+          <target value="_library" />
+          <target value="_template" />
+          <target value="_customtasks" />
+          <target value="_package" />
+        </targetsToHide>
+      </buildFile>
+    </buildFilePaths>
+    <phingPath>$PROJECT_DIR$/phing-latest.phar</phingPath>
+  </component>
+</project>

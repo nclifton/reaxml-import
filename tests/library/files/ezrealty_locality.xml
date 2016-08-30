@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+
+<resultset statement="SELECT * FROM `joomla-reaxml`.j_ezrealty_locality
+LIMIT 0, 1000
+"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<row>
+		<field name="id">4</field>
+		<field name="stateid">1</field>
+		<field name="ezcity">Camden</field>
+		<field name="alias">camden</field>
+		<field name="postcode">2570</field>
+		<field name="declat"></field>
+		<field name="declong"></field>
+		<field name="zoom">0</field>
+		<field name="owncoords">0</field>
+		<field name="image"></field>
+		<field name="ezcity_desc"></field>
+		<field name="metadesc"></field>
+		<field name="metakey"></field>
+		<field name="published">1</field>
+		<field name="language">*</field>
+		<field name="checked_out">0</field>
+		<field name="checked_out_time">0000-00-00 00:00:00</field>
+		<field name="ordering">1</field>
+	</row>
+
+	<row>
+		<field name="id">5</field>
+		<field name="stateid">2</field>
+		<field name="ezcity">RICHMOND</field>
+		<field name="alias">richmond</field>
+		<field name="postcode">3121</field>
+		<field name="declat"></field>
+		<field name="declong"></field>
+		<field name="zoom">0</field>
+		<field name="owncoords">0</field>
+		<field name="image"></field>
+		<field name="ezcity_desc"></field>
+		<field name="metadesc"></field>
+		<field name="metakey"></field>
+		<field name="published">1</field>
+		<field name="language">*</field>
+		<field name="checked_out">0</field>
+		<field name="checked_out_time">0000-00-00 00:00:00</field>
+		<field name="ordering">1</field>
+	</row>
+
+	<row>
+		<field name="id">6</field>
+		<field name="stateid">1</field>
+		<field name="ezcity">PENRITH</field>
+		<field name="alias">penrith</field>
+		<field name="postcode">2750</field>
+		<field name="declat"></field>
+		<field name="declong"></field>
+		<field name="zoom">0</field>
+		<field name="owncoords">0</field>
+		<field name="image"></field>
+		<field name="ezcity_desc"></field>
+		<field name="metadesc"></field>
+		<field name="metakey"></field>
+		<field name="published">1</field>
+		<field name="language">*</field>
+		<field name="checked_out">0</field>
+		<field name="checked_out_time">0000-00-00 00:00:00</field>
+		<field name="ordering">1</field>
+	</row>
+</resultset>

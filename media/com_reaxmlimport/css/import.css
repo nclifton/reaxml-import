@@ -1,0 +1,62 @@
+@CHARSET "US-ASCII";
+
+/*!    
+ * Copyright (C) 2014 Clifton IT Foundries Pty Ltd. All rights reserved.
+ * GNU General Public License version 3 or later.
+ */
+#reaxmlimportAdminContainer:after {
+	clear: both;
+}
+
+.ui-widget {
+	font-family: inherit;
+}
+
+.ui-accordion .ui-accordion-header {
+	font-weight: bold;
+	background-color: #c0c0c0;
+	background-image: none;
+	border: 2px solid #c0c0c0;
+	padding: 0 0 0 2.2em;
+	border: 2px solid #c0c0c0;
+}
+
+.ui-accordion .ui-accordion-content {
+	padding: 4px;
+}
+
+.ui-widget-content a {
+	color: #08c;
+}
+
+.filelistouter {
+	float: left;
+}
+
+.logcontentlabel {
+	font-weight: bold;
+	background-color: #c0c0c0;
+	font-size: 1.1em;
+	line-height: 1.5em;
+}
+
+.logcontentouter {
+	border: 2px solid #c0c0c0;
+	border-radius: 4px;
+	min-width: 200px;
+	float: left;
+	margin: 2px;
+}
+
+.logcontentinner {
+	padding: 0 4px;
+	white-space: pre;
+}
+
+#importWidget.btn {
+	width: 100px;
+}
+
+#updateWidget.btn {
+	width: 100px;
+}

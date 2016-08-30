@@ -1,0 +1,221 @@
+<propertyList date="2015-03-31-09:27:16" username="xxx" password="xxx">
+
+	<rental modTime="2015-03-31-09:27:16" status="current">
+
+		<agentID>14148</agentID>
+
+		<uniqueID>2094177</uniqueID>
+
+		<listingAgent id="1">
+
+			<name>Sharyn Callander</name>
+
+			<telephone type="BH">0423 688 409</telephone>
+
+			<telephone type="mobile">0423 688 409</telephone>
+
+			<email>sharyn@ethanproperty.com.au</email>
+
+		</listingAgent>
+		<listingAgent id="2"></listingAgent>
+
+		<address display="yes">
+
+			<subNumber></subNumber>
+
+			<streetNumber>159</streetNumber>
+
+			<street>Holts Lane</street>
+
+			<suburb>BACCHUS MARSH</suburb>
+
+			<state>VIC</state>
+
+			<postcode>3340</postcode>
+
+			<country>Australia</country>
+
+			<latitude>-37.6759953</latitude>
+
+			<longitude>144.43883449999998</longitude>
+
+		</address>
+
+		<rent period="weekly" display="yes">358</rent>
+
+		<priceView></priceView>
+
+		<headline><![CDATA[ROOM FOR THE ENTIRE FAMILY]]></headline>
+
+		<description><![CDATA[TO APPLY FOR THIS PROPERTY PLEASE COPY THIS LINK INTO YOUR BROWSER:
+
+www.ethanproperty.com.au/apply
+
+
+
+This great home features 5 bedrooms, walk in robe and ensuite to main and built in robes to remaining bedrooms. 
+
+Fantastic living areas including open plan meals/family plus separate rumpus plus a covered alfresco area for summer. The ensuite features double vanity and the main bathroom with bath, shower and separate toilet. Modern kitchen with stainless steel appliances including dishwasher. Completing this great package is ducted heating, evaporative cooling and double garage.]]></description>
+
+		<externalLink href="" />
+		<externalLink href="" />
+
+		<videoLink href="" />
+
+		<dateAvailable>2015-04-23</dateAvailable>
+
+		<bond>1552</bond>
+
+		<category name="House" />
+
+		<allowances>
+
+			<petFriendly>0</petFriendly>
+
+			<furnished>0</furnished>
+
+			<smokers>0</smokers>
+
+		</allowances>
+
+		<features>
+
+			<bedrooms>5</bedrooms>
+
+			<bathrooms>2</bathrooms>
+
+			<ensuite></ensuite>
+
+			<garages>2</garages>
+
+			<carports></carports>
+
+			<remoteGarage></remoteGarage>
+
+			<secureParking></secureParking>
+
+			<airConditioning></airConditioning>
+
+			<alarmSystem></alarmSystem>
+
+			<vacuumSystem></vacuumSystem>
+
+			<intercom></intercom>
+
+			<poolInGround></poolInGround>
+
+			<spa></spa>
+
+			<insideSpa></insideSpa>
+
+			<outsideSpa></outsideSpa>
+
+			<tennisCourt></tennisCourt>
+
+			<balcony></balcony>
+
+			<courtyard></courtyard>
+
+			<outdoorEnt></outdoorEnt>
+
+			<shed></shed>
+
+			<openFirePlace></openFirePlace>
+
+			<broadband></broadband>
+
+			<builtInRobes>1</builtInRobes>
+
+			<dishwasher>1</dishwasher>
+
+			<gym></gym>
+
+			<payTV></payTV>
+
+			<study></study>
+
+			<workshop></workshop>
+
+			<openSpaces></openSpaces>
+
+			<otherFeatures>ducted heating, evaporative cooling</otherFeatures>
+
+		</features>
+
+		<landDetails>
+
+			<area unit="squareMeter"></area>
+
+		</landDetails>
+
+		<buildingDetails>
+
+			<area unit="squareMeter"></area>
+
+		</buildingDetails>
+
+		<inspectionTimes></inspectionTimes>
+
+		<objects>
+
+			<img id="m" modTime="2015-03-30-15:42:23" url="http://img.agentaccount.com/b82373ba757610c149957046dff11dbbcd6a9020" format="jpg" />
+
+			<img id="a" modTime="2015-03-30-15:42:27" url="http://img.agentaccount.com/751ddba9fb121e274651256989e01b2829697fec" format="jpg" />
+
+			<img id="b" modTime="2015-03-30-15:42:33" url="http://img.agentaccount.com/ed8f070b6bc39475182e83b50ec69fdcae9095d3" format="jpg" />
+
+			<img id="c" modTime="2015-03-30-15:42:40" url="http://img.agentaccount.com/fb0c1d40131c3d6a422252ade1a88671330bca46" format="jpg" />
+
+			<img id="d" modTime="2015-03-30-15:42:51" url="http://img.agentaccount.com/b520b597b728fec67cc56dd63847cc97f6098b3c" format="jpg" />
+
+			<img id="e" modTime="2015-03-30-15:43:00" url="http://img.agentaccount.com/d55e6649401b82758f73777b4b1579bfae16a15a" format="jpg" />
+
+			<img id="f" modTime="2015-03-30-15:43:10" url="http://img.agentaccount.com/13be2647f8084922407759e627492ebb068a8a90" format="jpg" />
+
+			<img id="g" modTime="2015-03-30-15:43:15" url="http://img.agentaccount.com/a2a9390fc84138318f3d9fc5982b06ced2b962cc" format="jpg" />
+
+			<img id="h" />
+
+			<img id="i" />
+
+			<img id="j" />
+
+			<img id="k" />
+
+			<img id="l" />
+
+			<img id="n" />
+
+			<img id="o" />
+
+			<img id="p" />
+
+			<img id="q" />
+
+			<img id="r" />
+
+			<img id="s" />
+
+			<img id="t" />
+
+			<img id="u" />
+
+			<img id="v" />
+
+			<img id="w" />
+
+			<img id="x" />
+
+			<img id="y" />
+
+			<img id="z" />
+
+			<floorplan id="1" />
+
+			<floorplan id="2" />
+
+		</objects>
+
+	</rental>
+
+</propertyList>

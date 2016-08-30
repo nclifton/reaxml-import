@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<database name="joomla-reaxml">
+		<table_data name="j_ezrealty_catg">
+			<row>
+				<field name="id">1</field>
+				<field name="name">House</field>
+				<field name="alias">house</field>
+				<field name="description"></field>
+				<field name="image"></field>
+				<field name="metadesc"></field>
+				<field name="metakey"></field>
+				<field name="access">1</field>
+				<field name="published">1</field>
+				<field name="language">*</field>
+				<field name="ordering">1</field>
+				<field name="checked_out">0</field>
+				<field name="checked_out_time">0000-00-00 00:00:00</field>
+			</row>
+
+			<!-- Argology -->
+			<row>
+				<field name="id">2</field>
+				<field name="name">Arcology</field>
+				<field name="alias">arcology</field>
+				<field name="description"></field>
+				<field name="image"></field>
+				<field name="metadesc"></field>
+				<field name="metakey"></field>
+				<field name="access">1</field>
+				<field name="published">1</field>
+				<field name="language">*</field>
+				<field name="ordering">1</field>
+				<field name="checked_out">0</field>
+				<field name="checked_out_time">0000-00-00 00:00:00</field>
+			</row>
+		</table_data>
+	</database>
+</mysqldump>
+

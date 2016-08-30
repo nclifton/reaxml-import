@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension method="upgrade" type="library" version="3.0">
+	<name>REAXML Library</name>
+	<libraryname>reaxml</libraryname>
+	<author>Clifton IT Foundries Pty Ltd</author>
+	<creationDate>August 2016</creationDate>
+	<copyright>Copyright (c) 2014, 2015, 2016 Clifton IT Foundries Pty Ltd. All rights
+		Reserved
+	</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<authorEmail>neil.clifton@cliftonwebfoundry.com.au</authorEmail>
+	<authorUrl>http://cliftonwebfoundry.com.au</authorUrl>
+	<version>[VERSION]</version>
+	<description>REAXML Library</description>
+
+	<files>
+		<folder>configuration</folder>
+		<folder>db</folder>
+		<folder>ezr</folder>
+		<folder>importer</folder>
+		<folder>language</folder>
+		<folder>maphelper</folder>
+ 		<filename>gpl-3.0.txt</filename>
+	</files>
+	<updateservers>
+		<server name="REAXML Library" priority="1" type="extension">http://cliftonwebfoundry.com.au/index.php?option=com_ars&amp;view=update&amp;task=stream&amp;format=xml&amp;id=2</server>
+	</updateservers>
+
+</extension>

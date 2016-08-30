@@ -1,0 +1,36 @@
+<?php
+
+defined ( '_JEXEC' ) or die ( 'Restricted access' );
+
+/**
+ *
+ * @package Library REAXML Library for Joomla!
+ * @version 1.5.10: column.php 2016-08-15T00:04:57.830
+ * @author Clifton IT Foundries Pty Ltd
+ * @link http://cliftonwebfoundry.com.au
+ * @copyright Copyright (c) 2014, 2015 Clifton IT Foundries Pty Ltd. All rights Reserved
+ * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ * @since 3.6
+ *
+ **/ 
+
+abstract class ReaxmlDbColumn {
+	
+	public $xml;
+    public $row;
+	public $dbo;
+	public $configuration;
+
+    public function __construct(ReaxmlEzrRow $row) {
+        $this->row = $row;
+		$this->xml = $row->xml;
+		$this->dbo = $row->dbo;
+		$this->configuration = $row->configuration;
+
+	}
+	
+	abstract public function getValue();
+
+
+
+}

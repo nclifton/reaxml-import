@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="sites_reaxml">
+	<table_data name="j_extensions">
+
+
+	<row>
+		<field name="params"><![CDATA[{"input_dir":"\/var\/www\/reaxml\/ftp\/input","input_url":"\/ftp\/input","work_dir":"\/var\/www\/reaxml\/ftp\/work","work_url":"\/ftp\/work","done_dir":"\/var\/www\/reaxml\/ftp\/done","done_url":"\/ftp\/done","log_dir":"\/var\/www\/reaxml\/ftp\/log","log_url":"\/ftp\/log","error_dir":"\/var\/www\/reaxml\/ftp\/error","error_url":"\/ftp\/error","send_success":1,"send_nofiles":0,"done_mail_to":"","error_mail_to":"","mail_from_address":"","mail_from_name":"","subject":"REAXML Import Notification: {status}","usemap":0,"default_country":"Australia","update_dlid":""}]]></field>
+	</row>
+
+</table_data>
+</database>
+</mysqldump>
